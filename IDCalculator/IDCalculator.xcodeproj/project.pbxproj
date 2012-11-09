@@ -1,0 +1,477 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A676C0A1164CC20E00C0F859 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A676C0A0164CC20E00C0F859 /* UIKit.framework */; };
+		A676C0A3164CC20E00C0F859 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A676C0A2164CC20E00C0F859 /* Foundation.framework */; };
+		A676C0A5164CC20E00C0F859 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A676C0A4164CC20E00C0F859 /* CoreGraphics.framework */; };
+		A676C0AB164CC20E00C0F859 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A676C0A9164CC20E00C0F859 /* InfoPlist.strings */; };
+		A676C0AD164CC20E00C0F859 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A676C0AC164CC20E00C0F859 /* main.m */; };
+		A676C0B1164CC20E00C0F859 /* IDCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A676C0B0164CC20E00C0F859 /* IDCAppDelegate.m */; };
+		A676C0B3164CC20E00C0F859 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A676C0B2164CC20E00C0F859 /* Default.png */; };
+		A676C0B5164CC20E00C0F859 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A676C0B4164CC20E00C0F859 /* Default@2x.png */; };
+		A676C0B7164CC20E00C0F859 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A676C0B6164CC20E00C0F859 /* Default-568h@2x.png */; };
+		A676C0BA164CC20E00C0F859 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A676C0B8164CC20E00C0F859 /* MainStoryboard_iPhone.storyboard */; };
+		A676C0BD164CC20E00C0F859 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A676C0BB164CC20E00C0F859 /* MainStoryboard_iPad.storyboard */; };
+		A676C0C0164CC20E00C0F859 /* IDCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A676C0BF164CC20E00C0F859 /* IDCViewController.m */; };
+		A676C0C8164CC20F00C0F859 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A676C0C7164CC20F00C0F859 /* SenTestingKit.framework */; };
+		A676C0C9164CC20F00C0F859 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A676C0A0164CC20E00C0F859 /* UIKit.framework */; };
+		A676C0CA164CC20F00C0F859 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A676C0A2164CC20E00C0F859 /* Foundation.framework */; };
+		A676C0D2164CC20F00C0F859 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A676C0D0164CC20F00C0F859 /* InfoPlist.strings */; };
+		A676C0D5164CC20F00C0F859 /* IDCalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A676C0D4164CC20F00C0F859 /* IDCalculatorTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A676C0CB164CC20F00C0F859 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A676C093164CC20E00C0F859 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A676C09B164CC20E00C0F859;
+			remoteInfo = IDCalculator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A676C09C164CC20E00C0F859 /* IDCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A676C0A0164CC20E00C0F859 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A676C0A2164CC20E00C0F859 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A676C0A4164CC20E00C0F859 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A676C0A8164CC20E00C0F859 /* IDCalculator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IDCalculator-Info.plist"; sourceTree = "<group>"; };
+		A676C0AA164CC20E00C0F859 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A676C0AC164CC20E00C0F859 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A676C0AE164CC20E00C0F859 /* IDCalculator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IDCalculator-Prefix.pch"; sourceTree = "<group>"; };
+		A676C0AF164CC20E00C0F859 /* IDCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDCAppDelegate.h; sourceTree = "<group>"; };
+		A676C0B0164CC20E00C0F859 /* IDCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDCAppDelegate.m; sourceTree = "<group>"; };
+		A676C0B2164CC20E00C0F859 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		A676C0B4164CC20E00C0F859 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		A676C0B6164CC20E00C0F859 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		A676C0B9164CC20E00C0F859 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		A676C0BC164CC20E00C0F859 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		A676C0BE164CC20E00C0F859 /* IDCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDCViewController.h; sourceTree = "<group>"; };
+		A676C0BF164CC20E00C0F859 /* IDCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDCViewController.m; sourceTree = "<group>"; };
+		A676C0C6164CC20F00C0F859 /* IDCalculatorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IDCalculatorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A676C0C7164CC20F00C0F859 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		A676C0CF164CC20F00C0F859 /* IDCalculatorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IDCalculatorTests-Info.plist"; sourceTree = "<group>"; };
+		A676C0D1164CC20F00C0F859 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A676C0D3164CC20F00C0F859 /* IDCalculatorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDCalculatorTests.h; sourceTree = "<group>"; };
+		A676C0D4164CC20F00C0F859 /* IDCalculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDCalculatorTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A676C099164CC20E00C0F859 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A676C0A1164CC20E00C0F859 /* UIKit.framework in Frameworks */,
+				A676C0A3164CC20E00C0F859 /* Foundation.framework in Frameworks */,
+				A676C0A5164CC20E00C0F859 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A676C0C2164CC20F00C0F859 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A676C0C8164CC20F00C0F859 /* SenTestingKit.framework in Frameworks */,
+				A676C0C9164CC20F00C0F859 /* UIKit.framework in Frameworks */,
+				A676C0CA164CC20F00C0F859 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A676C091164CC20E00C0F859 = {
+			isa = PBXGroup;
+			children = (
+				A676C0A6164CC20E00C0F859 /* IDCalculator */,
+				A676C0CD164CC20F00C0F859 /* IDCalculatorTests */,
+				A676C09F164CC20E00C0F859 /* Frameworks */,
+				A676C09D164CC20E00C0F859 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A676C09D164CC20E00C0F859 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A676C09C164CC20E00C0F859 /* IDCalculator.app */,
+				A676C0C6164CC20F00C0F859 /* IDCalculatorTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A676C09F164CC20E00C0F859 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A676C0A0164CC20E00C0F859 /* UIKit.framework */,
+				A676C0A2164CC20E00C0F859 /* Foundation.framework */,
+				A676C0A4164CC20E00C0F859 /* CoreGraphics.framework */,
+				A676C0C7164CC20F00C0F859 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A676C0A6164CC20E00C0F859 /* IDCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				A676C0AF164CC20E00C0F859 /* IDCAppDelegate.h */,
+				A676C0B0164CC20E00C0F859 /* IDCAppDelegate.m */,
+				A676C0B8164CC20E00C0F859 /* MainStoryboard_iPhone.storyboard */,
+				A676C0BB164CC20E00C0F859 /* MainStoryboard_iPad.storyboard */,
+				A676C0BE164CC20E00C0F859 /* IDCViewController.h */,
+				A676C0BF164CC20E00C0F859 /* IDCViewController.m */,
+				A676C0A7164CC20E00C0F859 /* Supporting Files */,
+			);
+			path = IDCalculator;
+			sourceTree = "<group>";
+		};
+		A676C0A7164CC20E00C0F859 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A676C0A8164CC20E00C0F859 /* IDCalculator-Info.plist */,
+				A676C0A9164CC20E00C0F859 /* InfoPlist.strings */,
+				A676C0AC164CC20E00C0F859 /* main.m */,
+				A676C0AE164CC20E00C0F859 /* IDCalculator-Prefix.pch */,
+				A676C0B2164CC20E00C0F859 /* Default.png */,
+				A676C0B4164CC20E00C0F859 /* Default@2x.png */,
+				A676C0B6164CC20E00C0F859 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A676C0CD164CC20F00C0F859 /* IDCalculatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				A676C0D3164CC20F00C0F859 /* IDCalculatorTests.h */,
+				A676C0D4164CC20F00C0F859 /* IDCalculatorTests.m */,
+				A676C0CE164CC20F00C0F859 /* Supporting Files */,
+			);
+			path = IDCalculatorTests;
+			sourceTree = "<group>";
+		};
+		A676C0CE164CC20F00C0F859 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A676C0CF164CC20F00C0F859 /* IDCalculatorTests-Info.plist */,
+				A676C0D0164CC20F00C0F859 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A676C09B164CC20E00C0F859 /* IDCalculator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A676C0D8164CC20F00C0F859 /* Build configuration list for PBXNativeTarget "IDCalculator" */;
+			buildPhases = (
+				A676C098164CC20E00C0F859 /* Sources */,
+				A676C099164CC20E00C0F859 /* Frameworks */,
+				A676C09A164CC20E00C0F859 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IDCalculator;
+			productName = IDCalculator;
+			productReference = A676C09C164CC20E00C0F859 /* IDCalculator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A676C0C5164CC20F00C0F859 /* IDCalculatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A676C0DB164CC20F00C0F859 /* Build configuration list for PBXNativeTarget "IDCalculatorTests" */;
+			buildPhases = (
+				A676C0C1164CC20F00C0F859 /* Sources */,
+				A676C0C2164CC20F00C0F859 /* Frameworks */,
+				A676C0C3164CC20F00C0F859 /* Resources */,
+				A676C0C4164CC20F00C0F859 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A676C0CC164CC20F00C0F859 /* PBXTargetDependency */,
+			);
+			name = IDCalculatorTests;
+			productName = IDCalculatorTests;
+			productReference = A676C0C6164CC20F00C0F859 /* IDCalculatorTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A676C093164CC20E00C0F859 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = IDC;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Harper Jiang";
+			};
+			buildConfigurationList = A676C096164CC20E00C0F859 /* Build configuration list for PBXProject "IDCalculator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A676C091164CC20E00C0F859;
+			productRefGroup = A676C09D164CC20E00C0F859 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A676C09B164CC20E00C0F859 /* IDCalculator */,
+				A676C0C5164CC20F00C0F859 /* IDCalculatorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A676C09A164CC20E00C0F859 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A676C0AB164CC20E00C0F859 /* InfoPlist.strings in Resources */,
+				A676C0B3164CC20E00C0F859 /* Default.png in Resources */,
+				A676C0B5164CC20E00C0F859 /* Default@2x.png in Resources */,
+				A676C0B7164CC20E00C0F859 /* Default-568h@2x.png in Resources */,
+				A676C0BA164CC20E00C0F859 /* MainStoryboard_iPhone.storyboard in Resources */,
+				A676C0BD164CC20E00C0F859 /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A676C0C3164CC20F00C0F859 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A676C0D2164CC20F00C0F859 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A676C0C4164CC20F00C0F859 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A676C098164CC20E00C0F859 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A676C0AD164CC20E00C0F859 /* main.m in Sources */,
+				A676C0B1164CC20E00C0F859 /* IDCAppDelegate.m in Sources */,
+				A676C0C0164CC20E00C0F859 /* IDCViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A676C0C1164CC20F00C0F859 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A676C0D5164CC20F00C0F859 /* IDCalculatorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A676C0CC164CC20F00C0F859 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A676C09B164CC20E00C0F859 /* IDCalculator */;
+			targetProxy = A676C0CB164CC20F00C0F859 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A676C0A9164CC20E00C0F859 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A676C0AA164CC20E00C0F859 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A676C0B8164CC20E00C0F859 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A676C0B9164CC20E00C0F859 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		A676C0BB164CC20E00C0F859 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A676C0BC164CC20E00C0F859 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		A676C0D0164CC20F00C0F859 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A676C0D1164CC20F00C0F859 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A676C0D6164CC20F00C0F859 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A676C0D7164CC20F00C0F859 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A676C0D9164CC20F00C0F859 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IDCalculator/IDCalculator-Prefix.pch";
+				INFOPLIST_FILE = "IDCalculator/IDCalculator-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A676C0DA164CC20F00C0F859 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IDCalculator/IDCalculator-Prefix.pch";
+				INFOPLIST_FILE = "IDCalculator/IDCalculator-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		A676C0DC164CC20F00C0F859 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/IDCalculator.app/IDCalculator";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IDCalculator/IDCalculator-Prefix.pch";
+				INFOPLIST_FILE = "IDCalculatorTests/IDCalculatorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		A676C0DD164CC20F00C0F859 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/IDCalculator.app/IDCalculator";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IDCalculator/IDCalculator-Prefix.pch";
+				INFOPLIST_FILE = "IDCalculatorTests/IDCalculatorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A676C096164CC20E00C0F859 /* Build configuration list for PBXProject "IDCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A676C0D6164CC20F00C0F859 /* Debug */,
+				A676C0D7164CC20F00C0F859 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A676C0D8164CC20F00C0F859 /* Build configuration list for PBXNativeTarget "IDCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A676C0D9164CC20F00C0F859 /* Debug */,
+				A676C0DA164CC20F00C0F859 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A676C0DB164CC20F00C0F859 /* Build configuration list for PBXNativeTarget "IDCalculatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A676C0DC164CC20F00C0F859 /* Debug */,
+				A676C0DD164CC20F00C0F859 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A676C093164CC20E00C0F859 /* Project object */;
+}
