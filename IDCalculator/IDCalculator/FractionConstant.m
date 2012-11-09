@@ -11,8 +11,17 @@
 
 @implementation FractionConstant
 
+- (FractionConstant*) init:(IntegerConstant*) numerator denominator:(IntegerConstant*) denominator {
+    self = [super init];
+    if(self) {
+        [self setDenominator:denominator];
+        [self setNumerator:numerator];
+    }
+    return self;
+}
 
 + (Constant*) construct:(Constant *)n denominator:(Constant *)d {
+    IntegerConstant* ZERO = [IntegerConstant ZERO];
     if([n class] == [IntegerConstant class] && [d class] == [IntegerConstant class]) {
         if(n == ZERO) {
             return ZERO;
@@ -21,6 +30,12 @@
         IntegerConstant* icd = (IntegerConstant*)d;
         if([icn value] % [icd value] == 0)
             return [IntegerConstant construct:[icn value]/[icd value]];
+        NSInteger gcd = [FractionConstant gcd:[icn value]b:[icd value]];
+        if(gcd!= 1) {
+            [icn setValue:[icn value]/gcd];
+            [icd setValue:[icd value]/gcd];
+        }
+        return [[FractionConstant alloc] init:icn denominator:icd];
     }
     if([n class] == [IntegerConstant class] && [d class] == [FractionConstant class]) {
         IntegerConstant* icn = (IntegerConstant*)n;
@@ -84,6 +99,20 @@
 
 -(Constant*) div:(Constant *)input {
     return [FractionConstant construct:self denominator:input];
+}
+
++(NSInteger) gcd:(NSInteger)a b:(NSInteger)b {
+    NSInteger small = MIN(a, b);
+    NSInteger big = MAX(a,b);
+    NSInteger temp = 0;
+    while(small!= 1) {
+        if(big%small == 0)
+            return small;
+        temp = big;
+        big = small;
+        small = temp%small;
+    }
+    return small;
 }
 
 @end

@@ -14,6 +14,8 @@
 @implementation Cleaner
 
 +(Function*) clean:(Function *)input {
+    IntegerConstant* ZERO = [IntegerConstant ZERO];
+    IntegerConstant* ONE = [IntegerConstant ONE];
     // Arithmetic Function
     if([input class] == [ArithmeticFunction class]) {
         ArithmeticFunction* arith = (ArithmeticFunction*)input;

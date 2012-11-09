@@ -12,7 +12,7 @@
 @implementation Constant
 
 -(Function*) differentiate:(Variable *)variable {
-    return ZERO;
+    return [IntegerConstant ZERO];
 }
 
 -(Constant*)add:(Constant *)input {

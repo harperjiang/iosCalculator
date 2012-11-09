@@ -16,7 +16,7 @@
     self = [super init];
     if(self) {
         if(left == nil)
-            left = ZERO;
+            left = [IntegerConstant ZERO];
         [self setLeft:left];
         [self setRight:right];
         [self setOperator:opr];

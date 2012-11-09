@@ -12,12 +12,13 @@
 
 @property(nonatomic) NSInteger value;
 
+
 +(IntegerConstant*) construct:(NSInteger) input;
 
 +(void) initialize;
 
++(IntegerConstant*) ZERO;
++(IntegerConstant*) ONE;
+
 @end
 
-IntegerConstant* ZERO;
-
-IntegerConstant* ONE;

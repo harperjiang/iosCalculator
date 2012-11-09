@@ -11,6 +11,9 @@
 
 @implementation IntegerConstant
 
+static IntegerConstant* ZERO;
+static IntegerConstant* ONE;
+
 +(void) initialize {
     if([self class] == [IntegerConstant class]) {
         ZERO = [[IntegerConstant alloc] init:0];
@@ -65,6 +68,14 @@
     if(input == 1)
         return ONE;
     return [[IntegerConstant alloc] init:input];
+}
+
++(IntegerConstant*) ZERO {
+    return ZERO;
+}
+
++(IntegerConstant*) ONE {
+    return ONE;
 }
 
 @end

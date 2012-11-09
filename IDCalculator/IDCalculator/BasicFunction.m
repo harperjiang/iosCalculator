@@ -33,7 +33,7 @@
             transformed = [[ArithmeticFunction alloc] init:nil operator:SUB right:[[BasicFunction alloc] init:SIN base:[self base]]];
             break;
         case LN:
-            transformed = [[ArithmeticFunction alloc] init:ONE operator:DIV right:[self base]];
+            transformed = [[ArithmeticFunction alloc] init:[IntegerConstant ONE] operator:DIV right:[self base]];
             break;
         default:
             return nil;
