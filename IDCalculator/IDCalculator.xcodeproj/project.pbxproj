@@ -37,6 +37,7 @@
 		A676C106164CC58B00C0F859 /* FractionConstantTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A676C105164CC58B00C0F859 /* FractionConstantTest.m */; };
 		A676C109164CD25400C0F859 /* Storyboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A676C108164CD25400C0F859 /* Storyboard_iPhone.storyboard */; };
 		A6B9745E164DEDE5007E4AB4 /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B9745D164DEDE5007E4AB4 /* GraphViewController.m */; };
+		A6B97461164DF411007E4AB4 /* ConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B97460164DF411007E4AB4 /* ConsoleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,8 @@
 		A676C108164CD25400C0F859 /* Storyboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard_iPhone.storyboard; sourceTree = "<group>"; };
 		A6B9745C164DEDE5007E4AB4 /* GraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewController.h; sourceTree = "<group>"; };
 		A6B9745D164DEDE5007E4AB4 /* GraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphViewController.m; sourceTree = "<group>"; };
+		A6B9745F164DF411007E4AB4 /* ConsoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsoleViewController.h; sourceTree = "<group>"; };
+		A6B97460164DF411007E4AB4 /* ConsoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsoleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +275,8 @@
 				A676C0BF164CC20E00C0F859 /* IDCViewController.m */,
 				A6B9745C164DEDE5007E4AB4 /* GraphViewController.h */,
 				A6B9745D164DEDE5007E4AB4 /* GraphViewController.m */,
+				A6B9745F164DF411007E4AB4 /* ConsoleViewController.h */,
+				A6B97460164DF411007E4AB4 /* ConsoleViewController.m */,
 			);
 			name = ui;
 			sourceTree = "<group>";
@@ -403,6 +408,7 @@
 				A676C0FD164CC36400C0F859 /* PowerFunction.m in Sources */,
 				A676C0FE164CC36400C0F859 /* Variable.m in Sources */,
 				A6B9745E164DEDE5007E4AB4 /* GraphViewController.m in Sources */,
+				A6B97461164DF411007E4AB4 /* ConsoleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
