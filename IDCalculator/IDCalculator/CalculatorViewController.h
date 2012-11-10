@@ -18,7 +18,21 @@
 @property(nonatomic,strong) IBOutlet UIButton* cosButton;
 @property(nonatomic,strong) IBOutlet UIButton* lnButton;
 
+
 -(IBAction) sinButtonClicked:(id) sender;
 -(IBAction) cosButtonClicked:(id) sender;
 -(IBAction) lnButtonClicked:(id) sender;
+-(IBAction) numberButtonClicked:(id) sender;
+-(IBAction) powerButtonClicked:(id) sender;
+-(IBAction) integrateButtonClicked:(id) sender;
+-(IBAction) differentiateButtonClicked:(id) sender;
+-(IBAction) lpButtonClicked:(id) sender;
+-(IBAction) rpButtonClicked:(id) sender;
+-(IBAction) dxButtonClicked:(id) sender;
+-(IBAction) xButtonClicked:(id) sender;
+-(IBAction) eButtonClicked:(id) sender;
+-(IBAction) piButtonClicked:(id) sender;
+-(IBAction) oprButtonClicked:(id) sender;
+-(IBAction) backspaceButtonClicked:(id) sender;
+-(IBAction) equalButtonClicked:(id) sender;
 @end
