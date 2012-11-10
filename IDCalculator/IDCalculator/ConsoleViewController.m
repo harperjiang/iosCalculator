@@ -13,10 +13,6 @@
 #define IOS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
 #endif
 
-@interface ConsoleViewController ()
-
-@end
-
 @implementation ConsoleViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -30,7 +26,13 @@
 
 - (IBAction) editingDone: (id) sender {
     // Send Command to model
-    
+    [[self console] operate:[[self inputField] text]];
+    // Clear the input
+    [[self inputField] setText:nil];
+    // Update Display
+    [[self display] setText:[[self console] buffer]];
+    // Scroll to the end
+    [[self display] scrollRangeToVisible:NSMakeRange([[[self display] text] length], 0)];
     // Hide keyboard
     [sender resignFirstResponder];
 }
@@ -41,6 +43,9 @@
 	// Add listener to text box
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChange:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChange:) name:UIKeyboardWillHideNotification object:nil];
+    
+    // Init Console
+    self->_console = [[IDCConsole alloc] init];
 }
 
 - (void) keyboardWillChange:(NSNotification *)notification {
@@ -78,7 +83,8 @@
             [[self display] setFrame:displayBounds];
             [[self inputField] setFrame:textFieldBounds];
         }
-        
+        // Scroll to the end
+        [[self display] scrollRangeToVisible:NSMakeRange([[[self display] text] length], 0)];
         [UIView commitAnimations];
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
     }

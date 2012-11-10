@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IDCConsole.h"
 
 @interface ConsoleViewController : UIViewController
+
+@property(nonatomic,strong,readonly) IDCConsole* console;
 
 @property(nonatomic,strong) IBOutlet UITextField *inputField;
 @property(nonatomic,strong) IBOutlet UITextView *display;

@@ -10,4 +10,9 @@
 
 @interface IDCConsole : NSObject
 
+@property(nonatomic,strong,readonly) NSMutableString* buffer;
+@property(nonatomic,strong,readonly) NSMutableDictionary* variables;
+
+-(void) operate:(NSString*) command;
+
 @end

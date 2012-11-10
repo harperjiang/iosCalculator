@@ -10,4 +10,18 @@
 
 @implementation IDCConsole
 
+-(IDCConsole*) init {
+    self = [super init];
+    if(self) {
+        self->_buffer = [[NSMutableString alloc] initWithCapacity:100];
+        self->_variables = [[NSMutableDictionary alloc] initWithCapacity:100];
+    }
+    return self;
+}
+
+-(void) operate:(NSString *)command {
+    [[self buffer] appendString:[NSString stringWithFormat:@"Command: %@\n\n",command]];
+    // TODO Execute the command
+}
+
 @end
