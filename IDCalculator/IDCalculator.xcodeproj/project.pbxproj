@@ -16,8 +16,7 @@
 		A676C0B3164CC20E00C0F859 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A676C0B2164CC20E00C0F859 /* Default.png */; };
 		A676C0B5164CC20E00C0F859 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A676C0B4164CC20E00C0F859 /* Default@2x.png */; };
 		A676C0B7164CC20E00C0F859 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A676C0B6164CC20E00C0F859 /* Default-568h@2x.png */; };
-		A676C0BA164CC20E00C0F859 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A676C0B8164CC20E00C0F859 /* MainStoryboard_iPhone.storyboard */; };
-		A676C0BD164CC20E00C0F859 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A676C0BB164CC20E00C0F859 /* MainStoryboard_iPad.storyboard */; };
+		A676C0BD164CC20E00C0F859 /* Storyboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A676C0BB164CC20E00C0F859 /* Storyboard_iPad.storyboard */; };
 		A676C0C0164CC20E00C0F859 /* IDCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A676C0BF164CC20E00C0F859 /* IDCViewController.m */; };
 		A676C0C8164CC20F00C0F859 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A676C0C7164CC20F00C0F859 /* SenTestingKit.framework */; };
 		A676C0C9164CC20F00C0F859 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A676C0A0164CC20E00C0F859 /* UIKit.framework */; };
@@ -37,6 +36,7 @@
 		A676C0FE164CC36400C0F859 /* Variable.m in Sources */ = {isa = PBXBuildFile; fileRef = A676C0F3164CC36400C0F859 /* Variable.m */; };
 		A676C106164CC58B00C0F859 /* FractionConstantTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A676C105164CC58B00C0F859 /* FractionConstantTest.m */; };
 		A676C109164CD25400C0F859 /* Storyboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A676C108164CD25400C0F859 /* Storyboard_iPhone.storyboard */; };
+		A6B9745E164DEDE5007E4AB4 /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B9745D164DEDE5007E4AB4 /* GraphViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,8 +63,7 @@
 		A676C0B2164CC20E00C0F859 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		A676C0B4164CC20E00C0F859 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		A676C0B6164CC20E00C0F859 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		A676C0B9164CC20E00C0F859 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		A676C0BC164CC20E00C0F859 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		A676C0BC164CC20E00C0F859 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Storyboard_iPad.storyboard; sourceTree = "<group>"; };
 		A676C0BE164CC20E00C0F859 /* IDCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDCViewController.h; sourceTree = "<group>"; };
 		A676C0BF164CC20E00C0F859 /* IDCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDCViewController.m; sourceTree = "<group>"; };
 		A676C0C6164CC20F00C0F859 /* IDCalculatorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IDCalculatorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +97,8 @@
 		A676C104164CC58B00C0F859 /* FractionConstantTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FractionConstantTest.h; sourceTree = "<group>"; };
 		A676C105164CC58B00C0F859 /* FractionConstantTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FractionConstantTest.m; sourceTree = "<group>"; };
 		A676C108164CD25400C0F859 /* Storyboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard_iPhone.storyboard; sourceTree = "<group>"; };
+		A6B9745C164DEDE5007E4AB4 /* GraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewController.h; sourceTree = "<group>"; };
+		A6B9745D164DEDE5007E4AB4 /* GraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,8 +163,7 @@
 				A676C0AF164CC20E00C0F859 /* IDCAppDelegate.h */,
 				A676C0B0164CC20E00C0F859 /* IDCAppDelegate.m */,
 				A676C108164CD25400C0F859 /* Storyboard_iPhone.storyboard */,
-				A676C0B8164CC20E00C0F859 /* MainStoryboard_iPhone.storyboard */,
-				A676C0BB164CC20E00C0F859 /* MainStoryboard_iPad.storyboard */,
+				A676C0BB164CC20E00C0F859 /* Storyboard_iPad.storyboard */,
 				A676C0A7164CC20E00C0F859 /* Supporting Files */,
 			);
 			path = IDCalculator;
@@ -270,6 +270,8 @@
 				A676C0E3164CC36400C0F859 /* CalculatorViewController.m */,
 				A676C0BE164CC20E00C0F859 /* IDCViewController.h */,
 				A676C0BF164CC20E00C0F859 /* IDCViewController.m */,
+				A6B9745C164DEDE5007E4AB4 /* GraphViewController.h */,
+				A6B9745D164DEDE5007E4AB4 /* GraphViewController.m */,
 			);
 			name = ui;
 			sourceTree = "<group>";
@@ -350,8 +352,7 @@
 				A676C0B3164CC20E00C0F859 /* Default.png in Resources */,
 				A676C0B5164CC20E00C0F859 /* Default@2x.png in Resources */,
 				A676C0B7164CC20E00C0F859 /* Default-568h@2x.png in Resources */,
-				A676C0BA164CC20E00C0F859 /* MainStoryboard_iPhone.storyboard in Resources */,
-				A676C0BD164CC20E00C0F859 /* MainStoryboard_iPad.storyboard in Resources */,
+				A676C0BD164CC20E00C0F859 /* Storyboard_iPad.storyboard in Resources */,
 				A676C109164CD25400C0F859 /* Storyboard_iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +402,7 @@
 				A676C0FC164CC36400C0F859 /* IntegerConstant.m in Sources */,
 				A676C0FD164CC36400C0F859 /* PowerFunction.m in Sources */,
 				A676C0FE164CC36400C0F859 /* Variable.m in Sources */,
+				A6B9745E164DEDE5007E4AB4 /* GraphViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,20 +434,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		A676C0B8164CC20E00C0F859 /* MainStoryboard_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A676C0B9164CC20E00C0F859 /* en */,
-			);
-			name = MainStoryboard_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		A676C0BB164CC20E00C0F859 /* MainStoryboard_iPad.storyboard */ = {
+		A676C0BB164CC20E00C0F859 /* Storyboard_iPad.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A676C0BC164CC20E00C0F859 /* en */,
 			);
-			name = MainStoryboard_iPad.storyboard;
+			name = Storyboard_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		A676C0D0164CC20F00C0F859 /* InfoPlist.strings */ = {
