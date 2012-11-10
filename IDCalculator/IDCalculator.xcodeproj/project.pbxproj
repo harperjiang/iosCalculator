@@ -42,6 +42,7 @@
 		A6B97468164E1704007E4AB4 /* SquareMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B97467164E1704007E4AB4 /* SquareMatrix.m */; };
 		A6B9746B164E17EB007E4AB4 /* Vector.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B9746A164E17EB007E4AB4 /* Vector.m */; };
 		A6B9746E164E1A32007E4AB4 /* IDCConsole.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B9746D164E1A32007E4AB4 /* IDCConsole.m */; };
+		A6B97475164E8CC1007E4AB4 /* MatrixTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B97474164E8CC1007E4AB4 /* MatrixTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,8 @@
 		A6B9746A164E17EB007E4AB4 /* Vector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vector.m; sourceTree = "<group>"; };
 		A6B9746C164E1A32007E4AB4 /* IDCConsole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDCConsole.h; sourceTree = "<group>"; };
 		A6B9746D164E1A32007E4AB4 /* IDCConsole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDCConsole.m; sourceTree = "<group>"; };
+		A6B97473164E8CC1007E4AB4 /* MatrixTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatrixTest.h; sourceTree = "<group>"; };
+		A6B97474164E8CC1007E4AB4 /* MatrixTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatrixTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,7 +206,8 @@
 		A676C0CD164CC20F00C0F859 /* IDCalculatorTests */ = {
 			isa = PBXGroup;
 			children = (
-				A676C102164CC56600C0F859 /* model */,
+				A6B97476164E8CCC007E4AB4 /* matrix */,
+				A676C102164CC56600C0F859 /* calculus */,
 				A676C0D3164CC20F00C0F859 /* IDCalculatorTests.h */,
 				A676C0D4164CC20F00C0F859 /* IDCalculatorTests.m */,
 				A676C0CE164CC20F00C0F859 /* Supporting Files */,
@@ -263,12 +267,12 @@
 			name = cons;
 			sourceTree = "<group>";
 		};
-		A676C102164CC56600C0F859 /* model */ = {
+		A676C102164CC56600C0F859 /* calculus */ = {
 			isa = PBXGroup;
 			children = (
 				A676C103164CC56D00C0F859 /* cons */,
 			);
-			name = model;
+			name = calculus;
 			sourceTree = "<group>";
 		};
 		A676C103164CC56D00C0F859 /* cons */ = {
@@ -315,6 +319,15 @@
 				A6B9746D164E1A32007E4AB4 /* IDCConsole.m */,
 			);
 			name = console;
+			sourceTree = "<group>";
+		};
+		A6B97476164E8CCC007E4AB4 /* matrix */ = {
+			isa = PBXGroup;
+			children = (
+				A6B97473164E8CC1007E4AB4 /* MatrixTest.h */,
+				A6B97474164E8CC1007E4AB4 /* MatrixTest.m */,
+			);
+			name = matrix;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -458,6 +471,7 @@
 			files = (
 				A676C0D5164CC20F00C0F859 /* IDCalculatorTests.m in Sources */,
 				A676C106164CC58B00C0F859 /* FractionConstantTest.m in Sources */,
+				A6B97475164E8CC1007E4AB4 /* MatrixTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
