@@ -38,6 +38,10 @@
 		A676C109164CD25400C0F859 /* Storyboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A676C108164CD25400C0F859 /* Storyboard_iPhone.storyboard */; };
 		A6B9745E164DEDE5007E4AB4 /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B9745D164DEDE5007E4AB4 /* GraphViewController.m */; };
 		A6B97461164DF411007E4AB4 /* ConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B97460164DF411007E4AB4 /* ConsoleViewController.m */; };
+		A6B97465164E16B0007E4AB4 /* Matrix.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B97464164E16B0007E4AB4 /* Matrix.m */; };
+		A6B97468164E1704007E4AB4 /* SquareMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B97467164E1704007E4AB4 /* SquareMatrix.m */; };
+		A6B9746B164E17EB007E4AB4 /* Vector.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B9746A164E17EB007E4AB4 /* Vector.m */; };
+		A6B9746E164E1A32007E4AB4 /* IDCConsole.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B9746D164E1A32007E4AB4 /* IDCConsole.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +106,14 @@
 		A6B9745D164DEDE5007E4AB4 /* GraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphViewController.m; sourceTree = "<group>"; };
 		A6B9745F164DF411007E4AB4 /* ConsoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsoleViewController.h; sourceTree = "<group>"; };
 		A6B97460164DF411007E4AB4 /* ConsoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsoleViewController.m; sourceTree = "<group>"; };
+		A6B97463164E16B0007E4AB4 /* Matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix.h; sourceTree = "<group>"; };
+		A6B97464164E16B0007E4AB4 /* Matrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Matrix.m; sourceTree = "<group>"; };
+		A6B97466164E1704007E4AB4 /* SquareMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareMatrix.h; sourceTree = "<group>"; };
+		A6B97467164E1704007E4AB4 /* SquareMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquareMatrix.m; sourceTree = "<group>"; };
+		A6B97469164E17EB007E4AB4 /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
+		A6B9746A164E17EB007E4AB4 /* Vector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vector.m; sourceTree = "<group>"; };
+		A6B9746C164E1A32007E4AB4 /* IDCConsole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDCConsole.h; sourceTree = "<group>"; };
+		A6B9746D164E1A32007E4AB4 /* IDCConsole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDCConsole.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,8 +173,10 @@
 		A676C0A6164CC20E00C0F859 /* IDCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				A6B9746F164E1A36007E4AB4 /* console */,
+				A6B97462164E1627007E4AB4 /* matrix */,
 				A676C107164CD1DF00C0F859 /* ui */,
-				A676C0FF164CC36B00C0F859 /* model */,
+				A676C0FF164CC36B00C0F859 /* calculus */,
 				A676C0AF164CC20E00C0F859 /* IDCAppDelegate.h */,
 				A676C0B0164CC20E00C0F859 /* IDCAppDelegate.m */,
 				A676C108164CD25400C0F859 /* Storyboard_iPhone.storyboard */,
@@ -206,9 +220,11 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		A676C0FF164CC36B00C0F859 /* model */ = {
+		A676C0FF164CC36B00C0F859 /* calculus */ = {
 			isa = PBXGroup;
 			children = (
+				A676C100164CC37500C0F859 /* func */,
+				A676C101164CC39700C0F859 /* cons */,
 				A676C0F2164CC36400C0F859 /* Variable.h */,
 				A676C0F3164CC36400C0F859 /* Variable.m */,
 				A676C0EC164CC36400C0F859 /* Function.h */,
@@ -217,10 +233,8 @@
 				A676C0E7164CC36400C0F859 /* Constant.m */,
 				A676C0E4164CC36400C0F859 /* Cleaner.h */,
 				A676C0E5164CC36400C0F859 /* Cleaner.m */,
-				A676C101164CC39700C0F859 /* cons */,
-				A676C100164CC37500C0F859 /* func */,
 			);
-			name = model;
+			name = calculus;
 			sourceTree = "<group>";
 		};
 		A676C100164CC37500C0F859 /* func */ = {
@@ -279,6 +293,28 @@
 				A6B97460164DF411007E4AB4 /* ConsoleViewController.m */,
 			);
 			name = ui;
+			sourceTree = "<group>";
+		};
+		A6B97462164E1627007E4AB4 /* matrix */ = {
+			isa = PBXGroup;
+			children = (
+				A6B97463164E16B0007E4AB4 /* Matrix.h */,
+				A6B97464164E16B0007E4AB4 /* Matrix.m */,
+				A6B97466164E1704007E4AB4 /* SquareMatrix.h */,
+				A6B97467164E1704007E4AB4 /* SquareMatrix.m */,
+				A6B97469164E17EB007E4AB4 /* Vector.h */,
+				A6B9746A164E17EB007E4AB4 /* Vector.m */,
+			);
+			name = matrix;
+			sourceTree = "<group>";
+		};
+		A6B9746F164E1A36007E4AB4 /* console */ = {
+			isa = PBXGroup;
+			children = (
+				A6B9746C164E1A32007E4AB4 /* IDCConsole.h */,
+				A6B9746D164E1A32007E4AB4 /* IDCConsole.m */,
+			);
+			name = console;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,6 +445,10 @@
 				A676C0FE164CC36400C0F859 /* Variable.m in Sources */,
 				A6B9745E164DEDE5007E4AB4 /* GraphViewController.m in Sources */,
 				A6B97461164DF411007E4AB4 /* ConsoleViewController.m in Sources */,
+				A6B97465164E16B0007E4AB4 /* Matrix.m in Sources */,
+				A6B97468164E1704007E4AB4 /* SquareMatrix.m in Sources */,
+				A6B9746B164E17EB007E4AB4 /* Vector.m in Sources */,
+				A6B9746E164E1A32007E4AB4 /* IDCConsole.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,6 +29,8 @@
 }
 
 - (IBAction) editingDone: (id) sender {
+    // Send Command to model
+    
     // Hide keyboard
     [sender resignFirstResponder];
 }
