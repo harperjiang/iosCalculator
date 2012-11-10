@@ -15,4 +15,5 @@
 @property(nonatomic) NSInteger size;
 
 -(Constant*) val:(NSInteger) i;
+-(Vector*) init:(NSMutableArray*) data;
 @end

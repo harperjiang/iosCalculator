@@ -14,4 +14,13 @@
     return [[self data] objectAtIndex:i];
 }
 
+-(Vector*) init:(NSMutableArray *)data {
+    self = [super init];
+    if(self) {
+        self->_data = data;
+        self->_size = [data count];
+    }
+    return self;
+}
+
 @end

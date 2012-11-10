@@ -43,6 +43,7 @@
 		A6B9746B164E17EB007E4AB4 /* Vector.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B9746A164E17EB007E4AB4 /* Vector.m */; };
 		A6B9746E164E1A32007E4AB4 /* IDCConsole.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B9746D164E1A32007E4AB4 /* IDCConsole.m */; };
 		A6B97475164E8CC1007E4AB4 /* MatrixTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B97474164E8CC1007E4AB4 /* MatrixTest.m */; };
+		A6DE83FE164EDDEC002F6FFA /* VectorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DE83FD164EDDEC002F6FFA /* VectorTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,8 @@
 		A6B9746D164E1A32007E4AB4 /* IDCConsole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDCConsole.m; sourceTree = "<group>"; };
 		A6B97473164E8CC1007E4AB4 /* MatrixTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatrixTest.h; sourceTree = "<group>"; };
 		A6B97474164E8CC1007E4AB4 /* MatrixTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatrixTest.m; sourceTree = "<group>"; };
+		A6DE83FC164EDDEC002F6FFA /* VectorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VectorTest.h; sourceTree = "<group>"; };
+		A6DE83FD164EDDEC002F6FFA /* VectorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VectorTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -326,6 +329,8 @@
 			children = (
 				A6B97473164E8CC1007E4AB4 /* MatrixTest.h */,
 				A6B97474164E8CC1007E4AB4 /* MatrixTest.m */,
+				A6DE83FC164EDDEC002F6FFA /* VectorTest.h */,
+				A6DE83FD164EDDEC002F6FFA /* VectorTest.m */,
 			);
 			name = matrix;
 			sourceTree = "<group>";
@@ -472,6 +477,7 @@
 				A676C0D5164CC20F00C0F859 /* IDCalculatorTests.m in Sources */,
 				A676C106164CC58B00C0F859 /* FractionConstantTest.m in Sources */,
 				A6B97475164E8CC1007E4AB4 /* MatrixTest.m in Sources */,
+				A6DE83FE164EDDEC002F6FFA /* VectorTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,6 +578,7 @@
 				GCC_PREFIX_HEADER = "IDCalculator/IDCalculator-Prefix.pch";
 				INFOPLIST_FILE = "IDCalculator/IDCalculator-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -583,6 +590,7 @@
 				GCC_PREFIX_HEADER = "IDCalculator/IDCalculator-Prefix.pch";
 				INFOPLIST_FILE = "IDCalculator/IDCalculator-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -599,6 +607,7 @@
 				GCC_PREFIX_HEADER = "IDCalculator/IDCalculator-Prefix.pch";
 				INFOPLIST_FILE = "IDCalculatorTests/IDCalculatorTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -616,6 +625,7 @@
 				GCC_PREFIX_HEADER = "IDCalculator/IDCalculator-Prefix.pch";
 				INFOPLIST_FILE = "IDCalculatorTests/IDCalculatorTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
