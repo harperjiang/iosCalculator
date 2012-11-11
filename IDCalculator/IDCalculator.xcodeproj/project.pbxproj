@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A627E99216500A97001142D5 /* SpecialConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = A627E99116500A97001142D5 /* SpecialConstant.m */; };
+		A627E99816500AA4001142D5 /* ClearCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = A627E99516500AA4001142D5 /* ClearCommand.m */; };
+		A627E99916500AA4001142D5 /* Command.m in Sources */ = {isa = PBXBuildFile; fileRef = A627E99716500AA4001142D5 /* Command.m */; };
 		A676C0A1164CC20E00C0F859 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A676C0A0164CC20E00C0F859 /* UIKit.framework */; };
 		A676C0A3164CC20E00C0F859 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A676C0A2164CC20E00C0F859 /* Foundation.framework */; };
 		A676C0A5164CC20E00C0F859 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A676C0A4164CC20E00C0F859 /* CoreGraphics.framework */; };
@@ -57,6 +60,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A627E99016500A97001142D5 /* SpecialConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialConstant.h; sourceTree = "<group>"; };
+		A627E99116500A97001142D5 /* SpecialConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialConstant.m; sourceTree = "<group>"; };
+		A627E99416500AA4001142D5 /* ClearCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClearCommand.h; sourceTree = "<group>"; };
+		A627E99516500AA4001142D5 /* ClearCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClearCommand.m; sourceTree = "<group>"; };
+		A627E99616500AA4001142D5 /* Command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Command.h; sourceTree = "<group>"; };
+		A627E99716500AA4001142D5 /* Command.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Command.m; sourceTree = "<group>"; };
 		A676C09C164CC20E00C0F859 /* IDCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A676C0A0164CC20E00C0F859 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A676C0A2164CC20E00C0F859 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -146,6 +155,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A627E99A16500AAA001142D5 /* command */ = {
+			isa = PBXGroup;
+			children = (
+				A627E99416500AA4001142D5 /* ClearCommand.h */,
+				A627E99516500AA4001142D5 /* ClearCommand.m */,
+			);
+			name = command;
+			sourceTree = "<group>";
+		};
 		A676C091164CC20E00C0F859 = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +280,8 @@
 		A676C101164CC39700C0F859 /* cons */ = {
 			isa = PBXGroup;
 			children = (
+				A627E99016500A97001142D5 /* SpecialConstant.h */,
+				A627E99116500A97001142D5 /* SpecialConstant.m */,
 				A676C0EA164CC36400C0F859 /* FractionConstant.h */,
 				A676C0EB164CC36400C0F859 /* FractionConstant.m */,
 				A676C0EE164CC36400C0F859 /* IntegerConstant.h */,
@@ -318,6 +338,9 @@
 		A6B9746F164E1A36007E4AB4 /* console */ = {
 			isa = PBXGroup;
 			children = (
+				A627E99A16500AAA001142D5 /* command */,
+				A627E99616500AA4001142D5 /* Command.h */,
+				A627E99716500AA4001142D5 /* Command.m */,
 				A6B9746C164E1A32007E4AB4 /* IDCConsole.h */,
 				A6B9746D164E1A32007E4AB4 /* IDCConsole.m */,
 			);
@@ -467,6 +490,9 @@
 				A6B97468164E1704007E4AB4 /* SquareMatrix.m in Sources */,
 				A6B9746B164E17EB007E4AB4 /* Vector.m in Sources */,
 				A6B9746E164E1A32007E4AB4 /* IDCConsole.m in Sources */,
+				A627E99216500A97001142D5 /* SpecialConstant.m in Sources */,
+				A627E99816500AA4001142D5 /* ClearCommand.m in Sources */,
+				A627E99916500AA4001142D5 /* Command.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
