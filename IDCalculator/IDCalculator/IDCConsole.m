@@ -7,6 +7,7 @@
 //
 
 #import "IDCConsole.h"
+#import "Command.h"
 
 @implementation IDCConsole
 
@@ -19,9 +20,13 @@
     return self;
 }
 
--(void) operate:(NSString *)command {
-    [[self buffer] appendString:[NSString stringWithFormat:@"Command: %@\n\n",command]];
-    // TODO Execute the command
+-(void) operate:(NSString *)commandText {
+    // Execute the command
+    Command* command = [Command parse:commandText];
+    [command setConsole:self];
+    NSString* text = [command text];
+    [[self buffer] appendFormat:@">>%@\n",text];
+    [command execute];
 }
 
 @end
