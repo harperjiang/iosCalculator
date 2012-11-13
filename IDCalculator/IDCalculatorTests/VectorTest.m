@@ -28,7 +28,8 @@
     }
     Vector* v = [[Vector alloc] init:array];
     for(int i = 0 ; i < 10 ; i++) {
-        STAssertEqualObjects([[v val:i] description],[NSString stringWithFormat:@"%d",i],@"");
+        NSString* expect = [NSString stringWithFormat:@"%d",i];
+        STAssertEqualObjects([[v val:i] description],expect,@"");
     }
     
 }

@@ -11,14 +11,14 @@
 @implementation Vector
 
 -(Constant*) val:(NSInteger)i {
-    return [[self data] objectAtIndex:i];
+    return [super val:0 n:i];
 }
 
 -(Vector*) init:(NSMutableArray *)data {
     self = [super init];
     if(self) {
-        self->_data = data;
-        self->_size = [data count];
+        [self setData:data];
+        [self setSize:[data count]];
     }
     return self;
 }

@@ -11,8 +11,6 @@
 
 @interface ConsoleViewController : UIViewController
 
-@property(nonatomic,strong,readonly) IDCConsole* console;
-
 @property(nonatomic,strong) IBOutlet UITextField *inputField;
 @property(nonatomic,strong) IBOutlet UITextView *display;
 

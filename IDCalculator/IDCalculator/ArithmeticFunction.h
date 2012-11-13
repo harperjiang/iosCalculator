@@ -7,11 +7,7 @@
 //
 
 #import "Function.h"
-
-typedef enum _Operator {
-    ADD = 1,SUB,MUL,DIV
-} Operator;
-
+#import "Operator.h"
 
 @interface ArithmeticFunction : Function
 

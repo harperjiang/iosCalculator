@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "Constant.h"
+#import "Matrix.h"
 
-@interface Vector : NSObject
+@interface Vector : Matrix
 
 @property(nonatomic,strong) NSArray* data;
 @property(nonatomic) NSInteger size;
 
 -(Constant*) val:(NSInteger) i;
 -(Vector*) init:(NSMutableArray*) data;
+
 @end

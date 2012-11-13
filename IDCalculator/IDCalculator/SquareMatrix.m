@@ -24,9 +24,16 @@
     return self.size;
 }
 
+-(void) setM:(NSInteger)m {
+
+}
+
 -(NSInteger) n {
     return self.size;
 }
 
+-(void) setN:(NSInteger)n{
+    
+}
 
 @end

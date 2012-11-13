@@ -9,6 +9,7 @@
 #import "Matrix.h"
 #import "IntegerConstant.h"
 #import "Constant.h"
+#import "Vector.h"
 
 @implementation Matrix
 
@@ -18,6 +19,25 @@
         [self setData:d];
         [self setM:nm];
         [self setN:nn];
+    }
+    return self;
+}
+
+-(Matrix*) init:(NSArray*)d {
+    self = [super init];
+    if(self) {
+        NSInteger rowCount = 0;
+        NSInteger colCount = 0;
+        NSMutableArray* data = [[NSMutableArray alloc] initWithCapacity:20];
+        NSArray* firstRow = [d objectAtIndex:0];
+        colCount = [firstRow count];
+        for(NSArray* item in d) {
+            [data addObjectsFromArray:item];
+            rowCount++;
+        }
+        [self setData:data];
+        [self setM:rowCount];
+        [self setN:colCount];
     }
     return self;
 }
@@ -57,6 +77,17 @@
 
 -(Constant*) val:(NSInteger) i n:(NSInteger)j {
     return [[self data] objectAtIndex:i*self.n + j];
+}
+
+-(NSString*) description {
+    NSMutableString* buffer = [[NSMutableString alloc] initWithCapacity:[self m]*[self n]];
+    for(int i = 0 ; i < [self m] ; i++){
+        for(int j = 0 ; j < [self n]; j++) {
+            [buffer appendFormat:@"%@\t",[[self val:i n:j] description]];
+        }
+        [buffer appendString:@"\n"];
+    }
+    return buffer;
 }
 
 @end

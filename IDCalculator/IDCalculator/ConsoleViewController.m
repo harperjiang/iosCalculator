@@ -26,11 +26,11 @@
 
 - (IBAction) editingDone: (id) sender {
     // Send Command to model
-    [[self console] operate:[[self inputField] text]];
+    [[IDCConsole instance] operate:[[self inputField] text]];
     // Clear the input
     [[self inputField] setText:nil];
     // Update Display
-    [[self display] setText:[[self console] buffer]];
+    [[self display] setText:[[IDCConsole instance] buffer]];
     // Scroll to the end
     [[self display] scrollRangeToVisible:NSMakeRange([[[self display] text] length], 0)];
     // Hide keyboard
@@ -43,9 +43,6 @@
 	// Add listener to text box
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChange:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChange:) name:UIKeyboardWillHideNotification object:nil];
-    
-    // Init Console
-    self->_console = [[IDCConsole alloc] init];
 }
 
 - (void) keyboardWillChange:(NSNotification *)notification {

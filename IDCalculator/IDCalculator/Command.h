@@ -12,8 +12,6 @@
 @interface Command : NSObject
 
 @property(nonatomic,strong,readonly) NSString* text;
-@property(nonatomic,strong) IDCConsole* console;
-
 
 -(void) execute;
 

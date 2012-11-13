@@ -101,6 +101,10 @@
     return [FractionConstant construct:self denominator:input];
 }
 
+-(NSString*) description {
+    return [NSString stringWithFormat:@"%@/%@",[[self numerator] description],[[self denominator] description]];
+}
+
 +(NSInteger) gcd:(NSInteger)a b:(NSInteger)b {
     NSInteger small = MIN(a, b);
     NSInteger big = MAX(a,b);

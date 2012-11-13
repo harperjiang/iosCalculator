@@ -78,4 +78,8 @@ static IntegerConstant* ONE;
     return ONE;
 }
 
+-(NSString*) description {
+    return [NSString stringWithFormat:@"%d",[self value]];
+}
+
 @end

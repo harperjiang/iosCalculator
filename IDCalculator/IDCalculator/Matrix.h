@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Vector.h"
 #import "Constant.h"
 
+@class Vector;
 
 @interface Matrix : NSObject
 
@@ -17,9 +17,14 @@
 @property(nonatomic) NSInteger m;
 @property(nonatomic) NSInteger n;
     
+-(Matrix*) init:(NSArray*)d m:(NSInteger) nm n:(NSInteger)nn;
+-(Matrix*) init:(NSArray*)d;
 
 - (Matrix*) mul:(Matrix*)another;
 - (Vector*) mulvector:(Vector*)v;
 - (Constant*) val:(NSInteger) i n:(NSInteger)j;
+- (Constant*) rank;
+- (Constant*) determinant;
+- (Matrix*) submatrix:(NSRange) rowrange column:(NSRange) colrange;
 
 @end
