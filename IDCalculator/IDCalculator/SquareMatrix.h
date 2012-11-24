@@ -10,14 +10,12 @@
 
 @interface Eigenvalue : NSObject
 
-@property(nonatomic,readonly,strong) Constant* value;
+@property(nonatomic,readonly,strong) Number* value;
 @property(nonatomic,readonly,strong) NSArray* eigenvectors;
 
 @end
 
 @interface SquareMatrix : Matrix
-
-@property(nonatomic) NSInteger size;
 
 -(Matrix*) inverse;
 -(NSArray*) eigenvalues;

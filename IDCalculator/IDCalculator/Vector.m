@@ -7,20 +7,13 @@
 //
 
 #import "Vector.h"
+#import "NumberData.h"
 
 @implementation Vector
 
--(Constant*) val:(NSInteger)i {
+-(Number*) val:(NSInteger)i {
     return [super val:0 n:i];
 }
 
--(Vector*) init:(NSMutableArray *)data {
-    self = [super init];
-    if(self) {
-        [self setData:data];
-        [self setSize:[data count]];
-    }
-    return self;
-}
 
 @end

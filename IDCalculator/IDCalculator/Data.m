@@ -10,4 +10,24 @@
 
 @implementation Data
 
+-(Data*) evaluate {
+    return self;
+}
+
+-(Data*) add:(Data *)another {
+    return nil;
+}
+
+-(Data*) sub:(Data *)another {
+    return nil;
+}
+
+-(Data*) mul:(Data *)another {
+    return nil;
+}
+
+-(Data*) div:(Data *)another {
+    return nil;
+}
+
 @end

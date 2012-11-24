@@ -13,5 +13,7 @@
 @property(strong,nonatomic) NSMutableArray* expList;
 
 -(void) add:(Expression*) exp;
+-(Expression*) get:(NSInteger)index;
+-(NSInteger) count;
 
 @end

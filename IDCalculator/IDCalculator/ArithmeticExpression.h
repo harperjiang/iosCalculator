@@ -11,7 +11,7 @@
 
 @interface ArithmeticExpression : Expression
 
-@property(nonatomic) Operator operator;
+@property(nonatomic) Operator opr;
 @property(nonatomic,strong) Expression* left;
 @property(nonatomic,strong) Expression* right;
 

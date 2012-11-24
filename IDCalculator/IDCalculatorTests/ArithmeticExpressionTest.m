@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Harper Jiang. All rights reserved.
 //
 #import "Matrix.h"
-#import "IntegerConstant.h"
+#import "Integer.h"
 #import "ArithmeticExpression.h"
 #import "ArithmeticExpressionTest.h"
 #import "ConsoleIdentifier.h"
@@ -16,13 +16,13 @@
 -(void) testMul {
     NSMutableArray* dataA = [[NSMutableArray alloc] initWithCapacity:10];
     for(int i = 0 ; i < 10 ; i++)
-        [dataA insertObject:[IntegerConstant construct:i] atIndex:i];
+        [dataA insertObject:[Integer construct:i] atIndex:i];
     
     Matrix* matrixA = [[Matrix alloc] init:dataA m:5 n:2];
     
     NSMutableArray* dataB = [[NSMutableArray alloc] initWithCapacity:10];
     for(int i = 0 ; i < 10 ; i++)
-        [dataB insertObject:[IntegerConstant construct:i+5] atIndex:i];
+        [dataB insertObject:[Integer construct:i+5] atIndex:i];
     
     Matrix* matrixB = [[Matrix alloc] init:dataB m:2 n:5];
     

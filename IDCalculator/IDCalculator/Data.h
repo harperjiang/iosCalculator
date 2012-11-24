@@ -7,7 +7,13 @@
 //
 
 #import "Expression.h"
+#import "Number.h"
 
 @interface Data : Expression
+
+-(Data*) add:(Data*)another;
+-(Data*) sub:(Data*)another;
+-(Data*) mul:(Data*)another;
+-(Data*) div:(Data*)another;
 
 @end

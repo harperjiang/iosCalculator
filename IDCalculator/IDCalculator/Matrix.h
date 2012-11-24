@@ -7,25 +7,29 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Constant.h"
+#import "Number.h"
+#import "ExpressionList.h"
 #import "Data.h"
 
 @class Vector;
+@class SquareMatrix;
 
 @interface Matrix : Data
 
-@property(nonatomic,strong) NSArray* data;
+@property(nonatomic,strong) ExpressionList* data;
 @property(nonatomic) NSInteger m;
 @property(nonatomic) NSInteger n;
     
 -(Matrix*) init:(NSArray*)d m:(NSInteger) nm n:(NSInteger)nn;
--(Matrix*) init:(NSArray*)d;
+-(Matrix*) init:(ExpressionList*)data;
 
 - (Matrix*) mul:(Matrix*)another;
 - (Vector*) mulvector:(Vector*)v;
-- (Constant*) val:(NSInteger) i n:(NSInteger)j;
-- (Constant*) rank;
-- (Constant*) determinant;
+- (Number*) val:(NSInteger) i n:(NSInteger)j;
+- (Number*) rank;
+- (Number*) determinant;
 - (Matrix*) submatrix:(NSRange) rowrange column:(NSRange) colrange;
 
+-(SquareMatrix*) asSquare;
+-(Vector*) asVector;
 @end

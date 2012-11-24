@@ -23,7 +23,7 @@
     if(object == nil) {
         [[IDCConsole instance] error:[NSString stringWithFormat:@"Cannot find variable: %@",[self name]]];
     } else {
-        [[IDCConsole instance] output:[NSString stringWithFormat:@"%@=\n%@",[self name],[object description]]];
+        [[IDCConsole instance] output:[NSString stringWithFormat:@"%@ =\n%@",[self name],[object description]]];
     }
 }
 

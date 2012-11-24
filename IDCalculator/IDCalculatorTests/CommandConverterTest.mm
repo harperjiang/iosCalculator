@@ -9,8 +9,12 @@
 #import "CommandConverterTest.h"
 #import "CommandConverter.h"
 #import "ClearCommand.h"
-#import "VariableCommand.h"
+#import "ExpressionCommand.h"
+#import "AssignCommand.h"
 #import "Command.h"
+#import "ConsoleIdentifier.h"
+#import "ArithmeticExpression.h"
+#import "Matrix.h"
 
 @implementation CommandConverterTest
 
@@ -22,17 +26,52 @@
 }
 
 -(void) testParseAssign {
-    NSString* input = @"a = [5; 6]";
+    NSString* input = @"a = [5 8;4 6]";
     Command* cmd = [CommandConverter parse:input];
+    
+    STAssertTrue([cmd class] == [AssignCommand class],@"");
+    AssignCommand* ascmd = (AssignCommand*)cmd;
+    
+    STAssertEqualObjects([ascmd name], @"a", @"");
+    STAssertTrue([[ascmd exp] class] == [Matrix class],@"");
+    Matrix* matrix = (Matrix*)[ascmd exp];
+    STAssertEqualObjects([[matrix val:0 n:0] description],@"5",@"");
+    STAssertEqualObjects([[matrix val:0 n:1] description],@"8",@"");
+    STAssertEqualObjects([[matrix val:1 n:0] description],@"4",@"");
+    STAssertEqualObjects([[matrix val:1 n:1] description],@"6",@"");
 }
 
--(void) testParseVar {
+-(void) testParseAssignWrongMatrix {
+    NSString* input = @"a = [5 8;4 6 7]";
+    Command* cmd = [CommandConverter parse:input];
+    
+    STAssertEqualObjects(cmd,nil,@"");
+}
+
+-(void) testParseExpId {
     NSString* input = @"p";
     Command* cmd = [CommandConverter parse:input];
     
-    STAssertTrue([cmd class] == [VariableCommand class], @"");
-    VariableCommand* varc = (VariableCommand*)cmd;
-    STAssertEqualObjects(@"p", varc.name, @"");
+    STAssertTrue([cmd class] == [ExpressionCommand class], @"");
+    ExpressionCommand* varc = (ExpressionCommand*)cmd;
+    STAssertEqualObjects([ConsoleIdentifier class], [varc.expression class], @"");
+    ConsoleIdentifier* cid = (ConsoleIdentifier*)varc.expression;
+    STAssertEqualObjects(@"p",cid.name,@"");
+}
+
+-(void) testParseArith {
+    NSString* input = @"a*b";
+    Command* cmd = [CommandConverter parse:input];
+    
+    STAssertTrue([cmd class] == [ExpressionCommand class], @"");
+    
+    ExpressionCommand* expcmd = (ExpressionCommand*)cmd;
+    STAssertEqualObjects([ArithmeticExpression class], [expcmd.expression class], @"");
+    
+    ArithmeticExpression* arith = (ArithmeticExpression*)[expcmd expression];
+    
+    STAssertEqualObjects([[arith left] class],[ConsoleIdentifier class],@"");
+    STAssertEqualObjects([[arith right] class],[ConsoleIdentifier class],@"");
 }
 
 @end

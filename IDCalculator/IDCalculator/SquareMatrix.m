@@ -11,29 +11,5 @@
 
 @implementation SquareMatrix
 
--(SquareMatrix*) init:(NSArray*)data size:(NSInteger) size {
-    self = [super init];
-    if(self) {
-        [self setData:data];
-        [self setSize:size];
-    }
-    return self;
-}
-
--(NSInteger) m {
-    return self.size;
-}
-
--(void) setM:(NSInteger)m {
-
-}
-
--(NSInteger) n {
-    return self.size;
-}
-
--(void) setN:(NSInteger)n{
-    
-}
 
 @end

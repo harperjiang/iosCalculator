@@ -34,6 +34,66 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[Matrix init:m:n:]:Matrix.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[self m]">
+            </PersistentString>
+            <PersistentString
+               value = "(Integer*)number">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[Matrix val:n:]:Matrix.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[self val:1 n:0]">
+            </PersistentString>
+            <PersistentString
+               value = "[[self data] get:2]">
+            </PersistentString>
+            <PersistentString
+               value = "(NumberData*)item">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[Matrix init:]:Matrix.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[data count]">
+            </PersistentString>
+            <PersistentString
+               value = "[data get:3]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MatrixTest testDescription]:MatrixTest.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[[matrixB val:1 n:0] description]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "translate(CExpression*):CommandConverter.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "[[expList get:0] get: 0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CExpList::add(CExpression*):CModel.h">
+         <PersistentStrings>
+            <PersistentString
+               value = "(CNumData*)exp">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "yyparse():console.ypp">
          <PersistentStrings>
             <PersistentString
@@ -42,12 +102,7 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "CExpList::add(CExpression*):CModel.h">
-         <PersistentStrings>
-            <PersistentString
-               value = "exp.type()">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "-[CommandConverter convert]:CommandConverter.mm">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

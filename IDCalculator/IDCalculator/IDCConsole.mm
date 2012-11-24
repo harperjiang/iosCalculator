@@ -27,17 +27,24 @@ static IDCConsole* instance;
     if(self) {
         self->_buffer = [[NSMutableString alloc] initWithCapacity:100];
         self->_variables = [[NSMutableDictionary alloc] initWithCapacity:100];
-        [self->_buffer appendString:@">>"];
+        [self->_buffer appendString:@">> "];
     }
     return self;
 }
 
 -(void) operate:(NSString *)commandText {
+    if([commandText length] == 0)
+        return;
+    // Echo the Command
+    [self output:[NSString stringWithFormat:@"%@",commandText]];
     // Execute the command
     Command* command = [CommandConverter parse:commandText];
-    [[self buffer] appendFormat:@"%@\n",commandText];
-    [command execute];
-    [[self buffer] appendString:@">>"];
+    if(nil == command) {
+        [self error:[NSString stringWithFormat:@"Invalid Command:%@\n",commandText]];
+    } else {
+        [command execute];
+    }
+    [[self buffer]appendString:@">> "];
 }
 
 -(void) output:(NSString*) displayText {

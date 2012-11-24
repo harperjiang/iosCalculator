@@ -9,13 +9,14 @@
 #ifndef __IDCalculator__CModel__
 #define __IDCalculator__CModel__
 
-#include <list>
+#include <vector>
 #include "Operator.h"
 
 typedef enum _CModelType {
     ASSIGN_COMMAND = 100,
     CLEAR_COMMAND,
     VAR_COMMAND,
+    CMD_EXP,
     
     EXP_LIST = 200,
     EXP_ARITH,
@@ -28,9 +29,8 @@ typedef enum _CModelType {
 
 class CExpression {
 public:
-    int type() {
-        return 0;
-    }
+    virtual int type() = 0;
+    virtual ~CExpression(){};
 };
 
 class CArithExpression : public CExpression {
@@ -39,7 +39,12 @@ public:
     Operator opr;
     CExpression* right;
     
-    CArithExpression();
+    CArithExpression(CExpression* left, Operator o, CExpression* right) {
+        this->left = left;
+        this->opr = o;
+        this->right = right;
+    }
+    
     int type() {
         return EXP_ARITH;
     }
@@ -70,14 +75,25 @@ public:
 
 class CExpList : public CExpression {
 public:
-    std::list<CExpression*>* list;
+    std::vector<CExpression*>* list;
     
     CExpList() {
-        list = new std::list<CExpression*>();
+        list = new std::vector<CExpression*>();
     }
     
     void add(CExpression* exp) {
         list->push_back(exp);
+    }
+    
+    void insert(int index,CExpression* exp) {
+        list->insert(list->begin()+index, exp);
+    }
+    int size() {
+        return list->size();
+    }
+    
+    CExpression* get(int index) {
+        return list->at(index);
     }
     
     int type() {
@@ -90,7 +106,8 @@ public:
 };
 
 class CData : public CExpression {
-    
+public:
+    virtual ~CData(){}
 };
 
 class CMatrix :public CData {
@@ -98,9 +115,11 @@ public:
     CExpList* content;
     
     CMatrix() {}
+    
     int type() {
         return CONST_MATRIX;
     }
+    
     ~CMatrix() {
         if(content != 0)
             delete content;
@@ -117,6 +136,8 @@ public:
     int type() {
         return CONST_NUM;
     }
+
+    ~CNumData() {}
 };
 
 class CFracData : public CData {
@@ -130,13 +151,16 @@ public:
         this->numerator = n;
         this->denominator = d;
     }
+    
+    ~CFracData() {}
 };
 
 
 class CCommand {
     
 public:
-    virtual int type();
+    virtual int type() = 0;
+    virtual ~CCommand() {}
 };
 
 class CAssignCommand : public CCommand {
@@ -167,7 +191,13 @@ class CExpCommand : public CCommand {
 public:
     CExpression* exp;
     
-    int type();
+    CExpCommand(CExpression* exp) {
+        this->exp = exp;
+    }
+    
+    int type() {
+        return CMD_EXP;
+    }
     
     ~CExpCommand() {
         delete exp;

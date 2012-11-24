@@ -12,7 +12,11 @@
 
 -(void) testParseClear;
 
+-(void) testParseAssignWrongMatrix;
+
 -(void) testParseAssign;
 
 -(void) testParseVar;
+
+-(void) testParseArith;
 @end

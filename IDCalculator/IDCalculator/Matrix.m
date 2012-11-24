@@ -7,76 +7,179 @@
 //
 
 #import "Matrix.h"
-#import "IntegerConstant.h"
-#import "Constant.h"
+#import "SquareMatrix.h"
 #import "Vector.h"
+#import "Integer.h"
+#import "NumberData.h"
+#import "Number.h"
+#import "ExpressionList.h"
+
+#import "IDCConsole.h"
 
 @implementation Matrix
 
--(Matrix*) init:(NSArray*)d m:(NSInteger) nm n:(NSInteger)nn {
+-(Matrix*) init:(NSArray*)d m:(NSInteger) row n:(NSInteger)col {
     self = [super init];
     if(self) {
-        [self setData:d];
-        [self setM:nm];
-        [self setN:nn];
-    }
-    return self;
-}
-
--(Matrix*) init:(NSArray*)d {
-    self = [super init];
-    if(self) {
-        NSInteger rowCount = 0;
-        NSInteger colCount = 0;
-        NSMutableArray* data = [[NSMutableArray alloc] initWithCapacity:20];
-        NSArray* firstRow = [d objectAtIndex:0];
-        colCount = [firstRow count];
-        for(NSArray* item in d) {
-            [data addObjectsFromArray:item];
-            rowCount++;
+        [self setM:row];
+        [self setN:col];
+        if([d count] != row*col) {
+            NSLog(@"Not enough values");
+            return nil;
+        }
+        ExpressionList* data = [[ExpressionList alloc] init];
+        for(NSInteger i = 0 ; i < [self m] ; i++) {
+            ExpressionList* row = [[ExpressionList alloc] init];
+            for(NSInteger j = 0 ; j < [self n]; j++) {
+                Number* number = (Number*)[d objectAtIndex:i*[self n]+j];
+                Expression* exp = [[NumberData alloc] init:number];
+                [row add:exp];
+            }
+            [data add:row];
         }
         [self setData:data];
-        [self setM:rowCount];
-        [self setN:colCount];
+    }
+    return self;
+}
+
+-(Matrix*) init:(ExpressionList*)data {
+    self = [super init];
+    if(self) {
+        int colcount = 0;
+        for(NSInteger i = 0 ; i < [data count] ; i++) {
+            ExpressionList* row = (ExpressionList*)[data get:i];
+            if(colcount == 0) {
+                colcount = [row count];
+            } else if(colcount != [row count ]) {
+                [[IDCConsole instance] error:@"Wrong column count in matrix row"];
+                return nil;
+            }
+        }
+        [self setData:data];
+        [self setM:[data count]];
+        [self setN:[(ExpressionList*)[data get:0] count]];
     }
     return self;
 }
 
 
--(Matrix*) mul:(Matrix *)another {
-    if([another m] == [self n]) {
-        // n square speed
-        NSMutableArray* newData = [[NSMutableArray alloc] initWithCapacity:[self m]*[another n]];
-        for (int i = 0 ; i < [self m]; i++) {
-            for(int j = 0 ; j < [another n]; j++) {
-                Constant* sum = [IntegerConstant ZERO];
-                for(int k = 0 ; k < [self n] ; k++) {
-                    sum = [sum add: [[self val:i n:k] mul:[another val:k n:j]]];
-                }
-                [newData insertObject:sum atIndex:i*[another n]+j];
-            }
-        }
-        return [[Matrix alloc] init:newData m:[self m] n:[another n]];
-    }
-    return nil;
+-(Data*) evaluate {
+    return self;
 }
 
--(Vector*) mulvector:(Vector *)v {
-    NSMutableArray* newData = [[NSMutableArray alloc] initWithCapacity:[self m]];
-    if([self n] == [v size]) {
-        for(int i = 0 ; i < [self m]; i++) {
-            Constant* sum = [IntegerConstant ZERO];
+-(Data*) add:(Data*) another {
+    if([another class] == [Matrix class]) {
+        Matrix* anotherM = (Matrix*)another;
+        if([self m] != [anotherM m] || [self n] != [anotherM n]) {
+            [[IDCConsole instance] error:@"Adding matrices with different size"];
+            return nil;
+        }
+        ExpressionList* newdata = [[ExpressionList alloc] init];
+        for(int i = 0 ; i < [self m] ; i++) {
+            ExpressionList* newrow = [[ExpressionList alloc] init];
             for(int j = 0 ; j < [self n]; j++) {
-                sum = [sum add: [[self val:i n:j] mul:[v val:j]]];
+                Number* sum = [[self val:i n:j] add:[anotherM val:i n:j]];
+                [newrow add:[[NumberData alloc] init:sum]];
             }
-            [newData insertObject:sum atIndex:i];
+            [newdata add:newrow];
         }
+        return [[Matrix alloc] init:newdata];
+    } else {
+        [[IDCConsole instance] error:@"Adding Matrix to non-Matrix"];
+        return nil;
+    }
+}
+
+
+-(Data*) sub:(Data*) another {
+    if([another class] == [Matrix class]) {
+        Matrix* anotherM = (Matrix*)another;
+        if([self m] != [anotherM m] || [self n] != [anotherM n]) {
+            [[IDCConsole instance] error:@"Adding matrices with different size"];
+            return nil;
+        }
+        ExpressionList* newdata = [[ExpressionList alloc] init];
+        for(int i = 0 ; i < [self m] ; i++) {
+            ExpressionList* newrow = [[ExpressionList alloc] init];
+            for(int j = 0 ; j < [self n]; j++) {
+                Number* sum = [[self val:i n:j] sub:[anotherM val:i n:j]];
+                [newrow add:[[NumberData alloc] init:sum]];
+            }
+            [newdata add:newrow];
+        }
+        return [[Matrix alloc] init:newdata];
+    } else {
+        [[IDCConsole instance] error:@"Adding Matrix to non-Matrix"];
+        return nil;
+    }
+}
+
+-(Data*) mul:(Data *)another {
+    if([another class] == [Matrix class] || [another class] == [SquareMatrix class] || [another class] == [Vector class]) {
+        Matrix* am = (Matrix*) another;
+        if([am m] == [self n]) {
+            // n cube speed
+            ExpressionList* data = [[ExpressionList alloc] init];
+            for (int i = 0 ; i < [self m]; i++) {
+                ExpressionList* row = [[ExpressionList alloc] init];
+                for(int j = 0 ; j < [am n]; j++) {
+                    Number* sum = [Integer ZERO];
+                    for(int k = 0 ; k < [self n] ; k++) {
+                        sum = [sum add: [[self val:i n:k] mul:[am val:k n:j]]];
+                    }
+                    [row add:[[NumberData alloc] init:sum]];
+                }
+                [data add:row];
+            }
+            return [[Matrix alloc] init:data];
+        } else {
+            [[IDCConsole instance] error:@"Multiplying Matrices with wrong size"];
+            return nil;
+        }
+    } else if([another class] == [NumberData class]){
+        // Mul with number
+        NumberData* nd = (NumberData*)another;
+        ExpressionList* newdata = [[ExpressionList alloc] init];
+        for(int i = 0;i< [self m];i++) {
+            ExpressionList* row = [[ExpressionList alloc] init];
+            for(int j = 0 ; j < [self n];j++) {
+                Number* val = [self val:i n:j];
+                Number* mulresult = [[nd number] mul:val];
+                [row add:[[NumberData alloc] init:mulresult]];
+            }
+            [newdata add:row];
+        }
+        return [[Matrix alloc] init:newdata];
     }
     return nil;
 }
 
--(Constant*) val:(NSInteger) i n:(NSInteger)j {
-    return [[self data] objectAtIndex:i*self.n + j];
+-(Data*) div:(Data*) another {
+    if([another class] == [NumberData class]) {
+        // Mul with number
+        NumberData* nd = (NumberData*)another;
+        ExpressionList* newdata = [[ExpressionList alloc] init];
+        for(int i = 0;i< [self m];i++) {
+            ExpressionList* row = [[ExpressionList alloc] init];
+            for(int j = 0 ; j < [self n];j++) {
+                Number* val = [self val:i n:j];
+                Number* divresult = [val div:[nd number]];
+                [row add:[[NumberData alloc] init:divresult]];
+            }
+            [newdata add:row];
+        }
+        return [[Matrix alloc] init:newdata];
+    } else {
+        [[IDCConsole instance] error:@"Matrix can only be divided by number"];
+        return nil;
+    }
+}
+
+-(Number*) val:(NSInteger) i n:(NSInteger)j {
+    ExpressionList* row = (ExpressionList*)[[self data] get:i];
+    Expression* item = [row get:j];
+    assert([item class] == [NumberData class]);
+    return [(NumberData*)item number];
 }
 
 -(NSString*) description {

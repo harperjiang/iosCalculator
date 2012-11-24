@@ -1,5 +1,5 @@
 //
-//  FractionData.h
+//  NumberData.h
 //  IDCalculator
 //
 //  Created by Harper Jiang on 11/23/12.
@@ -8,6 +8,6 @@
 
 #import "Data.h"
 
-@interface FractionData : Data
+@interface NumberData : Data
 
 @end

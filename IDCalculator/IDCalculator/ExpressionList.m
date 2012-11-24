@@ -10,8 +10,24 @@
 
 @implementation ExpressionList
 
+-(ExpressionList*) init {
+    self = [super init];
+    if(self) {
+        [self setExpList:[[NSMutableArray alloc] initWithCapacity:20]];
+    }
+    return self;
+}
+
 -(void) add:(Expression *)exp {
     [[self expList] addObject:exp];
+}
+
+-(Expression*) get:(NSInteger)index {
+    return [[self expList] objectAtIndex:index];
+}
+
+-(NSInteger) count {
+    return [[self expList] count];
 }
 
 @end

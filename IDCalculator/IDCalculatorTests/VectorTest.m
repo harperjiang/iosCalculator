@@ -8,24 +8,20 @@
 
 #import "VectorTest.h"
 #import "Vector.h"
-#import "IntegerConstant.h"
+#import "Integer.h"
+#import "ExpressionList.h"
+#import "NumberData.h"
 
 @implementation VectorTest
 
--(void) testInit {
-    NSMutableArray* array = [[NSMutableArray alloc] initWithCapacity:10];
-    for(int i = 0 ; i < 10 ; i ++) {
-        [array insertObject:[IntegerConstant construct:i] atIndex:i];
-    }
-    Vector* v = [[Vector alloc] init:array];
-    STAssertNotNil(v, @"Should not be nil");
-}
 
 -(void) testVar {
-    NSMutableArray* array = [[NSMutableArray alloc] initWithCapacity:10];
+    ExpressionList* row = [[ExpressionList alloc] init];
     for(int i = 0 ; i < 10 ; i ++) {
-        [array insertObject:[IntegerConstant construct:i] atIndex:i];
+        [row add:[[NumberData alloc] init:[Integer construct:i]]];
     }
+    ExpressionList* array = [[ExpressionList alloc] init];
+    [array add:row];
     Vector* v = [[Vector alloc] init:array];
     for(int i = 0 ; i < 10 ; i++) {
         NSString* expect = [NSString stringWithFormat:@"%d",i];

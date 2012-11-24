@@ -16,6 +16,8 @@ extern void yyerror(char* input);
 "'"				{return DASH;}
 "["				{return LBR;}
 "]"				{return RBR;}
+"("             {return LP;}
+")"             {return RP;}
 "+"				{return OADD;}
 -				{return OSUB;}
 "*"				{return OMUL;}

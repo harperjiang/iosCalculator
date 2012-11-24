@@ -45,12 +45,14 @@
      LBR = 261,
      RBR = 262,
      DASH = 263,
-     OADD = 264,
-     OSUB = 265,
-     OMUL = 266,
-     ODIV = 267,
-     ID = 268,
-     NUM = 269
+     LP = 264,
+     RP = 265,
+     OADD = 266,
+     OSUB = 267,
+     OMUL = 268,
+     ODIV = 269,
+     ID = 270,
+     NUM = 271
    };
 #endif
 /* Tokens.  */
@@ -60,12 +62,14 @@
 #define LBR 261
 #define RBR 262
 #define DASH 263
-#define OADD 264
-#define OSUB 265
-#define OMUL 266
-#define ODIV 267
-#define ID 268
-#define NUM 269
+#define LP 264
+#define RP 265
+#define OADD 266
+#define OSUB 267
+#define OMUL 268
+#define ODIV 269
+#define ID 270
+#define NUM 271
 
 
 
@@ -76,7 +80,6 @@ typedef union YYSTYPE
 {
     char* stringTerm;
     CNumData* num;
-    CData* data;
     CExpression* exp;
     CExpList* expList;
     CExpList* rowList;
@@ -85,7 +88,7 @@ typedef union YYSTYPE
     CIdentifier* id;
 }
 /* Line 1529 of yacc.c.  */
-#line 89 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/ConsoleParser.h"
+#line 92 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/ConsoleParser.h"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1

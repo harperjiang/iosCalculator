@@ -7,6 +7,7 @@
 //
 
 #import "ExpressionCommand.h"
+#import "Data.h"
 
 @implementation ExpressionCommand
 
@@ -19,8 +20,12 @@
 }
 
 -(void) execute {
-    // Just print the result
-    [[IDCConsole instance] output:[[self expression] description]];
+    // Evaluate the expression
+    Data* result = [[self expression] evaluate];
+    if(nil != result) {
+    // Print the result
+        [[IDCConsole instance] output:[result description]];
+    }
 }
 
 @end

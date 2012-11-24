@@ -19,8 +19,14 @@
     return self;
 }
 
--(id) evaluate {
-    return [[IDCConsole instance] get:[self name]];
+-(Data*) evaluate {
+    Data* value =[[IDCConsole instance] get:[self name]];
+    if(value == nil) {
+        [[IDCConsole instance] error:[NSString stringWithFormat:@"Variable '%@' doesn't exist",[self name]]];
+        return nil;
+    }else {
+        return value;
+    }
 }
 
 @end

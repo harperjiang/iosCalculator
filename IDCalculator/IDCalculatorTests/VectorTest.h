@@ -10,8 +10,6 @@
 
 @interface VectorTest : SenTestCase
 
--(void) testInit;
-
 -(void) testVar;
 
 @end
