@@ -6,12 +6,12 @@
 //  Copyright (c) 2012 Harper Jiang. All rights reserved.
 //
 
-#import "VariableExpression.h"
+#import "ConsoleIdentifier.h"
 #import "IDCConsole.h"
 
-@implementation VariableExpression
+@implementation ConsoleIdentifier
 
--(VariableExpression*) init:(NSString *)name {
+-(ConsoleIdentifier*) init:(NSString *)name {
     self = [super init];
     if(self) {
         [self setName:name];

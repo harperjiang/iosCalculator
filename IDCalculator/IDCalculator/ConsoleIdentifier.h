@@ -8,10 +8,10 @@
 
 #import "Expression.h"
 
-@interface VariableExpression : Expression
+@interface ConsoleIdentifier : Expression
 
 @property(nonatomic,strong) NSString* name;
 
--(VariableExpression*) init:(NSString*) name;
+-(ConsoleIdentifier*) init:(NSString*) name;
 
 @end

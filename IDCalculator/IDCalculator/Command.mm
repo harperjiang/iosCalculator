@@ -7,15 +7,12 @@
 //
 
 #import "Command.h"
+#import "CommandConverter.h"
 
 @implementation Command
 
 -(void) execute {
     
-}
-
-+(Command*) parse:(NSString *)input {
-    return nil;
 }
 
 @end

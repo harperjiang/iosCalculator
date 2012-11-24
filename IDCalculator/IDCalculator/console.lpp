@@ -1,0 +1,27 @@
+%{
+#include <stdio.h>
+#include "CModel.h"
+#include "ConsoleParser.h"
+
+extern void yyerror(char* input);
+
+%}
+
+%option noyywrap
+
+
+%%
+=				{return EQUAL;}
+;				{return SEMICOLON;}
+"'"				{return DASH;}
+"["				{return LBR;}
+"]"				{return RBR;}
+"+"				{return OADD;}
+-				{return OSUB;}
+"*"				{return OMUL;}
+"/"             {return ODIV;}
+[0-9]+			{yylval.stringTerm = yytext; return NUM;}
+"clear"			{return CLEAR;}
+[a-z][a-z0-9]*	{yylval.stringTerm = yytext; return ID;}
+.				{yyerror(yytext);}
+%%

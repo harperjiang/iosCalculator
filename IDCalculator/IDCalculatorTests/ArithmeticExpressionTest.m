@@ -7,9 +7,9 @@
 //
 #import "Matrix.h"
 #import "IntegerConstant.h"
-#import "ValueExpression.h"
 #import "ArithmeticExpression.h"
 #import "ArithmeticExpressionTest.h"
+#import "ConsoleIdentifier.h"
 
 @implementation ArithmeticExpressionTest
 
@@ -26,7 +26,7 @@
     
     Matrix* matrixB = [[Matrix alloc] init:dataB m:2 n:5];
     
-    ArithmeticExpression* exp = [[ArithmeticExpression alloc] init:[[ValueExpression alloc] init:matrixA] operator:MUL right:[[ValueExpression alloc] init:matrixB]];
+    ArithmeticExpression* exp = [[ArithmeticExpression alloc] init:matrixA operator:MUL right:matrixB];
 
     Matrix* result = (Matrix*)[exp evaluate];
     

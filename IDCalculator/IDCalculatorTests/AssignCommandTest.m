@@ -11,7 +11,6 @@
 #import "Matrix.h"
 #import "AssignCommand.h"
 #import "ArithmeticExpression.h"
-#import "ValueExpression.h"
 #import "AssignCommandTest.h"
 
 @implementation AssignCommandTest
@@ -32,10 +31,10 @@
     
     Matrix* matrixB = [[Matrix alloc] init:dataB m:2 n:5];
     
-    ArithmeticExpression* exp = [[ArithmeticExpression alloc] init:[[ValueExpression alloc] init:matrixA] operator:MUL right:[[ValueExpression alloc] init:matrixB]];
+    ArithmeticExpression* exp = [[ArithmeticExpression alloc] init:matrixA operator:MUL right:matrixB];
     
     
-    AssignCommand* assign = [[AssignCommand alloc] init:@"p" expression:exp];
+    AssignCommand* assign = [[AssignCommand alloc] init:@"p" value:exp];
     
     [assign execute];
     Matrix* result = (Matrix*)[console get:@"p"];

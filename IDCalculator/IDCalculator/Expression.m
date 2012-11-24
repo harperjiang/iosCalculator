@@ -10,7 +10,7 @@
 
 @implementation Expression
 
--(id) evaluate {
+-(Data*) evaluate {
     return nil;
 }
 

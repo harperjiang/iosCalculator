@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "Constant.h"
+#import "Data.h"
 
 @class Vector;
 
-@interface Matrix : NSObject
+@interface Matrix : Data
 
-@property(nonatomic) NSArray* data;
+@property(nonatomic,strong) NSArray* data;
 @property(nonatomic) NSInteger m;
 @property(nonatomic) NSInteger n;
     

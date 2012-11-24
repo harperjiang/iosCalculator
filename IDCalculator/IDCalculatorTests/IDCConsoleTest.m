@@ -12,7 +12,6 @@
 #import "Matrix.h"
 #import "AssignCommand.h"
 #import "ArithmeticExpression.h"
-#import "ValueExpression.h"
 
 @implementation IDCConsoleTest
 

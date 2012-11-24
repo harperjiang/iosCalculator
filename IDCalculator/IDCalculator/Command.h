@@ -15,6 +15,4 @@
 
 -(void) execute;
 
-+(Command*) parse:(NSString*) input;
-
 @end

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[CommandConverter innerParse:]:CommandConverter.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "yylval">
+            </PersistentString>
+            <PersistentString
+               value = "">
+            </PersistentString>
+            <PersistentString
+               value = "(CMatrix*)(((CAssignCommand*)parse_result)-&gt;value)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "yyparse():ConsoleParser.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "YYID(yyresult)">
+            </PersistentString>
+            <PersistentString
+               value = "yylval">
+            </PersistentString>
+            <PersistentString
+               value = "parse_result">
+            </PersistentString>
+            <PersistentString
+               value = "yyresult">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "yyparse():console.ypp">
+         <PersistentStrings>
+            <PersistentString
+               value = "yylval">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CExpList::add(CExpression*):CModel.h">
+         <PersistentStrings>
+            <PersistentString
+               value = "exp.type()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

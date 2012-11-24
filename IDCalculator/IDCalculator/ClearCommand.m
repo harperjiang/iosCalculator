@@ -11,7 +11,7 @@
 @implementation ClearCommand
 
 -(void) execute{
-    [[[IDCConsole instance] buffer] setString:nil];
+    [[[IDCConsole instance] buffer] setString:@""];
 }
 
 @end

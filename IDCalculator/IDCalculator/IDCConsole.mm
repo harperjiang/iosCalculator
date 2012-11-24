@@ -8,6 +8,7 @@
 
 #import "IDCConsole.h"
 #import "Command.h"
+#import "CommandConverter.h"
 
 @implementation IDCConsole
 
@@ -26,16 +27,17 @@ static IDCConsole* instance;
     if(self) {
         self->_buffer = [[NSMutableString alloc] initWithCapacity:100];
         self->_variables = [[NSMutableDictionary alloc] initWithCapacity:100];
+        [self->_buffer appendString:@">>"];
     }
     return self;
 }
 
 -(void) operate:(NSString *)commandText {
     // Execute the command
-    Command* command = [Command parse:commandText];
-    NSString* text = [command text];
-    [[self buffer] appendFormat:@">>%@\n",text];
+    Command* command = [CommandConverter parse:commandText];
+    [[self buffer] appendFormat:@"%@\n",commandText];
     [command execute];
+    [[self buffer] appendString:@">>"];
 }
 
 -(void) output:(NSString*) displayText {

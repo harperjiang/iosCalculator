@@ -7,20 +7,11 @@
 //
 
 #import "AssignCommand.h"
+#import "Data.h"
 
 @implementation AssignCommand
 
-
--(AssignCommand*) init:(NSString *)name value:(id)object {
-    self = [super init];
-    if(self) {
-        [self setName:name];
-        [self setObject:object];
-    }
-    return self;
-}
-
--(AssignCommand*) init:(NSString *)name expression:(Expression *)exp {
+-(AssignCommand*) init:(NSString *)name value:(Expression *)exp {
     self = [super init];
     if(self) {
         [self setName:name];
@@ -30,11 +21,10 @@
 }
 
 -(void) execute {
-    if([self object] == nil)
-       [self setObject:[[self exp] evaluate]];
-    [[[IDCConsole instance] variables] setValue:[self object] forKey:[self name]];
+    Data* object = [[self exp] evaluate];
+    [[[IDCConsole instance] variables] setValue:object forKey:[self name]];
     // Set up the display
-    [[IDCConsole instance] output:[NSString stringWithFormat:@"%@=\n%@",[self name],[[self object] description]]];
+    [[IDCConsole instance] output:[NSString stringWithFormat:@"%@=\n%@",[self name],[object description]]];
 }
 
 @end

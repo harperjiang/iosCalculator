@@ -12,10 +12,8 @@
 @interface AssignCommand : Command
 
 @property(nonatomic,strong) NSString* name;
-@property(nonatomic,strong) id object;
 @property(nonatomic,strong) Expression* exp;
 
--(AssignCommand*) init:(NSString*) name value:(id) object;
--(AssignCommand*) init:(NSString*) name expression: (Expression*) exp;
+-(AssignCommand*) init:(NSString*) name value: (Expression*) exp;
 
 @end

@@ -9,7 +9,13 @@
 /* Begin PBXBuildFile section */
 		A627E99216500A97001142D5 /* SpecialConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = A627E99116500A97001142D5 /* SpecialConstant.m */; };
 		A627E99816500AA4001142D5 /* ClearCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = A627E99516500AA4001142D5 /* ClearCommand.m */; };
-		A627E99916500AA4001142D5 /* Command.m in Sources */ = {isa = PBXBuildFile; fileRef = A627E99716500AA4001142D5 /* Command.m */; };
+		A627E99916500AA4001142D5 /* Command.mm in Sources */ = {isa = PBXBuildFile; fileRef = A627E99716500AA4001142D5 /* Command.mm */; };
+		A6292C7A16603CA300C2C554 /* ConsoleLexer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6292C7816603CA200C2C554 /* ConsoleLexer.cpp */; };
+		A6292C7D16603CB000C2C554 /* ConsoleParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6292C7B16603CB000C2C554 /* ConsoleParser.cpp */; };
+		A6292C8A16605DFC00C2C554 /* Data.m in Sources */ = {isa = PBXBuildFile; fileRef = A6292C8916605DFC00C2C554 /* Data.m */; };
+		A6292C9016606EF300C2C554 /* NumberData.m in Sources */ = {isa = PBXBuildFile; fileRef = A6292C8F16606EF300C2C554 /* NumberData.m */; };
+		A6292C9316606F3E00C2C554 /* FractionData.m in Sources */ = {isa = PBXBuildFile; fileRef = A6292C9216606F3D00C2C554 /* FractionData.m */; };
+		A6292C9A166075B800C2C554 /* ExpressionList.m in Sources */ = {isa = PBXBuildFile; fileRef = A6292C99166075B800C2C554 /* ExpressionList.m */; };
 		A67415611650266600C33D7C /* AssignCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = A67415601650266600C33D7C /* AssignCommand.m */; };
 		A676C0A1164CC20E00C0F859 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A676C0A0164CC20E00C0F859 /* UIKit.framework */; };
 		A676C0A3164CC20E00C0F859 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A676C0A2164CC20E00C0F859 /* Foundation.framework */; };
@@ -44,8 +50,7 @@
 		A67BC0131650C53400072670 /* Expression.m in Sources */ = {isa = PBXBuildFile; fileRef = A67BC0121650C53400072670 /* Expression.m */; };
 		A67BC0161651FF1800072670 /* ArithmeticExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = A67BC0151651FF1800072670 /* ArithmeticExpression.m */; };
 		A67BC01F165291DD00072670 /* IDCConsoleTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A67BC01E165291DD00072670 /* IDCConsoleTest.m */; };
-		A67BC022165295A400072670 /* VariableExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = A67BC021165295A400072670 /* VariableExpression.m */; };
-		A67BC0251652AA8F00072670 /* ValueExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = A67BC0241652AA8F00072670 /* ValueExpression.m */; };
+		A67BC022165295A400072670 /* ConsoleIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = A67BC021165295A400072670 /* ConsoleIdentifier.m */; };
 		A67BC0291652B00100072670 /* ArithmeticExpressionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A67BC0281652B00100072670 /* ArithmeticExpressionTest.m */; };
 		A67BC02D1652C31700072670 /* AssignCommandTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A67BC02C1652C31700072670 /* AssignCommandTest.m */; };
 		A67BC0301652F9BB00072670 /* VariableCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = A67BC02F1652F9BA00072670 /* VariableCommand.m */; };
@@ -54,29 +59,36 @@
 		A6B97465164E16B0007E4AB4 /* Matrix.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B97464164E16B0007E4AB4 /* Matrix.m */; };
 		A6B97468164E1704007E4AB4 /* SquareMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B97467164E1704007E4AB4 /* SquareMatrix.m */; };
 		A6B9746B164E17EB007E4AB4 /* Vector.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B9746A164E17EB007E4AB4 /* Vector.m */; };
-		A6B9746E164E1A32007E4AB4 /* IDCConsole.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B9746D164E1A32007E4AB4 /* IDCConsole.m */; };
+		A6B9746E164E1A32007E4AB4 /* IDCConsole.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6B9746D164E1A32007E4AB4 /* IDCConsole.mm */; };
 		A6B97475164E8CC1007E4AB4 /* MatrixTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B97474164E8CC1007E4AB4 /* MatrixTest.m */; };
+		A6C6F59C165FFB5100472E99 /* CModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6C6F59A165FFB5100472E99 /* CModel.cpp */; };
+		A6C6F5CC16601F3D00472E99 /* CommandConverter.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6C6F5CB16601F3D00472E99 /* CommandConverter.mm */; };
+		A6C6F5CF1660237A00472E99 /* CommandConverterTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6C6F5CE1660237A00472E99 /* CommandConverterTest.mm */; };
 		A6DE83FE164EDDEC002F6FFA /* VectorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DE83FD164EDDEC002F6FFA /* VectorTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
-		A67BC0311652FEF500072670 /* PBXBuildRule */ = {
+		A6C6F56C165FD54A00472E99 /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
-			compilerSpec = com.apple.compilers.lex;
+			compilerSpec = com.apple.compilers.proxy.script;
 			fileType = sourcecode.lex;
 			isEditable = 1;
 			outputFiles = (
+				ConsoleLexer.h,
+				ConsoleLexer.cpp,
 			);
-			script = "# $(LEX)\n";
+			script = "# $(LEX)\nlex -o ${INPUT_FILE_DIR}/ConsoleLexer.cpp --header-file=${INPUT_FILE_DIR}/ConsoleLexer.h ${INPUT_FILE_PATH}";
 		};
-		A67BC0321652FF1300072670 /* PBXBuildRule */ = {
+		A6C6F56D165FD55800472E99 /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
-			compilerSpec = com.apple.compilers.yacc;
+			compilerSpec = com.apple.compilers.proxy.script;
 			fileType = sourcecode.yacc;
 			isEditable = 1;
 			outputFiles = (
+				ConsoleParser.cpp,
+				ConsoleParser.h,
 			);
-			script = "# $(YACC)\n";
+			script = "# $(YACC)\nyacc --defines=${INPUT_FILE_DIR}/ConsoleParser.h -o ${INPUT_FILE_DIR}/ConsoleParser.cpp ${INPUT_FILE_PATH}";
 		};
 /* End PBXBuildRule section */
 
@@ -96,7 +108,19 @@
 		A627E99416500AA4001142D5 /* ClearCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClearCommand.h; sourceTree = "<group>"; };
 		A627E99516500AA4001142D5 /* ClearCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClearCommand.m; sourceTree = "<group>"; };
 		A627E99616500AA4001142D5 /* Command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Command.h; sourceTree = "<group>"; };
-		A627E99716500AA4001142D5 /* Command.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Command.m; sourceTree = "<group>"; };
+		A627E99716500AA4001142D5 /* Command.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Command.mm; sourceTree = "<group>"; };
+		A6292C7816603CA200C2C554 /* ConsoleLexer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConsoleLexer.cpp; sourceTree = "<group>"; };
+		A6292C7916603CA300C2C554 /* ConsoleLexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsoleLexer.h; sourceTree = "<group>"; };
+		A6292C7B16603CB000C2C554 /* ConsoleParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConsoleParser.cpp; sourceTree = "<group>"; };
+		A6292C7C16603CB000C2C554 /* ConsoleParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsoleParser.h; sourceTree = "<group>"; };
+		A6292C8816605DFC00C2C554 /* Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
+		A6292C8916605DFC00C2C554 /* Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Data.m; sourceTree = "<group>"; };
+		A6292C8E16606EF300C2C554 /* NumberData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberData.h; sourceTree = "<group>"; };
+		A6292C8F16606EF300C2C554 /* NumberData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberData.m; sourceTree = "<group>"; };
+		A6292C9116606F3D00C2C554 /* FractionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FractionData.h; sourceTree = "<group>"; };
+		A6292C9216606F3D00C2C554 /* FractionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FractionData.m; sourceTree = "<group>"; };
+		A6292C98166075B700C2C554 /* ExpressionList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpressionList.h; sourceTree = "<group>"; };
+		A6292C99166075B800C2C554 /* ExpressionList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpressionList.m; sourceTree = "<group>"; };
 		A674155F1650266600C33D7C /* AssignCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignCommand.h; sourceTree = "<group>"; };
 		A67415601650266600C33D7C /* AssignCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignCommand.m; sourceTree = "<group>"; };
 		A676C09C164CC20E00C0F859 /* IDCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,16 +179,16 @@
 		A67BC01A165211FF00072670 /* Operator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Operator.h; sourceTree = "<group>"; };
 		A67BC01D165291DD00072670 /* IDCConsoleTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDCConsoleTest.h; sourceTree = "<group>"; };
 		A67BC01E165291DD00072670 /* IDCConsoleTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDCConsoleTest.m; sourceTree = "<group>"; };
-		A67BC020165295A400072670 /* VariableExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VariableExpression.h; sourceTree = "<group>"; };
-		A67BC021165295A400072670 /* VariableExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VariableExpression.m; sourceTree = "<group>"; };
-		A67BC0231652AA8F00072670 /* ValueExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueExpression.h; sourceTree = "<group>"; };
-		A67BC0241652AA8F00072670 /* ValueExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueExpression.m; sourceTree = "<group>"; };
+		A67BC020165295A400072670 /* ConsoleIdentifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsoleIdentifier.h; sourceTree = "<group>"; };
+		A67BC021165295A400072670 /* ConsoleIdentifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsoleIdentifier.m; sourceTree = "<group>"; };
 		A67BC0271652B00100072670 /* ArithmeticExpressionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArithmeticExpressionTest.h; sourceTree = "<group>"; };
 		A67BC0281652B00100072670 /* ArithmeticExpressionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArithmeticExpressionTest.m; sourceTree = "<group>"; };
 		A67BC02B1652C31700072670 /* AssignCommandTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignCommandTest.h; sourceTree = "<group>"; };
 		A67BC02C1652C31700072670 /* AssignCommandTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignCommandTest.m; sourceTree = "<group>"; };
 		A67BC02E1652F9B900072670 /* VariableCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VariableCommand.h; sourceTree = "<group>"; };
 		A67BC02F1652F9BA00072670 /* VariableCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VariableCommand.m; sourceTree = "<group>"; };
+		A69B8CA6165302AC00A64A65 /* console.lpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lex; path = console.lpp; sourceTree = "<group>"; };
+		A69B8CA7165302AC00A64A65 /* console.ypp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.yacc; path = console.ypp; sourceTree = "<group>"; };
 		A6B9745C164DEDE5007E4AB4 /* GraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewController.h; sourceTree = "<group>"; };
 		A6B9745D164DEDE5007E4AB4 /* GraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphViewController.m; sourceTree = "<group>"; };
 		A6B9745F164DF411007E4AB4 /* ConsoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsoleViewController.h; sourceTree = "<group>"; };
@@ -176,9 +200,15 @@
 		A6B97469164E17EB007E4AB4 /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
 		A6B9746A164E17EB007E4AB4 /* Vector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vector.m; sourceTree = "<group>"; };
 		A6B9746C164E1A32007E4AB4 /* IDCConsole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDCConsole.h; sourceTree = "<group>"; };
-		A6B9746D164E1A32007E4AB4 /* IDCConsole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDCConsole.m; sourceTree = "<group>"; };
+		A6B9746D164E1A32007E4AB4 /* IDCConsole.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IDCConsole.mm; sourceTree = "<group>"; };
 		A6B97473164E8CC1007E4AB4 /* MatrixTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatrixTest.h; sourceTree = "<group>"; };
 		A6B97474164E8CC1007E4AB4 /* MatrixTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatrixTest.m; sourceTree = "<group>"; };
+		A6C6F59A165FFB5100472E99 /* CModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CModel.cpp; sourceTree = "<group>"; };
+		A6C6F59B165FFB5100472E99 /* CModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CModel.h; sourceTree = "<group>"; };
+		A6C6F5CA16601F3D00472E99 /* CommandConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandConverter.h; sourceTree = "<group>"; };
+		A6C6F5CB16601F3D00472E99 /* CommandConverter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CommandConverter.mm; sourceTree = "<group>"; };
+		A6C6F5CD1660237A00472E99 /* CommandConverterTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandConverterTest.h; sourceTree = "<group>"; };
+		A6C6F5CE1660237A00472E99 /* CommandConverterTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CommandConverterTest.mm; sourceTree = "<group>"; };
 		A6DE83FC164EDDEC002F6FFA /* VectorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VectorTest.h; sourceTree = "<group>"; };
 		A6DE83FD164EDDEC002F6FFA /* VectorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VectorTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -210,6 +240,8 @@
 		A627E99A16500AAA001142D5 /* command */ = {
 			isa = PBXGroup;
 			children = (
+				A627E99616500AA4001142D5 /* Command.h */,
+				A627E99716500AA4001142D5 /* Command.mm */,
 				A674155F1650266600C33D7C /* AssignCommand.h */,
 				A67415601650266600C33D7C /* AssignCommand.m */,
 				A627E99416500AA4001142D5 /* ClearCommand.h */,
@@ -222,9 +254,53 @@
 			name = command;
 			sourceTree = "<group>";
 		};
+		A6292C8516605CDB00C2C554 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				A627E99A16500AAA001142D5 /* command */,
+				A67BC00D1650C45800072670 /* expression */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		A6292C8716605DE200C2C554 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				A6292C9B166079FC00C2C554 /* matrix */,
+				A6292C8816605DFC00C2C554 /* Data.h */,
+				A6292C8916605DFC00C2C554 /* Data.m */,
+				A6292C8E16606EF300C2C554 /* NumberData.h */,
+				A6292C8F16606EF300C2C554 /* NumberData.m */,
+				A6292C9116606F3D00C2C554 /* FractionData.h */,
+				A6292C9216606F3D00C2C554 /* FractionData.m */,
+			);
+			name = data;
+			sourceTree = "<group>";
+		};
+		A6292C9B166079FC00C2C554 /* matrix */ = {
+			isa = PBXGroup;
+			children = (
+				A6B97463164E16B0007E4AB4 /* Matrix.h */,
+				A6B97464164E16B0007E4AB4 /* Matrix.m */,
+				A6B97466164E1704007E4AB4 /* SquareMatrix.h */,
+				A6B97467164E1704007E4AB4 /* SquareMatrix.m */,
+				A6B97469164E17EB007E4AB4 /* Vector.h */,
+				A6B9746A164E17EB007E4AB4 /* Vector.m */,
+			);
+			name = matrix;
+			sourceTree = "<group>";
+		};
 		A67415631650803700C33D7C /* parser */ = {
 			isa = PBXGroup;
 			children = (
+				A69B8CA6165302AC00A64A65 /* console.lpp */,
+				A69B8CA7165302AC00A64A65 /* console.ypp */,
+				A6C6F5CA16601F3D00472E99 /* CommandConverter.h */,
+				A6C6F5CB16601F3D00472E99 /* CommandConverter.mm */,
+				A6292C7816603CA200C2C554 /* ConsoleLexer.cpp */,
+				A6292C7916603CA300C2C554 /* ConsoleLexer.h */,
+				A6292C7B16603CB000C2C554 /* ConsoleParser.cpp */,
+				A6292C7C16603CB000C2C554 /* ConsoleParser.h */,
 			);
 			name = parser;
 			sourceTree = "<group>";
@@ -263,7 +339,6 @@
 			isa = PBXGroup;
 			children = (
 				A6B9746F164E1A36007E4AB4 /* console */,
-				A6B97462164E1627007E4AB4 /* matrix */,
 				A676C107164CD1DF00C0F859 /* ui */,
 				A676C0FF164CC36B00C0F859 /* calculus */,
 				A676C0AF164CC20E00C0F859 /* IDCAppDelegate.h */,
@@ -392,14 +467,15 @@
 		A67BC00D1650C45800072670 /* expression */ = {
 			isa = PBXGroup;
 			children = (
+				A6292C8716605DE200C2C554 /* data */,
 				A67BC0111650C53400072670 /* Expression.h */,
 				A67BC0121650C53400072670 /* Expression.m */,
 				A67BC0141651FF1800072670 /* ArithmeticExpression.h */,
 				A67BC0151651FF1800072670 /* ArithmeticExpression.m */,
-				A67BC020165295A400072670 /* VariableExpression.h */,
-				A67BC021165295A400072670 /* VariableExpression.m */,
-				A67BC0231652AA8F00072670 /* ValueExpression.h */,
-				A67BC0241652AA8F00072670 /* ValueExpression.m */,
+				A67BC020165295A400072670 /* ConsoleIdentifier.h */,
+				A67BC021165295A400072670 /* ConsoleIdentifier.m */,
+				A6292C98166075B700C2C554 /* ExpressionList.h */,
+				A6292C99166075B800C2C554 /* ExpressionList.m */,
 			);
 			name = expression;
 			sourceTree = "<group>";
@@ -407,6 +483,7 @@
 		A67BC01C165291C600072670 /* console */ = {
 			isa = PBXGroup;
 			children = (
+				A69B8CAB1653099700A64A65 /* parser */,
 				A67BC02A1652C30700072670 /* command */,
 				A67BC0261652AFE800072670 /* expression */,
 				A67BC01D165291DD00072670 /* IDCConsoleTest.h */,
@@ -433,29 +510,23 @@
 			name = command;
 			sourceTree = "<group>";
 		};
-		A6B97462164E1627007E4AB4 /* matrix */ = {
+		A69B8CAB1653099700A64A65 /* parser */ = {
 			isa = PBXGroup;
 			children = (
-				A6B97463164E16B0007E4AB4 /* Matrix.h */,
-				A6B97464164E16B0007E4AB4 /* Matrix.m */,
-				A6B97466164E1704007E4AB4 /* SquareMatrix.h */,
-				A6B97467164E1704007E4AB4 /* SquareMatrix.m */,
-				A6B97469164E17EB007E4AB4 /* Vector.h */,
-				A6B9746A164E17EB007E4AB4 /* Vector.m */,
+				A6C6F5CD1660237A00472E99 /* CommandConverterTest.h */,
+				A6C6F5CE1660237A00472E99 /* CommandConverterTest.mm */,
 			);
-			name = matrix;
+			name = parser;
 			sourceTree = "<group>";
 		};
 		A6B9746F164E1A36007E4AB4 /* console */ = {
 			isa = PBXGroup;
 			children = (
-				A67BC00D1650C45800072670 /* expression */,
+				A6292C8516605CDB00C2C554 /* model */,
+				A6C6F599165FFAFD00472E99 /* cmodel */,
 				A67415631650803700C33D7C /* parser */,
-				A627E99A16500AAA001142D5 /* command */,
-				A627E99616500AA4001142D5 /* Command.h */,
-				A627E99716500AA4001142D5 /* Command.m */,
 				A6B9746C164E1A32007E4AB4 /* IDCConsole.h */,
-				A6B9746D164E1A32007E4AB4 /* IDCConsole.m */,
+				A6B9746D164E1A32007E4AB4 /* IDCConsole.mm */,
 			);
 			name = console;
 			sourceTree = "<group>";
@@ -471,6 +542,15 @@
 			name = matrix;
 			sourceTree = "<group>";
 		};
+		A6C6F599165FFAFD00472E99 /* cmodel */ = {
+			isa = PBXGroup;
+			children = (
+				A6C6F59A165FFB5100472E99 /* CModel.cpp */,
+				A6C6F59B165FFB5100472E99 /* CModel.h */,
+			);
+			name = cmodel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -478,13 +558,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A676C0D8164CC20F00C0F859 /* Build configuration list for PBXNativeTarget "IDCalculator" */;
 			buildPhases = (
+				A676C09A164CC20E00C0F859 /* Resources */,
 				A676C098164CC20E00C0F859 /* Sources */,
 				A676C099164CC20E00C0F859 /* Frameworks */,
-				A676C09A164CC20E00C0F859 /* Resources */,
 			);
 			buildRules = (
-				A67BC0321652FF1300072670 /* PBXBuildRule */,
-				A67BC0311652FEF500072670 /* PBXBuildRule */,
+				A6C6F56D165FD55800472E99 /* PBXBuildRule */,
+				A6C6F56C165FD54A00472E99 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -604,17 +684,24 @@
 				A6B97465164E16B0007E4AB4 /* Matrix.m in Sources */,
 				A6B97468164E1704007E4AB4 /* SquareMatrix.m in Sources */,
 				A6B9746B164E17EB007E4AB4 /* Vector.m in Sources */,
-				A6B9746E164E1A32007E4AB4 /* IDCConsole.m in Sources */,
+				A6B9746E164E1A32007E4AB4 /* IDCConsole.mm in Sources */,
 				A627E99216500A97001142D5 /* SpecialConstant.m in Sources */,
 				A627E99816500AA4001142D5 /* ClearCommand.m in Sources */,
-				A627E99916500AA4001142D5 /* Command.m in Sources */,
+				A627E99916500AA4001142D5 /* Command.mm in Sources */,
 				A67415611650266600C33D7C /* AssignCommand.m in Sources */,
 				A67BC0101650C49400072670 /* ExpressionCommand.m in Sources */,
 				A67BC0131650C53400072670 /* Expression.m in Sources */,
 				A67BC0161651FF1800072670 /* ArithmeticExpression.m in Sources */,
-				A67BC022165295A400072670 /* VariableExpression.m in Sources */,
-				A67BC0251652AA8F00072670 /* ValueExpression.m in Sources */,
+				A67BC022165295A400072670 /* ConsoleIdentifier.m in Sources */,
 				A67BC0301652F9BB00072670 /* VariableCommand.m in Sources */,
+				A6C6F59C165FFB5100472E99 /* CModel.cpp in Sources */,
+				A6C6F5CC16601F3D00472E99 /* CommandConverter.mm in Sources */,
+				A6292C7A16603CA300C2C554 /* ConsoleLexer.cpp in Sources */,
+				A6292C7D16603CB000C2C554 /* ConsoleParser.cpp in Sources */,
+				A6292C8A16605DFC00C2C554 /* Data.m in Sources */,
+				A6292C9016606EF300C2C554 /* NumberData.m in Sources */,
+				A6292C9316606F3E00C2C554 /* FractionData.m in Sources */,
+				A6292C9A166075B800C2C554 /* ExpressionList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,6 +716,7 @@
 				A67BC01F165291DD00072670 /* IDCConsoleTest.m in Sources */,
 				A67BC0291652B00100072670 /* ArithmeticExpressionTest.m in Sources */,
 				A67BC02D1652C31700072670 /* AssignCommandTest.m in Sources */,
+				A6C6F5CF1660237A00472E99 /* CommandConverterTest.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
