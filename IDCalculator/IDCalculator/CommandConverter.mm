@@ -10,6 +10,7 @@
 #import "Expression.h"
 #import "ExpressionList.h"
 #import "ArithmeticExpression.h"
+#import "FuncExpression.h"
 
 #import "NumberData.h"
 #import "ConsoleIdentifier.h"
@@ -106,6 +107,12 @@ Expression* translate(CExpression* input) {
             CIdentifier* cid = (CIdentifier*) input;
             ConsoleIdentifier* id = [[ConsoleIdentifier alloc] init:translate(cid->name)];
             return id;
+        }
+        case EXP_FUNC:
+        {
+            CFuncExpression* cf = (CFuncExpression*)input;
+            FuncExpression* func = [[FuncExpression alloc] init:(ConsoleIdentifier*)translate(cf->name) params:(ExpressionList*)translate(cf->params)];
+            return func;
         }
         case CONST_MATRIX:
         {

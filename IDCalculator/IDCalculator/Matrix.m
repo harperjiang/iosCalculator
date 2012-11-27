@@ -21,8 +21,8 @@
 -(Matrix*) init:(NSArray*)d m:(NSInteger) row n:(NSInteger)col {
     self = [super init];
     if(self) {
-        [self setM:row];
-        [self setN:col];
+        self->_m = row;
+        self->_n = col;
         if([d count] != row*col) {
             NSLog(@"Not enough values");
             return nil;
@@ -56,14 +56,9 @@
             }
         }
         [self setData:data];
-        [self setM:[data count]];
-        [self setN:[(ExpressionList*)[data get:0] count]];
+        self->_m = [data count];
+        self->_n = [(ExpressionList*)[data get:0] count];
     }
-    return self;
-}
-
-
--(Data*) evaluate {
     return self;
 }
 
@@ -181,6 +176,20 @@
     assert([item class] == [NumberData class]);
     return [(NumberData*)item number];
 }
+
+-(Matrix*) transpose {
+    ExpressionList* selfdata = [self data];
+    ExpressionList* newdata = [[ExpressionList alloc] init];
+    for(int i = 0 ; i < [self n];i++) {
+        ExpressionList* row = [[ExpressionList alloc] init];
+        for(int j = 0 ; j < [self m]; j++) {
+            [row add:[(ExpressionList*)[selfdata get:j] get:i]];
+        }
+        [newdata add:row];
+    }
+    return [[Matrix alloc] init:newdata];
+}
+
 
 -(NSString*) description {
     NSMutableString* buffer = [[NSMutableString alloc] initWithCapacity:[self m]*[self n]];

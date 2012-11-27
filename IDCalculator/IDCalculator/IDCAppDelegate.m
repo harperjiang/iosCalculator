@@ -13,6 +13,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    // Display Splash Screen for 2 secs
+    sleep(1);
+    
     return YES;
 }
 							

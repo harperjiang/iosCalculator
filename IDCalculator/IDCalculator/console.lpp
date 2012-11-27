@@ -11,18 +11,19 @@ extern void yyerror(char* input);
 
 
 %%
+"-"?[0-9]+      {yylval.stringTerm = yytext; return NUM;}
 =				{return EQUAL;}
 ;				{return SEMICOLON;}
-"'"				{return DASH;}
+"'"				{return SIQ;}
 "["				{return LBR;}
 "]"				{return RBR;}
 "("             {return LP;}
 ")"             {return RP;}
 "+"				{return OADD;}
--				{return OSUB;}
+"-"				{return OSUB;}
 "*"				{return OMUL;}
 "/"             {return ODIV;}
-[0-9]+			{yylval.stringTerm = yytext; return NUM;}
+","             {return COMMA;}
 "clear"			{return CLEAR;}
 [a-z][a-z0-9]*	{yylval.stringTerm = yytext; return ID;}
 .				{yyerror(yytext);}

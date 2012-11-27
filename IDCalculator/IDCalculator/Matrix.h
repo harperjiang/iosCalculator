@@ -17,17 +17,19 @@
 @interface Matrix : Data
 
 @property(nonatomic,strong) ExpressionList* data;
-@property(nonatomic) NSInteger m;
-@property(nonatomic) NSInteger n;
+@property(nonatomic,readonly) NSInteger m;
+@property(nonatomic,readonly) NSInteger n;
     
 -(Matrix*) init:(NSArray*)d m:(NSInteger) nm n:(NSInteger)nn;
 -(Matrix*) init:(ExpressionList*)data;
 
-- (Matrix*) mul:(Matrix*)another;
-- (Vector*) mulvector:(Vector*)v;
 - (Number*) val:(NSInteger) i n:(NSInteger)j;
+
 - (Number*) rank;
 - (Number*) determinant;
+
+- (Matrix*) transpose;
+
 - (Matrix*) submatrix:(NSRange) rowrange column:(NSRange) colrange;
 
 -(SquareMatrix*) asSquare;

@@ -1,0 +1,633 @@
+Terminals which are not used
+
+   LV3
+   LV2
+   LV1
+
+
+Grammar
+
+    0 $accept: command $end
+
+    1 command: CLEAR
+    2        | id EQUAL exp
+    3        | exp
+
+    4 func: exp SIQ
+    5     | id LP expList RP
+
+    6 matrix: LBR rowList RBR
+
+    7 rowList: dataList
+    8        | dataList SEMICOLON rowList
+
+    9 expList: exp
+   10        | exp COMMA expList
+
+   11 exp: num
+   12    | id
+   13    | LP exp RP
+   14    | exp OADD exp
+   15    | exp OSUB exp
+   16    | OSUB exp
+   17    | exp OMUL exp
+   18    | exp ODIV exp
+   19    | matrix
+   20    | func
+
+   21 dataList: data
+   22         | data dataList
+
+   23 id: ID
+
+   24 data: num
+   25     | num ODIV num
+
+   26 num: NUM
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+error (256)
+COMMA (258) 10
+SEMICOLON (259) 8
+LBR (260) 6
+RBR (261) 6
+SIQ (262) 4
+LP (263) 5 13
+RP (264) 5 13
+CLEAR (265) 1
+EQUAL (266) 2
+OADD (267) 14
+OSUB (268) 15 16
+OMUL (269) 17
+ODIV (270) 18 25
+ID (271) 23
+NUM (272) 26
+LV3 (273)
+LV2 (274)
+LV1 (275)
+
+
+Nonterminals, with rules where they appear
+
+$accept (21)
+    on left: 0
+command (22)
+    on left: 1 2 3, on right: 0
+func (23)
+    on left: 4 5, on right: 20
+matrix (24)
+    on left: 6, on right: 19
+rowList (25)
+    on left: 7 8, on right: 6 8
+expList (26)
+    on left: 9 10, on right: 5 10
+exp (27)
+    on left: 11 12 13 14 15 16 17 18 19 20, on right: 2 3 4 9 10 13
+    14 15 16 17 18
+dataList (28)
+    on left: 21 22, on right: 7 8 22
+id (29)
+    on left: 23, on right: 2 5 12
+data (30)
+    on left: 24 25, on right: 21 22
+num (31)
+    on left: 26, on right: 11 24 25
+
+
+state 0
+
+    0 $accept: . command $end
+
+    LBR    shift, and go to state 1
+    LP     shift, and go to state 2
+    CLEAR  shift, and go to state 3
+    OSUB   shift, and go to state 4
+    ID     shift, and go to state 5
+    NUM    shift, and go to state 6
+
+    command  go to state 7
+    func     go to state 8
+    matrix   go to state 9
+    exp      go to state 10
+    id       go to state 11
+    num      go to state 12
+
+
+state 1
+
+    6 matrix: LBR . rowList RBR
+
+    NUM  shift, and go to state 6
+
+    rowList   go to state 13
+    dataList  go to state 14
+    data      go to state 15
+    num       go to state 16
+
+
+state 2
+
+   13 exp: LP . exp RP
+
+    LBR   shift, and go to state 1
+    LP    shift, and go to state 2
+    OSUB  shift, and go to state 4
+    ID    shift, and go to state 5
+    NUM   shift, and go to state 6
+
+    func    go to state 8
+    matrix  go to state 9
+    exp     go to state 17
+    id      go to state 18
+    num     go to state 12
+
+
+state 3
+
+    1 command: CLEAR .
+
+    $default  reduce using rule 1 (command)
+
+
+state 4
+
+   16 exp: OSUB . exp
+
+    LBR   shift, and go to state 1
+    LP    shift, and go to state 2
+    OSUB  shift, and go to state 4
+    ID    shift, and go to state 5
+    NUM   shift, and go to state 6
+
+    func    go to state 8
+    matrix  go to state 9
+    exp     go to state 19
+    id      go to state 18
+    num     go to state 12
+
+
+state 5
+
+   23 id: ID .
+
+    $default  reduce using rule 23 (id)
+
+
+state 6
+
+   26 num: NUM .
+
+    $default  reduce using rule 26 (num)
+
+
+state 7
+
+    0 $accept: command . $end
+
+    $end  shift, and go to state 20
+
+
+state 8
+
+   20 exp: func .
+
+    $default  reduce using rule 20 (exp)
+
+
+state 9
+
+   19 exp: matrix .
+
+    $default  reduce using rule 19 (exp)
+
+
+state 10
+
+    3 command: exp .
+    4 func: exp . SIQ
+   14 exp: exp . OADD exp
+   15    | exp . OSUB exp
+   17    | exp . OMUL exp
+   18    | exp . ODIV exp
+
+    SIQ   shift, and go to state 21
+    OADD  shift, and go to state 22
+    OSUB  shift, and go to state 23
+    OMUL  shift, and go to state 24
+    ODIV  shift, and go to state 25
+
+    $default  reduce using rule 3 (command)
+
+
+state 11
+
+    2 command: id . EQUAL exp
+    5 func: id . LP expList RP
+   12 exp: id .
+
+    LP     shift, and go to state 26
+    EQUAL  shift, and go to state 27
+
+    $default  reduce using rule 12 (exp)
+
+
+state 12
+
+   11 exp: num .
+
+    $default  reduce using rule 11 (exp)
+
+
+state 13
+
+    6 matrix: LBR rowList . RBR
+
+    RBR  shift, and go to state 28
+
+
+state 14
+
+    7 rowList: dataList .
+    8        | dataList . SEMICOLON rowList
+
+    SEMICOLON  shift, and go to state 29
+
+    $default  reduce using rule 7 (rowList)
+
+
+state 15
+
+   21 dataList: data .
+   22         | data . dataList
+
+    NUM  shift, and go to state 6
+
+    $default  reduce using rule 21 (dataList)
+
+    dataList  go to state 30
+    data      go to state 15
+    num       go to state 16
+
+
+state 16
+
+   24 data: num .
+   25     | num . ODIV num
+
+    ODIV  shift, and go to state 31
+
+    $default  reduce using rule 24 (data)
+
+
+state 17
+
+    4 func: exp . SIQ
+   13 exp: LP exp . RP
+   14    | exp . OADD exp
+   15    | exp . OSUB exp
+   17    | exp . OMUL exp
+   18    | exp . ODIV exp
+
+    SIQ   shift, and go to state 21
+    RP    shift, and go to state 32
+    OADD  shift, and go to state 22
+    OSUB  shift, and go to state 23
+    OMUL  shift, and go to state 24
+    ODIV  shift, and go to state 25
+
+
+state 18
+
+    5 func: id . LP expList RP
+   12 exp: id .
+
+    LP  shift, and go to state 26
+
+    $default  reduce using rule 12 (exp)
+
+
+state 19
+
+    4 func: exp . SIQ
+   14 exp: exp . OADD exp
+   15    | exp . OSUB exp
+   16    | OSUB exp .
+   17    | exp . OMUL exp
+   18    | exp . ODIV exp
+
+    SIQ  shift, and go to state 21
+
+    $default  reduce using rule 16 (exp)
+
+
+state 20
+
+    0 $accept: command $end .
+
+    $default  accept
+
+
+state 21
+
+    4 func: exp SIQ .
+
+    $default  reduce using rule 4 (func)
+
+
+state 22
+
+   14 exp: exp OADD . exp
+
+    LBR   shift, and go to state 1
+    LP    shift, and go to state 2
+    OSUB  shift, and go to state 4
+    ID    shift, and go to state 5
+    NUM   shift, and go to state 6
+
+    func    go to state 8
+    matrix  go to state 9
+    exp     go to state 33
+    id      go to state 18
+    num     go to state 12
+
+
+state 23
+
+   15 exp: exp OSUB . exp
+
+    LBR   shift, and go to state 1
+    LP    shift, and go to state 2
+    OSUB  shift, and go to state 4
+    ID    shift, and go to state 5
+    NUM   shift, and go to state 6
+
+    func    go to state 8
+    matrix  go to state 9
+    exp     go to state 34
+    id      go to state 18
+    num     go to state 12
+
+
+state 24
+
+   17 exp: exp OMUL . exp
+
+    LBR   shift, and go to state 1
+    LP    shift, and go to state 2
+    OSUB  shift, and go to state 4
+    ID    shift, and go to state 5
+    NUM   shift, and go to state 6
+
+    func    go to state 8
+    matrix  go to state 9
+    exp     go to state 35
+    id      go to state 18
+    num     go to state 12
+
+
+state 25
+
+   18 exp: exp ODIV . exp
+
+    LBR   shift, and go to state 1
+    LP    shift, and go to state 2
+    OSUB  shift, and go to state 4
+    ID    shift, and go to state 5
+    NUM   shift, and go to state 6
+
+    func    go to state 8
+    matrix  go to state 9
+    exp     go to state 36
+    id      go to state 18
+    num     go to state 12
+
+
+state 26
+
+    5 func: id LP . expList RP
+
+    LBR   shift, and go to state 1
+    LP    shift, and go to state 2
+    OSUB  shift, and go to state 4
+    ID    shift, and go to state 5
+    NUM   shift, and go to state 6
+
+    func     go to state 8
+    matrix   go to state 9
+    expList  go to state 37
+    exp      go to state 38
+    id       go to state 18
+    num      go to state 12
+
+
+state 27
+
+    2 command: id EQUAL . exp
+
+    LBR   shift, and go to state 1
+    LP    shift, and go to state 2
+    OSUB  shift, and go to state 4
+    ID    shift, and go to state 5
+    NUM   shift, and go to state 6
+
+    func    go to state 8
+    matrix  go to state 9
+    exp     go to state 39
+    id      go to state 18
+    num     go to state 12
+
+
+state 28
+
+    6 matrix: LBR rowList RBR .
+
+    $default  reduce using rule 6 (matrix)
+
+
+state 29
+
+    8 rowList: dataList SEMICOLON . rowList
+
+    NUM  shift, and go to state 6
+
+    rowList   go to state 40
+    dataList  go to state 14
+    data      go to state 15
+    num       go to state 16
+
+
+state 30
+
+   22 dataList: data dataList .
+
+    $default  reduce using rule 22 (dataList)
+
+
+state 31
+
+   25 data: num ODIV . num
+
+    NUM  shift, and go to state 6
+
+    num  go to state 41
+
+
+state 32
+
+   13 exp: LP exp RP .
+
+    $default  reduce using rule 13 (exp)
+
+
+state 33
+
+    4 func: exp . SIQ
+   14 exp: exp . OADD exp
+   14    | exp OADD exp .
+   15    | exp . OSUB exp
+   17    | exp . OMUL exp
+   18    | exp . ODIV exp
+
+    SIQ   shift, and go to state 21
+    OMUL  shift, and go to state 24
+    ODIV  shift, and go to state 25
+
+    $default  reduce using rule 14 (exp)
+
+
+state 34
+
+    4 func: exp . SIQ
+   14 exp: exp . OADD exp
+   15    | exp . OSUB exp
+   15    | exp OSUB exp .
+   17    | exp . OMUL exp
+   18    | exp . ODIV exp
+
+    SIQ   shift, and go to state 21
+    OMUL  shift, and go to state 24
+    ODIV  shift, and go to state 25
+
+    $default  reduce using rule 15 (exp)
+
+
+state 35
+
+    4 func: exp . SIQ
+   14 exp: exp . OADD exp
+   15    | exp . OSUB exp
+   17    | exp . OMUL exp
+   17    | exp OMUL exp .
+   18    | exp . ODIV exp
+
+    SIQ  shift, and go to state 21
+
+    $default  reduce using rule 17 (exp)
+
+
+state 36
+
+    4 func: exp . SIQ
+   14 exp: exp . OADD exp
+   15    | exp . OSUB exp
+   17    | exp . OMUL exp
+   18    | exp . ODIV exp
+   18    | exp ODIV exp .
+
+    SIQ  shift, and go to state 21
+
+    $default  reduce using rule 18 (exp)
+
+
+state 37
+
+    5 func: id LP expList . RP
+
+    RP  shift, and go to state 42
+
+
+state 38
+
+    4 func: exp . SIQ
+    9 expList: exp .
+   10        | exp . COMMA expList
+   14 exp: exp . OADD exp
+   15    | exp . OSUB exp
+   17    | exp . OMUL exp
+   18    | exp . ODIV exp
+
+    COMMA  shift, and go to state 43
+    SIQ    shift, and go to state 21
+    OADD   shift, and go to state 22
+    OSUB   shift, and go to state 23
+    OMUL   shift, and go to state 24
+    ODIV   shift, and go to state 25
+
+    $default  reduce using rule 9 (expList)
+
+
+state 39
+
+    2 command: id EQUAL exp .
+    4 func: exp . SIQ
+   14 exp: exp . OADD exp
+   15    | exp . OSUB exp
+   17    | exp . OMUL exp
+   18    | exp . ODIV exp
+
+    SIQ   shift, and go to state 21
+    OADD  shift, and go to state 22
+    OSUB  shift, and go to state 23
+    OMUL  shift, and go to state 24
+    ODIV  shift, and go to state 25
+
+    $default  reduce using rule 2 (command)
+
+
+state 40
+
+    8 rowList: dataList SEMICOLON rowList .
+
+    $default  reduce using rule 8 (rowList)
+
+
+state 41
+
+   25 data: num ODIV num .
+
+    $default  reduce using rule 25 (data)
+
+
+state 42
+
+    5 func: id LP expList RP .
+
+    $default  reduce using rule 5 (func)
+
+
+state 43
+
+   10 expList: exp COMMA . expList
+
+    LBR   shift, and go to state 1
+    LP    shift, and go to state 2
+    OSUB  shift, and go to state 4
+    ID    shift, and go to state 5
+    NUM   shift, and go to state 6
+
+    func     go to state 8
+    matrix   go to state 9
+    expList  go to state 44
+    exp      go to state 38
+    id       go to state 18
+    num      go to state 12
+
+
+state 44
+
+   10 expList: exp COMMA expList .
+
+    $default  reduce using rule 10 (expList)

@@ -14,17 +14,23 @@ CCommand* parse_result;
 
 %union {
     char* stringTerm;
+    CData* data;
     CNumData* num;
     CExpression* exp;
     CExpList* expList;
+    CExpList* dataList;
     CExpList* rowList;
+    CExpList* params;
     CMatrix*  matrix;
     CCommand* command;
     CIdentifier* id;
+    CFuncExpression* func;
 }
-
-%token CLEAR EQUAL SEMICOLON LBR RBR DASH LP RP
-%token OADD OSUB OMUL ODIV ID NUM
+%token COMMA SEMICOLON LBR RBR SIQ LP RP
+%token CLEAR
+%token EQUAL 
+%token OADD OSUB OMUL ODIV
+%token ID NUM
 
 %type <command> command
 %type <matrix> matrix
@@ -33,13 +39,21 @@ CCommand* parse_result;
 %type <exp> exp
 %type <num> num
 %type <id> id
+%type <func> func
+%type <dataList> dataList
+%type <data> data
 
-%left ID
 %left EQUAL
-%left NUM
+%left NUM SEMICOLON ID
 %left OADD OSUB
 %left OMUL ODIV
+%left LP 
 %left RP
+%left SIQ
+
+%left LV3
+%left LV2
+%left LV1
 
 %start command
 
@@ -48,26 +62,36 @@ command :	CLEAR                           {parse_result = new CClearCommand();YY
         |	id EQUAL exp                    {parse_result = new CAssignCommand($1,$3);}
         |	exp                             {parse_result = new CExpCommand($1);};
 
-    
+func    :   exp SIQ                         {CExpList* expList = new CExpList(); expList->add($1);$$ = new CFuncExpression(new
+                                                CIdentifier("transpose"),expList);}
+        |   id LP expList RP                {$$ = new CFuncExpression($1,$3);};
+
 matrix	:	LBR rowList	RBR                 {$$ = new CMatrix(); $$->content = $2;};
 
-rowList	:	expList                         {$$ = new CExpList(); $$->insert(0,$1);}
-        |	expList SEMICOLON rowList       {$$ = $3; $3->insert(0,$1);};
+rowList	:	dataList                        {$$ = new CExpList(); $$->insert(0,$1);}
+        |	dataList SEMICOLON rowList      {$$ = $3; $3->insert(0,$1);};
 
 expList :	exp                             {$$ = new CExpList(); $$->insert(0,$1);}
-        |	exp expList                     {$$ = $2; $$->insert(0,$1);};
+        |	exp COMMA expList               {$$ = $3; $$->insert(0,$1);};
 
-exp     :   num                             {$$ = $1;}
-        |   num ODIV num                    {$$ = new CFracData($1->value,$3->value);}
-        |   id                              {$$ = $1;}
+exp     :   num       %prec NUM             {$$ = $1;}
+        |   id        %prec ID              {$$ = $1;}
         |   LP exp RP                       {$$ = $2;}
         |   exp OADD exp                    {$$ = new CArithExpression($1,ADD,$3);}
         |   exp OSUB exp                    {$$ = new CArithExpression($1,SUB,$3);}
         |   OSUB exp    %prec OMUL          {$$ = new CArithExpression(NULL,SUB,$2);} 
         |   exp OMUL exp                    {$$ = new CArithExpression($1,MUL,$3);}
         |   exp ODIV exp                    {$$ = new CArithExpression($1,DIV,$3);}
-        |   matrix                          {$$ = $1;};
+        |   matrix                          {$$ = $1;}
+        |   func                            {$$ = $1;};
+
+dataList:   data                            {$$ = new CExpList(); $$->insert(0,$1);}
+        |   data dataList                   {$$ = $2; $$->insert(0,$1);};
 
 id      :   ID                              {$$ = new CIdentifier(yylval.stringTerm);};
+
+data    :   num                             {$$ = $1;}
+        |   num ODIV num                    {$$ = new CFracData($1->value,$3->value);}
+
 num     :   NUM                             {$$ = new CNumData(atoi(yylval.stringTerm));};
 %%

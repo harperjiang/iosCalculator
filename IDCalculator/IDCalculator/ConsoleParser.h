@@ -39,37 +39,45 @@
    /* Put the tokens into the symbol table, so that GDB and other debuggers
       know about them.  */
    enum yytokentype {
-     CLEAR = 258,
-     EQUAL = 259,
-     SEMICOLON = 260,
-     LBR = 261,
-     RBR = 262,
-     DASH = 263,
-     LP = 264,
-     RP = 265,
-     OADD = 266,
-     OSUB = 267,
-     OMUL = 268,
-     ODIV = 269,
-     ID = 270,
-     NUM = 271
+     COMMA = 258,
+     SEMICOLON = 259,
+     LBR = 260,
+     RBR = 261,
+     SIQ = 262,
+     LP = 263,
+     RP = 264,
+     CLEAR = 265,
+     EQUAL = 266,
+     OADD = 267,
+     OSUB = 268,
+     OMUL = 269,
+     ODIV = 270,
+     ID = 271,
+     NUM = 272,
+     LV3 = 273,
+     LV2 = 274,
+     LV1 = 275
    };
 #endif
 /* Tokens.  */
-#define CLEAR 258
-#define EQUAL 259
-#define SEMICOLON 260
-#define LBR 261
-#define RBR 262
-#define DASH 263
-#define LP 264
-#define RP 265
-#define OADD 266
-#define OSUB 267
-#define OMUL 268
-#define ODIV 269
-#define ID 270
-#define NUM 271
+#define COMMA 258
+#define SEMICOLON 259
+#define LBR 260
+#define RBR 261
+#define SIQ 262
+#define LP 263
+#define RP 264
+#define CLEAR 265
+#define EQUAL 266
+#define OADD 267
+#define OSUB 268
+#define OMUL 269
+#define ODIV 270
+#define ID 271
+#define NUM 272
+#define LV3 273
+#define LV2 274
+#define LV1 275
 
 
 
@@ -79,16 +87,20 @@ typedef union YYSTYPE
 #line 15 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
 {
     char* stringTerm;
+    CData* data;
     CNumData* num;
     CExpression* exp;
     CExpList* expList;
+    CExpList* dataList;
     CExpList* rowList;
+    CExpList* params;
     CMatrix*  matrix;
     CCommand* command;
     CIdentifier* id;
+    CFuncExpression* func;
 }
 /* Line 1529 of yacc.c.  */
-#line 92 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/ConsoleParser.h"
+#line 104 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/ConsoleParser.h"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1

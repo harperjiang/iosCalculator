@@ -21,6 +21,7 @@ typedef enum _CModelType {
     EXP_LIST = 200,
     EXP_ARITH,
     EXP_ID,
+    EXP_FUNC,
     
     CONST_MATRIX = 300,
     CONST_NUM,
@@ -104,6 +105,30 @@ public:
         delete list;
     }
 };
+
+
+class CFuncExpression : public CExpression {
+    
+public:
+    CIdentifier* name;
+    CExpList* params;
+    
+    CFuncExpression(CIdentifier* id, CExpList* list) {
+        this->name = id;
+        this->params = list;
+    }
+    
+    int type() {
+        return EXP_FUNC;
+    }
+    
+    ~CFuncExpression() {
+        delete name;
+        delete params;
+    }
+};
+
+
 
 class CData : public CExpression {
 public:

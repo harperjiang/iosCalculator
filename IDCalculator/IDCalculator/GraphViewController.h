@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GLKit/GLKit.h>
+#import <QuartzCore/QuartzCore.h>
 
-@interface GraphViewController : UIViewController
+@interface GraphViewController : GLKViewController
+
+@property(nonatomic,strong) IBOutlet GLKView* graphView;
 
 @end

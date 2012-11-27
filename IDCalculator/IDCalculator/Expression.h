@@ -13,5 +13,6 @@
 @interface Expression : NSObject
 
 -(Data*) evaluate;
-
+-(void) error:(NSString*)input;
+-(void) output:(NSString*)input;
 @end

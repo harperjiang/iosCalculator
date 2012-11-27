@@ -14,6 +14,7 @@
 #import "Command.h"
 #import "ConsoleIdentifier.h"
 #import "ArithmeticExpression.h"
+#import "FuncExpression.h"
 #import "Matrix.h"
 
 @implementation CommandConverterTest
@@ -72,6 +73,32 @@
     
     STAssertEqualObjects([[arith left] class],[ConsoleIdentifier class],@"");
     STAssertEqualObjects([[arith right] class],[ConsoleIdentifier class],@"");
+}
+
+-(void) testParseSingleQuote {
+    NSString* input = @"[5 3]'";
+    Command* cmd = [CommandConverter parse:input];
+    
+    STAssertTrue([cmd class] == [ExpressionCommand class], @"");
+    
+    ExpressionCommand* expcmd = (ExpressionCommand*)cmd;
+    STAssertEqualObjects([FuncExpression class], [expcmd.expression class], @"");
+    
+    FuncExpression* func = (FuncExpression*)[expcmd expression];
+    STAssertEqualObjects([[func name] name],@"transpose",@"");
+}
+
+-(void) testParsingFunction {
+    NSString* input = @"inverse(a)";
+    Command* cmd = [CommandConverter parse:input];
+    
+    STAssertTrue([cmd class] == [ExpressionCommand class], @"");
+    
+    ExpressionCommand* expcmd = (ExpressionCommand*)cmd;
+    STAssertEqualObjects([FuncExpression class], [expcmd.expression class], @"");
+    
+    FuncExpression* func = (FuncExpression*)[expcmd expression];
+    STAssertEqualObjects([[func name] name],@"inverse",@"");
 }
 
 @end

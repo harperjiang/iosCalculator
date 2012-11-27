@@ -16,7 +16,11 @@
 
 -(void) testParseAssign;
 
--(void) testParseVar;
+-(void) testParseExpId;
 
 -(void) testParseArith;
+
+-(void) testParseSingleQuote;
+
+-(void) testParsingFunction;
 @end
