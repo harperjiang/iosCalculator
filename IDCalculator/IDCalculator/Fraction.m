@@ -26,11 +26,21 @@
         if(n == ZERO) {
             return ZERO;
         }
-        Integer* icn = (Integer*)n;
-        Integer* icd = (Integer*)d;
+        NSInteger icnval = [(Integer*)n value];
+        NSInteger icdval = [(Integer*)d value];
+        if(icnval < 0 && icdval < 0) {
+            icnval = abs(icnval);
+            icdval = abs(icdval);
+        }
+        if(icnval > 0 && icdval < 0) {
+            icnval = -icnval;
+            icdval = -icdval;
+        }
+        Integer* icn = [Integer construct:icnval];
+        Integer* icd = [Integer construct:icdval];
         if([icn value] % [icd value] == 0)
             return [Integer construct:[icn value]/[icd value]];
-        NSInteger gcd = [Fraction gcd:[icn value]b:[icd value]];
+        NSInteger gcd = [Fraction gcd:abs([icn value]) b:abs([icd value])];
         if(gcd!= 1) {
             [icn setValue:[icn value]/gcd];
             [icd setValue:[icd value]/gcd];

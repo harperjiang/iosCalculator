@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <GLKit/GLKit.h>
-#import <QuartzCore/QuartzCore.h>
 
 @interface GraphViewController : GLKViewController
 
 @property(nonatomic,strong) IBOutlet GLKView* graphView;
 
+-(IBAction) rotationReceived:(id)gesture;
+-(IBAction) pinchReceived:(id) gesture;
+-(IBAction) swipeReceived:(id) gesture;
 @end

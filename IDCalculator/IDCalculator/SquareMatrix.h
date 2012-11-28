@@ -17,7 +17,7 @@
 
 @interface SquareMatrix : Matrix
 
--(Matrix*) inverse;
+-(SquareMatrix*) inverse;
 -(NSArray*) eigenvalues;
 
 @end

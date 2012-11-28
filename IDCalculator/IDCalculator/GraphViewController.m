@@ -7,13 +7,17 @@
 //
 
 #import "GraphViewController.h"
-#import "ContextManager.h"
+#import "OpenGLContext.h"
+#import "GLESObject.h"
+#import "GLESContainer.h"
 
 @interface GraphViewController ()
 
 @end
 
-@implementation GraphViewController
+@implementation GraphViewController {
+    OpenGLContext* context;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -24,55 +28,83 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    context = [[OpenGLContext alloc] init:(CAEAGLLayer*)[[self view] layer]];    
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 -(void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self drawSomething];
+    [self drawView];
 }
 
--(void) drawSomething {
-    EAGLContext* myContext = [ContextManager createContext];
-    CAEAGLLayer* myEAGLLayer = (CAEAGLLayer*)[[self view] layer];
+- (void)drawView {
+    [context beginDraw];
+    // Replace the implementation of this method to do your own custom drawing
     
-    GLuint framebuffer;
-    glGenFramebuffers(1, &framebuffer);
-    glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
+    GLESContainer* container = [[GLESContainer alloc] init];
     
-    GLuint colorRenderbuffer;
-    glGenRenderbuffers(1, &colorRenderbuffer);
-    glBindRenderbuffer(GL_RENDERBUFFER, colorRenderbuffer);
-    [myContext renderbufferStorage:GL_RENDERBUFFER fromDrawable:myEAGLLayer];
-    glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, colorRenderbuffer);
-    GLint width;
-    GLint height;
-    glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_WIDTH, &width);
-    glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_HEIGHT, &height);
+    GLESObject* obj = [[GLESObject alloc] init];
     
-    GLuint depthRenderbuffer;
-    glGenRenderbuffers(1, &depthRenderbuffer);
-    glBindRenderbuffer(GL_RENDERBUFFER, depthRenderbuffer);
-    glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT16, width, height);
-    glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, depthRenderbuffer);
+    [obj add:[GLPoint construct:1.0f y:0.0f z:0.0f color:[GLColor RED]]];
+    [obj add:[GLPoint construct:0.707f y:0.707f z:0.0f color:[GLColor RED]]];
+    [obj add:[GLPoint construct:0.0f y:0.0f z:0.0f color:[GLColor GREEN]]];
+    [obj add:[GLPoint construct:0.0f y:1.0f z:0.0f color:[GLColor RED]]];
     
-    GLenum status = glCheckFramebufferStatus(GL_FRAMEBUFFER) ;
-    if(status != GL_FRAMEBUFFER_COMPLETE) {
-        NSLog(@"failed to make complete framebuffer object %x", status);
-    }
+    [container add:obj];
     
-    glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
+    obj = [[GLESObject alloc] init];
     
-    [myContext presentRenderbuffer:GL_RENDERBUFFER];
+    [obj add:[GLPoint construct:0.0f y:1.0f z:0.0f color:[GLColor RED]]];
+    [obj add:[GLPoint construct:-0.707f y:0.707f z:0.0f color:[GLColor RED]]];
+    [obj add:[GLPoint construct:0.0f y:0.0f z:0.0f color:[GLColor GREEN]]];
+    [obj add:[GLPoint construct:-1.0f y:0.0f z:0.0f color:[GLColor RED]]];
+    
+    [container add:obj];
+    
+    obj = [[GLESObject alloc] init];
+    
+    [obj add:[GLPoint construct:-1.0f y:0.0f z:0.0f color:[GLColor RED]]];
+    [obj add:[GLPoint construct:-0.707f y:-0.707f z:0.0f color:[GLColor RED]]];
+    [obj add:[GLPoint construct:0.0f y:0.0f z:0.0f color:[GLColor GREEN]]];
+    [obj add:[GLPoint construct:0.0f y:-1.0f z:0.0f color:[GLColor RED]]];
+    
+    [container add:obj];
+    
+    obj = [[GLESObject alloc] init];
+    
+    [obj add:[GLPoint construct:0.0f y:-1.0f z:0.0f color:[GLColor RED]]];
+    [obj add:[GLPoint construct:0.707f y:-0.707f z:0.0f color:[GLColor RED]]];
+    [obj add:[GLPoint construct:0.0f y:0.0f z:0.0f color:[GLColor GREEN]]];
+    [obj add:[GLPoint construct:1.0f y:0.0f z:0.0f color:[GLColor RED]]];
+    
+    [container add:obj];
+    
+
+    [container render];
+    
+    // Assuming you allocated a color renderbuffer to point at a Core Animation layer, you present its contents by making it the current renderbuffer
+    // and calling the presentRenderbuffer: method on your rendering context.
+    [context finishDraw];
+}
+
+-(IBAction)rotationReceived:(id)gesture {
+    UIRotationGestureRecognizer* rotation = (UIRotationGestureRecognizer*)gesture;
+    
+}
+
+-(IBAction)pinchReceived:(id)gesture {
+    UIPinchGestureRecognizer* pinch = (UIPinchGestureRecognizer*)gesture;
+}
+
+-(IBAction)swipeReceived:(id)gesture {
+    UISwipeGestureRecognizer* swipe = (UISwipeGestureRecognizer*)gesture;
 }
 
 @end

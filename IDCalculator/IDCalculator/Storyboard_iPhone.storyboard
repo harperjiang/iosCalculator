@@ -69,12 +69,16 @@
         <!--GLKit View Controller-->
         <scene sceneID="fU2-Hi-GrN">
             <objects>
-                <glkViewController autoresizesArchivedViewToFullSize="NO" preferredFramesPerSecond="30" id="lFG-5n-Aza" customClass="GraphViewController" sceneMemberID="viewController">
-                    <glkView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6MZ-ou-xns">
+                <glkViewController autoresizesArchivedViewToFullSize="NO" wantsFullScreenLayout="YES" preferredFramesPerSecond="30" id="lFG-5n-Aza" customClass="GraphViewController" sceneMemberID="viewController">
+                    <glkView key="view" autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="center" id="6MZ-ou-xns">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <gestureRecognizers/>
                         <connections>
                             <outlet property="delegate" destination="lFG-5n-Aza" id="mT8-3R-jYF"/>
+                            <outletCollection property="gestureRecognizers" destination="diB-zB-2Zz" appends="YES" id="yCz-ae-Rt7"/>
+                            <outletCollection property="gestureRecognizers" destination="2hy-2F-sgL" appends="YES" id="0xE-T2-Ohd"/>
+                            <outletCollection property="gestureRecognizers" destination="0ms-1m-JqU" appends="YES" id="Z9V-sT-QeJ"/>
                         </connections>
                     </glkView>
                     <tabBarItem key="tabBarItem" title="Graph" image="chart_line_24.png" id="uB8-Kt-cCk"/>
@@ -83,6 +87,21 @@
                     </connections>
                 </glkViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qc-Xy-zUP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <rotationGestureRecognizer id="diB-zB-2Zz">
+                    <connections>
+                        <action selector="rotationReceived:" destination="lFG-5n-Aza" id="HDP-j2-Om7"/>
+                    </connections>
+                </rotationGestureRecognizer>
+                <pinchGestureRecognizer id="2hy-2F-sgL">
+                    <connections>
+                        <action selector="pinchReceived:" destination="lFG-5n-Aza" id="1Mu-W6-aO3"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="0ms-1m-JqU">
+                    <connections>
+                        <action selector="swipeReceived:" destination="lFG-5n-Aza" id="Wh1-rl-6jl"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="880" y="823"/>
         </scene>
@@ -664,6 +683,9 @@
         <class className="GraphViewController" superclassName="GLKViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GraphViewController.h"/>
             <relationships>
+                <relationship kind="action" name="pinchReceived:"/>
+                <relationship kind="action" name="rotationReceived:"/>
+                <relationship kind="action" name="swipeReceived:"/>
                 <relationship kind="outlet" name="graphView" candidateClass="GLKView"/>
             </relationships>
         </class>

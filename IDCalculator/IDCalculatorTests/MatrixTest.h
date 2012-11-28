@@ -12,4 +12,6 @@
 
 -(void) testDescription;
 
+-(void) testInverse;
+
 @end

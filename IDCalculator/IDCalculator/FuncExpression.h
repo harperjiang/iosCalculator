@@ -25,6 +25,14 @@
 
 @end
 
+@interface TransposeFunction : FuncCallback
+
+@end
+
+@interface IdentityFunction : FuncCallback
+
+@end
+
 @interface FuncExpression : Expression
 
 @property(nonatomic,strong) ConsoleIdentifier* name;

@@ -11,5 +11,8 @@
 
 @implementation SquareMatrix
 
+-(SquareMatrix*) inverse {
+    
+}
 
 @end

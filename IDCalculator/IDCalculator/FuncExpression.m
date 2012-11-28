@@ -12,6 +12,8 @@
 #import "Matrix.h"
 #import "SquareMatrix.h"
 #import "Vector.h"
+#import "NumberData.h"
+#import "Integer.h"
 
 @implementation FuncCallback
 
@@ -43,9 +45,9 @@
 }
 @end
 
-@implementation InverseFunction
+@implementation TransposeFunction
 
--(InverseFunction*) init {
+-(TransposeFunction*) init {
     self = [super init];
     if(self) {
         [self setParamCount:1];
@@ -65,6 +67,57 @@
 
 @end
 
+@implementation InverseFunction
+
+-(InverseFunction*) init {
+    self = [super init];
+    if(self) {
+        [self setParamCount:1];
+    }
+    return self;
+}
+
+-(Data*) calculate:(ExpressionList *)expList {
+    Data* val = [[expList get:0] evaluate];
+    if([val class] == [Matrix class]) {
+        return [(Matrix*)val inverse];
+    } else {
+        [self error:@"Input is not a square matrix"];
+        return nil;
+    }
+}
+
+@end
+
+@implementation IdentityFunction
+
+-(IdentityFunction*) init {
+    self = [super init];
+    if(self) {
+        [self setParamCount:1];
+    }
+    return self;
+}
+
+-(Data*) calculate:(ExpressionList *)expList {
+    Data* val = [[expList get:0] evaluate];
+    if([val class] == [NumberData class]) {
+        NumberData* nd = (NumberData*)val;
+        if([[nd number] class] == [Integer class]) {
+            NSInteger intval = [(Integer*)[nd number] value];
+            return [Matrix identity:intval];
+        } else {
+            [self error:@"Parameter is not a number"];
+            return nil;
+        }
+    } else {
+        [self error:@"Input is not a matrix"];
+        return nil;
+    }
+}
+
+@end
+
 
 @implementation FuncExpression
 
@@ -75,7 +128,9 @@ static NSMutableDictionary* callbacks;
         // Initialize Callbacks
         callbacks = [[NSMutableDictionary alloc] initWithCapacity:10];
         
-        [callbacks setObject:[[InverseFunction alloc] init] forKey:@"transpose"];
+        [callbacks setObject:[[TransposeFunction alloc] init] forKey:@"transpose"];
+        [callbacks setObject:[[IdentityFunction alloc] init] forKey:@"identity"];
+        [callbacks setObject:[[InverseFunction alloc] init] forKey:@"inv"];
     }
 }
 

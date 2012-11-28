@@ -18,6 +18,21 @@
 
 @implementation Matrix
 
++(Matrix *)identity:(NSInteger)num {
+    ExpressionList* data = [[ExpressionList alloc] init];
+    for(int i = 0 ; i < num ; i++) {
+        ExpressionList* row = [[ExpressionList alloc] init];
+        for(int j = 0 ; j < num ; j ++) {
+            if(j==i)
+                [row add:[[NumberData alloc] init:[Integer ONE]]];
+            else
+                [row add:[[NumberData alloc] init:[Integer ZERO]]];
+        }
+        [data add:row];
+    }
+    return [[Matrix alloc]init:data];
+}
+
 -(Matrix*) init:(NSArray*)d m:(NSInteger) row n:(NSInteger)col {
     self = [super init];
     if(self) {
@@ -46,18 +61,24 @@
     self = [super init];
     if(self) {
         int colcount = 0;
-        for(NSInteger i = 0 ; i < [data count] ; i++) {
-            ExpressionList* row = (ExpressionList*)[data get:i];
-            if(colcount == 0) {
-                colcount = [row count];
-            } else if(colcount != [row count ]) {
-                [[IDCConsole instance] error:@"Wrong column count in matrix row"];
-                return nil;
+        if([data count] == 0) {
+            self->_data=data;
+            self->_m=0;
+            self->_n=0;
+        } else {
+            for(NSInteger i = 0 ; i < [data count] ; i++) {
+                ExpressionList* row = (ExpressionList*)[data get:i];
+                if(colcount == 0) {
+                    colcount = [row count];
+                } else if(colcount != [row count ]) {
+                    [[IDCConsole instance] error:@"Wrong column count in matrix row"];
+                    return nil;
+                }
             }
+            [self setData:data];
+            self->_m = [data count];
+            self->_n = [(ExpressionList*)[data get:0] count];
         }
-        [self setData:data];
-        self->_m = [data count];
-        self->_n = [(ExpressionList*)[data get:0] count];
     }
     return self;
 }
@@ -177,6 +198,23 @@
     return [(NumberData*)item number];
 }
 
+-(void)setVal:(NSInteger)i n:(NSInteger)j val:(Number *)value {
+    // Append Expressions
+    while(i >= [[self data] count]) {
+        ExpressionList* newrow = [[ExpressionList alloc] init];
+        [[self data] add:newrow];
+    }
+    ExpressionList* row = (ExpressionList*)[[self data] get:i];
+    while(j>= [row count]) {
+        [row add:[[NumberData alloc] init:nil]];
+    }
+    [(NumberData*)[row get:j] setNumber:value];
+    if(i >= [self m])
+        self->_m = i+1;
+    if(j >= [self n])
+        self->_n = j+1;
+}
+
 -(Matrix*) transpose {
     ExpressionList* selfdata = [self data];
     ExpressionList* newdata = [[ExpressionList alloc] init];
@@ -200,6 +238,61 @@
         [buffer appendString:@"\n"];
     }
     return buffer;
+}
+
+-(Matrix *)submatrix:(NSRange)rowrange column:(NSRange)colrange {
+    ExpressionList* data = [[ExpressionList alloc] init];
+    Matrix* m = [[Matrix alloc] init:data];
+    for( int i = 0 ; i < rowrange.length;i++)
+        for(int j = 0 ; j < colrange.length ; j++) {
+           [m setVal:i n:j val:[self val:rowrange.location +i n:colrange.location+j]];
+        }
+    return m;
+}
+
+-(Matrix*) duplicate {
+    return [self submatrix:NSMakeRange(0, [self m]) column:NSMakeRange(0, [self n])];
+}
+
+-(NSInteger)rank {
+    // TODO
+    if([self m] == [self n])
+        return [self m];
+    return -1;
+}
+
+-(Number *)determinant {
+    
+}
+
+-(Matrix*) inverse {
+    if([self m] == [self n] && [self rank] == [self m]) {
+        NSInteger size = [self m];
+        Matrix* factor = [Matrix identity:size];
+        Matrix* remain = [self duplicate];
+        for(NSInteger i = 0 ; i < size ; i++) {
+            // For Each Row, make the pivot to be 1
+            Matrix* pivot1 = [Matrix identity:size];
+            Number* pivotval = [[Integer ONE] div:[remain val:i n:i]];
+            [pivot1 setVal:i n:i val:pivotval];
+            factor = (Matrix*)[pivot1 mul:factor];
+            remain = (Matrix*)[pivot1 mul:remain];
+            
+            Matrix* reduce = [Matrix identity:size];
+            
+            for(NSInteger j = 0 ; j < size; j++) {
+                if(j != i) {
+                    Number* remval = [remain val:j n:i];
+                    [reduce setVal:j n:i val: [[Integer ZERO] sub:remval]];
+                }
+            }
+            factor = (Matrix*)[reduce mul:factor];
+            remain = (Matrix*)[reduce mul:remain];
+        }
+        return factor;
+    }
+    [self error:@"Not a square matrix"];
+    return nil;
 }
 
 @end

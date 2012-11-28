@@ -53,6 +53,7 @@
 		A67BC0291652B00100072670 /* ArithmeticExpressionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A67BC0281652B00100072670 /* ArithmeticExpressionTest.m */; };
 		A67BC02D1652C31700072670 /* AssignCommandTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A67BC02C1652C31700072670 /* AssignCommandTest.m */; };
 		A67BC0301652F9BB00072670 /* VariableCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = A67BC02F1652F9BA00072670 /* VariableCommand.m */; };
+		A6AE35081665FE6000AEF12B /* FractionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6AE35071665FE6000AEF12B /* FractionTest.m */; };
 		A6B9745E164DEDE5007E4AB4 /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B9745D164DEDE5007E4AB4 /* GraphViewController.m */; };
 		A6B97461164DF411007E4AB4 /* ConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B97460164DF411007E4AB4 /* ConsoleViewController.m */; };
 		A6B97465164E16B0007E4AB4 /* Matrix.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B97464164E16B0007E4AB4 /* Matrix.m */; };
@@ -63,6 +64,9 @@
 		A6C6F59C165FFB5100472E99 /* CModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6C6F59A165FFB5100472E99 /* CModel.cpp */; };
 		A6C6F5CC16601F3D00472E99 /* CommandConverter.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6C6F5CB16601F3D00472E99 /* CommandConverter.mm */; };
 		A6C6F5CF1660237A00472E99 /* CommandConverterTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6C6F5CE1660237A00472E99 /* CommandConverterTest.mm */; };
+		A6CE38AB1665879500EDC49A /* GLESObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CE38AA1665879500EDC49A /* GLESObject.m */; };
+		A6CE38B0166587CB00EDC49A /* GLESContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CE38AF166587CB00EDC49A /* GLESContainer.m */; };
+		A6CE38B41665B01700EDC49A /* GLESObjectTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CE38B31665B01700EDC49A /* GLESObjectTest.m */; };
 		A6DE83FE164EDDEC002F6FFA /* VectorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DE83FD164EDDEC002F6FFA /* VectorTest.m */; };
 		A6EEE67F16616D5A00310568 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A6EEE67E16616D5A00310568 /* icon.png */; };
 		A6EEE6851661CD4900310568 /* FuncExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EEE6841661CD4900310568 /* FuncExpression.m */; };
@@ -73,7 +77,7 @@
 		A6EEE6A51662A36300310568 /* display_on_24.png in Resources */ = {isa = PBXBuildFile; fileRef = A6EEE69F1662A36300310568 /* display_on_24.png */; };
 		A6EEE6A71662A36300310568 /* keyboard_24.png in Resources */ = {isa = PBXBuildFile; fileRef = A6EEE6A11662A36300310568 /* keyboard_24.png */; };
 		A6EEE6AA1662A6BD00310568 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6EEE6A91662A6BD00310568 /* Default-568h@2x.png */; };
-		A6EEE6B01662FAFB00310568 /* ContextManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EEE6AF1662FAFB00310568 /* ContextManager.m */; };
+		A6EEE6B01662FAFB00310568 /* OpenGLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EEE6AF1662FAFB00310568 /* OpenGLContext.m */; };
 		A6EEE6B21663022100310568 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EEE6B11663022100310568 /* GLKit.framework */; };
 		A6EEE6B41663027C00310568 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EEE6B31663027C00310568 /* OpenGLES.framework */; };
 		A6EEE6BA1663065100310568 /* concole_24.png in Resources */ = {isa = PBXBuildFile; fileRef = A6EEE6B71663065100310568 /* concole_24.png */; };
@@ -207,6 +211,8 @@
 		A67BC02F1652F9BA00072670 /* VariableCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VariableCommand.m; sourceTree = "<group>"; };
 		A69B8CA6165302AC00A64A65 /* console.lpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lex; path = console.lpp; sourceTree = "<group>"; };
 		A69B8CA7165302AC00A64A65 /* console.ypp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.yacc; path = console.ypp; sourceTree = "<group>"; };
+		A6AE35061665FE6000AEF12B /* FractionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FractionTest.h; sourceTree = "<group>"; };
+		A6AE35071665FE6000AEF12B /* FractionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FractionTest.m; sourceTree = "<group>"; };
 		A6B9745C164DEDE5007E4AB4 /* GraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewController.h; sourceTree = "<group>"; };
 		A6B9745D164DEDE5007E4AB4 /* GraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphViewController.m; sourceTree = "<group>"; };
 		A6B9745F164DF411007E4AB4 /* ConsoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsoleViewController.h; sourceTree = "<group>"; };
@@ -227,6 +233,12 @@
 		A6C6F5CB16601F3D00472E99 /* CommandConverter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CommandConverter.mm; sourceTree = "<group>"; };
 		A6C6F5CD1660237A00472E99 /* CommandConverterTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandConverterTest.h; sourceTree = "<group>"; };
 		A6C6F5CE1660237A00472E99 /* CommandConverterTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CommandConverterTest.mm; sourceTree = "<group>"; };
+		A6CE38A91665879500EDC49A /* GLESObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLESObject.h; sourceTree = "<group>"; };
+		A6CE38AA1665879500EDC49A /* GLESObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLESObject.m; sourceTree = "<group>"; };
+		A6CE38AE166587CB00EDC49A /* GLESContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLESContainer.h; sourceTree = "<group>"; };
+		A6CE38AF166587CB00EDC49A /* GLESContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLESContainer.m; sourceTree = "<group>"; };
+		A6CE38B21665B01700EDC49A /* GLESObjectTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLESObjectTest.h; sourceTree = "<group>"; };
+		A6CE38B31665B01700EDC49A /* GLESObjectTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLESObjectTest.m; sourceTree = "<group>"; };
 		A6DE83FC164EDDEC002F6FFA /* VectorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VectorTest.h; sourceTree = "<group>"; };
 		A6DE83FD164EDDEC002F6FFA /* VectorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VectorTest.m; sourceTree = "<group>"; };
 		A6EEE67E16616D5A00310568 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
@@ -239,8 +251,8 @@
 		A6EEE69F1662A36300310568 /* display_on_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = display_on_24.png; sourceTree = "<group>"; };
 		A6EEE6A11662A36300310568 /* keyboard_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keyboard_24.png; sourceTree = "<group>"; };
 		A6EEE6A91662A6BD00310568 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
-		A6EEE6AE1662FAFB00310568 /* ContextManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextManager.h; sourceTree = "<group>"; };
-		A6EEE6AF1662FAFB00310568 /* ContextManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextManager.m; sourceTree = "<group>"; };
+		A6EEE6AE1662FAFB00310568 /* OpenGLContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLContext.h; sourceTree = "<group>"; };
+		A6EEE6AF1662FAFB00310568 /* OpenGLContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLContext.m; sourceTree = "<group>"; };
 		A6EEE6B11663022100310568 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		A6EEE6B31663027C00310568 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		A6EEE6B71663065100310568 /* concole_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = concole_24.png; path = "../../../../Downloads/TWG Retina Icons/concole_24.png"; sourceTree = "<group>"; };
@@ -429,6 +441,8 @@
 		A676C0CD164CC20F00C0F859 /* IDCalculatorTests */ = {
 			isa = PBXGroup;
 			children = (
+				A6AE35041665FE5300AEF12B /* math */,
+				A6CE38B11665B00600EDC49A /* graph */,
 				A67BC01C165291C600072670 /* console */,
 				A6B97476164E8CCC007E4AB4 /* matrix */,
 				A676C102164CC56600C0F859 /* calculus */,
@@ -587,6 +601,15 @@
 			name = parser;
 			sourceTree = "<group>";
 		};
+		A6AE35041665FE5300AEF12B /* math */ = {
+			isa = PBXGroup;
+			children = (
+				A6AE35061665FE6000AEF12B /* FractionTest.h */,
+				A6AE35071665FE6000AEF12B /* FractionTest.m */,
+			);
+			name = math;
+			sourceTree = "<group>";
+		};
 		A6B9746F164E1A36007E4AB4 /* console */ = {
 			isa = PBXGroup;
 			children = (
@@ -619,6 +642,26 @@
 			name = cmodel;
 			sourceTree = "<group>";
 		};
+		A6CE38AD1665879A00EDC49A /* model */ = {
+			isa = PBXGroup;
+			children = (
+				A6CE38A91665879500EDC49A /* GLESObject.h */,
+				A6CE38AA1665879500EDC49A /* GLESObject.m */,
+				A6CE38AE166587CB00EDC49A /* GLESContainer.h */,
+				A6CE38AF166587CB00EDC49A /* GLESContainer.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		A6CE38B11665B00600EDC49A /* graph */ = {
+			isa = PBXGroup;
+			children = (
+				A6CE38B21665B01700EDC49A /* GLESObjectTest.h */,
+				A6CE38B31665B01700EDC49A /* GLESObjectTest.m */,
+			);
+			name = graph;
+			sourceTree = "<group>";
+		};
 		A6EEE6961662A20400310568 /* tabicon */ = {
 			isa = PBXGroup;
 			children = (
@@ -649,8 +692,9 @@
 		A6EEE6AD1662CC1D00310568 /* graph */ = {
 			isa = PBXGroup;
 			children = (
-				A6EEE6AE1662FAFB00310568 /* ContextManager.h */,
-				A6EEE6AF1662FAFB00310568 /* ContextManager.m */,
+				A6CE38AD1665879A00EDC49A /* model */,
+				A6EEE6AE1662FAFB00310568 /* OpenGLContext.h */,
+				A6EEE6AF1662FAFB00310568 /* OpenGLContext.m */,
 			);
 			name = graph;
 			sourceTree = "<group>";
@@ -818,8 +862,10 @@
 				A639F25B16609995000C5E02 /* Fraction.m in Sources */,
 				A639F25E1660A06C000C5E02 /* NumberData.m in Sources */,
 				A6EEE6851661CD4900310568 /* FuncExpression.m in Sources */,
-				A6EEE6B01662FAFB00310568 /* ContextManager.m in Sources */,
+				A6EEE6B01662FAFB00310568 /* OpenGLContext.m in Sources */,
 				A6EEE6D216645DBB00310568 /* HelpViewController.m in Sources */,
+				A6CE38AB1665879500EDC49A /* GLESObject.m in Sources */,
+				A6CE38B0166587CB00EDC49A /* GLESContainer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -835,6 +881,8 @@
 				A67BC0291652B00100072670 /* ArithmeticExpressionTest.m in Sources */,
 				A67BC02D1652C31700072670 /* AssignCommandTest.m in Sources */,
 				A6C6F5CF1660237A00472E99 /* CommandConverterTest.mm in Sources */,
+				A6CE38B41665B01700EDC49A /* GLESObjectTest.m in Sources */,
+				A6AE35081665FE6000AEF12B /* FractionTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

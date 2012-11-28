@@ -19,19 +19,24 @@
 @property(nonatomic,strong) ExpressionList* data;
 @property(nonatomic,readonly) NSInteger m;
 @property(nonatomic,readonly) NSInteger n;
-    
+
++(Matrix*) identity:(NSInteger) num;
+
 -(Matrix*) init:(NSArray*)d m:(NSInteger) nm n:(NSInteger)nn;
 -(Matrix*) init:(ExpressionList*)data;
 
 - (Number*) val:(NSInteger) i n:(NSInteger)j;
+- (void) setVal:(NSInteger) i n:(NSInteger)j val:(Number*)value;
 
-- (Number*) rank;
+- (NSInteger) rank;
 - (Number*) determinant;
 
 - (Matrix*) transpose;
 
 - (Matrix*) submatrix:(NSRange) rowrange column:(NSRange) colrange;
 
--(SquareMatrix*) asSquare;
+- (Matrix*) inverse;
+
+
 -(Vector*) asVector;
 @end
