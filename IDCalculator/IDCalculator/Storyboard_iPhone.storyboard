@@ -21,7 +21,7 @@
                                     <action selector="editingDone:" destination="jJ4-TP-rtf" eventType="editingDidEndOnExit" id="PzP-lu-3jo"/>
                                 </connections>
                             </textField>
-                            <textView clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="247" showsHorizontalScrollIndicator="NO" editable="NO" id="k54-zl-r9C">
+                            <textView clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="247" showsHorizontalScrollIndicator="NO" indicatorStyle="black" editable="NO" id="k54-zl-r9C">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="382"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.84057917179999997" green="0.90605235390000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -675,7 +675,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ConsoleViewController.h"/>
             <relationships>
                 <relationship kind="action" name="editingDone:"/>
-                <relationship kind="action" name="touchesBegan:withEvent:" candidateClass="NSSet"/>
                 <relationship kind="outlet" name="display" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="inputField" candidateClass="UITextField"/>
             </relationships>

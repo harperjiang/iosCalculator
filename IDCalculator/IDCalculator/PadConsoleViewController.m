@@ -67,19 +67,37 @@
 #else
         NSValue *keyboardBoundsValue = [[notification userInfo] objectForKey:UIKeyboardBoundsUserInfoKey];
 #endif
-        CGRect keyboardBounds;
-        [keyboardBoundsValue getValue:&keyboardBounds];
+        CGRect oldKeyboardBounds;
+        [keyboardBoundsValue getValue:&oldKeyboardBounds];
+        
+        // Keyboard Bounds will not change when rotate changes, manually change
         
         CGRect viewBounds = self.view.frame;
         CGRect subviewBounds = self.keyboardView.frame;
         CGRect displayBounds = self.display.frame;
+        
+        CGRect keyboardBounds;
+        
+        UIInterfaceOrientation orientation = [self interfaceOrientation];
+        
+        keyboardBounds.size.width = MAX(oldKeyboardBounds.size.width,oldKeyboardBounds.size.height);
+        keyboardBounds.size.height = MIN(oldKeyboardBounds.size.width,oldKeyboardBounds.size.height);
+        keyboardBounds.origin.x = 0;
+        if(orientation == UIInterfaceOrientationPortrait || orientation == UIInterfaceOrientationPortraitUpsideDown)
+            keyboardBounds.origin.y = [[self view] window].frame.size.height - keyboardBounds.size.height;
+        else
+            keyboardBounds.origin.y = [[self view] window].frame.size.width - keyboardBounds.size.height;
+        
+        NSLog(@"Old Keyboard Bounds:%f,%f,%f,%f",oldKeyboardBounds.origin.x,oldKeyboardBounds.origin.y,oldKeyboardBounds.size.width,oldKeyboardBounds.size.height);
         
         [UIView beginAnimations:@"anim" context:NULL];
         [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
         [UIView setAnimationBeginsFromCurrentState:YES];
         [UIView setAnimationDuration:0.3];
         
-        if(keyboardBounds.origin.y >= viewBounds.size.height) {
+        NSLog(@"Window Size:%f,%f",self.view.window.frame.size.width,self.view.window.frame.size.height);
+        
+        if(oldKeyboardBounds.origin.x < 0 || oldKeyboardBounds.origin.y < 0 || oldKeyboardBounds.origin.x == self.view.window.frame.size.width) {
             // keyboard is hidden
             NSInteger offset = viewBounds.size.height - subviewBounds.origin.y - subviewBounds.size.height;
             displayBounds.size.height += offset;

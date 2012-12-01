@@ -53,6 +53,13 @@
 		A67BC0291652B00100072670 /* ArithmeticExpressionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A67BC0281652B00100072670 /* ArithmeticExpressionTest.m */; };
 		A67BC02D1652C31700072670 /* AssignCommandTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A67BC02C1652C31700072670 /* AssignCommandTest.m */; };
 		A67BC0301652F9BB00072670 /* VariableCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = A67BC02F1652F9BA00072670 /* VariableCommand.m */; };
+		A67CCA671669EDE7007561D9 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A67CCA651669EDE7007561D9 /* Default-Landscape~ipad.png */; };
+		A67CCA681669EDE7007561D9 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A67CCA661669EDE7007561D9 /* Default-Portrait~ipad.png */; };
+		A67CCA6A1669EF38007561D9 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A67CCA691669EF38007561D9 /* Default-Portrait~ipad.png */; };
+		A67CCA6C1669EF5A007561D9 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A67CCA6B1669EF5A007561D9 /* Default-Landscape~ipad.png */; };
+		A67CCA6E1669EFF4007561D9 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A67CCA6D1669EFF4007561D9 /* Default-Landscape@2x~ipad.png */; };
+		A67CCA701669F005007561D9 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A67CCA6F1669F005007561D9 /* Default-Portrait@2x~ipad.png */; };
+		A67CCA721669F024007561D9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A67CCA711669F024007561D9 /* Default-568h@2x.png */; };
 		A6AE35081665FE6000AEF12B /* FractionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6AE35071665FE6000AEF12B /* FractionTest.m */; };
 		A6B9745E164DEDE5007E4AB4 /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B9745D164DEDE5007E4AB4 /* GraphViewController.m */; };
 		A6B97461164DF411007E4AB4 /* ConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B97460164DF411007E4AB4 /* ConsoleViewController.m */; };
@@ -211,6 +218,13 @@
 		A67BC02C1652C31700072670 /* AssignCommandTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignCommandTest.m; sourceTree = "<group>"; };
 		A67BC02E1652F9B900072670 /* VariableCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VariableCommand.h; sourceTree = "<group>"; };
 		A67BC02F1652F9BA00072670 /* VariableCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VariableCommand.m; sourceTree = "<group>"; };
+		A67CCA651669EDE7007561D9 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "../../../../Downloads/Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		A67CCA661669EDE7007561D9 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~ipad.png"; path = "../../../../Downloads/Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		A67CCA691669EF38007561D9 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~ipad.png"; path = "../Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		A67CCA6B1669EF5A007561D9 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "../Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		A67CCA6D1669EFF4007561D9 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		A67CCA6F1669F005007561D9 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		A67CCA711669F024007561D9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A69B8CA6165302AC00A64A65 /* console.lpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lex; path = console.lpp; sourceTree = "<group>"; };
 		A69B8CA7165302AC00A64A65 /* console.ypp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.yacc; path = console.ypp; sourceTree = "<group>"; };
 		A6AE35061665FE6000AEF12B /* FractionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FractionTest.h; sourceTree = "<group>"; };
@@ -380,6 +394,8 @@
 		A676C091164CC20E00C0F859 = {
 			isa = PBXGroup;
 			children = (
+				A67CCA6F1669F005007561D9 /* Default-Portrait@2x~ipad.png */,
+				A67CCA6D1669EFF4007561D9 /* Default-Landscape@2x~ipad.png */,
 				A676C0A6164CC20E00C0F859 /* IDCalculator */,
 				A676C0CD164CC20F00C0F859 /* IDCalculatorTests */,
 				A676C09F164CC20E00C0F859 /* Frameworks */,
@@ -431,6 +447,11 @@
 		A676C0A7164CC20E00C0F859 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A67CCA711669F024007561D9 /* Default-568h@2x.png */,
+				A67CCA651669EDE7007561D9 /* Default-Landscape~ipad.png */,
+				A67CCA661669EDE7007561D9 /* Default-Portrait~ipad.png */,
+				A67CCA6B1669EF5A007561D9 /* Default-Landscape~ipad.png */,
+				A67CCA691669EF38007561D9 /* Default-Portrait~ipad.png */,
 				A6EEE6961662A20400310568 /* tabicon */,
 				A6EEE69416627F5800310568 /* Default.png */,
 				A6EEE69216627DA300310568 /* Default@2x.png */,
@@ -814,6 +835,13 @@
 				A6EEE6C01663066900310568 /* gear_24.png in Resources */,
 				A6EEE6C6166306BA00310568 /* chart_line_24.png in Resources */,
 				A6EEE6CD1663102F00310568 /* Settings.bundle in Resources */,
+				A67CCA671669EDE7007561D9 /* Default-Landscape~ipad.png in Resources */,
+				A67CCA681669EDE7007561D9 /* Default-Portrait~ipad.png in Resources */,
+				A67CCA6A1669EF38007561D9 /* Default-Portrait~ipad.png in Resources */,
+				A67CCA6C1669EF5A007561D9 /* Default-Landscape~ipad.png in Resources */,
+				A67CCA6E1669EFF4007561D9 /* Default-Landscape@2x~ipad.png in Resources */,
+				A67CCA701669F005007561D9 /* Default-Portrait@2x~ipad.png in Resources */,
+				A67CCA721669F024007561D9 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
