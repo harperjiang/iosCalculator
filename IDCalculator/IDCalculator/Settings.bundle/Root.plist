@@ -30,6 +30,38 @@
 			<key>DefaultValue</key>
 			<string>http://www.kooobao.cn</string>
 		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Console</string>
+		</dict>
+		<dict>
+			<key>Titles</key>
+			<array>
+				<string>10</string>
+				<string>14</string>
+				<string>18</string>
+				<string>20</string>
+				<string>24</string>
+			</array>
+			<key>DefaultValue</key>
+			<integer>14</integer>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Text Size</string>
+			<key>Key</key>
+			<string>console_textsize</string>
+			<key>Values</key>
+			<array>
+				<integer>10</integer>
+				<integer>14</integer>
+				<integer>18</integer>
+				<integer>20</integer>
+				<integer>24</integer>
+			</array>
+		</dict>
 	</array>
 	<key>StringsTable</key>
 	<string>Root</string>

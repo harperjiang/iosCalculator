@@ -1,20 +1,20 @@
 //
-//  ConsoleViewController.m
+//  PadConsoleViewController.m
 //  IDCalculator
 //
-//  Created by Harper Jiang on 11/9/12.
+//  Created by Harper Jiang on 11/28/12.
 //  Copyright (c) 2012 Harper Jiang. All rights reserved.
 //
 
-#import "ConsoleViewController.h"
+#import "PadConsoleViewController.h"
+#import "IDCConsole.h"
 #import "ViewHelper.h"
-#import <UIKit/UIDevice.h>
 
-#ifndef IOS_VERSION
-#define IOS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
-#endif
+@interface PadConsoleViewController ()
 
-@implementation ConsoleViewController
+@end
+
+@implementation PadConsoleViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -23,6 +23,12 @@
         // Custom initialization
     }
     return self;
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction) editingDone: (id) sender {
@@ -46,6 +52,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChange:) name:UIKeyboardWillHideNotification object:nil];
 }
 
+
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [ViewHelper consoleWillAppear:[self display]];
@@ -53,7 +60,7 @@
 
 - (void) keyboardWillChange:(NSNotification *)notification {
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 #endif
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_3_2
         NSValue *keyboardBoundsValue = [[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey];
@@ -64,7 +71,7 @@
         [keyboardBoundsValue getValue:&keyboardBounds];
         
         CGRect viewBounds = self.view.frame;
-        CGRect textFieldBounds = self.inputField.frame;
+        CGRect subviewBounds = self.keyboardView.frame;
         CGRect displayBounds = self.display.frame;
         
         [UIView beginAnimations:@"anim" context:NULL];
@@ -74,18 +81,18 @@
         
         if(keyboardBounds.origin.y >= viewBounds.size.height) {
             // keyboard is hidden
-            NSInteger offset = viewBounds.size.height - textFieldBounds.origin.y - textFieldBounds.size.height;
+            NSInteger offset = viewBounds.size.height - subviewBounds.origin.y - subviewBounds.size.height;
             displayBounds.size.height += offset;
-            textFieldBounds.origin.y += offset;
+            subviewBounds.origin.y += offset;
             [[self display] setFrame:displayBounds];
-            [[self inputField] setFrame:textFieldBounds];
+            [[self keyboardView] setFrame:subviewBounds];
         } else {
-            NSInteger newtextloc = keyboardBounds.origin.y - textFieldBounds.size.height - 20;
-            NSInteger offset = newtextloc - textFieldBounds.origin.y;
+            NSInteger newtextloc = keyboardBounds.origin.y - subviewBounds.size.height - 20;
+            NSInteger offset = newtextloc - subviewBounds.origin.y;
             displayBounds.size.height += offset;
-            textFieldBounds.origin.y += offset;
+            subviewBounds.origin.y += offset;
             [[self display] setFrame:displayBounds];
-            [[self inputField] setFrame:textFieldBounds];
+            [[self keyboardView] setFrame:subviewBounds];
         }
         // Scroll to the end
         [[self display] scrollRangeToVisible:NSMakeRange([[[self display] text] length], 0)];
@@ -95,14 +102,17 @@
 #endif
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (IBAction) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [[self inputField] resignFirstResponder];
 }
+
+-(void)textButtonPressed:(id)sender {
+    UIButton* button = (UIButton*) sender;
+    NSMutableString *buffer = [[NSMutableString alloc]initWithCapacity:10];
+    [buffer appendString:[[self inputField] text]];
+    [buffer appendString:[[button titleLabel] text]];
+    [self.inputField setText:buffer];
+}
+
 
 @end

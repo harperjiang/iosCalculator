@@ -67,6 +67,8 @@
 		A6CE38AB1665879500EDC49A /* GLESObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CE38AA1665879500EDC49A /* GLESObject.m */; };
 		A6CE38B0166587CB00EDC49A /* GLESContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CE38AF166587CB00EDC49A /* GLESContainer.m */; };
 		A6CE38B41665B01700EDC49A /* GLESObjectTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CE38B31665B01700EDC49A /* GLESObjectTest.m */; };
+		A6D7DF131666FBD400D7B705 /* PadConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D7DF121666FBD400D7B705 /* PadConsoleViewController.m */; };
+		A6D7DF16166709CD00D7B705 /* ViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D7DF15166709CD00D7B705 /* ViewHelper.m */; };
 		A6DE83FE164EDDEC002F6FFA /* VectorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DE83FD164EDDEC002F6FFA /* VectorTest.m */; };
 		A6EEE67F16616D5A00310568 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A6EEE67E16616D5A00310568 /* icon.png */; };
 		A6EEE6851661CD4900310568 /* FuncExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EEE6841661CD4900310568 /* FuncExpression.m */; };
@@ -239,6 +241,10 @@
 		A6CE38AF166587CB00EDC49A /* GLESContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLESContainer.m; sourceTree = "<group>"; };
 		A6CE38B21665B01700EDC49A /* GLESObjectTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLESObjectTest.h; sourceTree = "<group>"; };
 		A6CE38B31665B01700EDC49A /* GLESObjectTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLESObjectTest.m; sourceTree = "<group>"; };
+		A6D7DF111666FBD400D7B705 /* PadConsoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadConsoleViewController.h; sourceTree = "<group>"; };
+		A6D7DF121666FBD400D7B705 /* PadConsoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadConsoleViewController.m; sourceTree = "<group>"; };
+		A6D7DF14166709CD00D7B705 /* ViewHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewHelper.h; sourceTree = "<group>"; };
+		A6D7DF15166709CD00D7B705 /* ViewHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewHelper.m; sourceTree = "<group>"; };
 		A6DE83FC164EDDEC002F6FFA /* VectorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VectorTest.h; sourceTree = "<group>"; };
 		A6DE83FD164EDDEC002F6FFA /* VectorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VectorTest.m; sourceTree = "<group>"; };
 		A6EEE67E16616D5A00310568 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
@@ -530,16 +536,10 @@
 		A676C107164CD1DF00C0F859 /* ui */ = {
 			isa = PBXGroup;
 			children = (
-				A676C0E2164CC36400C0F859 /* CalculatorViewController.h */,
-				A676C0E3164CC36400C0F859 /* CalculatorViewController.m */,
-				A676C0BE164CC20E00C0F859 /* IDCViewController.h */,
-				A676C0BF164CC20E00C0F859 /* IDCViewController.m */,
-				A6B9745C164DEDE5007E4AB4 /* GraphViewController.h */,
-				A6B9745D164DEDE5007E4AB4 /* GraphViewController.m */,
-				A6B9745F164DF411007E4AB4 /* ConsoleViewController.h */,
-				A6B97460164DF411007E4AB4 /* ConsoleViewController.m */,
-				A6EEE6D016645DBB00310568 /* HelpViewController.h */,
-				A6EEE6D116645DBB00310568 /* HelpViewController.m */,
+				A6D7DF101666FBA200D7B705 /* iphone */,
+				A6D7DF0E1666FB9B00D7B705 /* ipad */,
+				A6D7DF14166709CD00D7B705 /* ViewHelper.h */,
+				A6D7DF15166709CD00D7B705 /* ViewHelper.m */,
 			);
 			name = ui;
 			sourceTree = "<group>";
@@ -660,6 +660,32 @@
 				A6CE38B31665B01700EDC49A /* GLESObjectTest.m */,
 			);
 			name = graph;
+			sourceTree = "<group>";
+		};
+		A6D7DF0E1666FB9B00D7B705 /* ipad */ = {
+			isa = PBXGroup;
+			children = (
+				A6D7DF111666FBD400D7B705 /* PadConsoleViewController.h */,
+				A6D7DF121666FBD400D7B705 /* PadConsoleViewController.m */,
+			);
+			name = ipad;
+			sourceTree = "<group>";
+		};
+		A6D7DF101666FBA200D7B705 /* iphone */ = {
+			isa = PBXGroup;
+			children = (
+				A676C0E2164CC36400C0F859 /* CalculatorViewController.h */,
+				A676C0E3164CC36400C0F859 /* CalculatorViewController.m */,
+				A676C0BE164CC20E00C0F859 /* IDCViewController.h */,
+				A676C0BF164CC20E00C0F859 /* IDCViewController.m */,
+				A6B9745C164DEDE5007E4AB4 /* GraphViewController.h */,
+				A6B9745D164DEDE5007E4AB4 /* GraphViewController.m */,
+				A6B9745F164DF411007E4AB4 /* ConsoleViewController.h */,
+				A6B97460164DF411007E4AB4 /* ConsoleViewController.m */,
+				A6EEE6D016645DBB00310568 /* HelpViewController.h */,
+				A6EEE6D116645DBB00310568 /* HelpViewController.m */,
+			);
+			name = iphone;
 			sourceTree = "<group>";
 		};
 		A6EEE6961662A20400310568 /* tabicon */ = {
@@ -866,6 +892,8 @@
 				A6EEE6D216645DBB00310568 /* HelpViewController.m in Sources */,
 				A6CE38AB1665879500EDC49A /* GLESObject.m in Sources */,
 				A6CE38B0166587CB00EDC49A /* GLESContainer.m in Sources */,
+				A6D7DF131666FBD400D7B705 /* PadConsoleViewController.m in Sources */,
+				A6D7DF16166709CD00D7B705 /* ViewHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
