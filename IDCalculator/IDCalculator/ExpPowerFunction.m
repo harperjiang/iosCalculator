@@ -23,7 +23,7 @@
 -(Function*) differentiate:(Variable *)variable {
     // e^f(x) = e^f(x) *f'(x)
     Function* dpower = [[self power] differentiate:variable];
-    Function* result = [[ArithmeticFunction alloc] init:self operator:MUL right:dpower];
+    Function* result = [[ArithmeticFunction alloc] init:self opr:MUL right:dpower];
     return [Cleaner clean:result];
 }
 

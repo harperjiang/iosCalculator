@@ -15,5 +15,6 @@
 @property(nonatomic,readonly,strong) NSString* name;
 
 +(SpecialConstant*) PI;
++(SpecialConstant*) E;
 
 @end

@@ -84,7 +84,7 @@
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef union YYSTYPE
-#line 15 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 15 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.ypp"
 {
     char* stringTerm;
     CData* data;
@@ -100,7 +100,7 @@ typedef union YYSTYPE
     CFuncExpression* func;
 }
 /* Line 1529 of yacc.c.  */
-#line 104 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/ConsoleParser.h"
+#line 104 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/ConsoleParser.h"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1

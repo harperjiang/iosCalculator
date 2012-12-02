@@ -8,18 +8,18 @@
 
 #import "ArithmeticFunction.h"
 #import "Cleaner.h"
-#import "IntegerConstant.h"
+#import "NumConstant.h"
 
 @implementation ArithmeticFunction
 
--(ArithmeticFunction*) init: (Function*)left operator:(Operator) opr right:(Function*) right {
+-(ArithmeticFunction*) init: (Function*)left opr:(Operator) opr right:(Function*) right {
     self = [super init];
     if(self) {
         if(left == nil)
-            left = [IntegerConstant ZERO];
+            left = [NumConstant ZERO];
         [self setLeft:left];
         [self setRight:right];
-        [self setOperator:opr];
+        [self setOpr:opr];
     }
     return self;
 }
@@ -29,24 +29,24 @@
     Function* dv = [[self right] differentiate:variable];
     Function* result = nil;
     Function* udv = nil, *vdu = nil,*uv = nil;
-    if([self operator] >= MUL) {
-        udv = [[ArithmeticFunction alloc] init:[self left] operator:MUL right:dv];
-        vdu = [[ArithmeticFunction alloc] init:[self right] operator:MUL right:du];
-        uv = [[ArithmeticFunction alloc] init:[self left] operator:MUL right:[self right]];
+    if([self opr] >= MUL) {
+        udv = [[ArithmeticFunction alloc] init:[self left] opr:MUL right:dv];
+        vdu = [[ArithmeticFunction alloc] init:[self right] opr:MUL right:du];
+        uv = [[ArithmeticFunction alloc] init:[self left] opr:MUL right:[self right]];
     }
-    switch([self operator]) {
+    switch([self opr]) {
         case ADD:
         case SUB:
             // du +/- dv
-            result = [[ArithmeticFunction alloc] init:du operator:[self operator] right:dv];
+            result = [[ArithmeticFunction alloc] init:du opr:[self opr] right:dv];
             break;
         case MUL:
             // udv + vdu
-            result = [[ArithmeticFunction alloc] init:udv operator:ADD right:vdu];
+            result = [[ArithmeticFunction alloc] init:udv opr:ADD right:vdu];
             break;
         case DIV:
             // (udv - vdu)/uv
-            result = [[ArithmeticFunction alloc] init:[[ArithmeticFunction alloc] init:udv operator:SUB right:vdu] operator:DIV right:uv];
+            result = [[ArithmeticFunction alloc] init:[[ArithmeticFunction alloc] init:udv opr:SUB right:vdu] opr:DIV right:uv];
             break;
         default:
             return nil;

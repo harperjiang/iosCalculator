@@ -62,6 +62,14 @@ CNumConstant::CNumConstant(int val) {
     this->value = val;
 }
 
+CNumConstant::~CNumConstant() {
+    
+}
+
 CSpecialConstant::CSpecialConstant(ConstantType type) {
-    this->type = type;
+    this->consType = type;
+}
+
+CSpecialConstant::~CSpecialConstant() {
+    
 }

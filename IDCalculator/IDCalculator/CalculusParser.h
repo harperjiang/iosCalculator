@@ -54,7 +54,8 @@
      VAR = 270,
      IOPR = 271,
      CONST_E = 272,
-     CONST_PI = 273
+     CONST_PI = 273,
+     LOW = 274
    };
 #endif
 /* Tokens.  */
@@ -74,13 +75,14 @@
 #define IOPR 271
 #define CONST_E 272
 #define CONST_PI 273
+#define LOW 274
 
 
 
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef union YYSTYPE
-#line 14 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 14 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
 {
     char* stringTerm;
     CFunction* func;
@@ -88,7 +90,7 @@ typedef union YYSTYPE
     CConstant* num;
 }
 /* Line 1529 of yacc.c.  */
-#line 92 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/CalculusParser.h"
+#line 94 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/CalculusParser.h"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1

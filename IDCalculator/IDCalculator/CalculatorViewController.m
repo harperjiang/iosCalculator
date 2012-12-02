@@ -7,9 +7,24 @@
 //
 
 #import "CalculatorViewController.h"
+#import "FunctionParser.h"
 
 
-@implementation CalculatorViewController
+@implementation CalculatorViewController {
+    NSMutableString* buffer;
+}
+
+-(NSMutableString*) buffer {
+    return buffer;
+}
+
+-(id)init {
+    self = [super init];
+    if(self) {
+        buffer = [[NSMutableString alloc] initWithCapacity:100];
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
@@ -23,13 +38,30 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) appendText:(NSString*) text {
+-(void) appendText:(NSString*) text {
     if([self textView]) {
         NSMutableString* stringBuffer = [[NSMutableString alloc] initWithCapacity:20];
         [stringBuffer appendString:[[self textView] text]];
         [stringBuffer appendString:text];
         [[self textView] setText:stringBuffer];
     }
+    // Buffer
+    [buffer appendString:text];
+}
+
+-(void) output: (NSString*) text {
+    NSMutableString* stringBuffer = [[NSMutableString alloc] initWithCapacity:20];
+    [stringBuffer appendString:[[self textView] text]];
+    [stringBuffer appendFormat:@"%@\n",text];
+    [[self textView] setText:stringBuffer];
+}
+
+-(IBAction) equalButtonClicked:(id)sender {
+    // Do calculation
+    NSString* output = [[Calculator instance] calculate : buffer];
+    [self output:output];
+    // Clear
+    [buffer setString:@""];
 }
 
 -(IBAction) backspaceButtonClicked:(id)sender {
@@ -39,10 +71,8 @@
     [stringBuffer appendString:[[self textView] text]];
     [stringBuffer deleteCharactersInRange:NSMakeRange([stringBuffer length]-1, 1)];
     [[self textView] setText:stringBuffer];
-}
-
--(IBAction) equalButtonClicked:(id)sender {
-    
+    // Buffer
+    [buffer deleteCharactersInRange:NSMakeRange([buffer length] -1, 1)];
 }
 
 - (IBAction) sinButtonClicked:(id) sender {
@@ -57,50 +87,9 @@
     [self appendText:@"ln("];
 }
 
-- (IBAction) numberButtonClicked:(id) sender {
+- (IBAction) textButtonClicked:(id) sender {
     UIButton* button = (UIButton*) sender;
     [self appendText:[[button titleLabel] text]];
-}
-
-- (IBAction) oprButtonClicked:(id) sender {
-    UIButton* button = (UIButton*) sender;
-    [self appendText:[[button titleLabel] text]];
-}
-
--(IBAction) powerButtonClicked:(id) sender {
-    [self appendText:@"^"];
-}
-
--(IBAction) integrateButtonClicked:(id) sender {
-    [self appendText:@"∫"];
-}
-
--(IBAction) differentiateButtonClicked:(id) sender {
-    [self appendText:@"d"];
-}
-
--(IBAction) lpButtonClicked:(id) sender {
-    [self appendText:@"("];
-}
-
--(IBAction) rpButtonClicked:(id) sender {
-    [self appendText:@")"];
-}
-
--(IBAction) dxButtonClicked:(id) sender {
-    [self appendText:@"dx"];
-}
-
--(IBAction) xButtonClicked:(id) sender {
-    [self appendText:@"x"];
-}
-
--(IBAction) eButtonClicked:(id) sender {
-    [self appendText:@"e"];
-}
-
--(IBAction) piButtonClicked:(id) sender {
-    [self appendText:@"π"];
 }
 
 @end

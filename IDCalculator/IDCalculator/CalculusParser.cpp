@@ -89,7 +89,8 @@
      VAR = 270,
      IOPR = 271,
      CONST_E = 272,
-     CONST_PI = 273
+     CONST_PI = 273,
+     LOW = 274
    };
 #endif
 /* Tokens.  */
@@ -109,12 +110,13 @@
 #define IOPR 271
 #define CONST_E 272
 #define CONST_PI 273
+#define LOW 274
 
 
 
 
 /* Copy the first part of user declarations.  */
-#line 1 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 1 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
 
 #include <stdio.h>
 #include "CalModel.h"
@@ -148,7 +150,7 @@ CFunction* calculus_result;
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef union YYSTYPE
-#line 14 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 14 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
 {
     char* stringTerm;
     CFunction* func;
@@ -156,7 +158,7 @@ typedef union YYSTYPE
     CConstant* num;
 }
 /* Line 193 of yacc.c.  */
-#line 160 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/CalculusParser.cpp"
+#line 162 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/CalculusParser.cpp"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
@@ -169,7 +171,7 @@ typedef union YYSTYPE
 
 
 /* Line 216 of yacc.c.  */
-#line 173 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/CalculusParser.cpp"
+#line 175 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/CalculusParser.cpp"
 
 #ifdef short
 # undef short
@@ -382,22 +384,22 @@ union yyalloc
 #endif
 
 /* YYFINAL -- State number of the termination state.  */
-#define YYFINAL  18
+#define YYFINAL  20
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   67
+#define YYLAST   213
 
 /* YYNTOKENS -- Number of terminals.  */
-#define YYNTOKENS  19
+#define YYNTOKENS  20
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  5
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  19
+#define YYNRULES  21
 /* YYNRULES -- Number of states.  */
-#define YYNSTATES  37
+#define YYNSTATES  41
 
 /* YYTRANSLATE(YYLEX) -- Bison symbol number corresponding to YYLEX.  */
 #define YYUNDEFTOK  2
-#define YYMAXUTOK   273
+#define YYMAXUTOK   274
 
 #define YYTRANSLATE(YYX)						\
   ((unsigned int) (YYX) <= YYMAXUTOK ? yytranslate[YYX] : YYUNDEFTOK)
@@ -432,7 +434,7 @@ static const yytype_uint8 yytranslate[] =
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     1,     2,     3,     4,
        5,     6,     7,     8,     9,    10,    11,    12,    13,    14,
-      15,    16,    17,    18
+      15,    16,    17,    18,    19
 };
 
 #if YYDEBUG
@@ -440,26 +442,29 @@ static const yytype_uint8 yytranslate[] =
    YYRHS.  */
 static const yytype_uint8 yyprhs[] =
 {
-       0,     0,     3,     5,     9,    13,    16,    20,    24,    28,
-      33,    38,    44,    46,    48,    50,    52,    54,    56,    58
+       0,     0,     3,     5,     9,    13,    17,    20,    24,    27,
+      31,    35,    40,    45,    51,    53,    55,    57,    59,    61,
+      63,    65
 };
 
 /* YYRHS -- A `-1'-separated list of the rules' RHS.  */
 static const yytype_int8 yyrhs[] =
 {
-      20,     0,    -1,    21,    -1,    21,     6,    21,    -1,    21,
-       7,    21,    -1,     7,    21,    -1,    21,     8,    21,    -1,
-      21,     9,    21,    -1,    21,    10,    21,    -1,    22,     4,
-      21,     5,    -1,    16,    21,    14,    21,    -1,    14,    21,
-       9,    14,    21,    -1,    15,    -1,    23,    -1,    11,    -1,
-      12,    -1,    13,    -1,     3,    -1,    18,    -1,    17,    -1
+      21,     0,    -1,    22,    -1,     4,    22,     5,    -1,    22,
+       6,    22,    -1,    22,     7,    22,    -1,     7,    22,    -1,
+      22,     8,    22,    -1,    22,    22,    -1,    22,     9,    22,
+      -1,    22,    10,    22,    -1,    23,     4,    22,     5,    -1,
+      16,    22,    14,    22,    -1,    14,    22,     9,    14,    22,
+      -1,    15,    -1,    24,    -1,    11,    -1,    12,    -1,    13,
+      -1,     3,    -1,    18,    -1,    17,    -1
 };
 
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    39,    39,    40,    41,    42,    43,    44,    45,    46,
-      47,    48,    49,    50,    51,    52,    53,    54,    55,    56
+       0,    42,    42,    43,    44,    45,    46,    47,    48,    49,
+      50,    51,    52,    53,    54,    55,    56,    57,    58,    59,
+      60,    61
 };
 #endif
 
@@ -470,7 +475,7 @@ static const char *const yytname[] =
 {
   "$end", "error", "$undefined", "NUM", "LP", "RP", "OADD", "OSUB",
   "OMUL", "ODIV", "POWER", "FUNC_SIN", "FUNC_COS", "FUNC_LN", "DOPR",
-  "VAR", "IOPR", "CONST_E", "CONST_PI", "$accept", "result", "func",
+  "VAR", "IOPR", "CONST_E", "CONST_PI", "LOW", "$accept", "result", "func",
   "namefunc", "num", 0
 };
 #endif
@@ -481,22 +486,24 @@ static const char *const yytname[] =
 static const yytype_uint16 yytoknum[] =
 {
        0,   256,   257,   258,   259,   260,   261,   262,   263,   264,
-     265,   266,   267,   268,   269,   270,   271,   272,   273
+     265,   266,   267,   268,   269,   270,   271,   272,   273,   274
 };
 # endif
 
 /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
 static const yytype_uint8 yyr1[] =
 {
-       0,    19,    20,    21,    21,    21,    21,    21,    21,    21,
-      21,    21,    21,    21,    22,    22,    22,    23,    23,    23
+       0,    20,    21,    22,    22,    22,    22,    22,    22,    22,
+      22,    22,    22,    22,    22,    22,    23,    23,    23,    24,
+      24,    24
 };
 
 /* YYR2[YYN] -- Number of symbols composing right hand side of rule YYN.  */
 static const yytype_uint8 yyr2[] =
 {
-       0,     2,     1,     3,     3,     2,     3,     3,     3,     4,
-       4,     5,     1,     1,     1,     1,     1,     1,     1,     1
+       0,     2,     1,     3,     3,     3,     2,     3,     2,     3,
+       3,     4,     4,     5,     1,     1,     1,     1,     1,     1,
+       1,     1
 };
 
 /* YYDEFACT[STATE-NAME] -- Default rule to reduce with in state
@@ -504,70 +511,103 @@ static const yytype_uint8 yyr2[] =
    means the default is an error.  */
 static const yytype_uint8 yydefact[] =
 {
-       0,    17,     0,    14,    15,    16,     0,    12,     0,    19,
-      18,     0,     2,     0,    13,     5,     0,     0,     1,     0,
-       0,     0,     0,     0,     0,     0,     0,     3,     4,     6,
-       7,     8,     0,     0,    10,     9,    11
+       0,    19,     0,     0,    16,    17,    18,     0,    14,     0,
+      21,    20,     0,     2,     0,    15,     0,     6,     0,     0,
+       1,     0,     0,     0,     0,     0,     8,     0,     3,     0,
+       0,     4,     5,     7,     9,    10,     0,     0,    12,    11,
+      13
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-      -1,    11,    30,    13,    14
+      -1,    12,    26,    14,    15
 };
 
 /* YYPACT[STATE-NUM] -- Index in YYTABLE of the portion describing
    STATE-NUM.  */
-#define YYPACT_NINF -7
-static const yytype_int8 yypact[] =
+#define YYPACT_NINF -1
+static const yytype_int16 yypact[] =
 {
-      -2,    -7,    -2,    -7,    -7,    -7,    -2,    -7,    -2,    -7,
-      -7,     3,    52,    13,    -7,    -6,    57,    37,    -7,    -2,
-      -2,    -2,    -2,    -2,    -2,    24,    -2,    20,    20,    -6,
-      -6,    -7,    47,    -2,    -7,    -7,    -7
+     131,    -1,   131,   131,    -1,    -1,    -1,   131,    -1,   131,
+      -1,    -1,     1,    67,     4,    -1,    35,   179,    83,    99,
+      -1,   131,   131,   131,   131,   131,    67,   131,    -1,   147,
+     131,     2,   115,   163,   163,   179,    51,   131,   195,    -1,
+     195
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-      -7,    -7,     0,    -7,    -7
+      -1,    -1,     0,    -1,    -1
 };
 
 /* YYTABLE[YYPACT[STATE-NUM]].  What to do in state STATE-NUM.  If
    positive, shift that token.  If negative, reduce the rule which
    number is the opposite.  If zero, do what YYDEFACT says.
    If YYTABLE_NINF, syntax error.  */
-#define YYTABLE_NINF -1
-static const yytype_uint8 yytable[] =
+#define YYTABLE_NINF -7
+static const yytype_int8 yytable[] =
 {
-      12,     1,    15,    18,    23,     2,    16,     0,    17,     3,
-       4,     5,     6,     7,     8,     9,    10,    24,     0,    27,
-      28,    29,     0,    31,    32,     0,    34,     1,    21,    22,
-      23,     2,     0,    36,     0,     3,     4,     5,    33,     7,
-       8,     9,    10,    19,    20,    21,    22,    23,     0,     0,
-       0,    26,    35,    19,    20,    21,    22,    23,    19,    20,
-      21,    22,    23,    19,    20,    21,    25,    23
+      13,    20,    16,    17,     0,     1,     2,    18,    27,    19,
+      23,    24,    25,     4,     5,     6,     7,     8,     9,    10,
+      11,    31,    32,    33,    34,    35,     0,    36,     0,    34,
+      38,     0,     0,     0,     0,     0,     0,    40,     1,     2,
+      28,    21,    22,    23,    24,    25,     4,     5,     6,     7,
+       8,     9,    10,    11,     1,     2,    39,    21,    22,    23,
+      24,    25,     4,     5,     6,     7,     8,     9,    10,    11,
+       1,     2,     0,    21,    22,    23,    24,    25,     4,     5,
+       6,     7,     8,     9,    10,    11,     1,     2,     0,    21,
+      22,    23,    29,    25,     4,     5,     6,     7,     8,     9,
+      10,    11,     1,     2,     0,    21,    22,    23,    24,    25,
+       4,     5,     6,    30,     8,     9,    10,    11,     1,     2,
+       0,     0,     0,    -6,    -6,    -6,     4,     5,     6,     7,
+       8,     9,    10,    11,     1,     2,     0,     0,     3,     0,
+       0,     0,     4,     5,     6,     7,     8,     9,    10,    11,
+       1,     2,     0,     0,     3,     0,     0,     0,     4,     5,
+       6,    37,     8,     9,    10,    11,     1,     2,     0,     0,
+       0,     0,     0,    25,     4,     5,     6,     7,     8,     9,
+      10,    11,     1,     2,     0,     0,     0,     0,     0,     0,
+       4,     5,     6,     7,     8,     9,    10,    11,     1,     2,
+       0,     0,     0,     0,     0,     0,     4,     5,     6,     0,
+       8,     0,    10,    11
 };
 
 static const yytype_int8 yycheck[] =
 {
-       0,     3,     2,     0,    10,     7,     6,    -1,     8,    11,
-      12,    13,    14,    15,    16,    17,    18,     4,    -1,    19,
-      20,    21,    -1,    23,    24,    -1,    26,     3,     8,     9,
-      10,     7,    -1,    33,    -1,    11,    12,    13,    14,    15,
-      16,    17,    18,     6,     7,     8,     9,    10,    -1,    -1,
-      -1,    14,     5,     6,     7,     8,     9,    10,     6,     7,
-       8,     9,    10,     6,     7,     8,     9,    10
+       0,     0,     2,     3,    -1,     3,     4,     7,     4,     9,
+       8,     9,    10,    11,    12,    13,    14,    15,    16,    17,
+      18,    21,    22,    23,    24,    25,    -1,    27,    -1,    29,
+      30,    -1,    -1,    -1,    -1,    -1,    -1,    37,     3,     4,
+       5,     6,     7,     8,     9,    10,    11,    12,    13,    14,
+      15,    16,    17,    18,     3,     4,     5,     6,     7,     8,
+       9,    10,    11,    12,    13,    14,    15,    16,    17,    18,
+       3,     4,    -1,     6,     7,     8,     9,    10,    11,    12,
+      13,    14,    15,    16,    17,    18,     3,     4,    -1,     6,
+       7,     8,     9,    10,    11,    12,    13,    14,    15,    16,
+      17,    18,     3,     4,    -1,     6,     7,     8,     9,    10,
+      11,    12,    13,    14,    15,    16,    17,    18,     3,     4,
+      -1,    -1,    -1,     8,     9,    10,    11,    12,    13,    14,
+      15,    16,    17,    18,     3,     4,    -1,    -1,     7,    -1,
+      -1,    -1,    11,    12,    13,    14,    15,    16,    17,    18,
+       3,     4,    -1,    -1,     7,    -1,    -1,    -1,    11,    12,
+      13,    14,    15,    16,    17,    18,     3,     4,    -1,    -1,
+      -1,    -1,    -1,    10,    11,    12,    13,    14,    15,    16,
+      17,    18,     3,     4,    -1,    -1,    -1,    -1,    -1,    -1,
+      11,    12,    13,    14,    15,    16,    17,    18,     3,     4,
+      -1,    -1,    -1,    -1,    -1,    -1,    11,    12,    13,    -1,
+      15,    -1,    17,    18
 };
 
 /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
    symbol of state STATE-NUM.  */
 static const yytype_uint8 yystos[] =
 {
-       0,     3,     7,    11,    12,    13,    14,    15,    16,    17,
-      18,    20,    21,    22,    23,    21,    21,    21,     0,     6,
-       7,     8,     9,    10,     4,     9,    14,    21,    21,    21,
-      21,    21,    21,    14,    21,     5,    21
+       0,     3,     4,     7,    11,    12,    13,    14,    15,    16,
+      17,    18,    21,    22,    23,    24,    22,    22,    22,    22,
+       0,     6,     7,     8,     9,    10,    22,     4,     5,     9,
+      14,    22,    22,    22,    22,    22,    22,    14,    22,     5,
+      22
 };
 
 #define yyerrok		(yyerrstatus = 0)
@@ -1382,98 +1422,108 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 39 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 42 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {calculus_result = (yyvsp[(1) - (1)].func);}
     break;
 
   case 3:
-#line 40 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
-    {(yyval.func) = new CArithFunc((yyvsp[(1) - (3)].func),ADD,(yyvsp[(3) - (3)].func));}
+#line 43 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.func) = (yyvsp[(2) - (3)].func);}
     break;
 
   case 4:
-#line 41 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
-    {(yyval.func) = new CArithFunc((yyvsp[(1) - (3)].func),SUB,(yyvsp[(3) - (3)].func));}
+#line 44 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.func) = new CArithFunc((yyvsp[(1) - (3)].func),ADD,(yyvsp[(3) - (3)].func));}
     break;
 
   case 5:
-#line 42 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
-    {(yyval.func) = new CArithFunc(NULL,SUB,(yyvsp[(2) - (2)].func));}
+#line 45 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.func) = new CArithFunc((yyvsp[(1) - (3)].func),SUB,(yyvsp[(3) - (3)].func));}
     break;
 
   case 6:
-#line 43 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
-    {(yyval.func) = new CArithFunc((yyvsp[(1) - (3)].func),MUL,(yyvsp[(3) - (3)].func));}
+#line 46 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.func) = new CArithFunc(NULL,SUB,(yyvsp[(2) - (2)].func));}
     break;
 
   case 7:
-#line 44 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
-    {(yyval.func) = new CArithFunc((yyvsp[(1) - (3)].func),DIV,(yyvsp[(3) - (3)].func));}
+#line 47 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.func) = new CArithFunc((yyvsp[(1) - (3)].func),MUL,(yyvsp[(3) - (3)].func));}
     break;
 
   case 8:
-#line 45 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
-    {(yyval.func) = new CPowerFunc((yyvsp[(1) - (3)].func),(yyvsp[(3) - (3)].func));}
+#line 48 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.func) = new CArithFunc((yyvsp[(1) - (2)].func),MUL,(yyvsp[(2) - (2)].func));}
     break;
 
   case 9:
-#line 46 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
-    {(yyval.func) = (yyvsp[(1) - (4)].namefunc); (yyvsp[(1) - (4)].namefunc)->param = (yyvsp[(3) - (4)].func);}
+#line 49 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.func) = new CArithFunc((yyvsp[(1) - (3)].func),DIV,(yyvsp[(3) - (3)].func));}
     break;
 
   case 10:
-#line 47 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
-    {(yyval.func) = new CIntFunc((yyvsp[(2) - (4)].func),(yyvsp[(4) - (4)].func));}
+#line 50 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.func) = new CPowerFunc((yyvsp[(1) - (3)].func),(yyvsp[(3) - (3)].func));}
     break;
 
   case 11:
-#line 48 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
-    {(yyval.func) = new CDiffFunc((yyvsp[(2) - (5)].func),(yyvsp[(5) - (5)].func));}
+#line 51 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.func) = (yyvsp[(1) - (4)].namefunc); (yyvsp[(1) - (4)].namefunc)->param = (yyvsp[(3) - (4)].func);}
     break;
 
   case 12:
-#line 49 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
-    {(yyval.func) = new CVariable();}
+#line 52 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.func) = new CIntFunc((yyvsp[(2) - (4)].func),(yyvsp[(4) - (4)].func));}
     break;
 
   case 13:
-#line 50 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
-    {(yyval.func) = (yyvsp[(1) - (1)].num);}
+#line 53 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.func) = new CDiffFunc((yyvsp[(2) - (5)].func),(yyvsp[(5) - (5)].func));}
     break;
 
   case 14:
-#line 51 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
-    {(yyval.namefunc) = new CNameFunc(SIN,NULL);}
+#line 54 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.func) = new CVariable();}
     break;
 
   case 15:
-#line 52 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
-    {(yyval.namefunc) = new CNameFunc(COS,NULL);}
+#line 55 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.func) = (yyvsp[(1) - (1)].num);}
     break;
 
   case 16:
-#line 53 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
-    {(yyval.namefunc) = new CNameFunc(LN,NULL);}
+#line 56 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.namefunc) = new CNameFunc(NF_SIN,NULL);}
     break;
 
   case 17:
-#line 54 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
-    {int val = atoi(yylval.stringTerm); (yyval.num) = new CNumConstant(val);}
+#line 57 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.namefunc) = new CNameFunc(NF_COS,NULL);}
     break;
 
   case 18:
-#line 55 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
-    {(yyval.num) = new CSpecialConstant(CT_PI);}
+#line 58 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.namefunc) = new CNameFunc(NF_LN,NULL);}
     break;
 
   case 19:
-#line 56 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 59 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {int val = atoi(yylval.stringTerm); (yyval.num) = new CNumConstant(val);}
+    break;
+
+  case 20:
+#line 60 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.num) = new CSpecialConstant(CT_PI);}
+    break;
+
+  case 21:
+#line 61 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.num) = new CSpecialConstant(CT_E);}
     break;
 
 
 /* Line 1267 of yacc.c.  */
-#line 1477 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/CalculusParser.cpp"
+#line 1527 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/CalculusParser.cpp"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1687,5 +1737,5 @@ yyreturn:
 }
 
 
-#line 57 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 62 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
 

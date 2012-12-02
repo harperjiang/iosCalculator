@@ -8,7 +8,7 @@
 
 #import "BasicFunction.h"
 #import "ArithmeticFunction.h"
-#import "IntegerConstant.h"
+#import "NumConstant.h"
 #import "Cleaner.h"
 
 @implementation BasicFunction
@@ -26,19 +26,19 @@
     Function* inner = [[self base] differentiate:variable];
     Function* transformed = nil;
     switch ([self type]) {
-        case SIN:
-            transformed = [[BasicFunction alloc] init:COS base:[self base]];
+        case BT_SIN:
+            transformed = [[BasicFunction alloc] init:BT_COS base:[self base]];
             break;
-        case COS:
-            transformed = [[ArithmeticFunction alloc] init:nil operator:SUB right:[[BasicFunction alloc] init:SIN base:[self base]]];
+        case BT_COS:
+            transformed = [[ArithmeticFunction alloc] init:nil opr:SUB right:[[BasicFunction alloc] init:BT_SIN base:[self base]]];
             break;
-        case LN:
-            transformed = [[ArithmeticFunction alloc] init:[IntegerConstant ONE] operator:DIV right:[self base]];
+        case BT_LN:
+            transformed = [[ArithmeticFunction alloc] init:[NumConstant ONE] opr:DIV right:[self base]];
             break;
         default:
             return nil;
     }
-    return [Cleaner clean:[[ArithmeticFunction alloc] init:inner operator:MUL right:transformed]];
+    return [Cleaner clean:[[ArithmeticFunction alloc] init:inner opr:MUL right:transformed]];
 }
 
 @end

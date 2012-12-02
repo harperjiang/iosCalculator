@@ -110,7 +110,7 @@
 
 
 /* Copy the first part of user declarations.  */
-#line 1 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 1 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.ypp"
 
 #include <stdio.h>
 #include <list>
@@ -145,7 +145,7 @@ CCommand* parse_result;
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef union YYSTYPE
-#line 15 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 15 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.ypp"
 {
     char* stringTerm;
     CData* data;
@@ -161,7 +161,7 @@ typedef union YYSTYPE
     CFuncExpression* func;
 }
 /* Line 193 of yacc.c.  */
-#line 165 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/ConsoleParser.cpp"
+#line 165 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/ConsoleParser.cpp"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
@@ -174,7 +174,7 @@ typedef union YYSTYPE
 
 
 /* Line 216 of yacc.c.  */
-#line 178 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/ConsoleParser.cpp"
+#line 178 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/ConsoleParser.cpp"
 
 #ifdef short
 # undef short
@@ -1400,139 +1400,139 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 61 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 61 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.ypp"
     {parse_result = new CClearCommand();YYACCEPT;}
     break;
 
   case 3:
-#line 62 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 62 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.ypp"
     {parse_result = new CAssignCommand((yyvsp[(1) - (3)].id),(yyvsp[(3) - (3)].exp));}
     break;
 
   case 4:
-#line 63 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 63 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.ypp"
     {parse_result = new CExpCommand((yyvsp[(1) - (1)].exp));}
     break;
 
   case 5:
-#line 65 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 65 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.ypp"
     {CExpList* expList = new CExpList(); expList->add((yyvsp[(1) - (2)].exp));(yyval.func) = new CFuncExpression(new
                                                 CIdentifier("transpose"),expList);}
     break;
 
   case 6:
-#line 67 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 67 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.ypp"
     {(yyval.func) = new CFuncExpression((yyvsp[(1) - (4)].id),(yyvsp[(3) - (4)].expList));}
     break;
 
   case 7:
-#line 69 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 69 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.ypp"
     {(yyval.matrix) = new CMatrix(); (yyval.matrix)->content = (yyvsp[(2) - (3)].rowList);}
     break;
 
   case 8:
-#line 71 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 71 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.ypp"
     {(yyval.rowList) = new CExpList(); (yyval.rowList)->insert(0,(yyvsp[(1) - (1)].dataList));}
     break;
 
   case 9:
-#line 72 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 72 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.ypp"
     {(yyval.rowList) = (yyvsp[(3) - (3)].rowList); (yyvsp[(3) - (3)].rowList)->insert(0,(yyvsp[(1) - (3)].dataList));}
     break;
 
   case 10:
-#line 74 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 74 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.ypp"
     {(yyval.expList) = new CExpList(); (yyval.expList)->insert(0,(yyvsp[(1) - (1)].exp));}
     break;
 
   case 11:
-#line 75 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 75 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.ypp"
     {(yyval.expList) = (yyvsp[(3) - (3)].expList); (yyval.expList)->insert(0,(yyvsp[(1) - (3)].exp));}
     break;
 
   case 12:
-#line 77 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 77 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.ypp"
     {(yyval.exp) = (yyvsp[(1) - (1)].num);}
     break;
 
   case 13:
-#line 78 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 78 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.ypp"
     {(yyval.exp) = (yyvsp[(1) - (1)].id);}
     break;
 
   case 14:
-#line 79 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 79 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.ypp"
     {(yyval.exp) = (yyvsp[(2) - (3)].exp);}
     break;
 
   case 15:
-#line 80 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 80 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.ypp"
     {(yyval.exp) = new CArithExpression((yyvsp[(1) - (3)].exp),ADD,(yyvsp[(3) - (3)].exp));}
     break;
 
   case 16:
-#line 81 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 81 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.ypp"
     {(yyval.exp) = new CArithExpression((yyvsp[(1) - (3)].exp),SUB,(yyvsp[(3) - (3)].exp));}
     break;
 
   case 17:
-#line 82 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 82 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.ypp"
     {(yyval.exp) = new CArithExpression(NULL,SUB,(yyvsp[(2) - (2)].exp));}
     break;
 
   case 18:
-#line 83 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 83 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.ypp"
     {(yyval.exp) = new CArithExpression((yyvsp[(1) - (3)].exp),MUL,(yyvsp[(3) - (3)].exp));}
     break;
 
   case 19:
-#line 84 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 84 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.ypp"
     {(yyval.exp) = new CArithExpression((yyvsp[(1) - (3)].exp),DIV,(yyvsp[(3) - (3)].exp));}
     break;
 
   case 20:
-#line 85 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 85 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.ypp"
     {(yyval.exp) = (yyvsp[(1) - (1)].matrix);}
     break;
 
   case 21:
-#line 86 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 86 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.ypp"
     {(yyval.exp) = (yyvsp[(1) - (1)].func);}
     break;
 
   case 22:
-#line 88 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 88 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.ypp"
     {(yyval.dataList) = new CExpList(); (yyval.dataList)->insert(0,(yyvsp[(1) - (1)].data));}
     break;
 
   case 23:
-#line 89 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 89 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.ypp"
     {(yyval.dataList) = (yyvsp[(2) - (2)].dataList); (yyval.dataList)->insert(0,(yyvsp[(1) - (2)].data));}
     break;
 
   case 24:
-#line 91 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 91 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.ypp"
     {(yyval.id) = new CIdentifier(yylval.stringTerm);}
     break;
 
   case 25:
-#line 93 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 93 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.ypp"
     {(yyval.data) = (yyvsp[(1) - (1)].num);}
     break;
 
   case 26:
-#line 94 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 94 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.ypp"
     {(yyval.data) = new CFracData((yyvsp[(1) - (3)].num)->value,(yyvsp[(3) - (3)].num)->value);}
     break;
 
   case 27:
-#line 96 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 96 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.ypp"
     {(yyval.num) = new CNumData(atoi(yylval.stringTerm));}
     break;
 
 
 /* Line 1267 of yacc.c.  */
-#line 1536 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/ConsoleParser.cpp"
+#line 1536 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/ConsoleParser.cpp"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1746,5 +1746,5 @@ yyreturn:
 }
 
 
-#line 97 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 97 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.ypp"
 

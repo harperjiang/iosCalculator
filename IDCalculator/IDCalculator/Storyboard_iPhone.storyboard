@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="sfW-qe-gfL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="sfW-qe-gfL">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--View Controller - Console-->
@@ -177,7 +177,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="powerButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="Vj1-Im-i66"/>
+                                    <action selector="textButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="3C4-4I-hkX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dGM-16-LQP">
@@ -192,7 +192,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="dxButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="abe-N0-jJ8"/>
+                                    <action selector="textButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="ATE-oU-rbP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oLk-u7-Zpi">
@@ -207,7 +207,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="lpButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="deZ-2p-xy9"/>
+                                    <action selector="textButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="9St-Ad-E2p"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oX9-0y-ciU">
@@ -222,7 +222,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="rpButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="VbJ-AA-ljn"/>
+                                    <action selector="textButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="3HL-Rm-zZF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6Ox-ha-LGc">
@@ -237,7 +237,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="differentiateButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="yZx-GA-KMc"/>
+                                    <action selector="textButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="Mno-OV-YYm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mYc-vS-BR7">
@@ -252,7 +252,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="xButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="ZSX-jJ-ErT"/>
+                                    <action selector="textButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="jSU-Ck-64L"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xKK-QY-1WQ">
@@ -267,7 +267,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="numberButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="2c8-gx-nLd"/>
+                                    <action selector="textButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="NyJ-TQ-P79"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eT5-QG-7Im">
@@ -282,7 +282,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="numberButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="jXo-ng-c0S"/>
+                                    <action selector="textButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="Qfd-gP-Yg1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6jw-ZZ-8fX">
@@ -297,7 +297,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="numberButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="bID-ak-MUf"/>
+                                    <action selector="textButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="edn-gs-2RN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cHo-kt-6oi">
@@ -312,7 +312,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="numberButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="73a-9d-8L2"/>
+                                    <action selector="textButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="aHB-NO-LAd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rx2-yq-8Uw">
@@ -327,7 +327,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="numberButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="ZSf-uC-E5C"/>
+                                    <action selector="textButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="COZ-8K-cqM"/>
                                 </connections>
                             </button>
                             <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MmV-iO-VTe">
@@ -342,7 +342,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="numberButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="guh-bf-hoU"/>
+                                    <action selector="textButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="vta-NK-7yS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="D9g-av-RL7">
@@ -357,7 +357,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="numberButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="SFX-xp-hdc"/>
+                                    <action selector="textButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="wtb-PG-Xvb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rsk-pj-Qa1">
@@ -372,7 +372,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="numberButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="gvC-ZM-cN1"/>
+                                    <action selector="textButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="Z8Z-aC-nPQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Yve-Sy-qYd">
@@ -387,14 +387,14 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="numberButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="kTe-Md-WYL"/>
+                                    <action selector="textButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="60O-xZ-FTD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jEM-PT-H0j">
                                 <rect key="frame" x="91" y="363" width="40" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="×">
+                                <state key="normal" title="*">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -402,7 +402,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="oprButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="QU2-H8-1gb"/>
+                                    <action selector="textButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="2Sf-Fl-mnB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Hqg-zS-1kk">
@@ -417,7 +417,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="oprButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="7js-e0-c6Y"/>
+                                    <action selector="textButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="g1g-2n-RE4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YmP-py-S5H">
@@ -432,7 +432,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="eButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="hXf-JF-mxw"/>
+                                    <action selector="textButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="v08-gf-xHh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="j2P-ti-Iau">
@@ -447,7 +447,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="oprButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="dTk-Bb-Eqd"/>
+                                    <action selector="textButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="mey-Co-cnW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Owl-ab-ntb">
@@ -462,7 +462,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="oprButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="xAS-9p-Gy8"/>
+                                    <action selector="textButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="qN1-7F-5wJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7yk-Ye-8B5">
@@ -477,7 +477,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="integrateButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="WDn-5W-pKP"/>
+                                    <action selector="textButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="TCj-jQ-w53"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vvr-dG-Ys0">
@@ -492,7 +492,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="piButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="9V0-Ev-4j1"/>
+                                    <action selector="textButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="DwA-En-yIR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nnb-Rk-Eno">
@@ -507,7 +507,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="numberButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="aKe-59-qVe"/>
+                                    <action selector="textButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="DPk-eR-jty"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KUw-RM-cdb">
@@ -536,6 +536,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="equalButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="OHo-T7-Mg8"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -651,20 +654,10 @@
             <relationships>
                 <relationship kind="action" name="backspaceButtonClicked:"/>
                 <relationship kind="action" name="cosButtonClicked:"/>
-                <relationship kind="action" name="differentiateButtonClicked:"/>
-                <relationship kind="action" name="dxButtonClicked:"/>
-                <relationship kind="action" name="eButtonClicked:"/>
                 <relationship kind="action" name="equalButtonClicked:"/>
-                <relationship kind="action" name="integrateButtonClicked:"/>
                 <relationship kind="action" name="lnButtonClicked:"/>
-                <relationship kind="action" name="lpButtonClicked:"/>
-                <relationship kind="action" name="numberButtonClicked:"/>
-                <relationship kind="action" name="oprButtonClicked:"/>
-                <relationship kind="action" name="piButtonClicked:"/>
-                <relationship kind="action" name="powerButtonClicked:"/>
-                <relationship kind="action" name="rpButtonClicked:"/>
                 <relationship kind="action" name="sinButtonClicked:"/>
-                <relationship kind="action" name="xButtonClicked:"/>
+                <relationship kind="action" name="textButtonClicked:"/>
                 <relationship kind="outlet" name="cosButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="lnButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="sinButton" candidateClass="UIButton"/>

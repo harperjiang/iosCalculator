@@ -10,4 +10,17 @@
 
 @implementation Variable
 
+static Variable* x;
+
++(void)initialize {
+    if([self class] == [Variable class]) {
+        x = [[Variable alloc] init];
+        x.name = @"x";
+    }
+}
+
++(Variable*) x {
+    return x;
+}
+
 @end

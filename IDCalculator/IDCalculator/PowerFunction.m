@@ -7,7 +7,7 @@
 //
 
 #import "PowerFunction.h"
-#import "IntegerConstant.h"
+#import "NumConstant.h"
 #import "ArithmeticFunction.h"
 #import "Cleaner.h"
 
@@ -25,9 +25,9 @@
 -(Function*) differentiate:(Variable *)variable {
     // (f(x)^b)' = bf(x)^(b-1)*f(x)'
     Function* dbase = [[self base] differentiate:variable];
-    Function* newPower = [[PowerFunction alloc] init:[self base] power:[[self power] sub:[IntegerConstant ONE]]];
-    Function* bfx = [[ArithmeticFunction alloc] init:[self power] operator:MUL right:newPower];
-    Function* result = [[ArithmeticFunction alloc] init:bfx operator:MUL right:dbase];
+    Function* newPower = [[PowerFunction alloc] init:[self base] power:[[self power] sub:[NumConstant ONE]]];
+    Function* bfx = [[ArithmeticFunction alloc] init:[self power] opr:MUL right:newPower];
+    Function* result = [[ArithmeticFunction alloc] init:bfx opr:MUL right:dbase];
     
     return [Cleaner clean:result];
 }

@@ -10,4 +10,7 @@
 
 @interface InteFunction : Function
 
+@property(nonatomic,strong) Function* base;
+@property(nonatomic,strong) Function* factor;
+
 @end

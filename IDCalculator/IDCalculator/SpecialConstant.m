@@ -11,6 +11,7 @@
 @implementation SpecialConstant
 
 static SpecialConstant* PI;
+static SpecialConstant* E;
 
 -(SpecialConstant*) init:(NSString*)name {
     self = [super init];
@@ -27,6 +28,7 @@ static SpecialConstant* PI;
 +(void) initialize {
     if([self class] == [SpecialConstant class]) {
         PI = [[SpecialConstant alloc] init:@"π"];
+        E = [[SpecialConstant alloc] init:@"e"];
     }
 }
 
@@ -34,4 +36,7 @@ static SpecialConstant* PI;
     return PI;
 }
 
++(SpecialConstant*) E {
+    return E;
+}
 @end

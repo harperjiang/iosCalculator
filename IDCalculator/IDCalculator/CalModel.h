@@ -12,12 +12,26 @@
 #include <iostream>
 #include "Operator.h"
 
+typedef enum _CalModelType {
+    CAL_VAR,
+    CAL_FUNC_ARITH,
+    CAL_FUNC_POWER,
+    CAL_FUNC_NAME,
+    CAL_FUNC_INT,
+    CAL_FUNC_DIFF,
+    CAL_CON_NUM,
+    CAL_CON_SPEC
+} CalModelType;
+
 class CFunction {
-    
+public:
+    virtual int type() = 0;
+    virtual ~CFunction() {}
 };
 
 class CVariable : public CFunction {
-
+public:
+    int type() {return CAL_VAR;}
 };
 
 class CArithFunc : public CFunction {
@@ -28,6 +42,8 @@ public:
     
     CArithFunc(CFunction* left, Operator opr, CFunction* right);
     ~CArithFunc();
+    
+    int type() {return CAL_FUNC_ARITH;}
 };
 
 class CIntFunc : public CFunction {
@@ -37,6 +53,8 @@ public:
     
     CIntFunc(CFunction* base, CFunction* factor);
     ~CIntFunc();
+    
+    int type() {return CAL_FUNC_INT;}
 };
 
 class CDiffFunc : public CFunction {
@@ -46,10 +64,12 @@ public:
     
     CDiffFunc(CFunction* base, CFunction* factor);
     ~CDiffFunc();
+    
+    int type() {return CAL_FUNC_DIFF;}
 };
 
 typedef enum _FuncName {
-    SIN,COS,LN
+    NF_SIN,NF_COS,NF_LN
 } FuncName;
 
 class CNameFunc : public CFunction {
@@ -59,6 +79,8 @@ public:
     
     CNameFunc(FuncName name, CFunction* param);
     ~CNameFunc();
+    
+    int type() {return CAL_FUNC_NAME;}
 };
 
 class CPowerFunc : public CFunction {
@@ -68,10 +90,12 @@ public:
     
     CPowerFunc(CFunction* base, CFunction* power);
     ~CPowerFunc();
+    
+    int type() {return CAL_FUNC_POWER;}
 };
 
 class CConstant : public CFunction {
-    
+
 };
 
 class CNumConstant : public CConstant {
@@ -80,6 +104,8 @@ public:
     
     CNumConstant(int val);
     ~CNumConstant();
+    
+    int type() {return CAL_CON_NUM;}
 };
 
 typedef enum _ConstantType {
@@ -88,10 +114,12 @@ typedef enum _ConstantType {
 
 class CSpecialConstant : public CConstant {
 public:
-    ConstantType type;
+    ConstantType consType;
     
     CSpecialConstant(ConstantType type);
     ~CSpecialConstant();
+    
+    int type() {return CAL_CON_SPEC;}
 };
 
 #endif /* defined(__IDCalculator__CalModel__) */

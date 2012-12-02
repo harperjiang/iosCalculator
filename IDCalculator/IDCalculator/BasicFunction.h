@@ -9,15 +9,19 @@
 #import "Function.h"
 
 typedef enum _BasicFunctionType {
-    SIN=1,
-    COS=2,
-    LN=3
+    BT_SIN,
+    BT_COS,
+    BT_LN
 } BasicFunctionType;
 
 @interface BasicFunction : Function
 
-@property(nonatomic) BasicFunctionType type;
 
+
+@property(nonatomic) BasicFunctionType type;
 @property(nonatomic,strong) Function* base;
+
+
+-(BasicFunction*) init: (BasicFunctionType) type base:(Function*)base;
 
 @end

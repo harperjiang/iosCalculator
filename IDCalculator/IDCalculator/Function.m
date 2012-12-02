@@ -11,11 +11,15 @@
 
 @implementation Function
 
--(Function*)integrate:(Variable*) variable {
+-(Function*) evaluate {
     return nil;
 }
 
--(Function*)differentiate:(Variable*) variable {
+-(Function*) integrate:(Variable*) variable {
+    return nil;
+}
+
+-(Function*) differentiate:(Variable*) variable {
     return nil;
 }
 

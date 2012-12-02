@@ -11,10 +11,10 @@
 
 @interface ArithmeticFunction : Function
 
-@property(nonatomic) Operator operator;
+@property(nonatomic) Operator opr;
 @property(nonatomic, strong) Function* left;
 @property(nonatomic, strong) Function* right;
 
--(ArithmeticFunction*) init:(Function*)left operator:(Operator)opr right:(Function*) r;
+-(ArithmeticFunction*) init:(Function*)left opr:(Operator)opr right:(Function*) r;
 
 @end

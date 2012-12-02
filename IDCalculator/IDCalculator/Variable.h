@@ -13,4 +13,6 @@
 
 @property(strong,nonatomic) NSString* name;
 
++(Variable*) x;
+
 @end

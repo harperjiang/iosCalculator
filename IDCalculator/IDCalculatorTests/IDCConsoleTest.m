@@ -7,7 +7,6 @@
 //
 
 #import "IDCConsole.h"
-#import "IntegerConstant.h"
 #import "IDCConsoleTest.h"
 #import "Matrix.h"
 #import "AssignCommand.h"

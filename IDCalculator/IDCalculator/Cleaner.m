@@ -7,22 +7,22 @@
 //
 
 #import "Cleaner.h"
-#import "IntegerConstant.h"
+#import "NumConstant.h"
 #import "PowerFunction.h"
 #import "ArithmeticFunction.h"
 
 @implementation Cleaner
 
 +(Function*) clean:(Function *)input {
-    IntegerConstant* ZERO = [IntegerConstant ZERO];
-    IntegerConstant* ONE = [IntegerConstant ONE];
+    NumConstant* ZERO = [NumConstant ZERO];
+    NumConstant* ONE = [NumConstant ONE];
     // Arithmetic Function
     if([input class] == [ArithmeticFunction class]) {
         ArithmeticFunction* arith = (ArithmeticFunction*)input;
         
         // Calculate constant result if possible
         if([[arith left] class] == [Constant class] && [[arith right] class] == [Constant class]) {
-            switch ([arith operator]) {
+            switch ([arith opr]) {
                 case ADD:
                     return [(Constant*)[arith left] add:(Constant*)[arith right]];
                 case SUB:
@@ -38,33 +38,33 @@
         // Switch Constant and Functions
         if([[arith left] class] != [Constant class] && [[arith right] class] == [Constant class]) {
             // switch Left and right
-            return [Cleaner clean:[[ArithmeticFunction alloc] init:[arith right] operator:[arith operator] right:[arith left]]];
+            return [Cleaner clean:[[ArithmeticFunction alloc] init:[arith right] opr:[arith opr] right:[arith left]]];
         }
         // If MUL/DIV with ZERO/ONE
         if([[arith left] class] == [Constant class]) {
             Constant* cleft = (Constant*)[arith left];
-            if([arith operator] == MUL && cleft == ZERO)
+            if([arith opr] == MUL && cleft == ZERO)
                 return ZERO;
-            if([arith operator] == MUL && cleft == ONE)
+            if([arith opr] == MUL && cleft == ONE)
                 return [arith right];
-            if([arith operator] == ADD && cleft == ZERO)
+            if([arith opr] == ADD && cleft == ZERO)
                 return [arith right];
         }
         // Merge a*//(b*//x) a+/-(b+/-x)
         if([[arith right] class] == [ArithmeticFunction class]) {
             ArithmeticFunction* innerRight = (ArithmeticFunction*)[arith right];
-            if([innerRight operator] / 3 == [arith operator] / 3 && [[innerRight left] class] == [Constant class]) {
-                Function* newLeft = [[ArithmeticFunction alloc] init:[arith left] operator:[arith operator] right:[innerRight left]];
+            if([innerRight opr] / 3 == [arith opr] / 3 && [[innerRight left] class] == [Constant class]) {
+                Function* newLeft = [[ArithmeticFunction alloc] init:[arith left] opr:[arith opr] right:[innerRight left]];
                 Function* newRight = [innerRight right];
-                Operator oldopr1 = [arith operator];
-                Operator oldopr2 = [innerRight operator];
+                Operator oldopr1 = [arith opr];
+                Operator oldopr2 = [innerRight opr];
                 Operator newopr = 0;
                 if(oldopr1/3 == 0) {
                     newopr = ((oldopr1 + oldopr2)%2 == 0)?ADD:SUB;
                 } else {
                     newopr = ((oldopr1 + oldopr2)%2 == 0)?MUL:DIV;
                 }
-                return [[ArithmeticFunction alloc] init:newLeft operator:newopr right:newRight];
+                return [[ArithmeticFunction alloc] init:newLeft opr:newopr right:newRight];
             }
         }
         
