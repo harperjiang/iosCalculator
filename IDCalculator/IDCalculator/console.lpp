@@ -9,9 +9,8 @@ extern void yyerror(char* input);
 
 %option noyywrap
 
-
 %%
-"-"?[0-9]+      {yylval.stringTerm = yytext; return NUM;}
+[0-9]+          {yylval.stringTerm = yytext; return NUM;}
 =				{return EQUAL;}
 ;				{return SEMICOLON;}
 "'"				{return SIQ;}

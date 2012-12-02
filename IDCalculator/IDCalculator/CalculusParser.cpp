@@ -58,6 +58,14 @@
 /* Using locations.  */
 #define YYLSP_NEEDED 0
 
+/* Substitute the variable and function names.  */
+#define yyparse calparse
+#define yylex   callex
+#define yyerror calerror
+#define yylval  callval
+#define yychar  calchar
+#define yydebug caldebug
+#define yynerrs calnerrs
 
 
 /* Tokens.  */
@@ -66,63 +74,58 @@
    /* Put the tokens into the symbol table, so that GDB and other debuggers
       know about them.  */
    enum yytokentype {
-     COMMA = 258,
-     SEMICOLON = 259,
-     LBR = 260,
-     RBR = 261,
-     SIQ = 262,
-     LP = 263,
-     RP = 264,
-     CLEAR = 265,
-     EQUAL = 266,
-     OADD = 267,
-     OSUB = 268,
-     OMUL = 269,
-     ODIV = 270,
-     ID = 271,
-     NUM = 272,
-     LV3 = 273,
-     LV2 = 274,
-     LV1 = 275
+     NUM = 258,
+     LP = 259,
+     RP = 260,
+     OADD = 261,
+     OSUB = 262,
+     OMUL = 263,
+     ODIV = 264,
+     POWER = 265,
+     FUNC_SIN = 266,
+     FUNC_COS = 267,
+     FUNC_LN = 268,
+     DOPR = 269,
+     VAR = 270,
+     IOPR = 271,
+     CONST_E = 272,
+     CONST_PI = 273
    };
 #endif
 /* Tokens.  */
-#define COMMA 258
-#define SEMICOLON 259
-#define LBR 260
-#define RBR 261
-#define SIQ 262
-#define LP 263
-#define RP 264
-#define CLEAR 265
-#define EQUAL 266
-#define OADD 267
-#define OSUB 268
-#define OMUL 269
-#define ODIV 270
-#define ID 271
-#define NUM 272
-#define LV3 273
-#define LV2 274
-#define LV1 275
+#define NUM 258
+#define LP 259
+#define RP 260
+#define OADD 261
+#define OSUB 262
+#define OMUL 263
+#define ODIV 264
+#define POWER 265
+#define FUNC_SIN 266
+#define FUNC_COS 267
+#define FUNC_LN 268
+#define DOPR 269
+#define VAR 270
+#define IOPR 271
+#define CONST_E 272
+#define CONST_PI 273
 
 
 
 
 /* Copy the first part of user declarations.  */
-#line 1 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 1 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
 
 #include <stdio.h>
-#include <list>
-#include "CModel.h"
+#include "CalModel.h"
     
-void yyerror(char* s) {
+void calerror(char* s) {
 	printf("%s",s);
 }
     
-extern int yylex();
+extern int callex();
 
-CCommand* parse_result;
+CFunction* calculus_result;
 
 
 /* Enabling traces.  */
@@ -145,23 +148,15 @@ CCommand* parse_result;
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef union YYSTYPE
-#line 15 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 14 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
 {
     char* stringTerm;
-    CData* data;
-    CNumData* num;
-    CExpression* exp;
-    CExpList* expList;
-    CExpList* dataList;
-    CExpList* rowList;
-    CExpList* params;
-    CMatrix*  matrix;
-    CCommand* command;
-    CIdentifier* id;
-    CFuncExpression* func;
+    CFunction* func;
+    CNameFunc* namefunc;
+    CConstant* num;
 }
 /* Line 193 of yacc.c.  */
-#line 165 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/ConsoleParser.cpp"
+#line 160 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/CalculusParser.cpp"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
@@ -174,7 +169,7 @@ typedef union YYSTYPE
 
 
 /* Line 216 of yacc.c.  */
-#line 178 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/ConsoleParser.cpp"
+#line 173 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/CalculusParser.cpp"
 
 #ifdef short
 # undef short
@@ -387,22 +382,22 @@ union yyalloc
 #endif
 
 /* YYFINAL -- State number of the termination state.  */
-#define YYFINAL  20
+#define YYFINAL  18
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   65
+#define YYLAST   67
 
 /* YYNTOKENS -- Number of terminals.  */
-#define YYNTOKENS  21
+#define YYNTOKENS  19
 /* YYNNTS -- Number of nonterminals.  */
-#define YYNNTS  11
+#define YYNNTS  5
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  27
+#define YYNRULES  19
 /* YYNRULES -- Number of states.  */
-#define YYNSTATES  45
+#define YYNSTATES  37
 
 /* YYTRANSLATE(YYLEX) -- Bison symbol number corresponding to YYLEX.  */
 #define YYUNDEFTOK  2
-#define YYMAXUTOK   275
+#define YYMAXUTOK   273
 
 #define YYTRANSLATE(YYX)						\
   ((unsigned int) (YYX) <= YYMAXUTOK ? yytranslate[YYX] : YYUNDEFTOK)
@@ -437,7 +432,7 @@ static const yytype_uint8 yytranslate[] =
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     1,     2,     3,     4,
        5,     6,     7,     8,     9,    10,    11,    12,    13,    14,
-      15,    16,    17,    18,    19,    20
+      15,    16,    17,    18
 };
 
 #if YYDEBUG
@@ -445,31 +440,26 @@ static const yytype_uint8 yytranslate[] =
    YYRHS.  */
 static const yytype_uint8 yyprhs[] =
 {
-       0,     0,     3,     5,     9,    11,    14,    19,    23,    25,
-      29,    31,    35,    37,    39,    43,    47,    51,    54,    58,
-      62,    64,    66,    68,    71,    73,    75,    79
+       0,     0,     3,     5,     9,    13,    16,    20,    24,    28,
+      33,    38,    44,    46,    48,    50,    52,    54,    56,    58
 };
 
 /* YYRHS -- A `-1'-separated list of the rules' RHS.  */
 static const yytype_int8 yyrhs[] =
 {
-      22,     0,    -1,    10,    -1,    29,    11,    27,    -1,    27,
-      -1,    27,     7,    -1,    29,     8,    26,     9,    -1,     5,
-      25,     6,    -1,    28,    -1,    28,     4,    25,    -1,    27,
-      -1,    27,     3,    26,    -1,    31,    -1,    29,    -1,     8,
-      27,     9,    -1,    27,    12,    27,    -1,    27,    13,    27,
-      -1,    13,    27,    -1,    27,    14,    27,    -1,    27,    15,
-      27,    -1,    24,    -1,    23,    -1,    30,    -1,    30,    28,
-      -1,    16,    -1,    31,    -1,    31,    15,    31,    -1,    17,
-      -1
+      20,     0,    -1,    21,    -1,    21,     6,    21,    -1,    21,
+       7,    21,    -1,     7,    21,    -1,    21,     8,    21,    -1,
+      21,     9,    21,    -1,    21,    10,    21,    -1,    22,     4,
+      21,     5,    -1,    16,    21,    14,    21,    -1,    14,    21,
+       9,    14,    21,    -1,    15,    -1,    23,    -1,    11,    -1,
+      12,    -1,    13,    -1,     3,    -1,    18,    -1,    17,    -1
 };
 
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    61,    61,    62,    63,    65,    67,    69,    71,    72,
-      74,    75,    77,    78,    79,    80,    81,    82,    83,    84,
-      85,    86,    88,    89,    91,    93,    94,    96
+       0,    39,    39,    40,    41,    42,    43,    44,    45,    46,
+      47,    48,    49,    50,    51,    52,    53,    54,    55,    56
 };
 #endif
 
@@ -478,10 +468,10 @@ static const yytype_uint8 yyrline[] =
    First, the terminals, then, starting at YYNTOKENS, nonterminals.  */
 static const char *const yytname[] =
 {
-  "$end", "error", "$undefined", "COMMA", "SEMICOLON", "LBR", "RBR",
-  "SIQ", "LP", "RP", "CLEAR", "EQUAL", "OADD", "OSUB", "OMUL", "ODIV",
-  "ID", "NUM", "LV3", "LV2", "LV1", "$accept", "command", "func", "matrix",
-  "rowList", "expList", "exp", "dataList", "id", "data", "num", 0
+  "$end", "error", "$undefined", "NUM", "LP", "RP", "OADD", "OSUB",
+  "OMUL", "ODIV", "POWER", "FUNC_SIN", "FUNC_COS", "FUNC_LN", "DOPR",
+  "VAR", "IOPR", "CONST_E", "CONST_PI", "$accept", "result", "func",
+  "namefunc", "num", 0
 };
 #endif
 
@@ -491,25 +481,22 @@ static const char *const yytname[] =
 static const yytype_uint16 yytoknum[] =
 {
        0,   256,   257,   258,   259,   260,   261,   262,   263,   264,
-     265,   266,   267,   268,   269,   270,   271,   272,   273,   274,
-     275
+     265,   266,   267,   268,   269,   270,   271,   272,   273
 };
 # endif
 
 /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
 static const yytype_uint8 yyr1[] =
 {
-       0,    21,    22,    22,    22,    23,    23,    24,    25,    25,
-      26,    26,    27,    27,    27,    27,    27,    27,    27,    27,
-      27,    27,    28,    28,    29,    30,    30,    31
+       0,    19,    20,    21,    21,    21,    21,    21,    21,    21,
+      21,    21,    21,    21,    22,    22,    22,    23,    23,    23
 };
 
 /* YYR2[YYN] -- Number of symbols composing right hand side of rule YYN.  */
 static const yytype_uint8 yyr2[] =
 {
-       0,     2,     1,     3,     1,     2,     4,     3,     1,     3,
-       1,     3,     1,     1,     3,     3,     3,     2,     3,     3,
-       1,     1,     1,     2,     1,     1,     3,     1
+       0,     2,     1,     3,     3,     2,     3,     3,     3,     4,
+       4,     5,     1,     1,     1,     1,     1,     1,     1,     1
 };
 
 /* YYDEFACT[STATE-NAME] -- Default rule to reduce with in state
@@ -517,37 +504,33 @@ static const yytype_uint8 yyr2[] =
    means the default is an error.  */
 static const yytype_uint8 yydefact[] =
 {
-       0,     0,     0,     2,     0,    24,    27,     0,    21,    20,
-       4,    13,    12,     0,     8,    22,    25,     0,    13,    17,
-       1,     5,     0,     0,     0,     0,     0,     0,     7,     0,
-      23,     0,    14,    15,    16,    18,    19,     0,    10,     3,
-       9,    26,     6,     0,    11
+       0,    17,     0,    14,    15,    16,     0,    12,     0,    19,
+      18,     0,     2,     0,    13,     5,     0,     0,     1,     0,
+       0,     0,     0,     0,     0,     0,     0,     3,     4,     6,
+       7,     8,     0,     0,    10,     9,    11
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-      -1,     7,     8,     9,    13,    37,    38,    14,    18,    15,
-      12
+      -1,    11,    30,    13,    14
 };
 
 /* YYPACT[STATE-NUM] -- Index in YYTABLE of the portion describing
    STATE-NUM.  */
-#define YYPACT_NINF -17
+#define YYPACT_NINF -7
 static const yytype_int8 yypact[] =
 {
-       0,   -16,    26,   -17,    26,   -17,   -17,     3,   -17,   -17,
-      41,     1,   -17,    12,    15,   -16,    -8,    37,    24,    28,
-     -17,   -17,    26,    26,    26,    26,    26,    26,   -17,   -16,
-     -17,   -16,   -17,    50,    50,    28,    28,    27,     8,    41,
-     -17,   -17,   -17,    26,   -17
+      -2,    -7,    -2,    -7,    -7,    -7,    -2,    -7,    -2,    -7,
+      -7,     3,    52,    13,    -7,    -6,    57,    37,    -7,    -2,
+      -2,    -2,    -2,    -2,    -2,    24,    -2,    20,    20,    -6,
+      -6,    -7,    47,    -2,    -7,    -7,    -7
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-     -17,   -17,   -17,   -17,     4,    -6,     2,    23,    40,   -17,
-      -1
+      -7,    -7,     0,    -7,    -7
 };
 
 /* YYTABLE[YYPACT[STATE-NUM]].  What to do in state STATE-NUM.  If
@@ -557,35 +540,34 @@ static const yytype_int8 yypgoto[] =
 #define YYTABLE_NINF -1
 static const yytype_uint8 yytable[] =
 {
-      16,     6,    10,    20,    17,     1,    19,    31,     2,    26,
-       3,    43,    27,     4,    16,    21,     5,     6,    28,    29,
-      22,    23,    24,    25,    33,    34,    35,    36,    16,    39,
-      41,     1,    26,    40,     2,    21,    42,    44,    30,     4,
-      11,     0,     5,     6,    21,     0,    32,     0,    21,    22,
-      23,    24,    25,    22,    23,    24,    25,    21,     0,     0,
-       0,     0,     0,     0,    24,    25
+      12,     1,    15,    18,    23,     2,    16,     0,    17,     3,
+       4,     5,     6,     7,     8,     9,    10,    24,     0,    27,
+      28,    29,     0,    31,    32,     0,    34,     1,    21,    22,
+      23,     2,     0,    36,     0,     3,     4,     5,    33,     7,
+       8,     9,    10,    19,    20,    21,    22,    23,     0,     0,
+       0,    26,    35,    19,    20,    21,    22,    23,    19,    20,
+      21,    22,    23,    19,    20,    21,    25,    23
 };
 
 static const yytype_int8 yycheck[] =
 {
-       1,    17,     0,     0,     2,     5,     4,    15,     8,     8,
-      10,     3,    11,    13,    15,     7,    16,    17,     6,     4,
-      12,    13,    14,    15,    22,    23,    24,    25,    29,    27,
-      31,     5,     8,    29,     8,     7,     9,    43,    15,    13,
-       0,    -1,    16,    17,     7,    -1,     9,    -1,     7,    12,
-      13,    14,    15,    12,    13,    14,    15,     7,    -1,    -1,
-      -1,    -1,    -1,    -1,    14,    15
+       0,     3,     2,     0,    10,     7,     6,    -1,     8,    11,
+      12,    13,    14,    15,    16,    17,    18,     4,    -1,    19,
+      20,    21,    -1,    23,    24,    -1,    26,     3,     8,     9,
+      10,     7,    -1,    33,    -1,    11,    12,    13,    14,    15,
+      16,    17,    18,     6,     7,     8,     9,    10,    -1,    -1,
+      -1,    14,     5,     6,     7,     8,     9,    10,     6,     7,
+       8,     9,    10,     6,     7,     8,     9,    10
 };
 
 /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
    symbol of state STATE-NUM.  */
 static const yytype_uint8 yystos[] =
 {
-       0,     5,     8,    10,    13,    16,    17,    22,    23,    24,
-      27,    29,    31,    25,    28,    30,    31,    27,    29,    27,
-       0,     7,    12,    13,    14,    15,     8,    11,     6,     4,
-      28,    15,     9,    27,    27,    27,    27,    26,    27,    27,
-      25,    31,     9,     3,    26
+       0,     3,     7,    11,    12,    13,    14,    15,    16,    17,
+      18,    20,    21,    22,    23,    21,    21,    21,     0,     6,
+       7,     8,     9,    10,     4,     9,    14,    21,    21,    21,
+      21,    21,    21,    14,    21,     5,    21
 };
 
 #define yyerrok		(yyerrstatus = 0)
@@ -1400,139 +1382,98 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 61 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
-    {parse_result = new CClearCommand();YYACCEPT;}
+#line 39 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {calculus_result = (yyvsp[(1) - (1)].func);}
     break;
 
   case 3:
-#line 62 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
-    {parse_result = new CAssignCommand((yyvsp[(1) - (3)].id),(yyvsp[(3) - (3)].exp));}
+#line 40 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.func) = new CArithFunc((yyvsp[(1) - (3)].func),ADD,(yyvsp[(3) - (3)].func));}
     break;
 
   case 4:
-#line 63 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
-    {parse_result = new CExpCommand((yyvsp[(1) - (1)].exp));}
+#line 41 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.func) = new CArithFunc((yyvsp[(1) - (3)].func),SUB,(yyvsp[(3) - (3)].func));}
     break;
 
   case 5:
-#line 65 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
-    {CExpList* expList = new CExpList(); expList->add((yyvsp[(1) - (2)].exp));(yyval.func) = new CFuncExpression(new
-                                                CIdentifier("transpose"),expList);}
+#line 42 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.func) = new CArithFunc(NULL,SUB,(yyvsp[(2) - (2)].func));}
     break;
 
   case 6:
-#line 67 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
-    {(yyval.func) = new CFuncExpression((yyvsp[(1) - (4)].id),(yyvsp[(3) - (4)].expList));}
+#line 43 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.func) = new CArithFunc((yyvsp[(1) - (3)].func),MUL,(yyvsp[(3) - (3)].func));}
     break;
 
   case 7:
-#line 69 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
-    {(yyval.matrix) = new CMatrix(); (yyval.matrix)->content = (yyvsp[(2) - (3)].rowList);}
+#line 44 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.func) = new CArithFunc((yyvsp[(1) - (3)].func),DIV,(yyvsp[(3) - (3)].func));}
     break;
 
   case 8:
-#line 71 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
-    {(yyval.rowList) = new CExpList(); (yyval.rowList)->insert(0,(yyvsp[(1) - (1)].dataList));}
+#line 45 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.func) = new CPowerFunc((yyvsp[(1) - (3)].func),(yyvsp[(3) - (3)].func));}
     break;
 
   case 9:
-#line 72 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
-    {(yyval.rowList) = (yyvsp[(3) - (3)].rowList); (yyvsp[(3) - (3)].rowList)->insert(0,(yyvsp[(1) - (3)].dataList));}
+#line 46 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.func) = (yyvsp[(1) - (4)].namefunc); (yyvsp[(1) - (4)].namefunc)->param = (yyvsp[(3) - (4)].func);}
     break;
 
   case 10:
-#line 74 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
-    {(yyval.expList) = new CExpList(); (yyval.expList)->insert(0,(yyvsp[(1) - (1)].exp));}
+#line 47 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.func) = new CIntFunc((yyvsp[(2) - (4)].func),(yyvsp[(4) - (4)].func));}
     break;
 
   case 11:
-#line 75 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
-    {(yyval.expList) = (yyvsp[(3) - (3)].expList); (yyval.expList)->insert(0,(yyvsp[(1) - (3)].exp));}
+#line 48 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.func) = new CDiffFunc((yyvsp[(2) - (5)].func),(yyvsp[(5) - (5)].func));}
     break;
 
   case 12:
-#line 77 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
-    {(yyval.exp) = (yyvsp[(1) - (1)].num);}
+#line 49 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.func) = new CVariable();}
     break;
 
   case 13:
-#line 78 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
-    {(yyval.exp) = (yyvsp[(1) - (1)].id);}
+#line 50 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.func) = (yyvsp[(1) - (1)].num);}
     break;
 
   case 14:
-#line 79 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
-    {(yyval.exp) = (yyvsp[(2) - (3)].exp);}
+#line 51 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.namefunc) = new CNameFunc(SIN,NULL);}
     break;
 
   case 15:
-#line 80 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
-    {(yyval.exp) = new CArithExpression((yyvsp[(1) - (3)].exp),ADD,(yyvsp[(3) - (3)].exp));}
+#line 52 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.namefunc) = new CNameFunc(COS,NULL);}
     break;
 
   case 16:
-#line 81 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
-    {(yyval.exp) = new CArithExpression((yyvsp[(1) - (3)].exp),SUB,(yyvsp[(3) - (3)].exp));}
+#line 53 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.namefunc) = new CNameFunc(LN,NULL);}
     break;
 
   case 17:
-#line 82 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
-    {(yyval.exp) = new CArithExpression(NULL,SUB,(yyvsp[(2) - (2)].exp));}
+#line 54 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {int val = atoi(yylval.stringTerm); (yyval.num) = new CNumConstant(val);}
     break;
 
   case 18:
-#line 83 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
-    {(yyval.exp) = new CArithExpression((yyvsp[(1) - (3)].exp),MUL,(yyvsp[(3) - (3)].exp));}
+#line 55 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.num) = new CSpecialConstant(CT_PI);}
     break;
 
   case 19:
-#line 84 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
-    {(yyval.exp) = new CArithExpression((yyvsp[(1) - (3)].exp),DIV,(yyvsp[(3) - (3)].exp));}
-    break;
-
-  case 20:
-#line 85 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
-    {(yyval.exp) = (yyvsp[(1) - (1)].matrix);}
-    break;
-
-  case 21:
-#line 86 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
-    {(yyval.exp) = (yyvsp[(1) - (1)].func);}
-    break;
-
-  case 22:
-#line 88 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
-    {(yyval.dataList) = new CExpList(); (yyval.dataList)->insert(0,(yyvsp[(1) - (1)].data));}
-    break;
-
-  case 23:
-#line 89 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
-    {(yyval.dataList) = (yyvsp[(2) - (2)].dataList); (yyval.dataList)->insert(0,(yyvsp[(1) - (2)].data));}
-    break;
-
-  case 24:
-#line 91 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
-    {(yyval.id) = new CIdentifier(yylval.stringTerm);}
-    break;
-
-  case 25:
-#line 93 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
-    {(yyval.data) = (yyvsp[(1) - (1)].num);}
-    break;
-
-  case 26:
-#line 94 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
-    {(yyval.data) = new CFracData((yyvsp[(1) - (3)].num)->value,(yyvsp[(3) - (3)].num)->value);}
-    break;
-
-  case 27:
-#line 96 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
-    {(yyval.num) = new CNumData(atoi(yylval.stringTerm));}
+#line 56 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.num) = new CSpecialConstant(CT_E);}
     break;
 
 
 /* Line 1267 of yacc.c.  */
-#line 1536 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/ConsoleParser.cpp"
+#line 1477 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/CalculusParser.cpp"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1746,5 +1687,5 @@ yyreturn:
 }
 
 
-#line 97 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 57 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
 

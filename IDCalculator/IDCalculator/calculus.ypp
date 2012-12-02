@@ -1,0 +1,57 @@
+%{
+#include <stdio.h>
+#include "CalModel.h"
+    
+void calerror(char* s) {
+	printf("%s",s);
+}
+    
+extern int callex();
+
+CFunction* calculus_result;
+%}
+
+%union {
+    char* stringTerm;
+    CFunction* func;
+    CNameFunc* namefunc;
+    CConstant* num;
+}
+%token NUM LP RP OADD OSUB OMUL ODIV POWER 
+%token FUNC_SIN FUNC_COS FUNC_LN 
+%token DOPR VAR IOPR 
+%token NUM
+%token CONST_E CONST_PI
+
+%type <func> func
+%type <namefunc> namefunc
+%type <num> num
+
+%left OADD OSUB
+%left OMUL ODIV
+%left POWER
+%left DOPR
+%left RP
+
+%start result
+
+%%
+result      :   func                            {calculus_result = $1;};
+func        :   func OADD func                  {$$ = new CArithFunc($1,ADD,$3);}
+            |   func OSUB func                  {$$ = new CArithFunc($1,SUB,$3);}
+            |   OSUB func %prec OMUL            {$$ = new CArithFunc(NULL,SUB,$2);}
+            |   func OMUL func                  {$$ = new CArithFunc($1,MUL,$3);}
+            |   func ODIV func                  {$$ = new CArithFunc($1,DIV,$3);}
+            |   func POWER func                 {$$ = new CPowerFunc($1,$3);}
+            |   namefunc LP func RP             {$$ = $1; $1->param = $3;}
+            |   IOPR func DOPR func             {$$ = new CIntFunc($2,$4);}
+            |   DOPR func ODIV DOPR func        {$$ = new CDiffFunc($2,$5);}
+            |   VAR                             {$$ = new CVariable();}
+            |   num                             {$$ = $1;};
+namefunc    :   FUNC_SIN                        {$$ = new CNameFunc(SIN,NULL);}
+            |   FUNC_COS                        {$$ = new CNameFunc(COS,NULL);}
+            |   FUNC_LN                         {$$ = new CNameFunc(LN,NULL);};
+num         :   NUM                             {int val = atoi(yylval.stringTerm); $$ = new CNumConstant(val);}
+            |   CONST_PI                        {$$ = new CSpecialConstant(CT_PI);}
+            |   CONST_E                         {$$ = new CSpecialConstant(CT_E);};
+%%

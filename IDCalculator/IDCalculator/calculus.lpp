@@ -1,0 +1,31 @@
+%{
+#include <stdio.h>
+#include "CalModel.h"
+#include "CalculusParser.h"
+
+extern void calerror(char* input);
+
+%}
+
+%option noyywrap
+
+
+%%
+[0-9]+              {callval.stringTerm = caltext; return NUM;}
+"("                 {return LP;}
+")"                 {return RP;}
+"+"                 {return OADD;}
+"-"                 {return OSUB;}
+"*"                 {return OMUL;}
+"/"                 {return ODIV;}
+"^"                 {return POWER;}
+"sin"               {return FUNC_SIN;}
+"cos"               {return FUNC_COS;}
+"ln"                {return FUNC_LN;}
+"d"                 {return DOPR;}
+"x"                 {return VAR;}
+"∫"                 {return IOPR;}
+"e"                 {return CONST_E;}
+"π"                 {return CONST_PI;}
+.                   {calerror(yytext);}
+%%

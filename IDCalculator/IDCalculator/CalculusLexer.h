@@ -1,10 +1,10 @@
-#ifndef yyHEADER_H
-#define yyHEADER_H 1
-#define yyIN_HEADER 1
+#ifndef calHEADER_H
+#define calHEADER_H 1
+#define calIN_HEADER 1
 
-#line 6 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/ConsoleLexer.h"
+#line 6 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/CalculusLexer.h"
 
-#line 8 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/ConsoleLexer.h"
+#line 8 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/CalculusLexer.h"
 
 #define  YY_INT_ALIGNED short int
 
@@ -128,9 +128,9 @@ typedef struct yy_buffer_state *YY_BUFFER_STATE;
 typedef size_t yy_size_t;
 #endif
 
-extern yy_size_t yyleng;
+extern yy_size_t calleng;
 
-extern FILE *yyin, *yyout;
+extern FILE *calin, *calout;
 
 #ifndef YY_STRUCT_YY_BUFFER_STATE
 #define YY_STRUCT_YY_BUFFER_STATE
@@ -183,31 +183,31 @@ struct yy_buffer_state
 	};
 #endif /* !YY_STRUCT_YY_BUFFER_STATE */
 
-void yyrestart (FILE *input_file  );
-void yy_switch_to_buffer (YY_BUFFER_STATE new_buffer  );
-YY_BUFFER_STATE yy_create_buffer (FILE *file,int size  );
-void yy_delete_buffer (YY_BUFFER_STATE b  );
-void yy_flush_buffer (YY_BUFFER_STATE b  );
-void yypush_buffer_state (YY_BUFFER_STATE new_buffer  );
-void yypop_buffer_state (void );
+void calrestart (FILE *input_file  );
+void cal_switch_to_buffer (YY_BUFFER_STATE new_buffer  );
+YY_BUFFER_STATE cal_create_buffer (FILE *file,int size  );
+void cal_delete_buffer (YY_BUFFER_STATE b  );
+void cal_flush_buffer (YY_BUFFER_STATE b  );
+void calpush_buffer_state (YY_BUFFER_STATE new_buffer  );
+void calpop_buffer_state (void );
 
-YY_BUFFER_STATE yy_scan_buffer (char *base,yy_size_t size  );
-YY_BUFFER_STATE yy_scan_string (yyconst char *yy_str  );
-YY_BUFFER_STATE yy_scan_bytes (yyconst char *bytes,yy_size_t len  );
+YY_BUFFER_STATE cal_scan_buffer (char *base,yy_size_t size  );
+YY_BUFFER_STATE cal_scan_string (yyconst char *yy_str  );
+YY_BUFFER_STATE cal_scan_bytes (yyconst char *bytes,yy_size_t len  );
 
-void *yyalloc (yy_size_t  );
-void *yyrealloc (void *,yy_size_t  );
-void yyfree (void *  );
+void *calalloc (yy_size_t  );
+void *calrealloc (void *,yy_size_t  );
+void calfree (void *  );
 
 /* Begin user sect3 */
 
-#define yywrap(n) 1
+#define calwrap(n) 1
 #define YY_SKIP_YYWRAP
 
-extern int yylineno;
+extern int callineno;
 
-extern char *yytext;
-#define yytext_ptr yytext
+extern char *caltext;
+#define yytext_ptr caltext
 
 #ifdef YY_HEADER_EXPORT_START_CONDITIONS
 #define INITIAL 0
@@ -229,31 +229,31 @@ extern char *yytext;
 /* Accessor methods to globals.
    These are made visible to non-reentrant scanners for convenience. */
 
-int yylex_destroy (void );
+int callex_destroy (void );
 
-int yyget_debug (void );
+int calget_debug (void );
 
-void yyset_debug (int debug_flag  );
+void calset_debug (int debug_flag  );
 
-YY_EXTRA_TYPE yyget_extra (void );
+YY_EXTRA_TYPE calget_extra (void );
 
-void yyset_extra (YY_EXTRA_TYPE user_defined  );
+void calset_extra (YY_EXTRA_TYPE user_defined  );
 
-FILE *yyget_in (void );
+FILE *calget_in (void );
 
-void yyset_in  (FILE * in_str  );
+void calset_in  (FILE * in_str  );
 
-FILE *yyget_out (void );
+FILE *calget_out (void );
 
-void yyset_out  (FILE * out_str  );
+void calset_out  (FILE * out_str  );
 
-yy_size_t yyget_leng (void );
+yy_size_t calget_leng (void );
 
-char *yyget_text (void );
+char *calget_text (void );
 
-int yyget_lineno (void );
+int calget_lineno (void );
 
-void yyset_lineno (int line_number  );
+void calset_lineno (int line_number  );
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -261,9 +261,9 @@ void yyset_lineno (int line_number  );
 
 #ifndef YY_SKIP_YYWRAP
 #ifdef __cplusplus
-extern "C" int yywrap (void );
+extern "C" int calwrap (void );
 #else
-extern int yywrap (void );
+extern int calwrap (void );
 #endif
 #endif
 
@@ -295,9 +295,9 @@ static int yy_flex_strlen (yyconst char * );
 #ifndef YY_DECL
 #define YY_DECL_IS_OURS 1
 
-extern int yylex (void);
+extern int callex (void);
 
-#define YY_DECL int yylex (void)
+#define YY_DECL int callex (void)
 #endif /* !YY_DECL */
 
 /* yy_get_previous_state - get the state just before the EOB char was reached */
@@ -314,9 +314,9 @@ extern int yylex (void);
 #undef YY_DECL
 #endif
 
-#line 29 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/console.lpp"
+#line 31 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/calculus.lpp"
 
 
-#line 321 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/ConsoleLexer.h"
-#undef yyIN_HEADER
-#endif /* yyHEADER_H */
+#line 321 "/Users/harper/Projects/IDCalculator/IDCalculator/IDCalculator/CalculusLexer.h"
+#undef calIN_HEADER
+#endif /* calHEADER_H */

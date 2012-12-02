@@ -10,8 +10,6 @@
 		A627E99216500A97001142D5 /* SpecialConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = A627E99116500A97001142D5 /* SpecialConstant.m */; };
 		A627E99816500AA4001142D5 /* ClearCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = A627E99516500AA4001142D5 /* ClearCommand.m */; };
 		A627E99916500AA4001142D5 /* Command.mm in Sources */ = {isa = PBXBuildFile; fileRef = A627E99716500AA4001142D5 /* Command.mm */; };
-		A6292C7A16603CA300C2C554 /* ConsoleLexer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6292C7816603CA200C2C554 /* ConsoleLexer.cpp */; };
-		A6292C7D16603CB000C2C554 /* ConsoleParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6292C7B16603CB000C2C554 /* ConsoleParser.cpp */; };
 		A6292C8A16605DFC00C2C554 /* Data.m in Sources */ = {isa = PBXBuildFile; fileRef = A6292C8916605DFC00C2C554 /* Data.m */; };
 		A6292C9A166075B800C2C554 /* ExpressionList.m in Sources */ = {isa = PBXBuildFile; fileRef = A6292C99166075B800C2C554 /* ExpressionList.m */; };
 		A639F25516609970000C5E02 /* Integer.m in Sources */ = {isa = PBXBuildFile; fileRef = A639F25416609970000C5E02 /* Integer.m */; };
@@ -53,12 +51,6 @@
 		A67BC0291652B00100072670 /* ArithmeticExpressionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A67BC0281652B00100072670 /* ArithmeticExpressionTest.m */; };
 		A67BC02D1652C31700072670 /* AssignCommandTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A67BC02C1652C31700072670 /* AssignCommandTest.m */; };
 		A67BC0301652F9BB00072670 /* VariableCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = A67BC02F1652F9BA00072670 /* VariableCommand.m */; };
-		A67CCA671669EDE7007561D9 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A67CCA651669EDE7007561D9 /* Default-Landscape~ipad.png */; };
-		A67CCA681669EDE7007561D9 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A67CCA661669EDE7007561D9 /* Default-Portrait~ipad.png */; };
-		A67CCA6A1669EF38007561D9 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A67CCA691669EF38007561D9 /* Default-Portrait~ipad.png */; };
-		A67CCA6C1669EF5A007561D9 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A67CCA6B1669EF5A007561D9 /* Default-Landscape~ipad.png */; };
-		A67CCA6E1669EFF4007561D9 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A67CCA6D1669EFF4007561D9 /* Default-Landscape@2x~ipad.png */; };
-		A67CCA701669F005007561D9 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A67CCA6F1669F005007561D9 /* Default-Portrait@2x~ipad.png */; };
 		A67CCA721669F024007561D9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A67CCA711669F024007561D9 /* Default-568h@2x.png */; };
 		A67CCA771669F093007561D9 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A67CCA731669F093007561D9 /* Default-Landscape@2x~ipad.png */; };
 		A67CCA781669F093007561D9 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A67CCA741669F093007561D9 /* Default-Landscape~ipad.png */; };
@@ -78,6 +70,18 @@
 		A6CE38AB1665879500EDC49A /* GLESObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CE38AA1665879500EDC49A /* GLESObject.m */; };
 		A6CE38B0166587CB00EDC49A /* GLESContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CE38AF166587CB00EDC49A /* GLESContainer.m */; };
 		A6CE38B41665B01700EDC49A /* GLESObjectTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CE38B31665B01700EDC49A /* GLESObjectTest.m */; };
+		A6D2B1201669F2D6000144D5 /* CalModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6D2B11E1669F2D6000144D5 /* CalModel.cpp */; };
+		A6D2B126166A6367000144D5 /* chart_line_24.png in Resources */ = {isa = PBXBuildFile; fileRef = A6D2B123166A6367000144D5 /* chart_line_24.png */; };
+		A6D2B127166A6367000144D5 /* concole_24.png in Resources */ = {isa = PBXBuildFile; fileRef = A6D2B124166A6367000144D5 /* concole_24.png */; };
+		A6D2B128166A6367000144D5 /* gear_24.png in Resources */ = {isa = PBXBuildFile; fileRef = A6D2B125166A6367000144D5 /* gear_24.png */; };
+		A6D2B135166A66F2000144D5 /* ConsoleLexer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6D2B131166A66F1000144D5 /* ConsoleLexer.cpp */; };
+		A6D2B136166A66F2000144D5 /* ConsoleParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6D2B133166A66F1000144D5 /* ConsoleParser.cpp */; };
+		A6D2B13C166A8900000144D5 /* CalculusParser.output in Resources */ = {isa = PBXBuildFile; fileRef = A6D2B13B166A8900000144D5 /* CalculusParser.output */; };
+		A6D2B140166AB497000144D5 /* CalculusLexer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6D2B13D166AB496000144D5 /* CalculusLexer.cpp */; };
+		A6D2B141166AB497000144D5 /* CalculusParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6D2B13F166AB496000144D5 /* CalculusParser.cpp */; };
+		A6D2B144166AB4DF000144D5 /* InteFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D2B143166AB4DF000144D5 /* InteFunction.m */; };
+		A6D2B147166AB846000144D5 /* DiffFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D2B146166AB846000144D5 /* DiffFunction.m */; };
+		A6D2B14A166AB88F000144D5 /* FunctionParser.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6D2B149166AB88F000144D5 /* FunctionParser.mm */; };
 		A6D7DF131666FBD400D7B705 /* PadConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D7DF121666FBD400D7B705 /* PadConsoleViewController.m */; };
 		A6D7DF16166709CD00D7B705 /* ViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D7DF15166709CD00D7B705 /* ViewHelper.m */; };
 		A6DE83FE164EDDEC002F6FFA /* VectorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DE83FD164EDDEC002F6FFA /* VectorTest.m */; };
@@ -89,13 +93,9 @@
 		A6EEE6A31662A36300310568 /* calculator_24.png in Resources */ = {isa = PBXBuildFile; fileRef = A6EEE69D1662A36300310568 /* calculator_24.png */; };
 		A6EEE6A51662A36300310568 /* display_on_24.png in Resources */ = {isa = PBXBuildFile; fileRef = A6EEE69F1662A36300310568 /* display_on_24.png */; };
 		A6EEE6A71662A36300310568 /* keyboard_24.png in Resources */ = {isa = PBXBuildFile; fileRef = A6EEE6A11662A36300310568 /* keyboard_24.png */; };
-		A6EEE6AA1662A6BD00310568 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6EEE6A91662A6BD00310568 /* Default-568h@2x.png */; };
 		A6EEE6B01662FAFB00310568 /* OpenGLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EEE6AF1662FAFB00310568 /* OpenGLContext.m */; };
 		A6EEE6B21663022100310568 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EEE6B11663022100310568 /* GLKit.framework */; };
 		A6EEE6B41663027C00310568 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EEE6B31663027C00310568 /* OpenGLES.framework */; };
-		A6EEE6BA1663065100310568 /* concole_24.png in Resources */ = {isa = PBXBuildFile; fileRef = A6EEE6B71663065100310568 /* concole_24.png */; };
-		A6EEE6C01663066900310568 /* gear_24.png in Resources */ = {isa = PBXBuildFile; fileRef = A6EEE6BD1663066900310568 /* gear_24.png */; };
-		A6EEE6C6166306BA00310568 /* chart_line_24.png in Resources */ = {isa = PBXBuildFile; fileRef = A6EEE6C3166306BA00310568 /* chart_line_24.png */; };
 		A6EEE6CD1663102F00310568 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A6EEE6CC1663102D00310568 /* Settings.bundle */; };
 		A6EEE6CF1664391400310568 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EEE6CE1664391300310568 /* QuartzCore.framework */; };
 		A6EEE6D216645DBB00310568 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EEE6D116645DBB00310568 /* HelpViewController.m */; };
@@ -108,10 +108,12 @@
 			fileType = sourcecode.lex;
 			isEditable = 1;
 			outputFiles = (
+				CalculusLexer.cpp,
+				CalculusLexer.h,
 				ConsoleLexer.h,
 				ConsoleLexer.cpp,
 			);
-			script = "# $(LEX)\nlex -o ${INPUT_FILE_DIR}/ConsoleLexer.cpp --header-file=${INPUT_FILE_DIR}/ConsoleLexer.h ${INPUT_FILE_PATH}";
+			script = "# $(LEX)\nlex -o ${INPUT_FILE_DIR}/ConsoleLexer.cpp --header-file=${INPUT_FILE_DIR}/ConsoleLexer.h ${INPUT_FILE_DIR}/console.lpp\nlex -o ${INPUT_FILE_DIR}/CalculusLexer.cpp --header-file=${INPUT_FILE_DIR}/CalculusLexer.h -P cal ${INPUT_FILE_DIR}/calculus.lpp";
 		};
 		A6C6F56D165FD55800472E99 /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
@@ -119,10 +121,12 @@
 			fileType = sourcecode.yacc;
 			isEditable = 1;
 			outputFiles = (
-				ConsoleParser.cpp,
+				CalculusParser.h,
 				ConsoleParser.h,
+				ConsoleParser.cpp,
+				CalculusParser.cpp,
 			);
-			script = "# $(YACC)\nyacc --defines=${INPUT_FILE_DIR}/ConsoleParser.h -o ${INPUT_FILE_DIR}/ConsoleParser.cpp --verbose ${INPUT_FILE_PATH}";
+			script = "# $(YACC)\nyacc --defines=${INPUT_FILE_DIR}/ConsoleParser.h -o ${INPUT_FILE_DIR}/ConsoleParser.cpp --verbose ${INPUT_FILE_DIR}/console.ypp\nyacc --defines=${INPUT_FILE_DIR}/CalculusParser.h -o ${INPUT_FILE_DIR}/CalculusParser.cpp -p cal --verbose ${INPUT_FILE_DIR}/calculus.ypp";
 		};
 /* End PBXBuildRule section */
 
@@ -143,10 +147,6 @@
 		A627E99516500AA4001142D5 /* ClearCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClearCommand.m; sourceTree = "<group>"; };
 		A627E99616500AA4001142D5 /* Command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Command.h; sourceTree = "<group>"; };
 		A627E99716500AA4001142D5 /* Command.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Command.mm; sourceTree = "<group>"; };
-		A6292C7816603CA200C2C554 /* ConsoleLexer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConsoleLexer.cpp; sourceTree = "<group>"; };
-		A6292C7916603CA300C2C554 /* ConsoleLexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsoleLexer.h; sourceTree = "<group>"; };
-		A6292C7B16603CB000C2C554 /* ConsoleParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConsoleParser.cpp; sourceTree = "<group>"; };
-		A6292C7C16603CB000C2C554 /* ConsoleParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsoleParser.h; sourceTree = "<group>"; };
 		A6292C8816605DFC00C2C554 /* Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
 		A6292C8916605DFC00C2C554 /* Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Data.m; sourceTree = "<group>"; };
 		A6292C98166075B700C2C554 /* ExpressionList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpressionList.h; sourceTree = "<group>"; };
@@ -224,10 +224,6 @@
 		A67BC02F1652F9BA00072670 /* VariableCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VariableCommand.m; sourceTree = "<group>"; };
 		A67CCA651669EDE7007561D9 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "../../../../Downloads/Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		A67CCA661669EDE7007561D9 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~ipad.png"; path = "../../../../Downloads/Default-Portrait~ipad.png"; sourceTree = "<group>"; };
-		A67CCA691669EF38007561D9 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~ipad.png"; path = "../Default-Portrait~ipad.png"; sourceTree = "<group>"; };
-		A67CCA6B1669EF5A007561D9 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "../Default-Landscape~ipad.png"; sourceTree = "<group>"; };
-		A67CCA6D1669EFF4007561D9 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape@2x~ipad.png"; path = "../Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
-		A67CCA6F1669F005007561D9 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait@2x~ipad.png"; path = "../Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
 		A67CCA711669F024007561D9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A67CCA731669F093007561D9 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 		A67CCA741669F093007561D9 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
@@ -263,6 +259,28 @@
 		A6CE38AF166587CB00EDC49A /* GLESContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLESContainer.m; sourceTree = "<group>"; };
 		A6CE38B21665B01700EDC49A /* GLESObjectTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLESObjectTest.h; sourceTree = "<group>"; };
 		A6CE38B31665B01700EDC49A /* GLESObjectTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLESObjectTest.m; sourceTree = "<group>"; };
+		A6D2B11A1669F21B000144D5 /* calculus.lpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lex; path = calculus.lpp; sourceTree = "<group>"; };
+		A6D2B11C1669F22A000144D5 /* calculus.ypp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.yacc; path = calculus.ypp; sourceTree = "<group>"; };
+		A6D2B11E1669F2D6000144D5 /* CalModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CalModel.cpp; sourceTree = "<group>"; };
+		A6D2B11F1669F2D6000144D5 /* CalModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalModel.h; sourceTree = "<group>"; };
+		A6D2B123166A6367000144D5 /* chart_line_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chart_line_24.png; sourceTree = "<group>"; };
+		A6D2B124166A6367000144D5 /* concole_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = concole_24.png; sourceTree = "<group>"; };
+		A6D2B125166A6367000144D5 /* gear_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear_24.png; sourceTree = "<group>"; };
+		A6D2B12C166A64A6000144D5 /* CalculusParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalculusParser.h; sourceTree = "<group>"; };
+		A6D2B131166A66F1000144D5 /* ConsoleLexer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConsoleLexer.cpp; sourceTree = "<group>"; };
+		A6D2B132166A66F1000144D5 /* ConsoleLexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsoleLexer.h; sourceTree = "<group>"; };
+		A6D2B133166A66F1000144D5 /* ConsoleParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConsoleParser.cpp; sourceTree = "<group>"; };
+		A6D2B134166A66F1000144D5 /* ConsoleParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsoleParser.h; sourceTree = "<group>"; };
+		A6D2B13B166A8900000144D5 /* CalculusParser.output */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CalculusParser.output; sourceTree = "<group>"; };
+		A6D2B13D166AB496000144D5 /* CalculusLexer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CalculusLexer.cpp; sourceTree = "<group>"; };
+		A6D2B13E166AB496000144D5 /* CalculusLexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculusLexer.h; sourceTree = "<group>"; };
+		A6D2B13F166AB496000144D5 /* CalculusParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CalculusParser.cpp; sourceTree = "<group>"; };
+		A6D2B142166AB4DF000144D5 /* InteFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteFunction.h; sourceTree = "<group>"; };
+		A6D2B143166AB4DF000144D5 /* InteFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InteFunction.m; sourceTree = "<group>"; };
+		A6D2B145166AB846000144D5 /* DiffFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiffFunction.h; sourceTree = "<group>"; };
+		A6D2B146166AB846000144D5 /* DiffFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiffFunction.m; sourceTree = "<group>"; };
+		A6D2B148166AB88F000144D5 /* FunctionParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunctionParser.h; sourceTree = "<group>"; };
+		A6D2B149166AB88F000144D5 /* FunctionParser.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FunctionParser.mm; sourceTree = "<group>"; };
 		A6D7DF111666FBD400D7B705 /* PadConsoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadConsoleViewController.h; sourceTree = "<group>"; };
 		A6D7DF121666FBD400D7B705 /* PadConsoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadConsoleViewController.m; sourceTree = "<group>"; };
 		A6D7DF14166709CD00D7B705 /* ViewHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewHelper.h; sourceTree = "<group>"; };
@@ -278,14 +296,10 @@
 		A6EEE69D1662A36300310568 /* calculator_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calculator_24.png; sourceTree = "<group>"; };
 		A6EEE69F1662A36300310568 /* display_on_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = display_on_24.png; sourceTree = "<group>"; };
 		A6EEE6A11662A36300310568 /* keyboard_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keyboard_24.png; sourceTree = "<group>"; };
-		A6EEE6A91662A6BD00310568 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		A6EEE6AE1662FAFB00310568 /* OpenGLContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLContext.h; sourceTree = "<group>"; };
 		A6EEE6AF1662FAFB00310568 /* OpenGLContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLContext.m; sourceTree = "<group>"; };
 		A6EEE6B11663022100310568 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		A6EEE6B31663027C00310568 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
-		A6EEE6B71663065100310568 /* concole_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = concole_24.png; path = "../../../../Downloads/TWG Retina Icons/concole_24.png"; sourceTree = "<group>"; };
-		A6EEE6BD1663066900310568 /* gear_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gear_24.png; path = "../../../../Downloads/TWG Retina Icons/gear_24.png"; sourceTree = "<group>"; };
-		A6EEE6C3166306BA00310568 /* chart_line_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chart_line_24.png; path = "../../../../Downloads/TWG Retina Icons/chart_line_24.png"; sourceTree = "<group>"; };
 		A6EEE6CC1663102D00310568 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		A6EEE6CE1664391300310568 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A6EEE6D016645DBB00310568 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
@@ -386,15 +400,15 @@
 		A67415631650803700C33D7C /* parser */ = {
 			isa = PBXGroup;
 			children = (
+				A6D2B131166A66F1000144D5 /* ConsoleLexer.cpp */,
+				A6D2B132166A66F1000144D5 /* ConsoleLexer.h */,
+				A6D2B133166A66F1000144D5 /* ConsoleParser.cpp */,
+				A6D2B134166A66F1000144D5 /* ConsoleParser.h */,
 				A6EEE68A1661DD1200310568 /* ConsoleParser.output */,
 				A69B8CA6165302AC00A64A65 /* console.lpp */,
 				A69B8CA7165302AC00A64A65 /* console.ypp */,
 				A6C6F5CA16601F3D00472E99 /* CommandConverter.h */,
 				A6C6F5CB16601F3D00472E99 /* CommandConverter.mm */,
-				A6292C7816603CA200C2C554 /* ConsoleLexer.cpp */,
-				A6292C7916603CA300C2C554 /* ConsoleLexer.h */,
-				A6292C7B16603CB000C2C554 /* ConsoleParser.cpp */,
-				A6292C7C16603CB000C2C554 /* ConsoleParser.h */,
 			);
 			name = parser;
 			sourceTree = "<group>";
@@ -457,17 +471,12 @@
 				A67CCA741669F093007561D9 /* Default-Landscape~ipad.png */,
 				A67CCA751669F093007561D9 /* Default-Portrait@2x~ipad.png */,
 				A67CCA761669F093007561D9 /* Default-Portrait~ipad.png */,
-				A67CCA6F1669F005007561D9 /* Default-Portrait@2x~ipad.png */,
-				A67CCA6D1669EFF4007561D9 /* Default-Landscape@2x~ipad.png */,
 				A67CCA711669F024007561D9 /* Default-568h@2x.png */,
 				A67CCA651669EDE7007561D9 /* Default-Landscape~ipad.png */,
 				A67CCA661669EDE7007561D9 /* Default-Portrait~ipad.png */,
-				A67CCA6B1669EF5A007561D9 /* Default-Landscape~ipad.png */,
-				A67CCA691669EF38007561D9 /* Default-Portrait~ipad.png */,
 				A6EEE6961662A20400310568 /* tabicon */,
 				A6EEE69416627F5800310568 /* Default.png */,
 				A6EEE69216627DA300310568 /* Default@2x.png */,
-				A6EEE6A91662A6BD00310568 /* Default-568h@2x.png */,
 				A6EEE67E16616D5A00310568 /* icon.png */,
 				A676C0A8164CC20E00C0F859 /* IDCalculator-Info.plist */,
 				A676C0A9164CC20E00C0F859 /* InfoPlist.strings */,
@@ -532,6 +541,10 @@
 				A676C0E0164CC36400C0F859 /* BasicFunction.h */,
 				A676C0E1164CC36400C0F859 /* BasicFunction.m */,
 				A67BC01A165211FF00072670 /* Operator.h */,
+				A6D2B142166AB4DF000144D5 /* InteFunction.h */,
+				A6D2B143166AB4DF000144D5 /* InteFunction.m */,
+				A6D2B145166AB846000144D5 /* DiffFunction.h */,
+				A6D2B146166AB846000144D5 /* DiffFunction.m */,
 			);
 			name = func;
 			sourceTree = "<group>";
@@ -724,9 +737,9 @@
 		A6EEE6961662A20400310568 /* tabicon */ = {
 			isa = PBXGroup;
 			children = (
-				A6EEE6C3166306BA00310568 /* chart_line_24.png */,
-				A6EEE6BD1663066900310568 /* gear_24.png */,
-				A6EEE6B71663065100310568 /* concole_24.png */,
+				A6D2B123166A6367000144D5 /* chart_line_24.png */,
+				A6D2B124166A6367000144D5 /* concole_24.png */,
+				A6D2B125166A6367000144D5 /* gear_24.png */,
 				A6EEE69D1662A36300310568 /* calculator_24.png */,
 				A6EEE69F1662A36300310568 /* display_on_24.png */,
 				A6EEE6A11662A36300310568 /* keyboard_24.png */,
@@ -737,6 +750,8 @@
 		A6EEE6AB1662CBAA00310568 /* cmodel */ = {
 			isa = PBXGroup;
 			children = (
+				A6D2B11E1669F2D6000144D5 /* CalModel.cpp */,
+				A6D2B11F1669F2D6000144D5 /* CalModel.h */,
 			);
 			name = cmodel;
 			sourceTree = "<group>";
@@ -744,6 +759,15 @@
 		A6EEE6AC1662CBB900310568 /* parser */ = {
 			isa = PBXGroup;
 			children = (
+				A6D2B13D166AB496000144D5 /* CalculusLexer.cpp */,
+				A6D2B13E166AB496000144D5 /* CalculusLexer.h */,
+				A6D2B13F166AB496000144D5 /* CalculusParser.cpp */,
+				A6D2B12C166A64A6000144D5 /* CalculusParser.h */,
+				A6D2B13B166A8900000144D5 /* CalculusParser.output */,
+				A6D2B11A1669F21B000144D5 /* calculus.lpp */,
+				A6D2B11C1669F22A000144D5 /* calculus.ypp */,
+				A6D2B148166AB88F000144D5 /* FunctionParser.h */,
+				A6D2B149166AB88F000144D5 /* FunctionParser.mm */,
 			);
 			name = parser;
 			sourceTree = "<group>";
@@ -842,22 +866,16 @@
 				A6EEE6A31662A36300310568 /* calculator_24.png in Resources */,
 				A6EEE6A51662A36300310568 /* display_on_24.png in Resources */,
 				A6EEE6A71662A36300310568 /* keyboard_24.png in Resources */,
-				A6EEE6AA1662A6BD00310568 /* Default-568h@2x.png in Resources */,
-				A6EEE6BA1663065100310568 /* concole_24.png in Resources */,
-				A6EEE6C01663066900310568 /* gear_24.png in Resources */,
-				A6EEE6C6166306BA00310568 /* chart_line_24.png in Resources */,
 				A6EEE6CD1663102F00310568 /* Settings.bundle in Resources */,
-				A67CCA671669EDE7007561D9 /* Default-Landscape~ipad.png in Resources */,
-				A67CCA681669EDE7007561D9 /* Default-Portrait~ipad.png in Resources */,
-				A67CCA6A1669EF38007561D9 /* Default-Portrait~ipad.png in Resources */,
-				A67CCA6C1669EF5A007561D9 /* Default-Landscape~ipad.png in Resources */,
-				A67CCA6E1669EFF4007561D9 /* Default-Landscape@2x~ipad.png in Resources */,
-				A67CCA701669F005007561D9 /* Default-Portrait@2x~ipad.png in Resources */,
 				A67CCA721669F024007561D9 /* Default-568h@2x.png in Resources */,
 				A67CCA771669F093007561D9 /* Default-Landscape@2x~ipad.png in Resources */,
 				A67CCA781669F093007561D9 /* Default-Landscape~ipad.png in Resources */,
 				A67CCA791669F093007561D9 /* Default-Portrait@2x~ipad.png in Resources */,
 				A67CCA7A1669F093007561D9 /* Default-Portrait~ipad.png in Resources */,
+				A6D2B126166A6367000144D5 /* chart_line_24.png in Resources */,
+				A6D2B127166A6367000144D5 /* concole_24.png in Resources */,
+				A6D2B128166A6367000144D5 /* gear_24.png in Resources */,
+				A6D2B13C166A8900000144D5 /* CalculusParser.output in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -923,8 +941,6 @@
 				A67BC0301652F9BB00072670 /* VariableCommand.m in Sources */,
 				A6C6F59C165FFB5100472E99 /* CModel.cpp in Sources */,
 				A6C6F5CC16601F3D00472E99 /* CommandConverter.mm in Sources */,
-				A6292C7A16603CA300C2C554 /* ConsoleLexer.cpp in Sources */,
-				A6292C7D16603CB000C2C554 /* ConsoleParser.cpp in Sources */,
 				A6292C8A16605DFC00C2C554 /* Data.m in Sources */,
 				A6292C9A166075B800C2C554 /* ExpressionList.m in Sources */,
 				A639F25516609970000C5E02 /* Integer.m in Sources */,
@@ -938,6 +954,14 @@
 				A6CE38B0166587CB00EDC49A /* GLESContainer.m in Sources */,
 				A6D7DF131666FBD400D7B705 /* PadConsoleViewController.m in Sources */,
 				A6D7DF16166709CD00D7B705 /* ViewHelper.m in Sources */,
+				A6D2B1201669F2D6000144D5 /* CalModel.cpp in Sources */,
+				A6D2B135166A66F2000144D5 /* ConsoleLexer.cpp in Sources */,
+				A6D2B136166A66F2000144D5 /* ConsoleParser.cpp in Sources */,
+				A6D2B140166AB497000144D5 /* CalculusLexer.cpp in Sources */,
+				A6D2B141166AB497000144D5 /* CalculusParser.cpp in Sources */,
+				A6D2B144166AB4DF000144D5 /* InteFunction.m in Sources */,
+				A6D2B147166AB846000144D5 /* DiffFunction.m in Sources */,
+				A6D2B14A166AB88F000144D5 /* FunctionParser.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
