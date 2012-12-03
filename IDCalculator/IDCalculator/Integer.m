@@ -8,6 +8,7 @@
 
 #import "Integer.h"
 #import "Fraction.h"
+#import "NumberOperators.h"
 
 @implementation Integer
 
@@ -30,37 +31,41 @@ static Integer* ONE;
     return self;
 }
 
--(Number*)add:(Number *)input {
+-(Number*) add:(Number *)input {
     if([input class] == [Integer class]) {
         NSInteger value = [self value] + [(Integer*)input value];
         return [Integer construct:value];
     }
-    return [input add:self];
+    return [NumberOperators add:self right:input];
 }
 
--(Number*)sub:(Number *)input {
+-(Number*) sub:(Number *)input {
     if([input class] == [Integer class]) {
         NSInteger value = [self value] - [(Integer*)input value];
         return [Integer construct:value];
     }
-    if ([input class] == [Fraction class]) {
-        Fraction* fc = (Fraction*)input;
-        Number* n = [self mul:[fc denominator]];
-        return [Fraction construct:[n sub:[fc numerator]] denominator:[fc denominator]];
-    }
-    return nil;
+    return [NumberOperators sub:self right:input];
+//    if ([input class] == [Fraction class]) {
+//        Fraction* fc = (Fraction*)input;
+//        Number* n = [self mul:[fc denominator]];
+//        return [Fraction construct:[n sub:[fc numerator]] denominator:[fc denominator]];
+//    }
+//    return nil;
 }
 
--(Number*)mul:(Number *)input {
+-(Number*) mul:(Number *)input {
     if([input class] == [Integer class]) {
         NSInteger value = [self value] * [(Integer*)input value];
         return [Integer construct:value];
     }
-    return [input mul:self];
+    return [NumberOperators mul:self right:input];
 }
 
--(Number*)div:(Number *)input {
-    return [Fraction construct:self denominator:input];
+-(Number*) div:(Number *)input {
+    if([input class] == [Integer class]) {
+        return [Fraction construct:self denominator:input];
+    }
+    return [NumberOperators div:self right:input];
 }
 
 +(Integer*) construct:(NSInteger)input {

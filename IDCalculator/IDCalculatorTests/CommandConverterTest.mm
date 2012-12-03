@@ -16,6 +16,7 @@
 #import "ArithmeticExpression.h"
 #import "FuncExpression.h"
 #import "Matrix.h"
+#import "NumberData.h"
 
 @implementation CommandConverterTest
 
@@ -99,6 +100,23 @@
     
     FuncExpression* func = (FuncExpression*)[expcmd expression];
     STAssertEqualObjects([[func name] name],@"inverse",@"");
+}
+
+-(void) testParseDecimal {
+    NSString* input = @"3.8583234+6.7";
+    Command* cmd = [CommandConverter parse:input];
+    
+    STAssertTrue([cmd class] == [ExpressionCommand class], @"");
+    
+    ExpressionCommand* expcmd = (ExpressionCommand*)cmd;
+    STAssertEqualObjects([ArithmeticExpression class], [expcmd.expression class], @"");
+    
+    ArithmeticExpression* arith = (ArithmeticExpression*)[expcmd expression];
+    STAssertEqualObjects([arith.left class], [NumberData class],@"");
+    STAssertEqualObjects([arith.right class], [NumberData class],@"");
+    
+    STAssertEqualObjects([arith.left description], @"3.8583", @"");
+    STAssertEqualObjects([arith.right description], @"6.7", @"");
 }
 
 @end

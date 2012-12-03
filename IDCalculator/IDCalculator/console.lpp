@@ -10,20 +10,23 @@ extern void yyerror(char* input);
 %option noyywrap
 
 %%
-[0-9]+          {yylval.stringTerm = yytext; return NUM;}
-=				{return EQUAL;}
-;				{return SEMICOLON;}
-"'"				{return SIQ;}
-"["				{return LBR;}
-"]"				{return RBR;}
-"("             {return LP;}
-")"             {return RP;}
-"+"				{return OADD;}
-"-"				{return OSUB;}
-"*"				{return OMUL;}
-"/"             {return ODIV;}
-","             {return COMMA;}
-"clear"			{return CLEAR;}
-[a-z][a-z0-9]*	{yylval.stringTerm = yytext; return ID;}
-.				{yyerror(yytext);}
+
+[0-9]+"."[0-9]+         {yylval.stringTerm = yytext; return DECIMAL;}
+[0-9]+                  {yylval.stringTerm = yytext; return NUM;}
+=                       {return EQUAL;}
+;                       {return SEMICOLON;}
+"'"                     {return SIQ;}
+"["                     {return LBR;}
+"]"                     {return RBR;}
+"("                     {return LP;}
+")"                     {return RP;}
+"+"                     {return OADD;}
+"-"                     {return OSUB;}
+"*"                     {return OMUL;}
+"/"                     {return ODIV;}
+","                     {return COMMA;}
+"clear"                 {return CLEAR;}
+[a-z][a-z0-9]*          {yylval.stringTerm = yytext; return ID;}
+[ \t\n]+                {/*Ignore Space*/}
+.                       {yyerror(yytext);return ABORT;}
 %%

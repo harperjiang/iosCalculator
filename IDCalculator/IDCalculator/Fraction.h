@@ -7,11 +7,14 @@
 //
 
 #import "Number.h"
+#import "Integer.h"
 
 @interface Fraction : Number
 
 @property(nonatomic) Number* numerator;
 @property(nonatomic) Number* denominator;
+
+-(Fraction*) init:(Integer*) numerator denominator:(Integer*) denominator;
 
 +(Number*) construct:(Number*) n
             denominator:(Number*) d;

@@ -116,7 +116,7 @@
 
 
 /* Copy the first part of user declarations.  */
-#line 1 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 1 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
 
 #include <stdio.h>
 #include "CalModel.h"
@@ -150,7 +150,7 @@ CFunction* calculus_result;
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef union YYSTYPE
-#line 14 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 14 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
 {
     char* stringTerm;
     CFunction* func;
@@ -158,7 +158,7 @@ typedef union YYSTYPE
     CConstant* num;
 }
 /* Line 193 of yacc.c.  */
-#line 162 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/CalculusParser.cpp"
+#line 162 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/CalculusParser.cpp"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
@@ -171,7 +171,7 @@ typedef union YYSTYPE
 
 
 /* Line 216 of yacc.c.  */
-#line 175 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/CalculusParser.cpp"
+#line 175 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/CalculusParser.cpp"
 
 #ifdef short
 # undef short
@@ -463,8 +463,8 @@ static const yytype_int8 yyrhs[] =
 static const yytype_uint8 yyrline[] =
 {
        0,    42,    42,    43,    44,    45,    46,    47,    48,    49,
-      50,    51,    52,    53,    54,    55,    56,    57,    58,    59,
-      60,    61
+      50,    51,    52,    53,    54,    55,    57,    58,    59,    60,
+      61,    62
 };
 #endif
 
@@ -1422,108 +1422,108 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 42 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 42 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {calculus_result = (yyvsp[(1) - (1)].func);}
     break;
 
   case 3:
-#line 43 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 43 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.func) = (yyvsp[(2) - (3)].func);}
     break;
 
   case 4:
-#line 44 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 44 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.func) = new CArithFunc((yyvsp[(1) - (3)].func),ADD,(yyvsp[(3) - (3)].func));}
     break;
 
   case 5:
-#line 45 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 45 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.func) = new CArithFunc((yyvsp[(1) - (3)].func),SUB,(yyvsp[(3) - (3)].func));}
     break;
 
   case 6:
-#line 46 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 46 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.func) = new CArithFunc(NULL,SUB,(yyvsp[(2) - (2)].func));}
     break;
 
   case 7:
-#line 47 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 47 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.func) = new CArithFunc((yyvsp[(1) - (3)].func),MUL,(yyvsp[(3) - (3)].func));}
     break;
 
   case 8:
-#line 48 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 48 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.func) = new CArithFunc((yyvsp[(1) - (2)].func),MUL,(yyvsp[(2) - (2)].func));}
     break;
 
   case 9:
-#line 49 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 49 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.func) = new CArithFunc((yyvsp[(1) - (3)].func),DIV,(yyvsp[(3) - (3)].func));}
     break;
 
   case 10:
-#line 50 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 50 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.func) = new CPowerFunc((yyvsp[(1) - (3)].func),(yyvsp[(3) - (3)].func));}
     break;
 
   case 11:
-#line 51 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 51 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.func) = (yyvsp[(1) - (4)].namefunc); (yyvsp[(1) - (4)].namefunc)->param = (yyvsp[(3) - (4)].func);}
     break;
 
   case 12:
-#line 52 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 52 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.func) = new CIntFunc((yyvsp[(2) - (4)].func),(yyvsp[(4) - (4)].func));}
     break;
 
   case 13:
-#line 53 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 53 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.func) = new CDiffFunc((yyvsp[(2) - (5)].func),(yyvsp[(5) - (5)].func));}
     break;
 
   case 14:
-#line 54 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 54 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.func) = new CVariable();}
     break;
 
   case 15:
-#line 55 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 55 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.func) = (yyvsp[(1) - (1)].num);}
     break;
 
   case 16:
-#line 56 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 57 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.namefunc) = new CNameFunc(NF_SIN,NULL);}
     break;
 
   case 17:
-#line 57 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 58 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.namefunc) = new CNameFunc(NF_COS,NULL);}
     break;
 
   case 18:
-#line 58 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 59 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.namefunc) = new CNameFunc(NF_LN,NULL);}
     break;
 
   case 19:
-#line 59 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 60 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {int val = atoi(yylval.stringTerm); (yyval.num) = new CNumConstant(val);}
     break;
 
   case 20:
-#line 60 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 61 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.num) = new CSpecialConstant(CT_PI);}
     break;
 
   case 21:
-#line 61 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 62 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.num) = new CSpecialConstant(CT_E);}
     break;
 
 
 /* Line 1267 of yacc.c.  */
-#line 1527 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/CalculusParser.cpp"
+#line 1527 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/CalculusParser.cpp"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1737,5 +1737,5 @@ yyreturn:
 }
 
 
-#line 62 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 63 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
 

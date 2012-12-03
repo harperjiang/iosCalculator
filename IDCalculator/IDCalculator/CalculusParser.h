@@ -82,7 +82,7 @@
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef union YYSTYPE
-#line 14 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 14 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
 {
     char* stringTerm;
     CFunction* func;
@@ -90,7 +90,7 @@ typedef union YYSTYPE
     CConstant* num;
 }
 /* Line 1529 of yacc.c.  */
-#line 94 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/CalculusParser.h"
+#line 94 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/CalculusParser.h"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1

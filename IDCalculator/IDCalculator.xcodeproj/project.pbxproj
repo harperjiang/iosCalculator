@@ -10,7 +10,7 @@
 		A602AFC9166B11F0007FBA2A /* NumConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = A602AFC8166B11F0007FBA2A /* NumConstant.m */; };
 		A602AFCD166B1C82007FBA2A /* ArithConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = A602AFCC166B1C82007FBA2A /* ArithConstant.m */; };
 		A602AFDB166B2591007FBA2A /* FunctionParserTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = A602AFDA166B2591007FBA2A /* FunctionParserTest.mm */; };
-		A602AFE3166B4911007FBA2A /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = A602AFE2166B4911007FBA2A /* Calculator.m */; };
+		A602AFE3166B4911007FBA2A /* Calculator.mm in Sources */ = {isa = PBXBuildFile; fileRef = A602AFE2166B4911007FBA2A /* Calculator.mm */; };
 		A627E99216500A97001142D5 /* SpecialConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = A627E99116500A97001142D5 /* SpecialConstant.m */; };
 		A627E99816500AA4001142D5 /* ClearCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = A627E99516500AA4001142D5 /* ClearCommand.m */; };
 		A627E99916500AA4001142D5 /* Command.mm in Sources */ = {isa = PBXBuildFile; fileRef = A627E99716500AA4001142D5 /* Command.mm */; };
@@ -24,7 +24,6 @@
 		A676C0A1164CC20E00C0F859 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A676C0A0164CC20E00C0F859 /* UIKit.framework */; };
 		A676C0A3164CC20E00C0F859 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A676C0A2164CC20E00C0F859 /* Foundation.framework */; };
 		A676C0A5164CC20E00C0F859 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A676C0A4164CC20E00C0F859 /* CoreGraphics.framework */; };
-		A676C0AB164CC20E00C0F859 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A676C0A9164CC20E00C0F859 /* InfoPlist.strings */; };
 		A676C0AD164CC20E00C0F859 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A676C0AC164CC20E00C0F859 /* main.m */; };
 		A676C0B1164CC20E00C0F859 /* IDCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A676C0B0164CC20E00C0F859 /* IDCAppDelegate.m */; };
 		A676C0BD164CC20E00C0F859 /* Storyboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A676C0BB164CC20E00C0F859 /* Storyboard_iPad.storyboard */; };
@@ -36,7 +35,7 @@
 		A676C0D5164CC20F00C0F859 /* IDCalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A676C0D4164CC20F00C0F859 /* IDCalculatorTests.m */; };
 		A676C0F4164CC36400C0F859 /* ArithmeticFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = A676C0DF164CC36400C0F859 /* ArithmeticFunction.m */; };
 		A676C0F5164CC36400C0F859 /* BasicFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = A676C0E1164CC36400C0F859 /* BasicFunction.m */; };
-		A676C0F6164CC36400C0F859 /* CalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A676C0E3164CC36400C0F859 /* CalculatorViewController.m */; };
+		A676C0F6164CC36400C0F859 /* CalculatorViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A676C0E3164CC36400C0F859 /* CalculatorViewController.mm */; };
 		A676C0F7164CC36400C0F859 /* Cleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = A676C0E5164CC36400C0F859 /* Cleaner.m */; };
 		A676C0F8164CC36400C0F859 /* Constant.m in Sources */ = {isa = PBXBuildFile; fileRef = A676C0E7164CC36400C0F859 /* Constant.m */; };
 		A676C0F9164CC36400C0F859 /* ExpPowerFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = A676C0E9164CC36400C0F859 /* ExpPowerFunction.m */; };
@@ -65,6 +64,8 @@
 		A6B9746B164E17EB007E4AB4 /* Vector.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B9746A164E17EB007E4AB4 /* Vector.m */; };
 		A6B9746E164E1A32007E4AB4 /* IDCConsole.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6B9746D164E1A32007E4AB4 /* IDCConsole.mm */; };
 		A6B97475164E8CC1007E4AB4 /* MatrixTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B97474164E8CC1007E4AB4 /* MatrixTest.m */; };
+		A6C5D8E3166C0DD80048E5C2 /* Decimal.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C5D8E2166C0DD80048E5C2 /* Decimal.m */; };
+		A6C5D8E7166C13880048E5C2 /* NumberOperators.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C5D8E6166C13870048E5C2 /* NumberOperators.m */; };
 		A6C6F59C165FFB5100472E99 /* CModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6C6F59A165FFB5100472E99 /* CModel.cpp */; };
 		A6C6F5CC16601F3D00472E99 /* CommandConverter.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6C6F5CB16601F3D00472E99 /* CommandConverter.mm */; };
 		A6C6F5CF1660237A00472E99 /* CommandConverterTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6C6F5CE1660237A00472E99 /* CommandConverterTest.mm */; };
@@ -149,7 +150,7 @@
 		A602AFD9166B2591007FBA2A /* FunctionParserTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunctionParserTest.h; sourceTree = "<group>"; };
 		A602AFDA166B2591007FBA2A /* FunctionParserTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FunctionParserTest.mm; sourceTree = "<group>"; };
 		A602AFE1166B4911007FBA2A /* Calculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calculator.h; sourceTree = "<group>"; };
-		A602AFE2166B4911007FBA2A /* Calculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calculator.m; sourceTree = "<group>"; };
+		A602AFE2166B4911007FBA2A /* Calculator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Calculator.mm; sourceTree = "<group>"; };
 		A627E99016500A97001142D5 /* SpecialConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialConstant.h; sourceTree = "<group>"; };
 		A627E99116500A97001142D5 /* SpecialConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialConstant.m; sourceTree = "<group>"; };
 		A627E99416500AA4001142D5 /* ClearCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClearCommand.h; sourceTree = "<group>"; };
@@ -194,7 +195,7 @@
 		A676C0E0164CC36400C0F859 /* BasicFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicFunction.h; sourceTree = "<group>"; };
 		A676C0E1164CC36400C0F859 /* BasicFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicFunction.m; sourceTree = "<group>"; };
 		A676C0E2164CC36400C0F859 /* CalculatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorViewController.h; sourceTree = "<group>"; };
-		A676C0E3164CC36400C0F859 /* CalculatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorViewController.m; sourceTree = "<group>"; };
+		A676C0E3164CC36400C0F859 /* CalculatorViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CalculatorViewController.mm; sourceTree = "<group>"; };
 		A676C0E4164CC36400C0F859 /* Cleaner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cleaner.h; sourceTree = "<group>"; };
 		A676C0E5164CC36400C0F859 /* Cleaner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cleaner.m; sourceTree = "<group>"; };
 		A676C0E6164CC36400C0F859 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
@@ -250,6 +251,10 @@
 		A6B9746D164E1A32007E4AB4 /* IDCConsole.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IDCConsole.mm; sourceTree = "<group>"; };
 		A6B97473164E8CC1007E4AB4 /* MatrixTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatrixTest.h; sourceTree = "<group>"; };
 		A6B97474164E8CC1007E4AB4 /* MatrixTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatrixTest.m; sourceTree = "<group>"; };
+		A6C5D8E1166C0DD80048E5C2 /* Decimal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decimal.h; sourceTree = "<group>"; };
+		A6C5D8E2166C0DD80048E5C2 /* Decimal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Decimal.m; sourceTree = "<group>"; };
+		A6C5D8E5166C13870048E5C2 /* NumberOperators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberOperators.h; sourceTree = "<group>"; };
+		A6C5D8E6166C13870048E5C2 /* NumberOperators.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberOperators.m; sourceTree = "<group>"; };
 		A6C6F59A165FFB5100472E99 /* CModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CModel.cpp; sourceTree = "<group>"; };
 		A6C6F59B165FFB5100472E99 /* CModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CModel.h; sourceTree = "<group>"; };
 		A6C6F5CA16601F3D00472E99 /* CommandConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandConverter.h; sourceTree = "<group>"; };
@@ -422,6 +427,10 @@
 				A639F2571660997C000C5E02 /* Number.m */,
 				A639F25916609995000C5E02 /* Fraction.h */,
 				A639F25A16609995000C5E02 /* Fraction.m */,
+				A6C5D8E1166C0DD80048E5C2 /* Decimal.h */,
+				A6C5D8E2166C0DD80048E5C2 /* Decimal.m */,
+				A6C5D8E5166C13870048E5C2 /* NumberOperators.h */,
+				A6C5D8E6166C13870048E5C2 /* NumberOperators.m */,
 			);
 			name = math;
 			sourceTree = "<group>";
@@ -546,7 +555,7 @@
 				A6EEE6AC1662CBB900310568 /* parser */,
 				A6EEE6AB1662CBAA00310568 /* cmodel */,
 				A602AFE1166B4911007FBA2A /* Calculator.h */,
-				A602AFE2166B4911007FBA2A /* Calculator.m */,
+				A602AFE2166B4911007FBA2A /* Calculator.mm */,
 			);
 			name = calculus;
 			sourceTree = "<group>";
@@ -734,7 +743,7 @@
 			isa = PBXGroup;
 			children = (
 				A676C0E2164CC36400C0F859 /* CalculatorViewController.h */,
-				A676C0E3164CC36400C0F859 /* CalculatorViewController.m */,
+				A676C0E3164CC36400C0F859 /* CalculatorViewController.mm */,
 				A676C0BE164CC20E00C0F859 /* IDCViewController.h */,
 				A676C0BF164CC20E00C0F859 /* IDCViewController.m */,
 				A6B9745C164DEDE5007E4AB4 /* GraphViewController.h */,
@@ -869,7 +878,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A676C0AB164CC20E00C0F859 /* InfoPlist.strings in Resources */,
 				A676C0BD164CC20E00C0F859 /* Storyboard_iPad.storyboard in Resources */,
 				A676C109164CD25400C0F859 /* Storyboard_iPhone.storyboard in Resources */,
 				A6EEE67F16616D5A00310568 /* icon.png in Resources */,
@@ -928,7 +936,7 @@
 				A676C0C0164CC20E00C0F859 /* IDCViewController.m in Sources */,
 				A676C0F4164CC36400C0F859 /* ArithmeticFunction.m in Sources */,
 				A676C0F5164CC36400C0F859 /* BasicFunction.m in Sources */,
-				A676C0F6164CC36400C0F859 /* CalculatorViewController.m in Sources */,
+				A676C0F6164CC36400C0F859 /* CalculatorViewController.mm in Sources */,
 				A676C0F7164CC36400C0F859 /* Cleaner.m in Sources */,
 				A676C0F8164CC36400C0F859 /* Constant.m in Sources */,
 				A676C0F9164CC36400C0F859 /* ExpPowerFunction.m in Sources */,
@@ -975,7 +983,9 @@
 				A6D2B14A166AB88F000144D5 /* FunctionParser.mm in Sources */,
 				A602AFC9166B11F0007FBA2A /* NumConstant.m in Sources */,
 				A602AFCD166B1C82007FBA2A /* ArithConstant.m in Sources */,
-				A602AFE3166B4911007FBA2A /* Calculator.m in Sources */,
+				A602AFE3166B4911007FBA2A /* Calculator.mm in Sources */,
+				A6C5D8E3166C0DD80048E5C2 /* Decimal.m in Sources */,
+				A6C5D8E7166C13880048E5C2 /* NumberOperators.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

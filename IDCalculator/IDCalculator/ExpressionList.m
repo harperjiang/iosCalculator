@@ -26,6 +26,10 @@
     return [[self expList] objectAtIndex:index];
 }
 
+-(void)set:(NSInteger)index value:(Expression *)val {
+    [self.expList setObject:val atIndexedSubscript:index];
+}
+
 -(NSInteger) count {
     return [[self expList] count];
 }

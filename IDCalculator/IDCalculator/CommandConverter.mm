@@ -25,8 +25,10 @@
 #import "Matrix.h"
 #import "Integer.h"
 #import "Fraction.h"
+#import "Decimal.h"
 
 extern int yyparse();
+extern short DEFAULT_ROUND;
 extern CCommand* parse_result;
 
 @implementation CommandConverter {
@@ -124,14 +126,16 @@ Expression* translate(CExpression* input) {
         case CONST_NUM:
         {
             CNumData* cnd = (CNumData*)input;
-            Number* num = [Integer construct:cnd->value];
+            Number* num = nil;
+            if(cnd->decimal != NULL) {
+                NSDecimalNumber* decimal = [NSDecimalNumber decimalNumberWithString:translate(cnd->decimal)];
+                decimal = [decimal decimalNumberByRoundingAccordingToBehavior:[ScaleBehavior get:DEFAULT_ROUND]];
+                num = [[Decimal alloc] init:decimal];
+            } else {
+                num = [Integer construct:cnd->value];
+            }
             return [[NumberData alloc] init:num];
-        }
-        case CONST_FRAC:
-        {
-            CFracData* frac = (CFracData*)input;
-            Number* num = [Fraction construct:[Integer construct:frac->numerator] denominator:[Integer construct:frac->denominator]];
-            return [[NumberData alloc] init:num];
+            
         }
         default:
             return nil;

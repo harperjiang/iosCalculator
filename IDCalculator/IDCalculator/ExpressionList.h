@@ -14,6 +14,7 @@
 
 -(void) add:(Expression*) exp;
 -(Expression*) get:(NSInteger)index;
+-(void) set:(NSInteger) index value:(Expression*) val;
 -(NSInteger) count;
 
 @end

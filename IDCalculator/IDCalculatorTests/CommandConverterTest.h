@@ -23,4 +23,6 @@
 -(void) testParseSingleQuote;
 
 -(void) testParsingFunction;
+
+-(void) testParseDecimal;
 @end

@@ -154,32 +154,26 @@ public:
 class CNumData : public CData {
 public:
     int value;
+    char* decimal = NULL;
     
     CNumData(int val) {
         this->value = val;
     }
+    
+    CNumData(char* decimal) {
+        this->decimal = new char[strlen(decimal)];
+        strcpy(this->decimal,decimal);
+    }
+    
     int type() {
         return CONST_NUM;
     }
 
-    ~CNumData() {}
-};
-
-class CFracData : public CData {
-public:
-    int numerator;
-    int denominator;
-    int type() {
-        return CONST_FRAC;
+    ~CNumData() {
+        if(this->decimal != NULL)
+            delete this->decimal;
     }
-    CFracData(int n,int d) {
-        this->numerator = n;
-        this->denominator = d;
-    }
-    
-    ~CFracData() {}
 };
-
 
 class CCommand {
     

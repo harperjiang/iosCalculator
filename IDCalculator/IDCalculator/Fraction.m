@@ -8,6 +8,7 @@
 
 #import "Fraction.h"
 #import "Integer.h"
+#import "NumberOperators.h"
 
 @implementation Fraction
 
@@ -66,10 +67,11 @@
 }
 
 -(Number*) add:(Number *)input {
-    if([input class] == [Integer class]) {
-        Integer* ic = (Integer*)input;
-        return [Fraction construct:[[ic mul:[self denominator]] add:[self numerator]] denominator:[self denominator]];
-    } else if([input class] == [Fraction class]) {
+//    if([input class] == [Integer class]) {
+//        Integer* ic = (Integer*)input;
+//        return [Fraction construct:[[ic mul:[self denominator]] add:[self numerator]] denominator:[self denominator]];
+//    } else
+    if([input class] == [Fraction class]) {
         Fraction* fc = (Fraction*)input;
         
         Number* denominator = [[self denominator] mul:[fc denominator]];
@@ -78,14 +80,15 @@
         
         return [Fraction construct:[numLeft add:numRight] denominator:denominator];
     }
-    return nil;
+    return [NumberOperators add:self right:input];
 }
 
 -(Number*) sub:(Number *)input {
-    if([input class] == [Integer class]) {
-        Integer* ic = (Integer*)input;
-        return [Fraction construct:[[self numerator] sub:[ic mul:[self denominator]]] denominator:[self denominator]];
-    } else if([input class] == [Fraction class]) {
+//    if([input class] == [Integer class]) {
+//        Integer* ic = (Integer*)input;
+//        return [Fraction construct:[[self numerator] sub:[ic mul:[self denominator]]] denominator:[self denominator]];
+//    } else
+    if([input class] == [Fraction class]) {
         Fraction* fc = (Fraction*)input;
         Number* denominator = [[self denominator] mul:[fc denominator]];
         Number* numLeft = [[self numerator] mul:[fc denominator]];
@@ -93,22 +96,26 @@
         return [Fraction construct:[numLeft sub:numRight] denominator:denominator];
         
     }
-    return nil;
+    return [NumberOperators sub:self right:input];
 }
 
 -(Number*) mul:(Number *)input {
-    if([input class] == [Integer class]) {
-        Integer* ic = (Integer*)input;
-        return [Fraction construct:[ic mul:[self numerator]] denominator:[self denominator]];
-    } else if([input class] == [Fraction class]) {
+//    if([input class] == [Integer class]) {
+//        Integer* ic = (Integer*)input;
+//        return [Fraction construct:[ic mul:[self numerator]] denominator:[self denominator]];
+//    } else
+    if([input class] == [Fraction class]) {
         Fraction* fc = (Fraction*)input;
         return [Fraction construct:[[self numerator] mul:[fc numerator]] denominator:[[self denominator] mul:[fc denominator]]];
     }
-    return nil;
+    return [NumberOperators mul:self right:input];
 }
 
 -(Number*) div:(Number *)input {
-    return [Fraction construct:self denominator:input];
+    if([input class] == [Fraction class]) {
+        return [Fraction construct:self denominator:input];
+    }
+    return [NumberOperators div:self right:input];
 }
 
 -(NSString*) description {

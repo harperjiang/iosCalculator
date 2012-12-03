@@ -54,9 +54,13 @@
      ODIV = 270,
      ID = 271,
      NUM = 272,
-     LV3 = 273,
-     LV2 = 274,
-     LV1 = 275
+     DECIMAL = 273,
+     ABORT = 274,
+     LOW = 275,
+     POWER = 276,
+     LV3 = 277,
+     LV2 = 278,
+     LV1 = 279
    };
 #endif
 /* Tokens.  */
@@ -75,19 +79,23 @@
 #define ODIV 270
 #define ID 271
 #define NUM 272
-#define LV3 273
-#define LV2 274
-#define LV1 275
+#define DECIMAL 273
+#define ABORT 274
+#define LOW 275
+#define POWER 276
+#define LV3 277
+#define LV2 278
+#define LV1 279
 
 
 
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef union YYSTYPE
-#line 15 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 15 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.ypp"
 {
     char* stringTerm;
-    CData* data;
+    CExpression* data;
     CNumData* num;
     CExpression* exp;
     CExpList* expList;
@@ -100,7 +108,7 @@ typedef union YYSTYPE
     CFuncExpression* func;
 }
 /* Line 1529 of yacc.c.  */
-#line 104 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/ConsoleParser.h"
+#line 112 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/ConsoleParser.h"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1

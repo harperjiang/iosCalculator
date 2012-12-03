@@ -83,6 +83,26 @@
     return self;
 }
 
+-(Data*) evaluate {
+    // Convert Expression to value
+    for(int i = 0 ; i < [self.data count] ; i++) {
+        ExpressionList* row = (ExpressionList*)[self.data get:i];
+        for(int j = 0 ; j < [row count] ; j++) {
+            Expression* exp = [row get:j];
+            if(![exp isKindOfClass:[Data class]]) {
+                
+                Data* value = [exp evaluate];
+                if(![value isKindOfClass:[NumberData class]]){
+                    [self error:@"Matrix can only contain number data"];
+                    return nil;
+                }
+                [row set:j value:value];
+            }
+        }
+    }
+    return self;
+}
+
 -(Data*) add:(Data*) another {
     if([another class] == [Matrix class]) {
         Matrix* anotherM = (Matrix*)another;

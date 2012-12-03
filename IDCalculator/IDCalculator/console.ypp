@@ -14,7 +14,7 @@ CCommand* parse_result;
 
 %union {
     char* stringTerm;
-    CData* data;
+    CExpression* data;
     CNumData* num;
     CExpression* exp;
     CExpList* expList;
@@ -30,7 +30,8 @@ CCommand* parse_result;
 %token CLEAR
 %token EQUAL 
 %token OADD OSUB OMUL ODIV
-%token ID NUM
+%token ID NUM DECIMAL
+%token ABORT
 
 %type <command> command
 %type <matrix> matrix
@@ -43,13 +44,14 @@ CCommand* parse_result;
 %type <dataList> dataList
 %type <data> data
 
+%left LOW
 %left EQUAL
 %left NUM SEMICOLON ID
 %left OADD OSUB
 %left OMUL ODIV
 %left LP 
 %left RP
-%left SIQ
+%left SIQ POWER
 
 %left LV3
 %left LV2
@@ -90,8 +92,9 @@ dataList:   data                            {$$ = new CExpList(); $$->insert(0,$
 
 id      :   ID                              {$$ = new CIdentifier(yylval.stringTerm);};
 
-data    :   num                             {$$ = $1;}
-        |   num ODIV num                    {$$ = new CFracData($1->value,$3->value);}
+data    :   exp  %prec LOW                  {$$ = $1;};
 
-num     :   NUM                             {$$ = new CNumData(atoi(yylval.stringTerm));};
+num     :   NUM                             {$$ = new CNumData(atoi(yylval.stringTerm));}
+        |   DECIMAL                         {$$ = new CNumData(yylval.stringTerm);};
+abort   :   ABORT                           {YYABORT;};
 %%

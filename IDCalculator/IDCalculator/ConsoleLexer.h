@@ -2,9 +2,9 @@
 #define yyHEADER_H 1
 #define yyIN_HEADER 1
 
-#line 6 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/ConsoleLexer.h"
+#line 6 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/ConsoleLexer.h"
 
-#line 8 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/ConsoleLexer.h"
+#line 8 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/ConsoleLexer.h"
 
 #define  YY_INT_ALIGNED short int
 
@@ -314,9 +314,9 @@ extern int yylex (void);
 #undef YY_DECL
 #endif
 
-#line 29 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/console.lpp"
+#line 32 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
 
 
-#line 321 "/Users/harper/Project/IDCalculator/IDCalculator/IDCalculator/ConsoleLexer.h"
+#line 321 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/ConsoleLexer.h"
 #undef yyIN_HEADER
 #endif /* yyHEADER_H */
