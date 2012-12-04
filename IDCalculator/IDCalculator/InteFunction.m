@@ -10,4 +10,8 @@
 
 @implementation InteFunction
 
+-(Function*) evaluate {
+    
+}
+
 @end

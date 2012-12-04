@@ -9,6 +9,7 @@
 #import "FunctionParserTest.h"
 #import "FunctionParser.h"
 #import "Function.h"
+#import "DiffFunction.h"
 
 @implementation FunctionParserTest
 
@@ -16,6 +17,12 @@
     NSString* input = @"sin(4π)";
     Function* result = [FunctionParser parse:input];
     STAssertTrue(result!=nil, @"");
+}
+
+-(void)testParseDiffSin {
+    NSString* input = @"dsin(x)/dx";
+    Function* result = [FunctionParser parse:input];
+    STAssertEqualObjects([result class], [DiffFunction class], @"");
 }
 
 @end

@@ -26,5 +26,16 @@
     
 }
 
++(void) calculatorWillAppear:(UITextView*) calculator {
+    // Load setting and set font
+    NSNumber* fontsize = (NSNumber*)[[NSUserDefaults standardUserDefaults] objectForKey:@"calculator_textsize"];
+    
+    NSInteger val = 18;
+    if(nil != fontsize)
+        val = [fontsize integerValue];
+    
+    [calculator setFont:[UIFont systemFontOfSize:val]];
+}
+
 
 @end

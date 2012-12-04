@@ -11,6 +11,6 @@
 @interface DiffFunction : Function
 
 @property(nonatomic,strong) Function* base;
-@property(nonatomic,strong) Function* factor;
+@property(nonatomic,strong) Variable* variable;
 
 @end

@@ -23,8 +23,11 @@
 -(IBAction) sinButtonClicked:(id) sender;
 -(IBAction) cosButtonClicked:(id) sender;
 -(IBAction) lnButtonClicked:(id) sender;
+-(IBAction) powerButtonClicked:(id) sender;
 -(IBAction) textButtonClicked:(id) sender;
 -(IBAction) backspaceButtonClicked:(id) sender;
 -(IBAction) equalButtonClicked:(id) sender;
 
+-(IBAction) horizontalSwipeReceived:(id)gesture;
+-(IBAction) backspaceButtonRepeated:(id)sender;
 @end

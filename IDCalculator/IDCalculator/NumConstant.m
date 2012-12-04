@@ -22,6 +22,14 @@ static NumConstant* ZERO;
     }
 }
 
++(NumConstant*) construct:(Number*) num {
+    if(num == [Integer ONE])
+        return ONE;
+    if(num == [Integer ZERO])
+        return ZERO;
+    return [[NumConstant alloc] init:num];
+}
+
 +(NumConstant *)ONE {
     return ONE;
 }
@@ -38,10 +46,14 @@ static NumConstant* ZERO;
     return self;
 }
 
+-(NSString *)description {
+    return [self.number description];
+}
+
 -(Constant*)add:(Constant *)input {
     if([input class] == [NumConstant class]) {
         NumConstant* nc = (NumConstant*)input;
-        return [[NumConstant alloc] init:[self.number add:nc.number]];
+        return [NumConstant construct:[self.number add:nc.number]];
     }
     return [[ArithConstant alloc] init:self opr:ADD right:input];
 }
@@ -49,21 +61,23 @@ static NumConstant* ZERO;
 -(Constant*)sub:(Constant *)input {
     if([input class] == [NumConstant class]) {
         NumConstant* nc = (NumConstant*)input;
-        return [[NumConstant alloc] init:[self.number sub:nc.number]];
+        return [NumConstant construct:[self.number sub:nc.number]];
     }
     return [[ArithConstant alloc] init:self opr:SUB right:input];;
 }
+
 -(Constant*)mul:(Constant *)input {
     if([input class] == [NumConstant class]) {
         NumConstant* nc = (NumConstant*)input;
-        return [[NumConstant alloc] init:[self.number mul:nc.number]];
+        return [NumConstant construct:[self.number mul:nc.number]];
     }
     return [[ArithConstant alloc] init:self opr:MUL right:input];;
 }
+
 -(Constant*)div:(Constant *)input {
     if([input class] == [NumConstant class]) {
         NumConstant* nc = (NumConstant*)input;
-        return [[NumConstant alloc] init:[self.number div:nc.number]];
+        return [NumConstant construct:[self.number div:nc.number]];
     }
     return [[ArithConstant alloc] init:self opr:DIV right:input];
 }

@@ -9,7 +9,9 @@
 #import "BasicFunction.h"
 #import "ArithmeticFunction.h"
 #import "NumConstant.h"
-#import "Cleaner.h"
+#import "Integer.h"
+#import "SpecialConstant.h"
+#import "ExpPowerFunction.h"
 
 @implementation BasicFunction
 
@@ -22,8 +24,45 @@
     return self;
 }
 
--(Function*) differentiate:(Variable *)variable {
-    Function* inner = [[self base] differentiate:variable];
+-(Function*) evaluate {
+    self.base = [self.base evaluate];
+    switch(self.type) {
+        case BT_SIN:
+            if(self.base == [NumConstant ZERO]) {
+                return [NumConstant ZERO];
+            }
+            if(self.base == [SpecialConstant PI]) {
+                return [NumConstant ZERO];
+            }
+            if([self.base isKindOfClass:[ArithmeticFunction class]]) {
+                
+            }
+            break;
+        case BT_COS:
+            if(self.base == [NumConstant ZERO]) {
+                return [NumConstant ONE];
+            }
+            if(self.base == [SpecialConstant PI]) {
+                return [NumConstant construct:[Integer construct:-1]];
+            }
+            if([self.base isKindOfClass:[ArithmeticFunction class]]) {
+                
+            }
+            break;
+        case BT_LN:
+            if(self.base == [SpecialConstant E]) {
+                return [NumConstant ONE];
+            }
+            if([self.base isKindOfClass:[ExpPowerFunction class]]) {
+                return [(ExpPowerFunction*)self.base power];
+            }
+            break;
+    }
+    return self;
+}
+
+-(Function*) differentiate:(Variable *) variable{
+    Function* inner = [self.base differentiate:variable];
     Function* transformed = nil;
     switch ([self type]) {
         case BT_SIN:
@@ -38,7 +77,23 @@
         default:
             return nil;
     }
-    return [Cleaner clean:[[ArithmeticFunction alloc] init:inner opr:MUL right:transformed]];
+    return [[ArithmeticFunction alloc] init:inner opr:MUL right:transformed];
+}
+
+-(NSString *) description {
+    NSString* funcName = nil;
+    switch(self.type) {
+        case BT_COS:
+            funcName = @"cos";
+            break;
+        case BT_SIN:
+            funcName = @"sin";
+            break;
+        case BT_LN:
+            funcName = @"ln";
+            break;
+    }
+    return [NSString stringWithFormat:@"%@(%@)",funcName,[self.base description]];
 }
 
 @end

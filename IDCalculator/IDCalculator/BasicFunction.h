@@ -16,11 +16,8 @@ typedef enum _BasicFunctionType {
 
 @interface BasicFunction : Function
 
-
-
 @property(nonatomic) BasicFunctionType type;
 @property(nonatomic,strong) Function* base;
-
 
 -(BasicFunction*) init: (BasicFunctionType) type base:(Function*)base;
 

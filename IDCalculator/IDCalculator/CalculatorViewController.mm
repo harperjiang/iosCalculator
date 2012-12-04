@@ -8,6 +8,7 @@
 
 #import "CalculatorViewController.h"
 #import "FunctionParser.h"
+#import "ViewHelper.h"
 
 
 @implementation CalculatorViewController {
@@ -15,21 +16,20 @@
 }
 
 -(NSMutableString*) buffer {
-    return buffer;
-}
-
--(id)init {
-    self = [super init];
-    if(self) {
+    if(nil == buffer)
         buffer = [[NSMutableString alloc] initWithCapacity:100];
-    }
-    return self;
+    return buffer;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [ViewHelper calculatorWillAppear:self.textView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,7 +46,7 @@
         [[self textView] setText:stringBuffer];
     }
     // Buffer
-    [buffer appendString:text];
+    [[self buffer] appendString:text];
 }
 
 -(void) output: (NSString*) text {
@@ -57,11 +57,13 @@
 }
 
 -(IBAction) equalButtonClicked:(id)sender {
+    if([[self buffer] length] != 0) {
     // Do calculation
-    NSString* output = [[Calculator instance] calculate : buffer];
-    [self output:output];
+        NSString* output = [[Calculator instance] calculate : buffer];
+        [self output: [NSString stringWithFormat:@"=%@",output]];
+    }
     // Clear
-    [buffer setString:@""];
+    [[self buffer] setString:@""];
 }
 
 -(IBAction) backspaceButtonClicked:(id)sender {
@@ -72,7 +74,8 @@
     [stringBuffer deleteCharactersInRange:NSMakeRange([stringBuffer length]-1, 1)];
     [[self textView] setText:stringBuffer];
     // Buffer
-    [buffer deleteCharactersInRange:NSMakeRange([buffer length] -1, 1)];
+    if([[self buffer] length] > 0)
+        [[self buffer] deleteCharactersInRange:NSMakeRange([buffer length] -1, 1)];
 }
 
 - (IBAction) sinButtonClicked:(id) sender {
@@ -87,9 +90,27 @@
     [self appendText:@"ln("];
 }
 
+-(void)powerButtonClicked:(id)sender {
+    [self appendText:@"^"];
+}
+
 - (IBAction) textButtonClicked:(id) sender {
     UIButton* button = (UIButton*) sender;
     [self appendText:[[button titleLabel] text]];
+}
+
+-(void)horizontalSwipeReceived:(id)gesture {
+//    UISwipeGestureRecognizer* swipe = (UISwipeGestureRecognizer*)gesture;
+    [self cleanDisplay];
+}
+
+-(void) backspaceButtonRepeated:(id) sender {
+    [self cleanDisplay];
+}
+
+-(void) cleanDisplay {
+    [[self buffer] setString:@""];
+    [self.textView setText:@""];
 }
 
 @end

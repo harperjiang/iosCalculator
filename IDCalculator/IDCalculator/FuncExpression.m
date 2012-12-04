@@ -57,7 +57,7 @@
 
 -(Data*) calculate:(ExpressionList *)expList {
     Data* val = [[expList get:0] evaluate];
-    if([val class] == [Matrix class] || [val class] == [SquareMatrix class] || [val class] == [Vector class]) {
+    if([val isKindOfClass:[Matrix class]]) {
         return [(Matrix*)val transpose];
     } else {
         [self error:@"Input is not a matrix"];
@@ -107,17 +107,45 @@
             NSInteger intval = [(Integer*)[nd number] value];
             return [Matrix identity:intval];
         } else {
-            [self error:@"Parameter is not a number"];
+            [self error:@"Parameter is not an integer"];
             return nil;
         }
     } else {
-        [self error:@"Input is not a matrix"];
+        [self error:@"Parameter is not an integer"];
         return nil;
     }
 }
 
 @end
 
+@implementation PowerFuncCallback
+
+-(PowerFuncCallback*) init {
+    self = [super init];
+    if(self) {
+        [self setParamCount:2];
+    }
+    return self;
+}
+
+-(Boolean) check:(ExpressionList*) expList {
+    if([expList count] >= self.paramCount) {
+        [self error:@"Incorrect Param Count"];
+        return false;
+    }
+    return true;
+}
+
+-(Data*) calculate:(ExpressionList *)expList {
+    if([expList count] == 1) {
+        // e^n
+        return nil;
+    } else {
+        // a^b
+        return nil;
+    }
+}
+@end
 
 @implementation FuncExpression
 

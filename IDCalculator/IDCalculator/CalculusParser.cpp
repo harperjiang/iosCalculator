@@ -386,7 +386,7 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  20
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   213
+#define YYLAST   94
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  20
@@ -452,9 +452,9 @@ static const yytype_int8 yyrhs[] =
 {
       21,     0,    -1,    22,    -1,     4,    22,     5,    -1,    22,
        6,    22,    -1,    22,     7,    22,    -1,     7,    22,    -1,
-      22,     8,    22,    -1,    22,    22,    -1,    22,     9,    22,
+      22,     8,    22,    -1,    24,    22,    -1,    22,     9,    22,
       -1,    22,    10,    22,    -1,    23,     4,    22,     5,    -1,
-      16,    22,    14,    22,    -1,    14,    22,     9,    14,    22,
+      16,    22,    14,    15,    -1,    14,    22,     9,    14,    15,
       -1,    15,    -1,    24,    -1,    11,    -1,    12,    -1,    13,
       -1,     3,    -1,    18,    -1,    17,    -1
 };
@@ -462,9 +462,9 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    42,    42,    43,    44,    45,    46,    47,    48,    49,
-      50,    51,    52,    53,    54,    55,    57,    58,    59,    60,
-      61,    62
+       0,    41,    41,    42,    43,    44,    45,    46,    47,    48,
+      49,    50,    51,    52,    53,    54,    56,    57,    58,    59,
+      60,    61
 };
 #endif
 
@@ -513,7 +513,7 @@ static const yytype_uint8 yydefact[] =
 {
        0,    19,     0,     0,    16,    17,    18,     0,    14,     0,
       21,    20,     0,     2,     0,    15,     0,     6,     0,     0,
-       1,     0,     0,     0,     0,     0,     8,     0,     3,     0,
+       1,     0,     0,     0,     0,     0,     0,     8,     3,     0,
        0,     4,     5,     7,     9,    10,     0,     0,    12,    11,
       13
 };
@@ -521,82 +521,58 @@ static const yytype_uint8 yydefact[] =
 /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-      -1,    12,    26,    14,    15
+      -1,    12,    18,    14,    15
 };
 
 /* YYPACT[STATE-NUM] -- Index in YYTABLE of the portion describing
    STATE-NUM.  */
-#define YYPACT_NINF -1
-static const yytype_int16 yypact[] =
+#define YYPACT_NINF -5
+static const yytype_int8 yypact[] =
 {
-     131,    -1,   131,   131,    -1,    -1,    -1,   131,    -1,   131,
-      -1,    -1,     1,    67,     4,    -1,    35,   179,    83,    99,
-      -1,   131,   131,   131,   131,   131,    67,   131,    -1,   147,
-     131,     2,   115,   163,   163,   179,    51,   131,   195,    -1,
-     195
+      24,    -5,    24,    24,    -5,    -5,    -5,    24,    -5,    24,
+      -5,    -5,     1,    10,     6,    24,    70,    -5,    81,    -2,
+      -5,    24,    24,    24,    24,    24,    24,     3,    -5,    40,
+      -4,    84,    84,     3,     3,    -5,    76,    56,    -5,    -5,
+      -5
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-      -1,    -1,     0,    -1,    -1
+      -5,    -5,     0,    -5,    -5
 };
 
 /* YYTABLE[YYPACT[STATE-NUM]].  What to do in state STATE-NUM.  If
    positive, shift that token.  If negative, reduce the rule which
    number is the opposite.  If zero, do what YYDEFACT says.
    If YYTABLE_NINF, syntax error.  */
-#define YYTABLE_NINF -7
-static const yytype_int8 yytable[] =
+#define YYTABLE_NINF -1
+static const yytype_uint8 yytable[] =
 {
-      13,    20,    16,    17,     0,     1,     2,    18,    27,    19,
-      23,    24,    25,     4,     5,     6,     7,     8,     9,    10,
-      11,    31,    32,    33,    34,    35,     0,    36,     0,    34,
-      38,     0,     0,     0,     0,     0,     0,    40,     1,     2,
-      28,    21,    22,    23,    24,    25,     4,     5,     6,     7,
-       8,     9,    10,    11,     1,     2,    39,    21,    22,    23,
-      24,    25,     4,     5,     6,     7,     8,     9,    10,    11,
-       1,     2,     0,    21,    22,    23,    24,    25,     4,     5,
-       6,     7,     8,     9,    10,    11,     1,     2,     0,    21,
-      22,    23,    29,    25,     4,     5,     6,     7,     8,     9,
-      10,    11,     1,     2,     0,    21,    22,    23,    24,    25,
-       4,     5,     6,    30,     8,     9,    10,    11,     1,     2,
-       0,     0,     0,    -6,    -6,    -6,     4,     5,     6,     7,
-       8,     9,    10,    11,     1,     2,     0,     0,     3,     0,
-       0,     0,     4,     5,     6,     7,     8,     9,    10,    11,
-       1,     2,     0,     0,     3,     0,     0,     0,     4,     5,
-       6,    37,     8,     9,    10,    11,     1,     2,     0,     0,
-       0,     0,     0,    25,     4,     5,     6,     7,     8,     9,
-      10,    11,     1,     2,     0,     0,     0,     0,     0,     0,
-       4,     5,     6,     7,     8,     9,    10,    11,     1,     2,
-       0,     0,     0,     0,     0,     0,     4,     5,     6,     0,
-       8,     0,    10,    11
+      13,    20,    16,    17,    21,    22,    23,    24,    25,    19,
+      26,    38,    30,    25,     0,    27,    21,    22,    23,    24,
+      25,    31,    32,    33,    34,    35,    36,     1,     2,    34,
+       0,     3,     0,     0,     0,     4,     5,     6,     7,     8,
+       9,    10,    11,     1,     2,     0,     0,     3,     0,     0,
+       0,     4,     5,     6,    37,     8,     9,    10,    11,     1,
+       2,     0,     0,     3,     0,     0,     0,     4,     5,     6,
+       7,    40,     9,    10,    11,    28,    21,    22,    23,    24,
+      25,    39,    21,    22,    23,    24,    25,    21,    22,    23,
+      29,    25,    23,    24,    25
 };
 
 static const yytype_int8 yycheck[] =
 {
-       0,     0,     2,     3,    -1,     3,     4,     7,     4,     9,
-       8,     9,    10,    11,    12,    13,    14,    15,    16,    17,
-      18,    21,    22,    23,    24,    25,    -1,    27,    -1,    29,
-      30,    -1,    -1,    -1,    -1,    -1,    -1,    37,     3,     4,
-       5,     6,     7,     8,     9,    10,    11,    12,    13,    14,
-      15,    16,    17,    18,     3,     4,     5,     6,     7,     8,
-       9,    10,    11,    12,    13,    14,    15,    16,    17,    18,
-       3,     4,    -1,     6,     7,     8,     9,    10,    11,    12,
-      13,    14,    15,    16,    17,    18,     3,     4,    -1,     6,
-       7,     8,     9,    10,    11,    12,    13,    14,    15,    16,
-      17,    18,     3,     4,    -1,     6,     7,     8,     9,    10,
-      11,    12,    13,    14,    15,    16,    17,    18,     3,     4,
-      -1,    -1,    -1,     8,     9,    10,    11,    12,    13,    14,
-      15,    16,    17,    18,     3,     4,    -1,    -1,     7,    -1,
-      -1,    -1,    11,    12,    13,    14,    15,    16,    17,    18,
-       3,     4,    -1,    -1,     7,    -1,    -1,    -1,    11,    12,
-      13,    14,    15,    16,    17,    18,     3,     4,    -1,    -1,
-      -1,    -1,    -1,    10,    11,    12,    13,    14,    15,    16,
-      17,    18,     3,     4,    -1,    -1,    -1,    -1,    -1,    -1,
-      11,    12,    13,    14,    15,    16,    17,    18,     3,     4,
-      -1,    -1,    -1,    -1,    -1,    -1,    11,    12,    13,    -1,
-      15,    -1,    17,    18
+       0,     0,     2,     3,     6,     7,     8,     9,    10,     9,
+       4,    15,    14,    10,    -1,    15,     6,     7,     8,     9,
+      10,    21,    22,    23,    24,    25,    26,     3,     4,    29,
+      -1,     7,    -1,    -1,    -1,    11,    12,    13,    14,    15,
+      16,    17,    18,     3,     4,    -1,    -1,     7,    -1,    -1,
+      -1,    11,    12,    13,    14,    15,    16,    17,    18,     3,
+       4,    -1,    -1,     7,    -1,    -1,    -1,    11,    12,    13,
+      14,    15,    16,    17,    18,     5,     6,     7,     8,     9,
+      10,     5,     6,     7,     8,     9,    10,     6,     7,     8,
+       9,    10,     8,     9,    10
 };
 
 /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
@@ -605,9 +581,9 @@ static const yytype_uint8 yystos[] =
 {
        0,     3,     4,     7,    11,    12,    13,    14,    15,    16,
       17,    18,    21,    22,    23,    24,    22,    22,    22,    22,
-       0,     6,     7,     8,     9,    10,    22,     4,     5,     9,
-      14,    22,    22,    22,    22,    22,    22,    14,    22,     5,
-      22
+       0,     6,     7,     8,     9,    10,     4,    22,     5,     9,
+      14,    22,    22,    22,    22,    22,    22,    14,    15,     5,
+      15
 };
 
 #define yyerrok		(yyerrstatus = 0)
@@ -1422,108 +1398,108 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 42 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 41 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {calculus_result = (yyvsp[(1) - (1)].func);}
     break;
 
   case 3:
-#line 43 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 42 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.func) = (yyvsp[(2) - (3)].func);}
     break;
 
   case 4:
-#line 44 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 43 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.func) = new CArithFunc((yyvsp[(1) - (3)].func),ADD,(yyvsp[(3) - (3)].func));}
     break;
 
   case 5:
-#line 45 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 44 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.func) = new CArithFunc((yyvsp[(1) - (3)].func),SUB,(yyvsp[(3) - (3)].func));}
     break;
 
   case 6:
-#line 46 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 45 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.func) = new CArithFunc(NULL,SUB,(yyvsp[(2) - (2)].func));}
     break;
 
   case 7:
-#line 47 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 46 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.func) = new CArithFunc((yyvsp[(1) - (3)].func),MUL,(yyvsp[(3) - (3)].func));}
     break;
 
   case 8:
-#line 48 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
-    {(yyval.func) = new CArithFunc((yyvsp[(1) - (2)].func),MUL,(yyvsp[(2) - (2)].func));}
+#line 47 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.func) = new CArithFunc((yyvsp[(1) - (2)].num),MUL,(yyvsp[(2) - (2)].func));}
     break;
 
   case 9:
-#line 49 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 48 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.func) = new CArithFunc((yyvsp[(1) - (3)].func),DIV,(yyvsp[(3) - (3)].func));}
     break;
 
   case 10:
-#line 50 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 49 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.func) = new CPowerFunc((yyvsp[(1) - (3)].func),(yyvsp[(3) - (3)].func));}
     break;
 
   case 11:
-#line 51 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 50 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.func) = (yyvsp[(1) - (4)].namefunc); (yyvsp[(1) - (4)].namefunc)->param = (yyvsp[(3) - (4)].func);}
     break;
 
   case 12:
-#line 52 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
-    {(yyval.func) = new CIntFunc((yyvsp[(2) - (4)].func),(yyvsp[(4) - (4)].func));}
+#line 51 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.func) = new CIntFunc((yyvsp[(2) - (4)].func),new CVariable());}
     break;
 
   case 13:
-#line 53 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
-    {(yyval.func) = new CDiffFunc((yyvsp[(2) - (5)].func),(yyvsp[(5) - (5)].func));}
+#line 52 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
+    {(yyval.func) = new CDiffFunc((yyvsp[(2) - (5)].func),new CVariable());}
     break;
 
   case 14:
-#line 54 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 53 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.func) = new CVariable();}
     break;
 
   case 15:
-#line 55 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 54 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.func) = (yyvsp[(1) - (1)].num);}
     break;
 
   case 16:
-#line 57 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 56 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.namefunc) = new CNameFunc(NF_SIN,NULL);}
     break;
 
   case 17:
-#line 58 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 57 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.namefunc) = new CNameFunc(NF_COS,NULL);}
     break;
 
   case 18:
-#line 59 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 58 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.namefunc) = new CNameFunc(NF_LN,NULL);}
     break;
 
   case 19:
-#line 60 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 59 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {int val = atoi(yylval.stringTerm); (yyval.num) = new CNumConstant(val);}
     break;
 
   case 20:
-#line 61 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 60 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.num) = new CSpecialConstant(CT_PI);}
     break;
 
   case 21:
-#line 62 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 61 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
     {(yyval.num) = new CSpecialConstant(CT_E);}
     break;
 
 
 /* Line 1267 of yacc.c.  */
-#line 1527 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/CalculusParser.cpp"
+#line 1503 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/CalculusParser.cpp"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1737,5 +1713,5 @@ yyreturn:
 }
 
 
-#line 63 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
+#line 62 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.ypp"
 

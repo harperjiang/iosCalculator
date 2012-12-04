@@ -8,6 +8,7 @@
 
 #import "Function.h"
 #import "Constant.h"
+#import "NumConstant.h"
 
 @interface PowerFunction : Function
 
@@ -15,5 +16,5 @@
 @property(nonatomic,strong) Constant* power;
 
 -(PowerFunction*) init:(Function*)base power:(Constant*)power;
-
++(NSString*) stringForPower:(NumConstant*) val;
 @end

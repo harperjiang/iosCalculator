@@ -1,4 +1,10 @@
-State 32 conflicts: 4 reduce/reduce
+Terminals which are not used
+
+   LOW
+
+
+State 15 conflicts: 2 shift/reduce
+State 40 conflicts: 5 reduce/reduce
 
 
 Grammar
@@ -12,12 +18,12 @@ Grammar
     4     | func OSUB func
     5     | OSUB func
     6     | func OMUL func
-    7     | func func
+    7     | num func
     8     | func ODIV func
     9     | func POWER func
    10     | namefunc LP func RP
-   11     | IOPR func DOPR func
-   12     | DOPR func ODIV DOPR func
+   11     | IOPR func DOPR VAR
+   12     | DOPR func ODIV DOPR VAR
    13     | VAR
    14     | num
 
@@ -46,7 +52,7 @@ FUNC_SIN (266) 15
 FUNC_COS (267) 16
 FUNC_LN (268) 17
 DOPR (269) 11 12
-VAR (270) 13
+VAR (270) 11 12 13
 IOPR (271) 11
 CONST_E (272) 20
 CONST_PI (273) 19
@@ -65,7 +71,7 @@ func (22)
 namefunc (23)
     on left: 15 16 17, on right: 10
 num (24)
-    on left: 18 19 20, on right: 14
+    on left: 18 19 20, on right: 7 14
 
 
 state 0
@@ -162,7 +168,7 @@ state 6
 
 state 7
 
-   12 func: DOPR . func ODIV DOPR func
+   12 func: DOPR . func ODIV DOPR VAR
 
     NUM       shift, and go to state 1
     LP        shift, and go to state 2
@@ -190,7 +196,7 @@ state 8
 
 state 9
 
-   11 func: IOPR . func DOPR func
+   11 func: IOPR . func DOPR VAR
 
     NUM       shift, and go to state 1
     LP        shift, and go to state 2
@@ -236,17 +242,33 @@ state 13
     3 func: func . OADD func
     4     | func . OSUB func
     6     | func . OMUL func
-    7     | func . func
     8     | func . ODIV func
     9     | func . POWER func
 
+    OADD   shift, and go to state 21
+    OSUB   shift, and go to state 22
+    OMUL   shift, and go to state 23
+    ODIV   shift, and go to state 24
+    POWER  shift, and go to state 25
+
+    $default  reduce using rule 1 (result)
+
+
+state 14
+
+   10 func: namefunc . LP func RP
+
+    LP  shift, and go to state 26
+
+
+state 15
+
+    7 func: num . func
+   14     | num .
+
     NUM       shift, and go to state 1
     LP        shift, and go to state 2
-    OADD      shift, and go to state 21
-    OSUB      shift, and go to state 22
-    OMUL      shift, and go to state 23
-    ODIV      shift, and go to state 24
-    POWER     shift, and go to state 25
+    OSUB      shift, and go to state 3
     FUNC_SIN  shift, and go to state 4
     FUNC_COS  shift, and go to state 5
     FUNC_LN   shift, and go to state 6
@@ -256,25 +278,13 @@ state 13
     CONST_E   shift, and go to state 10
     CONST_PI  shift, and go to state 11
 
-    $default  reduce using rule 1 (result)
+    OSUB      [reduce using rule 14 (func)]
+    DOPR      [reduce using rule 14 (func)]
+    $default  reduce using rule 14 (func)
 
-    func      go to state 26
+    func      go to state 27
     namefunc  go to state 14
     num       go to state 15
-
-
-state 14
-
-   10 func: namefunc . LP func RP
-
-    LP  shift, and go to state 27
-
-
-state 15
-
-   14 func: num .
-
-    $default  reduce using rule 14 (func)
 
 
 state 16
@@ -283,30 +293,15 @@ state 16
     3     | func . OADD func
     4     | func . OSUB func
     6     | func . OMUL func
-    7     | func . func
     8     | func . ODIV func
     9     | func . POWER func
 
-    NUM       shift, and go to state 1
-    LP        shift, and go to state 2
-    RP        shift, and go to state 28
-    OADD      shift, and go to state 21
-    OSUB      shift, and go to state 22
-    OMUL      shift, and go to state 23
-    ODIV      shift, and go to state 24
-    POWER     shift, and go to state 25
-    FUNC_SIN  shift, and go to state 4
-    FUNC_COS  shift, and go to state 5
-    FUNC_LN   shift, and go to state 6
-    DOPR      shift, and go to state 7
-    VAR       shift, and go to state 8
-    IOPR      shift, and go to state 9
-    CONST_E   shift, and go to state 10
-    CONST_PI  shift, and go to state 11
-
-    func      go to state 26
-    namefunc  go to state 14
-    num       go to state 15
+    RP     shift, and go to state 28
+    OADD   shift, and go to state 21
+    OSUB   shift, and go to state 22
+    OMUL   shift, and go to state 23
+    ODIV   shift, and go to state 24
+    POWER  shift, and go to state 25
 
 
 state 17
@@ -315,26 +310,10 @@ state 17
     4     | func . OSUB func
     5     | OSUB func .
     6     | func . OMUL func
-    7     | func . func
     8     | func . ODIV func
     9     | func . POWER func
 
-    NUM       shift, and go to state 1
-    LP        shift, and go to state 2
-    FUNC_SIN  shift, and go to state 4
-    FUNC_COS  shift, and go to state 5
-    FUNC_LN   shift, and go to state 6
-    DOPR      shift, and go to state 7
-    VAR       shift, and go to state 8
-    IOPR      shift, and go to state 9
-    CONST_E   shift, and go to state 10
-    CONST_PI  shift, and go to state 11
-
     $default  reduce using rule 5 (func)
-
-    func      go to state 26
-    namefunc  go to state 14
-    num       go to state 15
 
 
 state 18
@@ -342,30 +321,15 @@ state 18
     3 func: func . OADD func
     4     | func . OSUB func
     6     | func . OMUL func
-    7     | func . func
     8     | func . ODIV func
     9     | func . POWER func
-   12     | DOPR func . ODIV DOPR func
+   12     | DOPR func . ODIV DOPR VAR
 
-    NUM       shift, and go to state 1
-    LP        shift, and go to state 2
-    OADD      shift, and go to state 21
-    OSUB      shift, and go to state 22
-    OMUL      shift, and go to state 23
-    ODIV      shift, and go to state 29
-    POWER     shift, and go to state 25
-    FUNC_SIN  shift, and go to state 4
-    FUNC_COS  shift, and go to state 5
-    FUNC_LN   shift, and go to state 6
-    DOPR      shift, and go to state 7
-    VAR       shift, and go to state 8
-    IOPR      shift, and go to state 9
-    CONST_E   shift, and go to state 10
-    CONST_PI  shift, and go to state 11
-
-    func      go to state 26
-    namefunc  go to state 14
-    num       go to state 15
+    OADD   shift, and go to state 21
+    OSUB   shift, and go to state 22
+    OMUL   shift, and go to state 23
+    ODIV   shift, and go to state 29
+    POWER  shift, and go to state 25
 
 
 state 19
@@ -373,30 +337,16 @@ state 19
     3 func: func . OADD func
     4     | func . OSUB func
     6     | func . OMUL func
-    7     | func . func
     8     | func . ODIV func
     9     | func . POWER func
-   11     | IOPR func . DOPR func
+   11     | IOPR func . DOPR VAR
 
-    NUM       shift, and go to state 1
-    LP        shift, and go to state 2
-    OADD      shift, and go to state 21
-    OSUB      shift, and go to state 22
-    OMUL      shift, and go to state 23
-    ODIV      shift, and go to state 24
-    POWER     shift, and go to state 25
-    FUNC_SIN  shift, and go to state 4
-    FUNC_COS  shift, and go to state 5
-    FUNC_LN   shift, and go to state 6
-    DOPR      shift, and go to state 30
-    VAR       shift, and go to state 8
-    IOPR      shift, and go to state 9
-    CONST_E   shift, and go to state 10
-    CONST_PI  shift, and go to state 11
-
-    func      go to state 26
-    namefunc  go to state 14
-    num       go to state 15
+    OADD   shift, and go to state 21
+    OSUB   shift, and go to state 22
+    OMUL   shift, and go to state 23
+    ODIV   shift, and go to state 24
+    POWER  shift, and go to state 25
+    DOPR   shift, and go to state 30
 
 
 state 20
@@ -430,7 +380,6 @@ state 21
 state 22
 
     4 func: func OSUB . func
-    5     | OSUB . func
 
     NUM       shift, and go to state 1
     LP        shift, and go to state 2
@@ -514,39 +463,6 @@ state 25
 
 state 26
 
-    3 func: func . OADD func
-    4     | func . OSUB func
-    6     | func . OMUL func
-    7     | func . func
-    7     | func func .
-    8     | func . ODIV func
-    9     | func . POWER func
-
-    NUM       shift, and go to state 1
-    LP        shift, and go to state 2
-    OADD      shift, and go to state 21
-    OSUB      shift, and go to state 22
-    OMUL      shift, and go to state 23
-    ODIV      shift, and go to state 24
-    POWER     shift, and go to state 25
-    FUNC_SIN  shift, and go to state 4
-    FUNC_COS  shift, and go to state 5
-    FUNC_LN   shift, and go to state 6
-    DOPR      shift, and go to state 7
-    VAR       shift, and go to state 8
-    IOPR      shift, and go to state 9
-    CONST_E   shift, and go to state 10
-    CONST_PI  shift, and go to state 11
-
-    $default  reduce using rule 7 (func)
-
-    func      go to state 26
-    namefunc  go to state 14
-    num       go to state 15
-
-
-state 27
-
    10 func: namefunc LP . func RP
 
     NUM       shift, and go to state 1
@@ -566,6 +482,20 @@ state 27
     num       go to state 15
 
 
+state 27
+
+    3 func: func . OADD func
+    4     | func . OSUB func
+    6     | func . OMUL func
+    7     | num func .
+    8     | func . ODIV func
+    9     | func . POWER func
+
+    POWER  shift, and go to state 25
+
+    $default  reduce using rule 7 (func)
+
+
 state 28
 
     2 func: LP func RP .
@@ -576,7 +506,7 @@ state 28
 state 29
 
     8 func: func ODIV . func
-   12     | DOPR func ODIV . DOPR func
+   12     | DOPR func ODIV . DOPR VAR
 
     NUM       shift, and go to state 1
     LP        shift, and go to state 2
@@ -597,24 +527,9 @@ state 29
 
 state 30
 
-   11 func: IOPR func DOPR . func
-   12     | DOPR . func ODIV DOPR func
+   11 func: IOPR func DOPR . VAR
 
-    NUM       shift, and go to state 1
-    LP        shift, and go to state 2
-    OSUB      shift, and go to state 3
-    FUNC_SIN  shift, and go to state 4
-    FUNC_COS  shift, and go to state 5
-    FUNC_LN   shift, and go to state 6
-    DOPR      shift, and go to state 7
-    VAR       shift, and go to state 8
-    IOPR      shift, and go to state 9
-    CONST_E   shift, and go to state 10
-    CONST_PI  shift, and go to state 11
-
-    func      go to state 38
-    namefunc  go to state 14
-    num       go to state 15
+    VAR  shift, and go to state 38
 
 
 state 31
@@ -623,29 +538,14 @@ state 31
     3     | func OADD func .
     4     | func . OSUB func
     6     | func . OMUL func
-    7     | func . func
     8     | func . ODIV func
     9     | func . POWER func
 
-    NUM       shift, and go to state 1
-    LP        shift, and go to state 2
-    OMUL      shift, and go to state 23
-    ODIV      shift, and go to state 24
-    POWER     shift, and go to state 25
-    FUNC_SIN  shift, and go to state 4
-    FUNC_COS  shift, and go to state 5
-    FUNC_LN   shift, and go to state 6
-    DOPR      shift, and go to state 7
-    VAR       shift, and go to state 8
-    IOPR      shift, and go to state 9
-    CONST_E   shift, and go to state 10
-    CONST_PI  shift, and go to state 11
+    OMUL   shift, and go to state 23
+    ODIV   shift, and go to state 24
+    POWER  shift, and go to state 25
 
     $default  reduce using rule 3 (func)
-
-    func      go to state 26
-    namefunc  go to state 14
-    num       go to state 15
 
 
 state 32
@@ -653,39 +553,15 @@ state 32
     3 func: func . OADD func
     4     | func . OSUB func
     4     | func OSUB func .
-    5     | OSUB func .
     6     | func . OMUL func
-    7     | func . func
     8     | func . ODIV func
     9     | func . POWER func
 
-    NUM       shift, and go to state 1
-    LP        shift, and go to state 2
-    FUNC_SIN  shift, and go to state 4
-    FUNC_COS  shift, and go to state 5
-    FUNC_LN   shift, and go to state 6
-    DOPR      shift, and go to state 7
-    VAR       shift, and go to state 8
-    IOPR      shift, and go to state 9
-    CONST_E   shift, and go to state 10
-    CONST_PI  shift, and go to state 11
+    OMUL   shift, and go to state 23
+    ODIV   shift, and go to state 24
+    POWER  shift, and go to state 25
 
-    $end      reduce using rule 4 (func)
-    $end      [reduce using rule 5 (func)]
-    RP        reduce using rule 4 (func)
-    RP        [reduce using rule 5 (func)]
-    OADD      reduce using rule 4 (func)
-    OADD      [reduce using rule 5 (func)]
-    OSUB      reduce using rule 4 (func)
-    OSUB      [reduce using rule 5 (func)]
-    OMUL      reduce using rule 5 (func)
-    ODIV      reduce using rule 5 (func)
-    POWER     reduce using rule 5 (func)
     $default  reduce using rule 4 (func)
-
-    func      go to state 26
-    namefunc  go to state 14
-    num       go to state 15
 
 
 state 33
@@ -694,27 +570,12 @@ state 33
     4     | func . OSUB func
     6     | func . OMUL func
     6     | func OMUL func .
-    7     | func . func
     8     | func . ODIV func
     9     | func . POWER func
 
-    NUM       shift, and go to state 1
-    LP        shift, and go to state 2
-    POWER     shift, and go to state 25
-    FUNC_SIN  shift, and go to state 4
-    FUNC_COS  shift, and go to state 5
-    FUNC_LN   shift, and go to state 6
-    DOPR      shift, and go to state 7
-    VAR       shift, and go to state 8
-    IOPR      shift, and go to state 9
-    CONST_E   shift, and go to state 10
-    CONST_PI  shift, and go to state 11
+    POWER  shift, and go to state 25
 
     $default  reduce using rule 6 (func)
-
-    func      go to state 26
-    namefunc  go to state 14
-    num       go to state 15
 
 
 state 34
@@ -722,28 +583,13 @@ state 34
     3 func: func . OADD func
     4     | func . OSUB func
     6     | func . OMUL func
-    7     | func . func
     8     | func . ODIV func
     8     | func ODIV func .
     9     | func . POWER func
 
-    NUM       shift, and go to state 1
-    LP        shift, and go to state 2
-    POWER     shift, and go to state 25
-    FUNC_SIN  shift, and go to state 4
-    FUNC_COS  shift, and go to state 5
-    FUNC_LN   shift, and go to state 6
-    DOPR      shift, and go to state 7
-    VAR       shift, and go to state 8
-    IOPR      shift, and go to state 9
-    CONST_E   shift, and go to state 10
-    CONST_PI  shift, and go to state 11
+    POWER  shift, and go to state 25
 
     $default  reduce using rule 8 (func)
-
-    func      go to state 26
-    namefunc  go to state 14
-    num       go to state 15
 
 
 state 35
@@ -751,27 +597,11 @@ state 35
     3 func: func . OADD func
     4     | func . OSUB func
     6     | func . OMUL func
-    7     | func . func
     8     | func . ODIV func
     9     | func . POWER func
     9     | func POWER func .
 
-    NUM       shift, and go to state 1
-    LP        shift, and go to state 2
-    FUNC_SIN  shift, and go to state 4
-    FUNC_COS  shift, and go to state 5
-    FUNC_LN   shift, and go to state 6
-    DOPR      shift, and go to state 7
-    VAR       shift, and go to state 8
-    IOPR      shift, and go to state 9
-    CONST_E   shift, and go to state 10
-    CONST_PI  shift, and go to state 11
-
     $default  reduce using rule 9 (func)
-
-    func      go to state 26
-    namefunc  go to state 14
-    num       go to state 15
 
 
 state 36
@@ -779,37 +609,22 @@ state 36
     3 func: func . OADD func
     4     | func . OSUB func
     6     | func . OMUL func
-    7     | func . func
     8     | func . ODIV func
     9     | func . POWER func
    10     | namefunc LP func . RP
 
-    NUM       shift, and go to state 1
-    LP        shift, and go to state 2
-    RP        shift, and go to state 39
-    OADD      shift, and go to state 21
-    OSUB      shift, and go to state 22
-    OMUL      shift, and go to state 23
-    ODIV      shift, and go to state 24
-    POWER     shift, and go to state 25
-    FUNC_SIN  shift, and go to state 4
-    FUNC_COS  shift, and go to state 5
-    FUNC_LN   shift, and go to state 6
-    DOPR      shift, and go to state 7
-    VAR       shift, and go to state 8
-    IOPR      shift, and go to state 9
-    CONST_E   shift, and go to state 10
-    CONST_PI  shift, and go to state 11
-
-    func      go to state 26
-    namefunc  go to state 14
-    num       go to state 15
+    RP     shift, and go to state 39
+    OADD   shift, and go to state 21
+    OSUB   shift, and go to state 22
+    OMUL   shift, and go to state 23
+    ODIV   shift, and go to state 24
+    POWER  shift, and go to state 25
 
 
 state 37
 
-   12 func: DOPR . func ODIV DOPR func
-   12     | DOPR func ODIV DOPR . func
+   12 func: DOPR . func ODIV DOPR VAR
+   12     | DOPR func ODIV DOPR . VAR
 
     NUM       shift, and go to state 1
     LP        shift, and go to state 2
@@ -818,41 +633,21 @@ state 37
     FUNC_COS  shift, and go to state 5
     FUNC_LN   shift, and go to state 6
     DOPR      shift, and go to state 7
-    VAR       shift, and go to state 8
+    VAR       shift, and go to state 40
     IOPR      shift, and go to state 9
     CONST_E   shift, and go to state 10
     CONST_PI  shift, and go to state 11
 
-    func      go to state 40
+    func      go to state 18
     namefunc  go to state 14
     num       go to state 15
 
 
 state 38
 
-    3 func: func . OADD func
-    4     | func . OSUB func
-    6     | func . OMUL func
-    7     | func . func
-    8     | func . ODIV func
-    9     | func . POWER func
-   11     | IOPR func DOPR func .
-   12     | DOPR func . ODIV DOPR func
-
-    NUM       shift, and go to state 1
-    LP        shift, and go to state 2
-    FUNC_SIN  shift, and go to state 4
-    FUNC_COS  shift, and go to state 5
-    FUNC_LN   shift, and go to state 6
-    VAR       shift, and go to state 8
-    CONST_E   shift, and go to state 10
-    CONST_PI  shift, and go to state 11
+   11 func: IOPR func DOPR VAR .
 
     $default  reduce using rule 11 (func)
-
-    func      go to state 26
-    namefunc  go to state 14
-    num       go to state 15
 
 
 state 39
@@ -864,26 +659,17 @@ state 39
 
 state 40
 
-    3 func: func . OADD func
-    4     | func . OSUB func
-    6     | func . OMUL func
-    7     | func . func
-    8     | func . ODIV func
-    9     | func . POWER func
-   12     | DOPR func . ODIV DOPR func
-   12     | DOPR func ODIV DOPR func .
+   12 func: DOPR func ODIV DOPR VAR .
+   13     | VAR .
 
-    NUM       shift, and go to state 1
-    LP        shift, and go to state 2
-    FUNC_SIN  shift, and go to state 4
-    FUNC_COS  shift, and go to state 5
-    FUNC_LN   shift, and go to state 6
-    VAR       shift, and go to state 8
-    CONST_E   shift, and go to state 10
-    CONST_PI  shift, and go to state 11
-
+    OADD      reduce using rule 12 (func)
+    OADD      [reduce using rule 13 (func)]
+    OSUB      reduce using rule 12 (func)
+    OSUB      [reduce using rule 13 (func)]
+    OMUL      reduce using rule 12 (func)
+    OMUL      [reduce using rule 13 (func)]
+    ODIV      reduce using rule 12 (func)
+    ODIV      [reduce using rule 13 (func)]
+    POWER     reduce using rule 12 (func)
+    POWER     [reduce using rule 13 (func)]
     $default  reduce using rule 12 (func)
-
-    func      go to state 26
-    namefunc  go to state 14
-    num       go to state 15

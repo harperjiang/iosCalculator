@@ -90,7 +90,6 @@
         for(int j = 0 ; j < [row count] ; j++) {
             Expression* exp = [row get:j];
             if(![exp isKindOfClass:[Data class]]) {
-                
                 Data* value = [exp evaluate];
                 if(![value isKindOfClass:[NumberData class]]){
                     [self error:@"Matrix can only contain number data"];
@@ -107,7 +106,7 @@
     if([another class] == [Matrix class]) {
         Matrix* anotherM = (Matrix*)another;
         if([self m] != [anotherM m] || [self n] != [anotherM n]) {
-            [[IDCConsole instance] error:@"Adding matrices with different size"];
+            [self error:@"Adding matrices with different size"];
             return nil;
         }
         ExpressionList* newdata = [[ExpressionList alloc] init];
@@ -121,7 +120,7 @@
         }
         return [[Matrix alloc] init:newdata];
     } else {
-        [[IDCConsole instance] error:@"Adding Matrix to non-Matrix"];
+        [self error:@"Adding Matrix to non-Matrix"];
         return nil;
     }
 }
@@ -131,7 +130,7 @@
     if([another class] == [Matrix class]) {
         Matrix* anotherM = (Matrix*)another;
         if([self m] != [anotherM m] || [self n] != [anotherM n]) {
-            [[IDCConsole instance] error:@"Adding matrices with different size"];
+            [self error:@"Adding matrices with different size"];
             return nil;
         }
         ExpressionList* newdata = [[ExpressionList alloc] init];
@@ -145,7 +144,7 @@
         }
         return [[Matrix alloc] init:newdata];
     } else {
-        [[IDCConsole instance] error:@"Adding Matrix to non-Matrix"];
+        [self error:@"Adding Matrix to non-Matrix"];
         return nil;
     }
 }
@@ -169,7 +168,7 @@
             }
             return [[Matrix alloc] init:data];
         } else {
-            [[IDCConsole instance] error:@"Multiplying Matrices with wrong size"];
+            [self error:@"Multiplying Matrices with wrong size"];
             return nil;
         }
     } else if([another class] == [NumberData class]){
@@ -206,7 +205,7 @@
         }
         return [[Matrix alloc] init:newdata];
     } else {
-        [[IDCConsole instance] error:@"Matrix can only be divided by number"];
+        [self error:@"Matrix can only be divided by number"];
         return nil;
     }
 }
@@ -282,7 +281,7 @@
 }
 
 -(Number *)determinant {
-    
+    return nil;
 }
 
 -(Matrix*) inverse {

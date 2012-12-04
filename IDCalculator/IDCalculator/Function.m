@@ -12,7 +12,7 @@
 @implementation Function
 
 -(Function*) evaluate {
-    return nil;
+    return self;
 }
 
 -(Function*) integrate:(Variable*) variable {

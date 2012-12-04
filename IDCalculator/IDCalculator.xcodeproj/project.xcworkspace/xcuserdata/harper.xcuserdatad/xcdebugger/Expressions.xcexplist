@@ -3,87 +3,35 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[Matrix init:]:Matrix.m">
+         contextName = "-[ArithmeticFunction evaluate]:ArithmeticFunction.m">
          <PersistentStrings>
             <PersistentString
-               value = "[data count]">
-            </PersistentString>
-            <PersistentString
-               value = "[data get:3]">
+               value = "(NumConstant*)self.left">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "yyparse():console.ypp">
-         <PersistentStrings>
-            <PersistentString
-               value = "yylval">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[Matrix init:m:n:]:Matrix.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "[self m]">
-            </PersistentString>
-            <PersistentString
-               value = "(Integer*)number">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "translate(CExpression*):CommandConverter.mm">
-         <PersistentStrings>
-            <PersistentString
-               value = "[[expList get:0] get: 0]">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[Matrix mul:]:Matrix.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "[(Fraction*)sum description]">
-            </PersistentString>
-            <PersistentString
-               value = "[(Integer*)sum description]">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[MatrixTest testDescription]:MatrixTest.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "[[matrixB val:1 n:0] description]">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "-[BasicFunction differentiate:]:BasicFunction.m">
       </ContextState>
       <ContextState
          contextName = "-[Matrix val:n:]:Matrix.m">
          <PersistentStrings>
+            <PersistentString
+               value = "[[self data] get:2]">
+            </PersistentString>
             <PersistentString
                value = "(NumberData*)item">
             </PersistentString>
             <PersistentString
                value = "[self val:1 n:0]">
             </PersistentString>
-            <PersistentString
-               value = "[[self data] get:2]">
-            </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[CommandConverter innerParse:]:CommandConverter.mm">
+         contextName = "-[Matrix setVal:n:val:]:Matrix.m">
          <PersistentStrings>
             <PersistentString
-               value = "yylval">
-            </PersistentString>
-            <PersistentString
-               value = "">
-            </PersistentString>
-            <PersistentString
-               value = "(CMatrix*)(((CAssignCommand*)parse_result)-&gt;value)">
+               value = "1/3">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -120,6 +68,79 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[CommandConverter convert]:CommandConverter.mm">
+      </ContextState>
+      <ContextState
+         contextName = "translate(CExpression*):CommandConverter.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "[[expList get:0] get: 0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "yyparse():console.ypp">
+         <PersistentStrings>
+            <PersistentString
+               value = "yylval">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PowerFunction differentiate:]:PowerFunction.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ArithmeticFunction differentiate:]:ArithmeticFunction.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[(ArithmeticFunction*)dv description]">
+            </PersistentString>
+            <PersistentString
+               value = "[(ArithmeticFunction*)du description]">
+            </PersistentString>
+            <PersistentString
+               value = "[self description]">
+            </PersistentString>
+            <PersistentString
+               value = "[(ArithmeticFunction*)self.left description]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CleanerTest testCleanNestedConstantMul]:CleanerTest.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[Matrix init:m:n:]:Matrix.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[self m]">
+            </PersistentString>
+            <PersistentString
+               value = "(Integer*)number">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CommandConverter innerParse:]:CommandConverter.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "yylval">
+            </PersistentString>
+            <PersistentString
+               value = "">
+            </PersistentString>
+            <PersistentString
+               value = "(CMatrix*)(((CAssignCommand*)parse_result)-&gt;value)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[Variable differentiate:]:Variable.m">
+      </ContextState>
+      <ContextState
+         contextName = "+[Fraction construct:denominator:]:Fraction.m">
+      </ContextState>
+      <ContextState
          contextName = "yyparse():ConsoleParser.cpp">
          <PersistentStrings>
             <PersistentString
@@ -137,10 +158,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[Matrix setVal:n:val:]:Matrix.m">
+         contextName = "-[Matrix mul:]:Matrix.m">
          <PersistentStrings>
             <PersistentString
-               value = "1/3">
+               value = "[(Fraction*)sum description]">
+            </PersistentString>
+            <PersistentString
+               value = "[(Integer*)sum description]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -149,6 +173,31 @@
          <PersistentStrings>
             <PersistentString
                value = "(CNumData*)exp">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[DiffFunction evaluate]:DiffFunction.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[DiffFunctionTest testPolynomialDiff]:DiffFunctionTest.mm">
+      </ContextState>
+      <ContextState
+         contextName = "-[MatrixTest testDescription]:MatrixTest.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[[matrixB val:1 n:0] description]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[Matrix init:]:Matrix.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[data count]">
+            </PersistentString>
+            <PersistentString
+               value = "[data get:3]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -164,13 +213,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "+[Cleaner clean:]:Cleaner.m">
+      </ContextState>
+      <ContextState
          contextName = "-[Integer div:]:Integer.m">
-      </ContextState>
-      <ContextState
-         contextName = "-[CommandConverter convert]:CommandConverter.mm">
-      </ContextState>
-      <ContextState
-         contextName = "+[Fraction construct:denominator:]:Fraction.m">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

@@ -10,4 +10,9 @@
 
 @implementation DiffFunction
 
+-(Function*) evaluate {
+    self.base = [self.base evaluate];
+    return [[self.base differentiate:self.variable] evaluate];
+}
+
 @end

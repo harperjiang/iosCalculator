@@ -33,6 +33,10 @@
 
 @end
 
+@interface PowerFuncCallback :  FuncCallback
+
+@end
+
 @interface FuncExpression : Expression
 
 @property(nonatomic,strong) ConsoleIdentifier* name;

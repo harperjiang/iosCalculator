@@ -20,4 +20,25 @@
     return self;
 }
 
+-(NSString *)description {
+    NSString* format = nil;
+    switch(self.opr) {
+        case ADD:
+            format = @"%@+%@";
+            break;
+        case SUB:
+            format = @"%@-%@";
+            break;
+        case MUL:
+            format = @"%@*%@";
+            break;
+        case DIV:
+            format = @"%@/%@";
+            break;
+        default:
+            return nil;
+    }
+    return [NSString stringWithFormat:format,[self.left description],[self.right description]];
+}
+
 @end

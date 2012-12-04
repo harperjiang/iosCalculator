@@ -11,9 +11,9 @@
 
 @interface Constant : Function
 
--(Constant*)add:(Constant*)input;
--(Constant*)sub:(Constant*)input;
--(Constant*)mul:(Constant*)input;
--(Constant*)div:(Constant*)input;
+-(Constant*) add:(Constant*)input;
+-(Constant*) sub:(Constant*)input;
+-(Constant*) mul:(Constant*)input;
+-(Constant*) div:(Constant*)input;
 
 @end

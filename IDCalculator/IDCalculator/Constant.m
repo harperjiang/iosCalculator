@@ -14,8 +14,12 @@
 
 @implementation Constant
 
+-(Function*) evaluate {
+    return self;
+}
+
 -(Function*) differentiate:(Variable *)variable {
-    return [[NumConstant alloc] init:[Integer ZERO]];
+    return [NumConstant ZERO];
 }
 
 -(Constant*)add:(Constant *)input {

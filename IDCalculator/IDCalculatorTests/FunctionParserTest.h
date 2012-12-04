@@ -11,5 +11,5 @@
 @interface FunctionParserTest : SenTestCase
 
 -(void) testParseSimple;
-
+-(void) testParseDiffSin;
 @end

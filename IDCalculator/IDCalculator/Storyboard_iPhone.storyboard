@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="sfW-qe-gfL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="sfW-qe-gfL">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
         <!--View Controller - Console-->
@@ -117,8 +117,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="223"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.84057917179999997" green="0.90605235390000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="2oh-wM-j4H" appends="YES" id="ioL-DC-ZgF"/>
+                                </connections>
                             </textView>
                             <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Zb9-kn-0H5">
                                 <rect key="frame" x="5" y="228" width="40" height="44"/>
@@ -177,7 +181,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="textButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="3C4-4I-hkX"/>
+                                    <action selector="powerButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="shc-Ar-B96"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dGM-16-LQP">
@@ -523,6 +527,7 @@
                                 </state>
                                 <connections>
                                     <action selector="backspaceButtonClicked:" destination="jCI-G3-0cw" eventType="touchUpInside" id="fYM-N8-eTv"/>
+                                    <action selector="backspaceButtonRepeated:" destination="jCI-G3-0cw" eventType="touchDownRepeat" id="8eb-bn-6pb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cEC-mO-nM1">
@@ -552,6 +557,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XFg-N4-cM3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" numberOfTouchesRequired="2" id="2oh-wM-j4H">
+                    <connections>
+                        <action selector="horizontalSwipeReceived:" destination="jCI-G3-0cw" id="wIv-e3-Wb0"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="880" y="-683"/>
         </scene>
@@ -653,9 +663,12 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CalculatorViewController.h"/>
             <relationships>
                 <relationship kind="action" name="backspaceButtonClicked:"/>
+                <relationship kind="action" name="backspaceButtonRepeated:"/>
                 <relationship kind="action" name="cosButtonClicked:"/>
                 <relationship kind="action" name="equalButtonClicked:"/>
+                <relationship kind="action" name="horizontalSwipeReceived:"/>
                 <relationship kind="action" name="lnButtonClicked:"/>
+                <relationship kind="action" name="powerButtonClicked:"/>
                 <relationship kind="action" name="sinButtonClicked:"/>
                 <relationship kind="action" name="textButtonClicked:"/>
                 <relationship kind="outlet" name="cosButton" candidateClass="UIButton"/>

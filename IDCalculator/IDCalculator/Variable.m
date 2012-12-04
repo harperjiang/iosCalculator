@@ -7,6 +7,8 @@
 //
 
 #import "Variable.h"
+#import "NumConstant.h"
+#import "integer.h"
 
 @implementation Variable
 
@@ -21,6 +23,21 @@ static Variable* x;
 
 +(Variable*) x {
     return x;
+}
+
+-(Function*) evaluate {
+    return self;
+}
+
+-(Function*) differentiate:(Variable *)variable {
+    if([self.name compare:variable.name] == NSOrderedSame)
+        return [NumConstant ONE];
+    else
+        return [NumConstant ZERO];
+}
+
+-(NSString*) description {
+    return self.name;
 }
 
 @end

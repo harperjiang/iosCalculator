@@ -13,5 +13,5 @@
 +(void) consoleWillLoad:(UIView*) view;
 +(void) consoleWillAppear:(UITextView*) view;
 
-
++(void) calculatorWillAppear:(UITextView*) view;
 @end

@@ -8,7 +8,8 @@
 
 #import "ExpPowerFunction.h"
 #import "ArithmeticFunction.h"
-#import "Cleaner.h"
+#import "NumConstant.h"
+#import "PowerFunction.h"
 
 @implementation ExpPowerFunction
 
@@ -24,7 +25,30 @@
     // e^f(x) = e^f(x) *f'(x)
     Function* dpower = [[self power] differentiate:variable];
     Function* result = [[ArithmeticFunction alloc] init:self opr:MUL right:dpower];
-    return [Cleaner clean:result];
+    return  result;
+}
+
+-(Function*) evaluate {
+    self.power = [self.power evaluate];
+    return self;
+}
+
+-(NSString*) description {
+    NSMutableString* buffer = [[NSMutableString alloc] initWithCapacity:20];
+    [buffer appendString:@"e"];
+    if([self.power isKindOfClass:[NumConstant class]]) {
+        NSString* powerstr = [PowerFunction stringForPower:(NumConstant*)self.power];
+        if(powerstr != nil) {
+            [buffer appendString:powerstr];
+            return buffer;
+        }
+    }
+    if([self.power isKindOfClass:[NumConstant class]]) {
+        [buffer appendFormat:@"^%@",[self.power description]];
+    } else {
+        [buffer appendFormat:@"^(%@)",[self.power description]];
+    }
+    return buffer;
 }
 
 @end

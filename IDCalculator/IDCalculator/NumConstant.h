@@ -13,7 +13,7 @@
 
 @property(nonatomic,strong) Number* number;
 
--(NumConstant*) init:(Number*) number;
++(NumConstant*) construct:(Number*) num;
 
 +(NumConstant*) ONE;
 +(NumConstant*) ZERO;

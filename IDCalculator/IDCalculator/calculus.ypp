@@ -20,7 +20,6 @@ CFunction* calculus_result;
 %token NUM LP RP OADD OSUB OMUL ODIV POWER 
 %token FUNC_SIN FUNC_COS FUNC_LN 
 %token DOPR VAR IOPR 
-%token NUM
 %token CONST_E CONST_PI
 
 %type <func> func
@@ -45,12 +44,12 @@ func        :   LP func RP                      {$$ = $2;}
             |   func OSUB func                  {$$ = new CArithFunc($1,SUB,$3);}
             |   OSUB func %prec POWER           {$$ = new CArithFunc(NULL,SUB,$2);}
             |   func OMUL func                  {$$ = new CArithFunc($1,MUL,$3);}
-            |   func func %prec LOW             {$$ = new CArithFunc($1,MUL,$2);}
+            |   num  func %prec OMUL            {$$ = new CArithFunc($1,MUL,$2);}
             |   func ODIV func                  {$$ = new CArithFunc($1,DIV,$3);}
             |   func POWER func                 {$$ = new CPowerFunc($1,$3);}
             |   namefunc LP func RP             {$$ = $1; $1->param = $3;}
-            |   IOPR func DOPR func             {$$ = new CIntFunc($2,$4);}
-            |   DOPR func ODIV DOPR func        {$$ = new CDiffFunc($2,$5);}
+            |   IOPR func DOPR VAR              {$$ = new CIntFunc($2,new CVariable());}
+            |   DOPR func ODIV DOPR VAR         {$$ = new CDiffFunc($2,new CVariable());}
             |   VAR                             {$$ = new CVariable();}
             |   num                             {$$ = $1;};
 

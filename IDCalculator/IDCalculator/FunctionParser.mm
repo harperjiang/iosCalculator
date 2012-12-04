@@ -72,14 +72,14 @@ Function* translate(CFunction* cfunc) {
             CIntFunc* cintf = (CIntFunc*)cfunc;
             InteFunction* inte = [[InteFunction alloc] init];
             inte.base = translate(cintf->base);
-            inte.factor = translate(cintf->factor);
+            inte.variable = translate(cintf->factor);
             return inte;
         }
         case CAL_FUNC_DIFF: {
             CDiffFunc* cdf = (CDiffFunc*)cfunc;
             DiffFunction* df = [[DiffFunction alloc] init];
             df.base = translate(cdf->base);
-            df.factor = translate(cdf->factor);
+            df.variable = (Variable*)translate(cdf->factor);
             return df;
         }
         case CAL_FUNC_NAME: {
@@ -100,7 +100,7 @@ Function* translate(CFunction* cfunc) {
         }
         case CAL_CON_NUM: {
             CNumConstant* cnc = (CNumConstant*)cfunc;
-            return [[NumConstant alloc] init:[Integer construct:cnc->value]];
+            return [NumConstant construct:[Integer construct:cnc->value]];
         }
         case CAL_CON_SPEC: {
             CSpecialConstant* specc = (CSpecialConstant*)cfunc;
