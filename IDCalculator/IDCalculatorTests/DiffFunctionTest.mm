@@ -37,4 +37,17 @@
 
 }
 
+-(void) testNegativePower {
+    Function* func = [FunctionParser parse:@"d(1/x)/dx"];
+    Function* diff = [func evaluate];
+    STAssertEqualObjects([diff description], @"-1/x²", @"");
+    
+}
+
+-(void)testComplexPolynomial {
+    Function* func = [FunctionParser parse:@"d((x^2+1)/(x+1))/dx"];
+    Function* diff = [func evaluate];
+    STAssertEqualObjects([diff description], @"(x²+2x-1)/(x²+2x+1)", @"");
+}
+
 @end

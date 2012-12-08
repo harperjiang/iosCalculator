@@ -7,11 +7,17 @@
 //
 
 #import "InteFunction.h"
+#import "PolynomialFunction.h"
 
 @implementation InteFunction
 
 -(Function*) evaluate {
-    
+    self.base = [self.base evaluate];
+    Function* inte = [[self.base integrate:self.variable] evaluate];
+    Function* polyStyle = [PolynomialFunction toPolynomial:inte];
+    if(nil != polyStyle)
+        return polyStyle;
+    return inte;
 }
 
 @end

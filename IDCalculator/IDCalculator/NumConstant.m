@@ -14,11 +14,13 @@
 
 static NumConstant* ONE;
 static NumConstant* ZERO;
+static NumConstant* NEGAONE;
 
 +(void) initialize {
     if([self class] == [NumConstant class]) {
         ONE = [[NumConstant alloc] init:[Integer ONE]];
         ZERO = [[NumConstant alloc] init:[Integer ZERO]];
+        NEGAONE = [[NumConstant alloc] init:[Integer NEGAONE]];
     }
 }
 
@@ -27,7 +29,13 @@ static NumConstant* ZERO;
         return ONE;
     if(num == [Integer ZERO])
         return ZERO;
+    if(num == [Integer NEGAONE])
+        return NEGAONE;
     return [[NumConstant alloc] init:num];
+}
+
++(NumConstant *)constructWithInteger:(NSInteger)num {
+    return [NumConstant construct:[Integer construct:num]];
 }
 
 +(NumConstant *)ONE {
@@ -36,6 +44,10 @@ static NumConstant* ZERO;
 
 +(NumConstant*) ZERO {
     return ZERO;
+}
+
++(NumConstant*)NEGAONE {
+    return NEGAONE;
 }
 
 -(NumConstant *)init:(Number *)number {

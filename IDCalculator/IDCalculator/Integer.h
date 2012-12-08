@@ -20,5 +20,6 @@
 
 +(Integer*) ZERO;
 +(Integer*) ONE;
++(Integer*) NEGAONE;
 
 @end

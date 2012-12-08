@@ -6,7 +6,7 @@
          contextName = "-[ArithmeticFunction evaluate]:ArithmeticFunction.m">
          <PersistentStrings>
             <PersistentString
-               value = "(NumConstant*)self.left">
+               value = "[self description]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -14,16 +14,30 @@
          contextName = "-[BasicFunction differentiate:]:BasicFunction.m">
       </ContextState>
       <ContextState
-         contextName = "-[Matrix val:n:]:Matrix.m">
+         contextName = "-[PolynomialFunction description]:PolynomialFunction.m">
          <PersistentStrings>
             <PersistentString
-               value = "[[self data] get:2]">
+               value = "[self description]">
             </PersistentString>
+            <PersistentString
+               value = "(NumConstant*)coefficient">
+            </PersistentString>
+            <PersistentString
+               value = "[NumConstant NEGAONE]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[Matrix val:n:]:Matrix.m">
+         <PersistentStrings>
             <PersistentString
                value = "(NumberData*)item">
             </PersistentString>
             <PersistentString
                value = "[self val:1 n:0]">
+            </PersistentString>
+            <PersistentString
+               value = "[[self data] get:2]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -68,13 +82,39 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[CommandConverter convert]:CommandConverter.mm">
+         contextName = "-[PowerFunction differentiate:]:PowerFunction.m">
       </ContextState>
       <ContextState
          contextName = "translate(CExpression*):CommandConverter.mm">
          <PersistentStrings>
             <PersistentString
                value = "[[expList get:0] get: 0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ArithmeticFunction differentiate:]:ArithmeticFunction.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[(ArithmeticFunction*) vdu description]">
+            </PersistentString>
+            <PersistentString
+               value = "[self.right description]">
+            </PersistentString>
+            <PersistentString
+               value = "[(ArithmeticFunction*)result description]">
+            </PersistentString>
+            <PersistentString
+               value = "[(ArithmeticFunction*)du description]">
+            </PersistentString>
+            <PersistentString
+               value = "[self.left description]">
+            </PersistentString>
+            <PersistentString
+               value = "[(ArithmeticFunction*)dv description]">
+            </PersistentString>
+            <PersistentString
+               value = "(ArithmeticFunction*)result">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -87,24 +127,7 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[PowerFunction differentiate:]:PowerFunction.m">
-      </ContextState>
-      <ContextState
-         contextName = "-[ArithmeticFunction differentiate:]:ArithmeticFunction.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "[(ArithmeticFunction*)dv description]">
-            </PersistentString>
-            <PersistentString
-               value = "[(ArithmeticFunction*)du description]">
-            </PersistentString>
-            <PersistentString
-               value = "[self description]">
-            </PersistentString>
-            <PersistentString
-               value = "[(ArithmeticFunction*)self.left description]">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "-[DiffFunction evaluate]:DiffFunction.m">
       </ContextState>
       <ContextState
          contextName = "-[CleanerTest testCleanNestedConstantMul]:CleanerTest.m">
@@ -138,9 +161,6 @@
          contextName = "-[Variable differentiate:]:Variable.m">
       </ContextState>
       <ContextState
-         contextName = "+[Fraction construct:denominator:]:Fraction.m">
-      </ContextState>
-      <ContextState
          contextName = "yyparse():ConsoleParser.cpp">
          <PersistentStrings>
             <PersistentString
@@ -158,6 +178,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "CExpList::add(CExpression*):CModel.h">
+         <PersistentStrings>
+            <PersistentString
+               value = "(CNumData*)exp">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[Matrix mul:]:Matrix.m">
          <PersistentStrings>
             <PersistentString
@@ -169,15 +197,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "CExpList::add(CExpression*):CModel.h">
-         <PersistentStrings>
-            <PersistentString
-               value = "(CNumData*)exp">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "-[CommandConverter convert]:CommandConverter.mm">
       </ContextState>
       <ContextState
-         contextName = "-[DiffFunction evaluate]:DiffFunction.m">
+         contextName = "+[Fraction construct:denominator:]:Fraction.m">
       </ContextState>
       <ContextState
          contextName = "-[DiffFunctionTest testPolynomialDiff]:DiffFunctionTest.mm">
@@ -213,7 +236,29 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[PolynomialFunction power:]:PolynomialFunction.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[self description]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "+[Cleaner clean:]:Cleaner.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[PolynomialFunction evaluate]:PolynomialFunction.m">
+      </ContextState>
+      <ContextState
+         contextName = "+[PolynomialFunction toPolynomial:]:PolynomialFunction.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[function description]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ArithmeticFunction description]:ArithmeticFunction.m">
       </ContextState>
       <ContextState
          contextName = "-[Integer div:]:Integer.m">

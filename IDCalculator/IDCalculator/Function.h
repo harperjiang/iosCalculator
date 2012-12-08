@@ -17,4 +17,6 @@
 -(Function*) differentiate:(Variable*) variable;
 -(Function*) integrate:(Variable*) variable;
 
+-(Boolean) equals:(Function*) another;
+
 @end

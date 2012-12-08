@@ -8,6 +8,10 @@
 
 #import "ArithmeticFunction.h"
 #import "NumConstant.h"
+#import "PowerFunction.h"
+#import "ExpPowerFunction.h"
+#import "Integer.h"
+#import "PolynomialFunction.h"
 
 @implementation ArithmeticFunction
 
@@ -22,17 +26,17 @@
 }
 
 -(Function*) differentiate:(Variable *)variable {
-    if([self.left isKindOfClass:[Constant class]]) {
+    if([self.left isKindOfClass:[Constant class]] && self.opr == MUL) {
         return [[ArithmeticFunction alloc] init:self.left opr:MUL right:[self.right differentiate:variable]];
     }
     Function* du = [[self left] differentiate:variable];
     Function* dv = [[self right] differentiate:variable];
     Function* result = nil;
-    Function* udv = nil, *vdu = nil,*uv = nil;
+    Function* udv = nil, *vdu = nil,*vv = nil;
     if([self opr] >= MUL) {
         udv = [[ArithmeticFunction alloc] init:[self left] opr:MUL right:dv];
         vdu = [[ArithmeticFunction alloc] init:[self right] opr:MUL right:du];
-        uv = [[ArithmeticFunction alloc] init:[self left] opr:MUL right:[self right]];
+        vv = [[PowerFunction alloc] init:self.right power:[NumConstant construct:[Integer construct:2]]];
     }
     switch([self opr]) {
         case ADD:
@@ -45,8 +49,8 @@
             result = [[ArithmeticFunction alloc] init:udv opr:ADD right:vdu];
             break;
         case DIV:
-            // (udv - vdu)/uv
-            result = [[ArithmeticFunction alloc] init:[[ArithmeticFunction alloc] init:udv opr:SUB right:vdu] opr:DIV right:uv];
+            // (vdu - udv)/v²
+            result = [[ArithmeticFunction alloc] init:[[ArithmeticFunction alloc] init:vdu opr:SUB right:udv] opr:DIV right:vv];
             break;
         default:
             return nil;
@@ -130,6 +134,24 @@
         }
     }
     
+    // Merge PowerFunction
+    if([self.left isKindOfClass:[PowerFunction class]] && [self.right isKindOfClass:[PowerFunction class]] && self.opr == MUL) {
+        PowerFunction* leftPower = (PowerFunction*)self.left;
+        PowerFunction* rightPower = (PowerFunction*)self.right;
+        if([[leftPower base] equals:[rightPower base]]) {
+            Constant* newpower = [leftPower.power add:rightPower.power];
+            return [[PowerFunction alloc] init:leftPower.base power:newpower];
+        }
+    }
+    
+    // Merge ExpPowerFunction
+    if([self.left isKindOfClass:[ExpPowerFunction class]] && [self.right isKindOfClass:[ExpPowerFunction class]] && self.opr == MUL) {
+        ExpPowerFunction* leftPower = (ExpPowerFunction*)self.left;
+        ExpPowerFunction* rightPower = (ExpPowerFunction*)self.right;
+        Function* newpower = [[[ArithmeticFunction alloc] init:leftPower.power opr:ADD right:rightPower.power] evaluate];
+        return [[ExpPowerFunction alloc] init:newpower];
+    }
+    
     return self;
 }
 
@@ -138,11 +160,13 @@
     if(self.left != nil) {
         if([self.left isKindOfClass:[ArithmeticFunction class]]) {
             ArithmeticFunction* lefta = (ArithmeticFunction*)self.left;
-            if(lefta.opr < 3 && self.opr > 3) {
+            if(lefta.opr < 3 && self.opr >= 3) {
                 [result appendFormat:@"(%@)",[self.left description]];
             } else {
                 [result appendString:[self.left description]];
             }
+        } else if([self.left isKindOfClass:[PolynomialFunction class]] && [[(PolynomialFunction*)self.left coefficients] count] > 1){
+            [result appendFormat:@"(%@)",[self.left description]];
         } else {
             [result appendString:[self.left description]];
         }
@@ -165,14 +189,17 @@
     }
     if([self.right isKindOfClass:[ArithmeticFunction class]]) {
         ArithmeticFunction* righta = (ArithmeticFunction*)self.right;
-        if(righta.opr < 3 && self.opr > 3) {
+        if(righta.opr < 3 && self.opr >= 3) {
             [result appendFormat:@"(%@)",[self.right description]];
         } else {
             [result appendString:[self.right description]];
         }
+    } else if([self.right isKindOfClass:[PolynomialFunction class]] && [(PolynomialFunction*)self.right validCount] > 1){
+        [result appendFormat:@"(%@)",[self.right description]];
     } else {
         [result appendString:[self.right description]];
     }
+    
     return result;
 }
 

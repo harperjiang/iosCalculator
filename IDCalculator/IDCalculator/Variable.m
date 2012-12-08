@@ -40,4 +40,12 @@ static Variable* x;
     return self.name;
 }
 
+-(Boolean) equals:(Function *)another {
+    if([another isKindOfClass:[Variable class]]) {
+        Variable* av = (Variable*)another;
+        return [av.name compare: self.name] == NSOrderedSame;
+    }
+    return false;
+}
+
 @end

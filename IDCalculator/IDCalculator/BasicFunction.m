@@ -80,6 +80,10 @@
     return [[ArithmeticFunction alloc] init:inner opr:MUL right:transformed];
 }
 
+-(Function*) integrate:(Variable *)variable {
+    
+}
+
 -(NSString *) description {
     NSString* funcName = nil;
     switch(self.type) {

@@ -8,6 +8,7 @@
 
 #import "Function.h"
 #import "Variable.h"
+#import "PolynomialFunction.h"
 
 @implementation Function
 
@@ -20,6 +21,18 @@
 }
 
 -(Function*) differentiate:(Variable*) variable {
+    return nil;
+}
+
+-(Boolean)equals:(Function *)another {
+    return false;
+}
+
+-(NSString*) description {
+    Function* poly = [PolynomialFunction toPolynomial:self];
+    if(poly != nil) {
+        return [poly description];
+    }
     return nil;
 }
 

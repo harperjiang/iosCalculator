@@ -1,5 +1,5 @@
 //
-//  ArithmeticFunctionTest.h
+//  VariableTest.h
 //  IDCalculator
 //
 //  Created by Harper Jiang on 12/4/12.
@@ -8,8 +8,8 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface ArithmeticFunctionTest : SenTestCase
+@interface VariableTest : SenTestCase
 
--(void) testPlusAddMinus;
--(void) testDescriptionWithParenthesis;
+-(void) testEquals;
+
 @end

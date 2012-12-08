@@ -89,6 +89,9 @@
 		A6D7DF131666FBD400D7B705 /* PadConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D7DF121666FBD400D7B705 /* PadConsoleViewController.m */; };
 		A6D7DF16166709CD00D7B705 /* ViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D7DF15166709CD00D7B705 /* ViewHelper.m */; };
 		A6DE83FE164EDDEC002F6FFA /* VectorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DE83FD164EDDEC002F6FFA /* VectorTest.m */; };
+		A6E505BC166EF39500575845 /* VariableTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E505BB166EF39500575845 /* VariableTest.m */; };
+		A6E505C0166EF4AB00575845 /* PolynomialFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E505BF166EF4AB00575845 /* PolynomialFunction.m */; };
+		A6E505C31671D1B300575845 /* PolynomialFunctionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E505C21671D1B300575845 /* PolynomialFunctionTest.m */; };
 		A6EEE67F16616D5A00310568 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A6EEE67E16616D5A00310568 /* icon.png */; };
 		A6EEE6851661CD4900310568 /* FuncExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EEE6841661CD4900310568 /* FuncExpression.m */; };
 		A6EEE68B1661DD1200310568 /* ConsoleParser.output in Resources */ = {isa = PBXBuildFile; fileRef = A6EEE68A1661DD1200310568 /* ConsoleParser.output */; };
@@ -301,6 +304,12 @@
 		A6D7DF15166709CD00D7B705 /* ViewHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewHelper.m; sourceTree = "<group>"; };
 		A6DE83FC164EDDEC002F6FFA /* VectorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VectorTest.h; sourceTree = "<group>"; };
 		A6DE83FD164EDDEC002F6FFA /* VectorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VectorTest.m; sourceTree = "<group>"; };
+		A6E505BA166EF39500575845 /* VariableTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VariableTest.h; sourceTree = "<group>"; };
+		A6E505BB166EF39500575845 /* VariableTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VariableTest.m; sourceTree = "<group>"; };
+		A6E505BE166EF4AB00575845 /* PolynomialFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolynomialFunction.h; sourceTree = "<group>"; };
+		A6E505BF166EF4AB00575845 /* PolynomialFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolynomialFunction.m; sourceTree = "<group>"; };
+		A6E505C11671D1B300575845 /* PolynomialFunctionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolynomialFunctionTest.h; sourceTree = "<group>"; };
+		A6E505C21671D1B300575845 /* PolynomialFunctionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolynomialFunctionTest.m; sourceTree = "<group>"; };
 		A6EEE67E16616D5A00310568 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		A6EEE6831661CD4900310568 /* FuncExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuncExpression.h; sourceTree = "<group>"; };
 		A6EEE6841661CD4900310568 /* FuncExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuncExpression.m; sourceTree = "<group>"; };
@@ -580,6 +589,8 @@
 				A6D2B143166AB4DF000144D5 /* InteFunction.m */,
 				A6D2B145166AB846000144D5 /* DiffFunction.h */,
 				A6D2B146166AB846000144D5 /* DiffFunction.m */,
+				A6E505BE166EF4AB00575845 /* PolynomialFunction.h */,
+				A6E505BF166EF4AB00575845 /* PolynomialFunction.m */,
 			);
 			name = func;
 			sourceTree = "<group>";
@@ -744,6 +755,10 @@
 				A6D1238C166E831900F256B3 /* ArithmeticFunctionTest.mm */,
 				A6D1238E166E886F00F256B3 /* BasicFunctionTest.h */,
 				A6D1238F166E887000F256B3 /* BasicFunctionTest.m */,
+				A6E505BA166EF39500575845 /* VariableTest.h */,
+				A6E505BB166EF39500575845 /* VariableTest.m */,
+				A6E505C11671D1B300575845 /* PolynomialFunctionTest.h */,
+				A6E505C21671D1B300575845 /* PolynomialFunctionTest.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -1003,6 +1018,7 @@
 				A602AFE3166B4911007FBA2A /* Calculator.mm in Sources */,
 				A6C5D8E3166C0DD80048E5C2 /* Decimal.m in Sources */,
 				A6C5D8E7166C13880048E5C2 /* NumberOperators.m in Sources */,
+				A6E505C0166EF4AB00575845 /* PolynomialFunction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1023,6 +1039,8 @@
 				A6D12383166D981E00F256B3 /* DiffFunctionTest.mm in Sources */,
 				A6D1238D166E831900F256B3 /* ArithmeticFunctionTest.mm in Sources */,
 				A6D12390166E887000F256B3 /* BasicFunctionTest.m in Sources */,
+				A6E505BC166EF39500575845 /* VariableTest.m in Sources */,
+				A6E505C31671D1B300575845 /* PolynomialFunctionTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

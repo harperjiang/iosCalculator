@@ -9,6 +9,7 @@
 #import "PowerFunction.h"
 #import "NumConstant.h"
 #import "ArithmeticFunction.h"
+#import "PolynomialFunction.h"
 #import "Integer.h"
 #import "Number.h"
 
@@ -39,12 +40,23 @@
         return self.base;
     if(self.power == [NumConstant ZERO])
         return [NumConstant ONE];
+    if([self.base isKindOfClass:[PowerFunction class]]) {
+        // Nested Power
+        PowerFunction* oldbase = (PowerFunction*)self.base;
+        self.base = oldbase.base;
+        Function* newpower = [[[ArithmeticFunction alloc] init:oldbase.power opr:ADD right:self.power] evaluate];
+        if([newpower isKindOfClass:[NumConstant class]]) {
+            self.power = (NumConstant*)newpower;
+        } else {
+            return nil;
+        }
+    }
     return self;
 }
 
 -(NSString *)description {
     NSMutableString* result = [[NSMutableString alloc] initWithCapacity:20];
-    if([self.base isKindOfClass:[ArithmeticFunction class]])
+    if([self.base isKindOfClass:[ArithmeticFunction class]] || [self.base isKindOfClass:[PolynomialFunction class]])
         [result appendFormat:@"(%@)",[self.base description]];
     else
         [result appendString:[self.base description]];
@@ -69,32 +81,36 @@
 
 +(NSString*) stringForPower:(NumConstant*) con {
     if(![con.number isKindOfClass:[Integer class]])
-        return nil;
+        return [NSString stringWithFormat:@"^(%@)",[con description]];
     Integer* intval = (Integer*)con.number;
     NSInteger val = intval.value;
-    if(val > 1 && val < 10) {
-        switch(val) {
-            case 2:
-                return @"²";
-            case 3:
-                return @"³";
-            case 4:
-                return @"⁴";
-            case 5:
-                return @"⁵";
-            case 6:
-                return @"⁶";
-            case 7:
-                return @"⁷";
-            case 8:
-                return @"⁸";
-            case 9:
-                return @"⁹";
-            default:
-                return nil;
-        }
+    
+    switch(val) {
+        case 0:
+            return @"";
+        case 1:
+            return @"";
+        case 2:
+            return @"²";
+        case 3:
+            return @"³";
+        case 4:
+            return @"⁴";
+        case 5:
+            return @"⁵";
+        case 6:
+            return @"⁶";
+        case 7:
+            return @"⁷";
+        case 8:
+            return @"⁸";
+        case 9:
+            return @"⁹";
+        default:
+            return [NSString stringWithFormat:@"^%@",[con description]];
     }
-    return nil;
+    
+    return @"";
 }
 
 @end

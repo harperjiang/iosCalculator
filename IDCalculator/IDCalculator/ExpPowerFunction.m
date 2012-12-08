@@ -28,6 +28,10 @@
     return  result;
 }
 
+-(Function*) integrate:(Variable *)variable {
+    
+}
+
 -(Function*) evaluate {
     self.power = [self.power evaluate];
     return self;

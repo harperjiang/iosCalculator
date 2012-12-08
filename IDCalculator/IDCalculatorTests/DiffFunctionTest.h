@@ -13,4 +13,6 @@
 -(void) testDifferentiate;
 -(void) testPolynomialDiff;
 -(void) testBasicFunc;
+-(void) testNegativePower;
+-(void) testComplexPolynomial;
 @end

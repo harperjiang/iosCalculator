@@ -14,8 +14,8 @@
 @property(nonatomic,strong) Number* number;
 
 +(NumConstant*) construct:(Number*) num;
-
++(NumConstant*) constructWithInteger:(NSInteger) num;
 +(NumConstant*) ONE;
 +(NumConstant*) ZERO;
-
++(NumConstant*) NEGAONE;
 @end

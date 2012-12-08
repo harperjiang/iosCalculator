@@ -15,11 +15,13 @@
 
 static Integer* ZERO;
 static Integer* ONE;
+static Integer* NEGAONE;
 
 +(void) initialize {
     if([self class] == [Integer class]) {
         ZERO = [[Integer alloc] init:0];
         ONE = [[Integer alloc] init:1];
+        NEGAONE = [[Integer alloc] init:-1];
     }
 }
 
@@ -73,6 +75,8 @@ static Integer* ONE;
         return ZERO;
     if(input == 1)
         return ONE;
+    if(input == -1)
+        return NEGAONE;
     return [[Integer alloc] init:input];
 }
 
@@ -82,6 +86,10 @@ static Integer* ONE;
 
 +(Integer*) ONE {
     return ONE;
+}
+
++(Integer *)NEGAONE {
+    return NEGAONE;
 }
 
 -(NSString*) description {

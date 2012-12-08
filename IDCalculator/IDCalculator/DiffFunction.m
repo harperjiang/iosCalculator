@@ -7,12 +7,17 @@
 //
 
 #import "DiffFunction.h"
+#import "PolynomialFunction.h"
 
 @implementation DiffFunction
 
 -(Function*) evaluate {
     self.base = [self.base evaluate];
-    return [[self.base differentiate:self.variable] evaluate];
+    Function* diff = [[self.base differentiate:self.variable] evaluate];
+    Function* polyStyle = [PolynomialFunction toPolynomial:diff];
+    if(nil != polyStyle)
+        return polyStyle;
+    return diff;
 }
 
 @end
