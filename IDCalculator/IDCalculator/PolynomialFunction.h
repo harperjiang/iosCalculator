@@ -21,14 +21,19 @@
 -(void) addItem: (Constant*) coefficient power:(NSInteger)power;
 -(Constant*) getCoefficient:(NSInteger) power;
 
+-(NSInteger) order;
+
 -(PolynomialFunction*) add:(PolynomialFunction*) another;
 -(PolynomialFunction*) sub:(PolynomialFunction*) another;
 -(PolynomialFunction*) mul:(PolynomialFunction*) another;
+-(PolynomialFunction*) div:(PolynomialFunction*) another;
+-(PolynomialFunction*) mod:(PolynomialFunction*) another;
 
 -(PolynomialFunction*) power:(Constant*) power;
 
 -(NSInteger) validCount;
 
 +(PolynomialFunction*) toPolynomial:(Function*) func;
++(Boolean) polynomialEqual:(Function*) left right:(Function*) right;
 
 @end

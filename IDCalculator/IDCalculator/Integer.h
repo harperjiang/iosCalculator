@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Number.h"
+#import "RealNumber.h"
 
-@interface Integer : Number
+@interface Integer : RealNumber
 
 @property(nonatomic) NSInteger value;
 

@@ -21,6 +21,17 @@
 		A639F25B16609995000C5E02 /* Fraction.m in Sources */ = {isa = PBXBuildFile; fileRef = A639F25A16609995000C5E02 /* Fraction.m */; };
 		A639F25E1660A06C000C5E02 /* NumberData.m in Sources */ = {isa = PBXBuildFile; fileRef = A639F25D1660A06A000C5E02 /* NumberData.m */; };
 		A67415611650266600C33D7C /* AssignCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = A67415601650266600C33D7C /* AssignCommand.m */; };
+		A6741AF6167D6977005BCBE5 /* RealNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = A6741AF5167D6977005BCBE5 /* RealNumber.m */; };
+		A6741AF9167D698D005BCBE5 /* ComplexNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = A6741AF8167D698D005BCBE5 /* ComplexNumber.m */; };
+		A6741B01167D6ED4005BCBE5 /* Canvas2DView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6741B00167D6ED3005BCBE5 /* Canvas2DView.m */; };
+		A6741B05167D70A8005BCBE5 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6741B04167D70A8005BCBE5 /* iAd.framework */; };
+		A6741B08167D7172005BCBE5 /* DrawContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = A6741B07167D7172005BCBE5 /* DrawContainer.m */; };
+		A6741B0C167D741E005BCBE5 /* DrawFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = A6741B0B167D741E005BCBE5 /* DrawFunction.m */; };
+		A6741B0F167D7751005BCBE5 /* Environment.m in Sources */ = {isa = PBXBuildFile; fileRef = A6741B0E167D7751005BCBE5 /* Environment.m */; };
+		A6741B12167D77AC005BCBE5 /* Coordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6741B11167D77AC005BCBE5 /* Coordinate.m */; };
+		A6741B15167D931E005BCBE5 /* ViewControllerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A6741B14167D931D005BCBE5 /* ViewControllerHelper.m */; };
+		A6741B18167DA4BE005BCBE5 /* DrawObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A6741B17167DA4BE005BCBE5 /* DrawObject.m */; };
+		A6741B1B167F7B86005BCBE5 /* InteFunctionTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6741B1A167F7B85005BCBE5 /* InteFunctionTest.mm */; };
 		A676C0A1164CC20E00C0F859 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A676C0A0164CC20E00C0F859 /* UIKit.framework */; };
 		A676C0A3164CC20E00C0F859 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A676C0A2164CC20E00C0F859 /* Foundation.framework */; };
 		A676C0A5164CC20E00C0F859 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A676C0A4164CC20E00C0F859 /* CoreGraphics.framework */; };
@@ -176,6 +187,28 @@
 		A639F25D1660A06A000C5E02 /* NumberData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberData.m; sourceTree = "<group>"; };
 		A674155F1650266600C33D7C /* AssignCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignCommand.h; sourceTree = "<group>"; };
 		A67415601650266600C33D7C /* AssignCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignCommand.m; sourceTree = "<group>"; };
+		A6741AF4167D6977005BCBE5 /* RealNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealNumber.h; sourceTree = "<group>"; };
+		A6741AF5167D6977005BCBE5 /* RealNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RealNumber.m; sourceTree = "<group>"; };
+		A6741AF7167D698D005BCBE5 /* ComplexNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComplexNumber.h; sourceTree = "<group>"; };
+		A6741AF8167D698D005BCBE5 /* ComplexNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComplexNumber.m; sourceTree = "<group>"; };
+		A6741AFF167D6ED3005BCBE5 /* Canvas2DView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Canvas2DView.h; sourceTree = "<group>"; };
+		A6741B00167D6ED3005BCBE5 /* Canvas2DView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Canvas2DView.m; sourceTree = "<group>"; };
+		A6741B04167D70A8005BCBE5 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		A6741B06167D7172005BCBE5 /* DrawContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawContainer.h; sourceTree = "<group>"; };
+		A6741B07167D7172005BCBE5 /* DrawContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawContainer.m; sourceTree = "<group>"; };
+		A6741B09167D71B0005BCBE5 /* Drawable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Drawable.h; sourceTree = "<group>"; };
+		A6741B0A167D741E005BCBE5 /* DrawFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawFunction.h; sourceTree = "<group>"; };
+		A6741B0B167D741E005BCBE5 /* DrawFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawFunction.m; sourceTree = "<group>"; };
+		A6741B0D167D7750005BCBE5 /* Environment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Environment.h; sourceTree = "<group>"; };
+		A6741B0E167D7751005BCBE5 /* Environment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Environment.m; sourceTree = "<group>"; };
+		A6741B10167D77AB005BCBE5 /* Coordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coordinate.h; sourceTree = "<group>"; };
+		A6741B11167D77AC005BCBE5 /* Coordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coordinate.m; sourceTree = "<group>"; };
+		A6741B13167D931D005BCBE5 /* ViewControllerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerHelper.h; sourceTree = "<group>"; };
+		A6741B14167D931D005BCBE5 /* ViewControllerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerHelper.m; sourceTree = "<group>"; };
+		A6741B16167DA4BE005BCBE5 /* DrawObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawObject.h; sourceTree = "<group>"; };
+		A6741B17167DA4BE005BCBE5 /* DrawObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawObject.m; sourceTree = "<group>"; };
+		A6741B19167F7B85005BCBE5 /* InteFunctionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteFunctionTest.h; sourceTree = "<group>"; };
+		A6741B1A167F7B85005BCBE5 /* InteFunctionTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = InteFunctionTest.mm; sourceTree = "<group>"; };
 		A676C09C164CC20E00C0F859 /* IDCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A676C0A0164CC20E00C0F859 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A676C0A2164CC20E00C0F859 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -334,6 +367,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6741B05167D70A8005BCBE5 /* iAd.framework in Frameworks */,
 				A6EEE6CF1664391400310568 /* QuartzCore.framework in Frameworks */,
 				A6EEE6B41663027C00310568 /* OpenGLES.framework in Frameworks */,
 				A6EEE6B21663022100310568 /* GLKit.framework in Frameworks */,
@@ -444,6 +478,10 @@
 				A6C5D8E2166C0DD80048E5C2 /* Decimal.m */,
 				A6C5D8E5166C13870048E5C2 /* NumberOperators.h */,
 				A6C5D8E6166C13870048E5C2 /* NumberOperators.m */,
+				A6741AF4167D6977005BCBE5 /* RealNumber.h */,
+				A6741AF5167D6977005BCBE5 /* RealNumber.m */,
+				A6741AF7167D698D005BCBE5 /* ComplexNumber.h */,
+				A6741AF8167D698D005BCBE5 /* ComplexNumber.m */,
 			);
 			name = math;
 			sourceTree = "<group>";
@@ -462,6 +500,34 @@
 				A6C6F5CB16601F3D00472E99 /* CommandConverter.mm */,
 			);
 			name = parser;
+			sourceTree = "<group>";
+		};
+		A6741AFA167D6A68005BCBE5 /* gl */ = {
+			isa = PBXGroup;
+			children = (
+				A6CE38AD1665879A00EDC49A /* model */,
+				A6EEE6AE1662FAFB00310568 /* OpenGLContext.h */,
+				A6EEE6AF1662FAFB00310568 /* OpenGLContext.m */,
+			);
+			name = gl;
+			sourceTree = "<group>";
+		};
+		A6741AFB167D6A78005BCBE5 /* quartz */ = {
+			isa = PBXGroup;
+			children = (
+				A6741B06167D7172005BCBE5 /* DrawContainer.h */,
+				A6741B07167D7172005BCBE5 /* DrawContainer.m */,
+				A6741B09167D71B0005BCBE5 /* Drawable.h */,
+				A6741B0A167D741E005BCBE5 /* DrawFunction.h */,
+				A6741B0B167D741E005BCBE5 /* DrawFunction.m */,
+				A6741B0D167D7750005BCBE5 /* Environment.h */,
+				A6741B0E167D7751005BCBE5 /* Environment.m */,
+				A6741B10167D77AB005BCBE5 /* Coordinate.h */,
+				A6741B11167D77AC005BCBE5 /* Coordinate.m */,
+				A6741B16167DA4BE005BCBE5 /* DrawObject.h */,
+				A6741B17167DA4BE005BCBE5 /* DrawObject.m */,
+			);
+			name = quartz;
 			sourceTree = "<group>";
 		};
 		A676C091164CC20E00C0F859 = {
@@ -486,6 +552,7 @@
 		A676C09F164CC20E00C0F859 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A6741B04167D70A8005BCBE5 /* iAd.framework */,
 				A6EEE6CE1664391300310568 /* QuartzCore.framework */,
 				A6EEE6B31663027C00310568 /* OpenGLES.framework */,
 				A6EEE6B11663022100310568 /* GLKit.framework */,
@@ -620,6 +687,8 @@
 		A676C107164CD1DF00C0F859 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				A6741AFF167D6ED3005BCBE5 /* Canvas2DView.h */,
+				A6741B00167D6ED3005BCBE5 /* Canvas2DView.m */,
 				A6D7DF101666FBA200D7B705 /* iphone */,
 				A6D7DF0E1666FB9B00D7B705 /* ipad */,
 				A6D7DF14166709CD00D7B705 /* ViewHelper.h */,
@@ -759,6 +828,8 @@
 				A6E505BB166EF39500575845 /* VariableTest.m */,
 				A6E505C11671D1B300575845 /* PolynomialFunctionTest.h */,
 				A6E505C21671D1B300575845 /* PolynomialFunctionTest.m */,
+				A6741B19167F7B85005BCBE5 /* InteFunctionTest.h */,
+				A6741B1A167F7B85005BCBE5 /* InteFunctionTest.mm */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -785,6 +856,8 @@
 				A6B97460164DF411007E4AB4 /* ConsoleViewController.m */,
 				A6EEE6D016645DBB00310568 /* HelpViewController.h */,
 				A6EEE6D116645DBB00310568 /* HelpViewController.m */,
+				A6741B13167D931D005BCBE5 /* ViewControllerHelper.h */,
+				A6741B14167D931D005BCBE5 /* ViewControllerHelper.m */,
 			);
 			name = iphone;
 			sourceTree = "<group>";
@@ -830,9 +903,8 @@
 		A6EEE6AD1662CC1D00310568 /* graph */ = {
 			isa = PBXGroup;
 			children = (
-				A6CE38AD1665879A00EDC49A /* model */,
-				A6EEE6AE1662FAFB00310568 /* OpenGLContext.h */,
-				A6EEE6AF1662FAFB00310568 /* OpenGLContext.m */,
+				A6741AFB167D6A78005BCBE5 /* quartz */,
+				A6741AFA167D6A68005BCBE5 /* gl */,
 			);
 			name = graph;
 			sourceTree = "<group>";
@@ -1019,6 +1091,15 @@
 				A6C5D8E3166C0DD80048E5C2 /* Decimal.m in Sources */,
 				A6C5D8E7166C13880048E5C2 /* NumberOperators.m in Sources */,
 				A6E505C0166EF4AB00575845 /* PolynomialFunction.m in Sources */,
+				A6741AF6167D6977005BCBE5 /* RealNumber.m in Sources */,
+				A6741AF9167D698D005BCBE5 /* ComplexNumber.m in Sources */,
+				A6741B01167D6ED4005BCBE5 /* Canvas2DView.m in Sources */,
+				A6741B08167D7172005BCBE5 /* DrawContainer.m in Sources */,
+				A6741B0C167D741E005BCBE5 /* DrawFunction.m in Sources */,
+				A6741B0F167D7751005BCBE5 /* Environment.m in Sources */,
+				A6741B12167D77AC005BCBE5 /* Coordinate.m in Sources */,
+				A6741B15167D931E005BCBE5 /* ViewControllerHelper.m in Sources */,
+				A6741B18167DA4BE005BCBE5 /* DrawObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1041,6 +1122,7 @@
 				A6D12390166E887000F256B3 /* BasicFunctionTest.m in Sources */,
 				A6E505BC166EF39500575845 /* VariableTest.m in Sources */,
 				A6E505C31671D1B300575845 /* PolynomialFunctionTest.m in Sources */,
+				A6741B1B167F7B86005BCBE5 /* InteFunctionTest.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,10 @@
 
 #import "Variable.h"
 #import "NumConstant.h"
+#import "Fraction.h"
 #import "integer.h"
+#import "PolynomialFunction.h"
+
 
 @implementation Variable
 
@@ -34,6 +37,13 @@ static Variable* x;
         return [NumConstant ONE];
     else
         return [NumConstant ZERO];
+}
+
+-(Function*) integrate:(Variable *)variable {
+    PolynomialFunction* pf = [[PolynomialFunction alloc] init];
+    NumConstant* oot = [NumConstant construct:[Fraction construct:[Integer construct:1] denominator:[Integer construct:2]]];
+    [pf addItem:oot power:2];
+    return pf;
 }
 
 -(NSString*) description {

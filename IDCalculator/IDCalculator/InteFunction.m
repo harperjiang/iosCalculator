@@ -13,11 +13,16 @@
 
 -(Function*) evaluate {
     self.base = [self.base evaluate];
-    Function* inte = [[self.base integrate:self.variable] evaluate];
-    Function* polyStyle = [PolynomialFunction toPolynomial:inte];
-    if(nil != polyStyle)
-        return polyStyle;
-    return inte;
+    Function* inte = [self.base integrate:self.variable];
+    if(nil != inte) {
+        inte = [inte evaluate];
+        Function* polyStyle = [PolynomialFunction toPolynomial:inte];
+        if(nil != polyStyle)
+            return polyStyle;
+        return inte;
+    } else {
+        return nil;
+    }
 }
 
 @end

@@ -12,6 +12,7 @@
 #import "Integer.h"
 #import "SpecialConstant.h"
 #import "ExpPowerFunction.h"
+#import "PolynomialFunction.h"
 
 @implementation BasicFunction
 
@@ -81,7 +82,43 @@
 }
 
 -(Function*) integrate:(Variable *)variable {
-    
+    Function* pf = [PolynomialFunction toPolynomial:self.base];
+    if([pf isKindOfClass:[PolynomialFunction class]]) {
+        PolynomialFunction* poly = (PolynomialFunction*)pf;
+        if([poly order] == 1) {
+            Constant* coefficient = [[NumConstant ONE] div:[poly getCoefficient:[poly order]]];
+            Function* result = nil;
+            switch(self.type) {
+                case BT_SIN:
+                    result = [[ArithmeticFunction alloc] init:nil opr:SUB right:[[BasicFunction alloc] init:BT_COS base:poly]];
+                    break;
+                case BT_COS:
+                    result = [[BasicFunction alloc] init:BT_SIN base:poly];
+                    break;
+                case BT_LN: {
+                    // ∫ln(x)dx = ln(x)*x - x
+                    Function* lnpart = [[BasicFunction alloc] init:BT_LN base:poly];
+                    Function* firstLn = [[ArithmeticFunction alloc] init:lnpart opr:MUL right:poly];
+                    result = [[ArithmeticFunction alloc] init:firstLn opr:SUB right:poly];
+                    break;
+                }
+                default:
+                    result = nil;
+            }
+            if(nil != result) {
+                result = [[ArithmeticFunction alloc] init:coefficient opr:MUL right:result];
+                return result;
+            } else {
+                return nil;
+            }
+        } else {
+            // Higher Order, no solution
+            return nil;
+        }
+    } else {
+        // Not polynomial format, no solution
+        return nil;
+    }
 }
 
 -(NSString *) description {

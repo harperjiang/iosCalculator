@@ -13,11 +13,16 @@
 
 -(Function*) evaluate {
     self.base = [self.base evaluate];
-    Function* diff = [[self.base differentiate:self.variable] evaluate];
-    Function* polyStyle = [PolynomialFunction toPolynomial:diff];
-    if(nil != polyStyle)
-        return polyStyle;
-    return diff;
+    Function* diff = [self.base differentiate:self.variable];
+    if(diff != nil) {
+        diff = [diff evaluate];
+        Function* polyStyle = [PolynomialFunction toPolynomial:diff];
+        if(nil != polyStyle)
+            return polyStyle;
+        return diff;
+    } else {
+        return nil;
+    }
 }
 
 @end

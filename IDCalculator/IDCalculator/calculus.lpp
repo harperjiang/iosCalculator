@@ -22,6 +22,7 @@ extern void calerror(char* input);
 "sin"               {return FUNC_SIN;}
 "cos"               {return FUNC_COS;}
 "ln"                {return FUNC_LN;}
+"dx"                {return DX;}
 "d"                 {return DOPR;}
 "x"                 {return VAR;}
 "∫"                 {return IOPR;}

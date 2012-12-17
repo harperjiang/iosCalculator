@@ -11,6 +11,7 @@
 #import "Operator.h"
 #import "NumConstant.h"
 #import "ArithConstant.h"
+#import "PolynomialFunction.h"
 
 @implementation Constant
 
@@ -20,6 +21,12 @@
 
 -(Function*) differentiate:(Variable *)variable {
     return [NumConstant ZERO];
+}
+
+-(Function *)integrate:(Variable *)variable {
+    PolynomialFunction* pf = [[PolynomialFunction alloc] init];
+    [pf addItem:self power:1];
+    return pf;
 }
 
 -(Constant*)add:(Constant *)input {

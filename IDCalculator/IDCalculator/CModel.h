@@ -61,7 +61,7 @@ class CIdentifier : public CExpression {
 public:
     char* name;
     
-    CIdentifier(char* input) {
+    CIdentifier(const char* input) {
         name = new char[strlen(input)];
         strcpy(name, input);
     }

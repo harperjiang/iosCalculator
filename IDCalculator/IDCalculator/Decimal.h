@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Harper Jiang. All rights reserved.
 //
 
-#import "Number.h"
+#import "RealNumber.h"
 
 @interface ScaleBehavior : NSObject <NSDecimalNumberBehaviors>
 
@@ -16,7 +16,7 @@
 
 @end
 
-@interface Decimal : Number
+@interface Decimal : RealNumber
 
 @property(nonatomic) NSDecimalNumber* value;
 @property(nonatomic,strong) ScaleBehavior* scale;

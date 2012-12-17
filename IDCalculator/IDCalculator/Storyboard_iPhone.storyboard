@@ -71,7 +71,7 @@
             <objects>
                 <glkViewController autoresizesArchivedViewToFullSize="NO" wantsFullScreenLayout="YES" preferredFramesPerSecond="30" id="lFG-5n-Aza" customClass="GraphViewController" sceneMemberID="viewController">
                     <glkView key="view" autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="center" id="6MZ-ou-xns">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <gestureRecognizers/>
                         <connections>
@@ -103,7 +103,22 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="880" y="823"/>
+            <point key="canvasLocation" x="1616" y="821"/>
+        </scene>
+        <!--View Controller - Graph-->
+        <scene sceneID="Nyj-8b-dZJ">
+            <objects>
+                <viewController id="yMC-G2-Gh5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YrF-xe-fbd" customClass="Canvas2DView">
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Graph" image="chart_line_24.png" id="kxU-Lg-trf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jpl-Ex-ejo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="880" y="829"/>
         </scene>
         <!--View Controller - Calculator-->
         <scene sceneID="61K-s2-kpi">
@@ -578,7 +593,7 @@
                     <connections>
                         <segue destination="jCI-G3-0cw" kind="relationship" relationship="viewControllers" id="Tie-By-vgb"/>
                         <segue destination="jJ4-TP-rtf" kind="relationship" relationship="viewControllers" id="yIo-Vp-JcK"/>
-                        <segue destination="lFG-5n-Aza" kind="relationship" relationship="viewControllers" id="RvS-Mg-qCm"/>
+                        <segue destination="yMC-G2-Gh5" kind="relationship" relationship="viewControllers" id="lQf-7H-O8h"/>
                         <segue destination="ZVk-Gv-4o4" kind="relationship" relationship="viewControllers" id="0xg-Gn-3Jv"/>
                     </connections>
                 </tabBarController>
@@ -614,7 +629,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8Lt-0v-5TN">
-                                <rect key="frame" x="88" y="273" width="146" height="44"/>
+                                <rect key="frame" x="87" y="248" width="146" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="View Online Help">
@@ -642,6 +657,14 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="YYH-5b-WM9">
+                                <rect key="frame" x="0.0" y="317" width="320" height="50"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <requiredContentSizeIdentifiers>
+                                    <string>ADBannerContentSizeLandscape</string>
+                                    <string>ADBannerContentSizePortrait</string>
+                                </requiredContentSizeIdentifiers>
+                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -658,49 +681,6 @@
         <image name="concole_24.png" width="24" height="24"/>
         <image name="gear_24.png" width="24" height="24"/>
     </resources>
-    <classes>
-        <class className="CalculatorViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CalculatorViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backspaceButtonClicked:"/>
-                <relationship kind="action" name="backspaceButtonRepeated:"/>
-                <relationship kind="action" name="cosButtonClicked:"/>
-                <relationship kind="action" name="equalButtonClicked:"/>
-                <relationship kind="action" name="horizontalSwipeReceived:"/>
-                <relationship kind="action" name="lnButtonClicked:"/>
-                <relationship kind="action" name="powerButtonClicked:"/>
-                <relationship kind="action" name="sinButtonClicked:"/>
-                <relationship kind="action" name="textButtonClicked:"/>
-                <relationship kind="outlet" name="cosButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="lnButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="sinButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="ConsoleViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ConsoleViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="editingDone:"/>
-                <relationship kind="outlet" name="display" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="inputField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="GraphViewController" superclassName="GLKViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GraphViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="pinchReceived:"/>
-                <relationship kind="action" name="rotationReceived:"/>
-                <relationship kind="action" name="swipeReceived:"/>
-                <relationship kind="outlet" name="graphView" candidateClass="GLKView"/>
-            </relationships>
-        </class>
-        <class className="HelpViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HelpViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -12,6 +12,7 @@
 #import "ExpPowerFunction.h"
 #import "Integer.h"
 #import "PolynomialFunction.h"
+#import "BasicFunction.h"
 
 @implementation ArithmeticFunction
 
@@ -29,7 +30,7 @@
     if([self.left isKindOfClass:[Constant class]] && self.opr == MUL) {
         return [[ArithmeticFunction alloc] init:self.left opr:MUL right:[self.right differentiate:variable]];
     }
-    Function* du = [[self left] differentiate:variable];
+    Function* du = (self.left == nil)? nil: [[self left] differentiate:variable];
     Function* dv = [[self right] differentiate:variable];
     Function* result = nil;
     Function* udv = nil, *vdu = nil,*vv = nil;
@@ -55,11 +56,83 @@
         default:
             return nil;
     }
-    
     return result;
 }
 
+-(Function*) integrate:(Variable *)variable {
+    Function* iu = (self.left == nil)? nil:[self.left integrate:variable];
+    Function* iv = [self.right integrate:variable];
+    if((self.left != nil && iu == nil) || iv == nil)
+        return nil;
+    switch (self.opr) {
+        case ADD:
+            return [[ArithmeticFunction alloc] init:iu opr:ADD right:iv];
+        case SUB:
+            return [[ArithmeticFunction alloc] init:iu opr:SUB right:iv];
+        case MUL: {
+            // Try to convert to polynomial
+            Function* poly = [PolynomialFunction toPolynomial:self];
+            if(poly != nil && [poly isKindOfClass:[PolynomialFunction class]]) {
+                return [poly integrate:variable];
+            }
+            return nil;
+        }
+        case DIV: {
+            // Try to convert to polynomial
+            Function* poly = [PolynomialFunction toPolynomial:self];
+            if(poly != nil && [poly isKindOfClass:[PolynomialFunction class]]) {
+                return [poly integrate:variable];
+            }
+            if([poly isKindOfClass:[ArithmeticFunction class]] && ((ArithmeticFunction*)poly).opr == DIV) {
+                ArithmeticFunction* polyedArith = (ArithmeticFunction*)poly;
+                if(![polyedArith.left isKindOfClass:[PolynomialFunction class]] || ![polyedArith.right isKindOfClass:[PolynomialFunction class]])
+                    return nil;
+                PolynomialFunction* leftp = (PolynomialFunction*)polyedArith.left;
+                PolynomialFunction* rightp = (PolynomialFunction*)polyedArith.right;
+                
+                PolynomialFunction* div = [leftp div:rightp];
+                PolynomialFunction* mod = [leftp mod:rightp];
+                if([mod evaluate] == [NumConstant ZERO]) {
+                    // Fully Division
+                    return [div integrate:variable];
+                } else if([div evaluate] == [NumConstant ZERO] && [rightp order] == 1) {
+                    // 1/x format, ln result
+                    // c/(ax+b)
+                    Constant* coe = [[mod getCoefficient:0] div:[rightp getCoefficient:1]];
+                    Function* lnf = [[BasicFunction alloc] init:BT_LN base:rightp];
+                    return [[ArithmeticFunction alloc] init:coe opr:MUL right:lnf];
+                } else if([rightp order] == 1) {
+                    Function* divi = [div integrate:variable];
+                    Function* modi = [[[ArithmeticFunction alloc] init:mod opr:DIV right:rightp] integrate:variable];
+                    return [[ArithmeticFunction alloc] init:divi opr:ADD right:modi];
+                } else {
+                    return nil;
+                }
+            }
+        }
+        default:
+            return nil;
+    }
+}
+
+
 -(Function*) evaluate {
+    Function* result = [self arithevaluate];
+    Function* polyeval = [PolynomialFunction toPolynomial:result];
+    if(polyeval != nil) {
+        if([polyeval isKindOfClass:[PolynomialFunction class]]){
+            return [polyeval evaluate];
+        }
+        else {
+            return polyeval;
+        }
+    }
+    else {
+        return result;
+    }
+}
+
+-(Function*) arithevaluate {
     if(nil != self.left)
         self.left = [self.left evaluate];
     self.right = [self.right evaluate];
@@ -132,6 +205,11 @@
             }
             return [[ArithmeticFunction alloc] init:[newLeft evaluate] opr:newopr right:[newRight evaluate]];
         }
+        // Merge a+(-x) or a-(-x)
+        if((self.opr == ADD || self.opr == SUB) && innerRight.opr == SUB && innerRight.left == nil) {
+            Operator newopr = (self.opr + 1) % 2;
+            return [[ArithmeticFunction alloc] init:self.left opr:newopr right:innerRight.right];
+        }
     }
     
     // Merge PowerFunction
@@ -165,8 +243,15 @@
             } else {
                 [result appendString:[self.left description]];
             }
-        } else if([self.left isKindOfClass:[PolynomialFunction class]] && [[(PolynomialFunction*)self.left coefficients] count] > 1){
+        } else if([self.left isKindOfClass:[PolynomialFunction class]] && [[(PolynomialFunction*)self.left coefficients] count] > 1 && self.opr >= 3){
             [result appendFormat:@"(%@)",[self.left description]];
+        } else if([self.left isKindOfClass:[NumConstant class]]) {
+            NumConstant* nc = (NumConstant*)self.left;
+            if(![nc.number isKindOfClass:[Integer class]] && self.opr == MUL) {
+                [result appendFormat:@"(%@)",[self.left description]];
+            } else {
+                [result appendString:[self.left description]];
+            }
         } else {
             [result appendString:[self.left description]];
         }
@@ -189,7 +274,7 @@
     }
     if([self.right isKindOfClass:[ArithmeticFunction class]]) {
         ArithmeticFunction* righta = (ArithmeticFunction*)self.right;
-        if(righta.opr < 3 && self.opr >= 3) {
+        if(righta.opr < 3 && self.opr >= 2) {
             [result appendFormat:@"(%@)",[self.right description]];
         } else {
             [result appendString:[self.right description]];

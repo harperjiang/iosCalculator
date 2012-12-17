@@ -12,4 +12,6 @@
 
 -(void) testPlusAddMinus;
 -(void) testDescriptionWithParenthesis;
+-(void) testPolyMultiply;
+-(void) testEvaluate;
 @end

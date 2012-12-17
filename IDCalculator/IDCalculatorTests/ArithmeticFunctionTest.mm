@@ -8,6 +8,7 @@
 
 #import "ArithmeticFunctionTest.h"
 #import "ArithmeticFunction.h"
+#import "PolynomialFunction.h"
 #import "FunctionParser.h"
 #import "Function.h"
 #import "Integer.h"
@@ -34,6 +35,24 @@
     outer = [[ArithmeticFunction alloc] init:[Variable x] opr:MUL right:arith];
     STAssertEqualObjects([outer description], @"x*(5+1)", @"");
     
+    arith = [[ArithmeticFunction alloc] init:[NumConstant constructWithInteger:5] opr:SUB right:[NumConstant ONE]];
+    outer = [[ArithmeticFunction alloc] init:[NumConstant constructWithInteger:3] opr:SUB right:arith];
+    STAssertEqualObjects([outer description],@"3-(5-1)",@"");
+}
+
+-(void) testPolyMultiply {
+    NSString* input = @"(x+5)(x-8)";
+    Function* func = [FunctionParser parse:input];
+    Function* result = [func evaluate];
+    
+    STAssertTrue([result isKindOfClass:[PolynomialFunction class]],@"");
+    STAssertEqualObjects([result description], @"x²-3x-40", @"");
+}
+
+-(void) testEvaluate {
+    NSString* input = @"sin(π/2)";
+    Function* result = [FunctionParser parse:input];
+    STAssertEqualObjects([[result evaluate] description], @"sin(π/2)", @"");
 }
 
 @end

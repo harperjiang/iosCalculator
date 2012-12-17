@@ -110,6 +110,52 @@
     STAssertEqualObjects([pf description], @"2x^10-2x⁹+15x⁸-19x⁷+26x⁶-27x⁵-16x⁴+51x³-95x²+70x-9", @"");
 }
 
+-(void) testDiv {
+    PolynomialFunction* pf1 = [[PolynomialFunction alloc] init];
+    
+    [pf1 addItem:[NumConstant construct:[Integer construct:1]] power:4];
+    [pf1 addItem:[NumConstant construct:[Integer construct:5]] power:3];
+    [pf1 addItem:[NumConstant construct:[Integer construct:-1]] power:2];
+    [pf1 addItem:[NumConstant construct:[Integer construct:-7]] power:1];
+    [pf1 addItem:[NumConstant construct:[Integer construct:1]] power:0];
+    
+    PolynomialFunction* pf2 = [[PolynomialFunction alloc] init];
+    
+    [pf2 addItem:[NumConstant construct:[Integer construct:1]] power:3];
+    [pf2 addItem:[NumConstant construct:[Integer construct:7]] power:2];
+    [pf2 addItem:[NumConstant construct:[Integer construct:5]] power:1];
+    [pf2 addItem:[NumConstant construct:[Integer construct:-9]] power:0];
+    
+    PolynomialFunction* pf = [pf1 div:pf2];
+    STAssertEqualObjects([pf description], @"x-2", @"");
+    
+    pf = [pf1 div:pf1];
+    STAssertEqualObjects([pf description], @"1", @"");
+}
+
+-(void) testMod {
+    PolynomialFunction* pf1 = [[PolynomialFunction alloc] init];
+    
+    [pf1 addItem:[NumConstant construct:[Integer construct:1]] power:4];
+    [pf1 addItem:[NumConstant construct:[Integer construct:5]] power:3];
+    [pf1 addItem:[NumConstant construct:[Integer construct:-1]] power:2];
+    [pf1 addItem:[NumConstant construct:[Integer construct:-7]] power:1];
+    [pf1 addItem:[NumConstant construct:[Integer construct:1]] power:0];
+    
+    PolynomialFunction* pf2 = [[PolynomialFunction alloc] init];
+    
+    [pf2 addItem:[NumConstant construct:[Integer construct:1]] power:3];
+    [pf2 addItem:[NumConstant construct:[Integer construct:7]] power:2];
+    [pf2 addItem:[NumConstant construct:[Integer construct:5]] power:1];
+    [pf2 addItem:[NumConstant construct:[Integer construct:-9]] power:0];
+    
+    PolynomialFunction* pf = [pf1 mod:pf2];
+    STAssertEqualObjects([pf description], @"8x²+12x-17", @"");
+    
+    pf = [pf1 mod:pf1];
+    STAssertEqualObjects([pf description], @"0", @"");
+}
+
 -(void)testToPolynomial {
     ArithmeticFunction* left = [[ArithmeticFunction alloc] init:[Variable x] opr:ADD right:[NumConstant construct:[Integer construct:5]]];
     ArithmeticFunction* right = [[ArithmeticFunction alloc] init:[Variable x] opr:SUB right:[NumConstant construct:[Integer construct:3]]];

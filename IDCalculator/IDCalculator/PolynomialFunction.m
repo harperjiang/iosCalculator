@@ -80,7 +80,7 @@
         }
         return function;
     }
-    if([function isKindOfClass:[Constant class]]) {
+    if([function isKindOfClass:[NumConstant class]]) {
         PolynomialFunction* poly = [[PolynomialFunction alloc] init];
         [poly addItem:(Constant*)function power:0];
         return poly;
@@ -120,6 +120,9 @@
                 return nil;
         }
     }
+    if([function isKindOfClass:[PolynomialFunction class]]) {
+        return function;
+    }
     return nil;
 }
 
@@ -141,6 +144,8 @@
 }
 
 -(NSString*) description {
+    if([self.coefficients count] == 0)
+        return [[NumConstant ZERO] description];
     NSMutableString* buffer = [[NSMutableString alloc] initWithCapacity:20];
     for(NSInteger count = [self.coefficients count] -1 ; count >= 0 ; count--) {
         Constant* coefficient = (Constant*)[self.coefficients objectAtIndex:count];
@@ -225,6 +230,17 @@
     return val;
 }
 
+-(NSInteger)order {
+    for(int i = [[self coefficients] count] - 1 ; i >= 0 ; i--) {
+        if([self.coefficients objectAtIndex:i] == [NumConstant ZERO]) {
+            [self.coefficients removeObjectAtIndex:i];
+        } else {
+            return i;
+        }
+    }
+    return 0;
+}
+
 -(PolynomialFunction*) add:(PolynomialFunction *)another {
     PolynomialFunction* pf = [[PolynomialFunction alloc] init];
     NSInteger max = MAX([self.coefficients count],[another.coefficients count]);
@@ -261,6 +277,38 @@
         }
     }
     return pf;
+}
+
+-(PolynomialFunction *)div:(PolynomialFunction *)another {
+    PolynomialFunction* pf = [[PolynomialFunction alloc] init];
+    if([another order] > [self order]) {
+        [pf addItem:[NumConstant ZERO] power:0];
+    } else {
+        PolynomialFunction* remain = self;
+        while([remain order] >= [another order]) {
+            Constant* mul = [[remain getCoefficient:[remain order]] div:[another getCoefficient:[another order]]];
+            PolynomialFunction* val = [[PolynomialFunction alloc] init];
+            [val addItem:mul power:[remain order] - [another order]];
+            pf = [pf add:val];
+            remain = [remain sub:[another mul:val]];
+        }
+    }
+    return pf;
+}
+
+-(PolynomialFunction *)mod:(PolynomialFunction *)another {
+    if([another order] > [self order]) {
+        return self;
+    } else {
+        PolynomialFunction* remain = self;
+        while([remain order] >= [another order]) {
+            Constant* mul = [[remain getCoefficient:[remain order]] div:[another getCoefficient:[another order]]];
+            PolynomialFunction* val = [[PolynomialFunction alloc] init];
+            [val addItem:mul power:[remain order] - [another order]];
+            remain = [remain sub:[another mul:val]];
+        }
+        return remain;
+    }
 }
 
 -(NSInteger) validCount {

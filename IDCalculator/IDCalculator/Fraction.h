@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 Harper Jiang. All rights reserved.
 //
 
-#import "Number.h"
+#import "RealNumber.h"
 #import "Integer.h"
 
-@interface Fraction : Number
+@interface Fraction : RealNumber
 
 @property(nonatomic) Number* numerator;
 @property(nonatomic) Number* denominator;

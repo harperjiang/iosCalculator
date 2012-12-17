@@ -4,23 +4,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
-        <!--GLKit View Controller-->
-        <scene sceneID="lyL-yB-Ha9">
-            <objects>
-                <glkViewController autoresizesArchivedViewToFullSize="NO" preferredFramesPerSecond="30" id="YkY-wH-Rqh" sceneMemberID="viewController">
-                    <glkView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Luj-qa-Z04">
-                        <rect key="frame" x="0.0" y="20" width="768" height="955"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <connections>
-                            <outlet property="delegate" destination="YkY-wH-Rqh" id="ccM-Pc-4jU"/>
-                        </connections>
-                    </glkView>
-                    <tabBarItem key="tabBarItem" title="Graph" image="chart_line_24.png" id="JFq-K1-q3X"/>
-                </glkViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3uF-hl-eGj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="505" y="619"/>
-        </scene>
         <!--View Controller - About-->
         <scene sceneID="wqI-4z-aI6">
             <objects>
@@ -34,7 +17,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bEt-JS-rWx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1472" y="1844"/>
+            <point key="canvasLocation" x="1522" y="1822"/>
         </scene>
         <!--Pad Console View Controller - Console-->
         <scene sceneID="yFi-F7-Zuo">
@@ -400,13 +383,28 @@
                     </tabBar>
                     <connections>
                         <segue destination="ZAE-xb-zlZ" kind="relationship" relationship="viewControllers" id="FzN-Ed-vS9"/>
-                        <segue destination="YkY-wH-Rqh" kind="relationship" relationship="viewControllers" id="BoA-AO-Kqf"/>
+                        <segue destination="qQ5-d6-uXi" kind="relationship" relationship="viewControllers" id="0fc-AD-keT"/>
                         <segue destination="I2c-NE-jna" kind="relationship" relationship="viewControllers" id="qjm-1H-3x2"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FeT-cA-kyp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-477" y="-8"/>
+        </scene>
+        <!--View Controller - Graph-->
+        <scene sceneID="r8c-EL-Iu8">
+            <objects>
+                <viewController id="qQ5-d6-uXi" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sDl-u3-8Cf" customClass="Canvas2DView">
+                        <rect key="frame" x="0.0" y="20" width="768" height="955"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Graph" image="chart_line_24.png" id="Fhb-r1-v9l"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b7D-i5-kn0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="505" y="599"/>
         </scene>
         <!--Navigation Controller - About-->
         <scene sceneID="uMh-YW-WfZ">
@@ -425,7 +423,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L35-ak-Wfi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="498" y="1844"/>
+            <point key="canvasLocation" x="505" y="1822"/>
         </scene>
     </scenes>
     <resources>
@@ -434,6 +432,9 @@
         <image name="gear_24.png" width="24" height="24"/>
     </resources>
     <classes>
+        <class className="Canvas2DView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/Canvas2DView.h"/>
+        </class>
         <class className="PadConsoleViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PadConsoleViewController.h"/>
             <relationships>

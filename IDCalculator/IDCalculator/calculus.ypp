@@ -14,15 +14,17 @@ CFunction* calculus_result;
 %union {
     char* stringTerm;
     CFunction* func;
+    CFunction* pfunc;
     CNameFunc* namefunc;
     CConstant* num;
 }
 %token NUM LP RP OADD OSUB OMUL ODIV POWER 
 %token FUNC_SIN FUNC_COS FUNC_LN 
-%token DOPR VAR IOPR 
+%token DOPR VAR IOPR DX
 %token CONST_E CONST_PI
 
 %type <func> func
+%type <pfunc> pfunc
 %type <namefunc> namefunc
 %type <num> num
 
@@ -30,29 +32,31 @@ CFunction* calculus_result;
 %left OADD OSUB
 %left OMUL ODIV
 %left POWER
-%left DOPR IOPR
+%left DOPR IOPR DX
 %left LP RP
-%left FUNC_SIN FUNC_COS FUNC_LN
 %left NUM CONST_E CONST_PI VAR
+%left FUNC_SIN FUNC_COS FUNC_LN
+%left HIGH
 
 %start result
 
 %%
 result      :   func                            {calculus_result = $1;};
-func        :   LP func RP                      {$$ = $2;}
+func        :   pfunc                           {$$ = $1;}
             |   func OADD func                  {$$ = new CArithFunc($1,ADD,$3);}
             |   func OSUB func                  {$$ = new CArithFunc($1,SUB,$3);}
             |   OSUB func %prec POWER           {$$ = new CArithFunc(NULL,SUB,$2);}
             |   func OMUL func                  {$$ = new CArithFunc($1,MUL,$3);}
-            |   num  func %prec OMUL            {$$ = new CArithFunc($1,MUL,$2);}
+            |   pfunc pfunc %prec OMUL          {$$ = new CArithFunc($1,MUL,$2);}
+            |   num func %prec OMUL             {$$ = new CArithFunc($1,MUL,$2);}
             |   func ODIV func                  {$$ = new CArithFunc($1,DIV,$3);}
             |   func POWER func                 {$$ = new CPowerFunc($1,$3);}
             |   namefunc LP func RP             {$$ = $1; $1->param = $3;}
-            |   IOPR func DOPR VAR              {$$ = new CIntFunc($2,new CVariable());}
-            |   DOPR func ODIV DOPR VAR         {$$ = new CDiffFunc($2,new CVariable());}
+            |   IOPR func DX                    {$$ = new CIntFunc($2,new CVariable());}
+            |   DOPR func ODIV DX               {$$ = new CDiffFunc($2,new CVariable());}
             |   VAR                             {$$ = new CVariable();}
-            |   num                             {$$ = $1;};
-
+            |   num %prec HIGH                  {$$ = $1;};
+pfunc       :   LP func RP                      {$$ = $2;};
 namefunc    :   FUNC_SIN                        {$$ = new CNameFunc(NF_SIN,NULL);}
             |   FUNC_COS                        {$$ = new CNameFunc(NF_COS,NULL);}
             |   FUNC_LN                         {$$ = new CNameFunc(NF_LN,NULL);};

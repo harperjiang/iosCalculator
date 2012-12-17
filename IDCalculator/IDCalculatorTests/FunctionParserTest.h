@@ -12,4 +12,5 @@
 
 -(void) testParseSimple;
 -(void) testParseDiffSin;
+-(void) testParseSinPi;
 @end

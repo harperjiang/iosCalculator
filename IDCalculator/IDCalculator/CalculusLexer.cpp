@@ -383,8 +383,8 @@ static void yy_fatal_error (yyconst char msg[]  );
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
 
-#define YY_NUM_RULES 18
-#define YY_END_OF_BUFFER 19
+#define YY_NUM_RULES 19
+#define YY_END_OF_BUFFER 20
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -392,12 +392,12 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static yyconst flex_int16_t yy_accept[32] =
+static yyconst flex_int16_t yy_accept[33] =
     {   0,
-        0,    0,   19,   17,   18,    2,    3,    6,    4,    5,
-        7,    1,    8,   17,   12,   15,   17,   17,   13,   17,
-       17,    1,    0,   11,    0,   16,    0,   10,    9,   14,
-        0
+        0,    0,   20,   18,   19,    2,    3,    6,    4,    5,
+        7,    1,    8,   18,   13,   16,   18,   18,   14,   18,
+       18,    1,    0,   12,   11,    0,   17,    0,   10,    9,
+       15,    0
     } ;
 
 static yyconst flex_int32_t yy_ec[256] =
@@ -439,40 +439,42 @@ static yyconst flex_int32_t yy_meta[25] =
         1,    1,    1,    1
     } ;
 
-static yyconst flex_int16_t yy_base[32] =
+static yyconst flex_int16_t yy_base[33] =
     {   0,
-        0,    0,   35,   36,   36,   36,   36,   36,   36,   36,
-       36,   25,   36,   16,   36,   36,   16,   17,   36,   10,
-        8,   19,    9,   36,   10,   36,    3,   36,   36,   36,
-       36
+        0,    0,   36,   37,   37,   37,   37,   37,   37,   37,
+       37,   26,   37,   17,   14,   37,   16,   17,   37,   10,
+        8,   19,    9,   37,   37,   10,   37,    3,   37,   37,
+       37,   37
     } ;
 
-static yyconst flex_int16_t yy_def[32] =
+static yyconst flex_int16_t yy_def[33] =
     {   0,
-       31,    1,   31,   31,   31,   31,   31,   31,   31,   31,
-       31,   31,   31,   31,   31,   31,   31,   31,   31,   31,
-       31,   31,   31,   31,   31,   31,   31,   31,   31,   31,
-        0
+       32,    1,   32,   32,   32,   32,   32,   32,   32,   32,
+       32,   32,   32,   32,   32,   32,   32,   32,   32,   32,
+       32,   32,   32,   32,   32,   32,   32,   32,   32,   32,
+       32,    0
     } ;
 
-static yyconst flex_int16_t yy_nxt[61] =
+static yyconst flex_int16_t yy_nxt[62] =
     {   0,
         4,    5,    6,    7,    8,    9,   10,   11,   12,   13,
        14,   15,   16,    4,   17,    4,    4,   18,   19,    4,
-        4,    4,   20,   21,   30,   29,   28,   22,   27,   26,
-       25,   24,   23,   22,   31,    3,   31,   31,   31,   31,
-       31,   31,   31,   31,   31,   31,   31,   31,   31,   31,
-       31,   31,   31,   31,   31,   31,   31,   31,   31,   31
+        4,    4,   20,   21,   31,   30,   29,   22,   28,   27,
+       26,   25,   24,   23,   22,   32,    3,   32,   32,   32,
+       32,   32,   32,   32,   32,   32,   32,   32,   32,   32,
+       32,   32,   32,   32,   32,   32,   32,   32,   32,   32,
+       32
     } ;
 
-static yyconst flex_int16_t yy_chk[61] =
+static yyconst flex_int16_t yy_chk[62] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,   27,   25,   23,   22,   21,   20,
-       18,   17,   14,   12,    3,   31,   31,   31,   31,   31,
-       31,   31,   31,   31,   31,   31,   31,   31,   31,   31,
-       31,   31,   31,   31,   31,   31,   31,   31,   31,   31
+        1,    1,    1,    1,   28,   26,   23,   22,   21,   20,
+       18,   17,   15,   14,   12,    3,   32,   32,   32,   32,
+       32,   32,   32,   32,   32,   32,   32,   32,   32,   32,
+       32,   32,   32,   32,   32,   32,   32,   32,   32,   32,
+       32
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -497,7 +499,7 @@ char *caltext;
 
 extern void calerror(char* input);
 
-#line 501 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/CalculusLexer.cpp"
+#line 503 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/CalculusLexer.cpp"
 
 #define INITIAL 0
 
@@ -681,7 +683,7 @@ YY_DECL
     
 #line 13 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
 
-#line 685 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/CalculusLexer.cpp"
+#line 687 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/CalculusLexer.cpp"
 
 	if ( !(yy_init) )
 		{
@@ -734,13 +736,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 32 )
+				if ( yy_current_state >= 33 )
 					yy_c = yy_meta[(unsigned int) yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 36 );
+		while ( yy_base[yy_current_state] != 37 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -822,39 +824,44 @@ YY_RULE_SETUP
 case 12:
 YY_RULE_SETUP
 #line 25 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
-{return DOPR;}
+{return DX;}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
 #line 26 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
-{return VAR;}
+{return DOPR;}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
 #line 27 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
-{return IOPR;}
+{return VAR;}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
 #line 28 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
-{return CONST_E;}
+{return IOPR;}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
 #line 29 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
-{return CONST_PI;}
+{return CONST_E;}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
 #line 30 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
-{calerror(caltext);}
+{return CONST_PI;}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
 #line 31 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
+{calerror(caltext);}
+	YY_BREAK
+case 19:
+YY_RULE_SETUP
+#line 32 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
 ECHO;
 	YY_BREAK
-#line 858 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/CalculusLexer.cpp"
+#line 865 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/CalculusLexer.cpp"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1146,7 +1153,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 32 )
+			if ( yy_current_state >= 33 )
 				yy_c = yy_meta[(unsigned int) yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
@@ -1174,11 +1181,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 32 )
+		if ( yy_current_state >= 33 )
 			yy_c = yy_meta[(unsigned int) yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
-	yy_is_jam = (yy_current_state == 31);
+	yy_is_jam = (yy_current_state == 32);
 
 	return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1851,6 +1858,6 @@ void calfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 31 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
+#line 32 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
 
 

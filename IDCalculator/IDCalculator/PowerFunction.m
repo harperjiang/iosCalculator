@@ -34,6 +34,12 @@
     return result;
 }
 
+-(Function*) integrate:(Variable *)variable {
+    // Change to polynomial
+    Function* poly = [PolynomialFunction toPolynomial:self];
+    return [poly integrate:variable];
+}
+
 -(Function*) evaluate {
     self.base = [self.base evaluate];
     if(self.power == [NumConstant ONE])
