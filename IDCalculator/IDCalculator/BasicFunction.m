@@ -82,7 +82,7 @@
 }
 
 -(Function*) integrate:(Variable *)variable {
-    Function* pf = [PolynomialFunction toPolynomial:self.base];
+    Function* pf = [PolynomialFunction toPolynomial:self.base under:variable];
     if([pf isKindOfClass:[PolynomialFunction class]]) {
         PolynomialFunction* poly = (PolynomialFunction*)pf;
         if([poly order] == 1) {

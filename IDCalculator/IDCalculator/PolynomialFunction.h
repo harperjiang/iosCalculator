@@ -34,6 +34,7 @@
 -(NSInteger) validCount;
 
 +(PolynomialFunction*) toPolynomial:(Function*) func;
++(PolynomialFunction*) toPolynomial:(Function*) func under:(Variable*) var;
 +(Boolean) polynomialEqual:(Function*) left right:(Function*) right;
 
 @end

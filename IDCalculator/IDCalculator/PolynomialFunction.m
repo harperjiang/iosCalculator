@@ -62,7 +62,11 @@
     self->_validCount += newval - oldval;
 }
 
-+(Function*) toPolynomial:(Function*) function {
++(PolynomialFunction *)toPolynomial:(Function *)func {
+    return [PolynomialFunction toPolynomial:func under:[Variable x]];
+}
+
++(Function*) toPolynomial:(Function*) function under:(Variable *)var{
     if([function isKindOfClass:[Variable class]]) {
         PolynomialFunction* poly = [[PolynomialFunction alloc] init];
         poly.variable = (Variable*)function;

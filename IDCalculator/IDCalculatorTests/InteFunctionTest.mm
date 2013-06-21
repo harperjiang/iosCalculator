@@ -48,14 +48,13 @@
     input = @"∫(x^2+5x+1)/(4x-1)dx";
     func = [[FunctionParser parse:input] evaluate];
     STAssertEqualObjects([func description],@"(1/8)x²+(21/16)x+(37/64)ln(4x-1)",@"");
-    
-    
 }
 
 -(void)testPower {
-    NSString* input = @"∫(x^2+5x+7)^2)dx";
-    Function* func = [[FunctionParser parse:input] evaluate];
-    STAssertEqualObjects([func description],@"-cos(x)+sin(x)",@"");
+    NSString* input = @"∫((x^2+5x+7)^2)dx";
+    Function* func = [FunctionParser parse:input];
+    func = [func evaluate];
+    STAssertEqualObjects([func description],@"(1/5)x⁵+(5/2)x⁴+13x³+35x²+49x",@"");
 }
 
 @end
