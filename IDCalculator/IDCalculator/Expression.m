@@ -7,20 +7,41 @@
 //
 
 #import "Expression.h"
-#import "IDCConsole.h"
+#import "Variable.h"
+#import "Log.h"
 
 @implementation Expression
 
--(Data*) evaluate {
+-(Expression*) evaluate {
+    return nil;
+}
+
+-(Boolean) equals:(Expression *)another {
+    return false;
+}
+
+-(Expression*) integrate:(Variable *)v {
+    return nil;
+}
+
+-(Expression*) differentiate:(Variable *)v {
     return nil;
 }
 
 -(void) error:(NSString*) input {
-    [[IDCConsole instance] error:input];
+    [Log error:input];
 }
 
 -(void) output:(NSString*) input{
-    [[IDCConsole instance] output:input];
+    [Log info:input];
+}
+
++(Boolean) equals:(Expression *)left another:(Expression *)right {
+    if(left == right)
+        return true;
+    if(left == nil && right != nil)
+        return false;
+    return [left equals:right];
 }
 
 @end

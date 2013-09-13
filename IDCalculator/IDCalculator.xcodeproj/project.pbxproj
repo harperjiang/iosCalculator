@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A602AFC9166B11F0007FBA2A /* NumConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = A602AFC8166B11F0007FBA2A /* NumConstant.m */; };
 		A602AFCD166B1C82007FBA2A /* ArithConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = A602AFCC166B1C82007FBA2A /* ArithConstant.m */; };
 		A602AFDB166B2591007FBA2A /* FunctionParserTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = A602AFDA166B2591007FBA2A /* FunctionParserTest.mm */; };
 		A602AFE3166B4911007FBA2A /* Calculator.mm in Sources */ = {isa = PBXBuildFile; fileRef = A602AFE2166B4911007FBA2A /* Calculator.mm */; };
@@ -19,7 +18,6 @@
 		A639F25516609970000C5E02 /* Integer.m in Sources */ = {isa = PBXBuildFile; fileRef = A639F25416609970000C5E02 /* Integer.m */; };
 		A639F2581660997C000C5E02 /* Number.m in Sources */ = {isa = PBXBuildFile; fileRef = A639F2571660997C000C5E02 /* Number.m */; };
 		A639F25B16609995000C5E02 /* Fraction.m in Sources */ = {isa = PBXBuildFile; fileRef = A639F25A16609995000C5E02 /* Fraction.m */; };
-		A639F25E1660A06C000C5E02 /* NumberData.m in Sources */ = {isa = PBXBuildFile; fileRef = A639F25D1660A06A000C5E02 /* NumberData.m */; };
 		A67415611650266600C33D7C /* AssignCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = A67415601650266600C33D7C /* AssignCommand.m */; };
 		A6741AF6167D6977005BCBE5 /* RealNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = A6741AF5167D6977005BCBE5 /* RealNumber.m */; };
 		A6741AF9167D698D005BCBE5 /* ComplexNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = A6741AF8167D698D005BCBE5 /* ComplexNumber.m */; };
@@ -44,21 +42,18 @@
 		A676C0CA164CC20F00C0F859 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A676C0A2164CC20E00C0F859 /* Foundation.framework */; };
 		A676C0D2164CC20F00C0F859 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A676C0D0164CC20F00C0F859 /* InfoPlist.strings */; };
 		A676C0D5164CC20F00C0F859 /* IDCalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A676C0D4164CC20F00C0F859 /* IDCalculatorTests.m */; };
-		A676C0F4164CC36400C0F859 /* ArithmeticFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = A676C0DF164CC36400C0F859 /* ArithmeticFunction.m */; };
-		A676C0F5164CC36400C0F859 /* BasicFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = A676C0E1164CC36400C0F859 /* BasicFunction.m */; };
+		A676C0F5164CC36400C0F859 /* BasicFuncExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = A676C0E1164CC36400C0F859 /* BasicFuncExpression.m */; };
 		A676C0F6164CC36400C0F859 /* CalculatorViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A676C0E3164CC36400C0F859 /* CalculatorViewController.mm */; };
 		A676C0F8164CC36400C0F859 /* Constant.m in Sources */ = {isa = PBXBuildFile; fileRef = A676C0E7164CC36400C0F859 /* Constant.m */; };
-		A676C0F9164CC36400C0F859 /* ExpPowerFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = A676C0E9164CC36400C0F859 /* ExpPowerFunction.m */; };
+		A676C0F9164CC36400C0F859 /* ExpPowerExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = A676C0E9164CC36400C0F859 /* ExpPowerExpression.m */; };
 		A676C0FB164CC36400C0F859 /* Function.m in Sources */ = {isa = PBXBuildFile; fileRef = A676C0ED164CC36400C0F859 /* Function.m */; };
-		A676C0FD164CC36400C0F859 /* PowerFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = A676C0F1164CC36400C0F859 /* PowerFunction.m */; };
+		A676C0FD164CC36400C0F859 /* PowerExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = A676C0F1164CC36400C0F859 /* PowerExpression.m */; };
 		A676C0FE164CC36400C0F859 /* Variable.m in Sources */ = {isa = PBXBuildFile; fileRef = A676C0F3164CC36400C0F859 /* Variable.m */; };
 		A676C109164CD25400C0F859 /* Storyboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A676C108164CD25400C0F859 /* Storyboard_iPhone.storyboard */; };
 		A67BC0101650C49400072670 /* ExpressionCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = A67BC00F1650C49400072670 /* ExpressionCommand.m */; };
 		A67BC0131650C53400072670 /* Expression.m in Sources */ = {isa = PBXBuildFile; fileRef = A67BC0121650C53400072670 /* Expression.m */; };
 		A67BC0161651FF1800072670 /* ArithmeticExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = A67BC0151651FF1800072670 /* ArithmeticExpression.m */; };
 		A67BC01F165291DD00072670 /* IDCConsoleTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A67BC01E165291DD00072670 /* IDCConsoleTest.m */; };
-		A67BC022165295A400072670 /* ConsoleIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = A67BC021165295A400072670 /* ConsoleIdentifier.m */; };
-		A67BC0291652B00100072670 /* ArithmeticExpressionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A67BC0281652B00100072670 /* ArithmeticExpressionTest.m */; };
 		A67BC02D1652C31700072670 /* AssignCommandTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A67BC02C1652C31700072670 /* AssignCommandTest.m */; };
 		A67BC0301652F9BB00072670 /* VariableCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = A67BC02F1652F9BA00072670 /* VariableCommand.m */; };
 		A67CCA721669F024007561D9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A67CCA711669F024007561D9 /* Default-568h@2x.png */; };
@@ -66,6 +61,7 @@
 		A67CCA781669F093007561D9 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A67CCA741669F093007561D9 /* Default-Landscape~ipad.png */; };
 		A67CCA791669F093007561D9 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A67CCA751669F093007561D9 /* Default-Portrait@2x~ipad.png */; };
 		A67CCA7A1669F093007561D9 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A67CCA761669F093007561D9 /* Default-Portrait~ipad.png */; };
+		A67D2DC417E38F7E007C2F7F /* IntegerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A67D2DC317E38F7E007C2F7F /* IntegerTest.m */; };
 		A6AE35081665FE6000AEF12B /* FractionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6AE35071665FE6000AEF12B /* FractionTest.m */; };
 		A6B9745E164DEDE5007E4AB4 /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B9745D164DEDE5007E4AB4 /* GraphViewController.m */; };
 		A6B97461164DF411007E4AB4 /* ConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B97460164DF411007E4AB4 /* ConsoleViewController.m */; };
@@ -83,7 +79,7 @@
 		A6CE38B0166587CB00EDC49A /* GLESContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CE38AF166587CB00EDC49A /* GLESContainer.m */; };
 		A6CE38B41665B01700EDC49A /* GLESObjectTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CE38B31665B01700EDC49A /* GLESObjectTest.m */; };
 		A6D12383166D981E00F256B3 /* DiffFunctionTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6D12382166D981E00F256B3 /* DiffFunctionTest.mm */; };
-		A6D1238D166E831900F256B3 /* ArithmeticFunctionTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6D1238C166E831900F256B3 /* ArithmeticFunctionTest.mm */; };
+		A6D1238D166E831900F256B3 /* ArithmeticExpressionTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6D1238C166E831900F256B3 /* ArithmeticExpressionTest.mm */; };
 		A6D12390166E887000F256B3 /* BasicFunctionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D1238F166E887000F256B3 /* BasicFunctionTest.m */; };
 		A6D2B1201669F2D6000144D5 /* CalModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6D2B11E1669F2D6000144D5 /* CalModel.cpp */; };
 		A6D2B126166A6367000144D5 /* chart_line_24.png in Resources */ = {isa = PBXBuildFile; fileRef = A6D2B123166A6367000144D5 /* chart_line_24.png */; };
@@ -94,15 +90,14 @@
 		A6D2B13C166A8900000144D5 /* CalculusParser.output in Resources */ = {isa = PBXBuildFile; fileRef = A6D2B13B166A8900000144D5 /* CalculusParser.output */; };
 		A6D2B140166AB497000144D5 /* CalculusLexer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6D2B13D166AB496000144D5 /* CalculusLexer.cpp */; };
 		A6D2B141166AB497000144D5 /* CalculusParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6D2B13F166AB496000144D5 /* CalculusParser.cpp */; };
-		A6D2B144166AB4DF000144D5 /* InteFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D2B143166AB4DF000144D5 /* InteFunction.m */; };
-		A6D2B147166AB846000144D5 /* DiffFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D2B146166AB846000144D5 /* DiffFunction.m */; };
+		A6D2B144166AB4DF000144D5 /* InteExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D2B143166AB4DF000144D5 /* InteExpression.m */; };
+		A6D2B147166AB846000144D5 /* DiffExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D2B146166AB846000144D5 /* DiffExpression.m */; };
 		A6D2B14A166AB88F000144D5 /* FunctionParser.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6D2B149166AB88F000144D5 /* FunctionParser.mm */; };
 		A6D7DF131666FBD400D7B705 /* PadConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D7DF121666FBD400D7B705 /* PadConsoleViewController.m */; };
 		A6D7DF16166709CD00D7B705 /* ViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D7DF15166709CD00D7B705 /* ViewHelper.m */; };
 		A6DE83FE164EDDEC002F6FFA /* VectorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DE83FD164EDDEC002F6FFA /* VectorTest.m */; };
 		A6E505BC166EF39500575845 /* VariableTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E505BB166EF39500575845 /* VariableTest.m */; };
-		A6E505C0166EF4AB00575845 /* PolynomialFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E505BF166EF4AB00575845 /* PolynomialFunction.m */; };
-		A6E505C31671D1B300575845 /* PolynomialFunctionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E505C21671D1B300575845 /* PolynomialFunctionTest.m */; };
+		A6E505C31671D1B300575845 /* PolynomialExpressionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E505C21671D1B300575845 /* PolynomialExpressionTest.m */; };
 		A6EEE67F16616D5A00310568 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A6EEE67E16616D5A00310568 /* icon.png */; };
 		A6EEE6851661CD4900310568 /* FuncExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EEE6841661CD4900310568 /* FuncExpression.m */; };
 		A6EEE68B1661DD1200310568 /* ConsoleParser.output in Resources */ = {isa = PBXBuildFile; fileRef = A6EEE68A1661DD1200310568 /* ConsoleParser.output */; };
@@ -117,6 +112,9 @@
 		A6EEE6CD1663102F00310568 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A6EEE6CC1663102D00310568 /* Settings.bundle */; };
 		A6EEE6CF1664391400310568 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EEE6CE1664391300310568 /* QuartzCore.framework */; };
 		A6EEE6D216645DBB00310568 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EEE6D116645DBB00310568 /* HelpViewController.m */; };
+		A6FE3B0017E206EC0045A1CE /* Log.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FE3AFF17E206EC0045A1CE /* Log.m */; };
+		A6FE3B0617E213720045A1CE /* PolynomialExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FE3B0517E213710045A1CE /* PolynomialExpression.m */; };
+		A6FE3B0A17E218740045A1CE /* VariableContext.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FE3B0917E218740045A1CE /* VariableContext.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -159,8 +157,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A602AFC7166B11F0007FBA2A /* NumConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumConstant.h; sourceTree = "<group>"; };
-		A602AFC8166B11F0007FBA2A /* NumConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumConstant.m; sourceTree = "<group>"; };
 		A602AFCB166B1C81007FBA2A /* ArithConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArithConstant.h; sourceTree = "<group>"; };
 		A602AFCC166B1C82007FBA2A /* ArithConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArithConstant.m; sourceTree = "<group>"; };
 		A602AFD9166B2591007FBA2A /* FunctionParserTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunctionParserTest.h; sourceTree = "<group>"; };
@@ -183,8 +179,6 @@
 		A639F2571660997C000C5E02 /* Number.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Number.m; sourceTree = "<group>"; };
 		A639F25916609995000C5E02 /* Fraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fraction.h; sourceTree = "<group>"; };
 		A639F25A16609995000C5E02 /* Fraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fraction.m; sourceTree = "<group>"; };
-		A639F25C1660A069000C5E02 /* NumberData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberData.h; sourceTree = "<group>"; };
-		A639F25D1660A06A000C5E02 /* NumberData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberData.m; sourceTree = "<group>"; };
 		A674155F1650266600C33D7C /* AssignCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignCommand.h; sourceTree = "<group>"; };
 		A67415601650266600C33D7C /* AssignCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignCommand.m; sourceTree = "<group>"; };
 		A6741AF4167D6977005BCBE5 /* RealNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealNumber.h; sourceTree = "<group>"; };
@@ -228,20 +222,18 @@
 		A676C0D1164CC20F00C0F859 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A676C0D3164CC20F00C0F859 /* IDCalculatorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDCalculatorTests.h; sourceTree = "<group>"; };
 		A676C0D4164CC20F00C0F859 /* IDCalculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDCalculatorTests.m; sourceTree = "<group>"; };
-		A676C0DE164CC36400C0F859 /* ArithmeticFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArithmeticFunction.h; sourceTree = "<group>"; };
-		A676C0DF164CC36400C0F859 /* ArithmeticFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArithmeticFunction.m; sourceTree = "<group>"; };
-		A676C0E0164CC36400C0F859 /* BasicFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicFunction.h; sourceTree = "<group>"; };
-		A676C0E1164CC36400C0F859 /* BasicFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicFunction.m; sourceTree = "<group>"; };
+		A676C0E0164CC36400C0F859 /* BasicFuncExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicFuncExpression.h; sourceTree = "<group>"; };
+		A676C0E1164CC36400C0F859 /* BasicFuncExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicFuncExpression.m; sourceTree = "<group>"; };
 		A676C0E2164CC36400C0F859 /* CalculatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorViewController.h; sourceTree = "<group>"; };
 		A676C0E3164CC36400C0F859 /* CalculatorViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CalculatorViewController.mm; sourceTree = "<group>"; };
 		A676C0E6164CC36400C0F859 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		A676C0E7164CC36400C0F859 /* Constant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constant.m; sourceTree = "<group>"; };
-		A676C0E8164CC36400C0F859 /* ExpPowerFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpPowerFunction.h; sourceTree = "<group>"; };
-		A676C0E9164CC36400C0F859 /* ExpPowerFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpPowerFunction.m; sourceTree = "<group>"; };
+		A676C0E8164CC36400C0F859 /* ExpPowerExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpPowerExpression.h; sourceTree = "<group>"; };
+		A676C0E9164CC36400C0F859 /* ExpPowerExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpPowerExpression.m; sourceTree = "<group>"; };
 		A676C0EC164CC36400C0F859 /* Function.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Function.h; sourceTree = "<group>"; };
 		A676C0ED164CC36400C0F859 /* Function.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Function.m; sourceTree = "<group>"; };
-		A676C0F0164CC36400C0F859 /* PowerFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PowerFunction.h; sourceTree = "<group>"; };
-		A676C0F1164CC36400C0F859 /* PowerFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PowerFunction.m; sourceTree = "<group>"; };
+		A676C0F0164CC36400C0F859 /* PowerExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PowerExpression.h; sourceTree = "<group>"; };
+		A676C0F1164CC36400C0F859 /* PowerExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PowerExpression.m; sourceTree = "<group>"; };
 		A676C0F2164CC36400C0F859 /* Variable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Variable.h; sourceTree = "<group>"; };
 		A676C0F3164CC36400C0F859 /* Variable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Variable.m; sourceTree = "<group>"; };
 		A676C108164CD25400C0F859 /* Storyboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard_iPhone.storyboard; sourceTree = "<group>"; };
@@ -254,10 +246,6 @@
 		A67BC01A165211FF00072670 /* Operator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Operator.h; sourceTree = "<group>"; };
 		A67BC01D165291DD00072670 /* IDCConsoleTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDCConsoleTest.h; sourceTree = "<group>"; };
 		A67BC01E165291DD00072670 /* IDCConsoleTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDCConsoleTest.m; sourceTree = "<group>"; };
-		A67BC020165295A400072670 /* ConsoleIdentifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsoleIdentifier.h; sourceTree = "<group>"; };
-		A67BC021165295A400072670 /* ConsoleIdentifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsoleIdentifier.m; sourceTree = "<group>"; };
-		A67BC0271652B00100072670 /* ArithmeticExpressionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArithmeticExpressionTest.h; sourceTree = "<group>"; };
-		A67BC0281652B00100072670 /* ArithmeticExpressionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArithmeticExpressionTest.m; sourceTree = "<group>"; };
 		A67BC02B1652C31700072670 /* AssignCommandTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignCommandTest.h; sourceTree = "<group>"; };
 		A67BC02C1652C31700072670 /* AssignCommandTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignCommandTest.m; sourceTree = "<group>"; };
 		A67BC02E1652F9B900072670 /* VariableCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VariableCommand.h; sourceTree = "<group>"; };
@@ -269,6 +257,8 @@
 		A67CCA741669F093007561D9 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		A67CCA751669F093007561D9 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
 		A67CCA761669F093007561D9 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		A67D2DC217E38F7D007C2F7F /* IntegerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntegerTest.h; sourceTree = "<group>"; };
+		A67D2DC317E38F7E007C2F7F /* IntegerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntegerTest.m; sourceTree = "<group>"; };
 		A69B8CA6165302AC00A64A65 /* console.lpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lex; path = console.lpp; sourceTree = "<group>"; };
 		A69B8CA7165302AC00A64A65 /* console.ypp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.yacc; path = console.ypp; sourceTree = "<group>"; };
 		A6AE35061665FE6000AEF12B /* FractionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FractionTest.h; sourceTree = "<group>"; };
@@ -305,8 +295,8 @@
 		A6CE38B31665B01700EDC49A /* GLESObjectTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLESObjectTest.m; sourceTree = "<group>"; };
 		A6D12381166D981E00F256B3 /* DiffFunctionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiffFunctionTest.h; sourceTree = "<group>"; };
 		A6D12382166D981E00F256B3 /* DiffFunctionTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DiffFunctionTest.mm; sourceTree = "<group>"; };
-		A6D1238B166E831900F256B3 /* ArithmeticFunctionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArithmeticFunctionTest.h; sourceTree = "<group>"; };
-		A6D1238C166E831900F256B3 /* ArithmeticFunctionTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ArithmeticFunctionTest.mm; sourceTree = "<group>"; };
+		A6D1238B166E831900F256B3 /* ArithmeticExpressionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArithmeticExpressionTest.h; sourceTree = "<group>"; };
+		A6D1238C166E831900F256B3 /* ArithmeticExpressionTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ArithmeticExpressionTest.mm; sourceTree = "<group>"; };
 		A6D1238E166E886F00F256B3 /* BasicFunctionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicFunctionTest.h; sourceTree = "<group>"; };
 		A6D1238F166E887000F256B3 /* BasicFunctionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicFunctionTest.m; sourceTree = "<group>"; };
 		A6D2B11A1669F21B000144D5 /* calculus.lpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lex; path = calculus.lpp; sourceTree = "<group>"; };
@@ -325,10 +315,10 @@
 		A6D2B13D166AB496000144D5 /* CalculusLexer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CalculusLexer.cpp; sourceTree = "<group>"; };
 		A6D2B13E166AB496000144D5 /* CalculusLexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculusLexer.h; sourceTree = "<group>"; };
 		A6D2B13F166AB496000144D5 /* CalculusParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CalculusParser.cpp; sourceTree = "<group>"; };
-		A6D2B142166AB4DF000144D5 /* InteFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteFunction.h; sourceTree = "<group>"; };
-		A6D2B143166AB4DF000144D5 /* InteFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InteFunction.m; sourceTree = "<group>"; };
-		A6D2B145166AB846000144D5 /* DiffFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiffFunction.h; sourceTree = "<group>"; };
-		A6D2B146166AB846000144D5 /* DiffFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiffFunction.m; sourceTree = "<group>"; };
+		A6D2B142166AB4DF000144D5 /* InteExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteExpression.h; sourceTree = "<group>"; };
+		A6D2B143166AB4DF000144D5 /* InteExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InteExpression.m; sourceTree = "<group>"; };
+		A6D2B145166AB846000144D5 /* DiffExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiffExpression.h; sourceTree = "<group>"; };
+		A6D2B146166AB846000144D5 /* DiffExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiffExpression.m; sourceTree = "<group>"; };
 		A6D2B148166AB88F000144D5 /* FunctionParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunctionParser.h; sourceTree = "<group>"; };
 		A6D2B149166AB88F000144D5 /* FunctionParser.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FunctionParser.mm; sourceTree = "<group>"; };
 		A6D7DF111666FBD400D7B705 /* PadConsoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadConsoleViewController.h; sourceTree = "<group>"; };
@@ -339,10 +329,8 @@
 		A6DE83FD164EDDEC002F6FFA /* VectorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VectorTest.m; sourceTree = "<group>"; };
 		A6E505BA166EF39500575845 /* VariableTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VariableTest.h; sourceTree = "<group>"; };
 		A6E505BB166EF39500575845 /* VariableTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VariableTest.m; sourceTree = "<group>"; };
-		A6E505BE166EF4AB00575845 /* PolynomialFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolynomialFunction.h; sourceTree = "<group>"; };
-		A6E505BF166EF4AB00575845 /* PolynomialFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolynomialFunction.m; sourceTree = "<group>"; };
-		A6E505C11671D1B300575845 /* PolynomialFunctionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolynomialFunctionTest.h; sourceTree = "<group>"; };
-		A6E505C21671D1B300575845 /* PolynomialFunctionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolynomialFunctionTest.m; sourceTree = "<group>"; };
+		A6E505C11671D1B300575845 /* PolynomialExpressionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolynomialExpressionTest.h; sourceTree = "<group>"; };
+		A6E505C21671D1B300575845 /* PolynomialExpressionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolynomialExpressionTest.m; sourceTree = "<group>"; };
 		A6EEE67E16616D5A00310568 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		A6EEE6831661CD4900310568 /* FuncExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuncExpression.h; sourceTree = "<group>"; };
 		A6EEE6841661CD4900310568 /* FuncExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuncExpression.m; sourceTree = "<group>"; };
@@ -360,6 +348,12 @@
 		A6EEE6CE1664391300310568 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A6EEE6D016645DBB00310568 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
 		A6EEE6D116645DBB00310568 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
+		A6FE3AFE17E206EC0045A1CE /* Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Log.h; sourceTree = "<group>"; };
+		A6FE3AFF17E206EC0045A1CE /* Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Log.m; sourceTree = "<group>"; };
+		A6FE3B0417E213700045A1CE /* PolynomialExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolynomialExpression.h; sourceTree = "<group>"; };
+		A6FE3B0517E213710045A1CE /* PolynomialExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolynomialExpression.m; sourceTree = "<group>"; };
+		A6FE3B0817E218740045A1CE /* VariableContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VariableContext.h; sourceTree = "<group>"; };
+		A6FE3B0917E218740045A1CE /* VariableContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VariableContext.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -399,21 +393,6 @@
 			name = parser;
 			sourceTree = "<group>";
 		};
-		A602AFE0166B4642007FBA2A /* model */ = {
-			isa = PBXGroup;
-			children = (
-				A676C100164CC37500C0F859 /* func */,
-				A676C101164CC39700C0F859 /* cons */,
-				A676C0F2164CC36400C0F859 /* Variable.h */,
-				A676C0F3164CC36400C0F859 /* Variable.m */,
-				A676C0EC164CC36400C0F859 /* Function.h */,
-				A676C0ED164CC36400C0F859 /* Function.m */,
-				A676C0E6164CC36400C0F859 /* Constant.h */,
-				A676C0E7164CC36400C0F859 /* Constant.m */,
-			);
-			name = model;
-			sourceTree = "<group>";
-		};
 		A627E99A16500AAA001142D5 /* command */ = {
 			isa = PBXGroup;
 			children = (
@@ -435,21 +414,8 @@
 			isa = PBXGroup;
 			children = (
 				A627E99A16500AAA001142D5 /* command */,
-				A67BC00D1650C45800072670 /* expression */,
 			);
 			name = model;
-			sourceTree = "<group>";
-		};
-		A6292C8716605DE200C2C554 /* data */ = {
-			isa = PBXGroup;
-			children = (
-				A6292C9B166079FC00C2C554 /* matrix */,
-				A6292C8816605DFC00C2C554 /* Data.h */,
-				A6292C8916605DFC00C2C554 /* Data.m */,
-				A639F25C1660A069000C5E02 /* NumberData.h */,
-				A639F25D1660A06A000C5E02 /* NumberData.m */,
-			);
-			name = data;
 			sourceTree = "<group>";
 		};
 		A6292C9B166079FC00C2C554 /* matrix */ = {
@@ -465,25 +431,14 @@
 			name = matrix;
 			sourceTree = "<group>";
 		};
-		A639F2511660995A000C5E02 /* math */ = {
+		A639F2511660995A000C5E02 /* common */ = {
 			isa = PBXGroup;
 			children = (
-				A639F25316609970000C5E02 /* Integer.h */,
-				A639F25416609970000C5E02 /* Integer.m */,
-				A639F2561660997C000C5E02 /* Number.h */,
-				A639F2571660997C000C5E02 /* Number.m */,
-				A639F25916609995000C5E02 /* Fraction.h */,
-				A639F25A16609995000C5E02 /* Fraction.m */,
-				A6C5D8E1166C0DD80048E5C2 /* Decimal.h */,
-				A6C5D8E2166C0DD80048E5C2 /* Decimal.m */,
-				A6C5D8E5166C13870048E5C2 /* NumberOperators.h */,
-				A6C5D8E6166C13870048E5C2 /* NumberOperators.m */,
-				A6741AF4167D6977005BCBE5 /* RealNumber.h */,
-				A6741AF5167D6977005BCBE5 /* RealNumber.m */,
-				A6741AF7167D698D005BCBE5 /* ComplexNumber.h */,
-				A6741AF8167D698D005BCBE5 /* ComplexNumber.m */,
+				A6FE3B0717E2185A0045A1CE /* context */,
+				A6FE3AFD17E206C20045A1CE /* display */,
+				A6FE3AFC17E206AF0045A1CE /* math */,
 			);
-			name = math;
+			name = common;
 			sourceTree = "<group>";
 		};
 		A67415631650803700C33D7C /* parser */ = {
@@ -567,9 +522,9 @@
 		A676C0A6164CC20E00C0F859 /* IDCalculator */ = {
 			isa = PBXGroup;
 			children = (
-				A639F2511660995A000C5E02 /* math */,
+				A6FE3AF717E176CB0045A1CE /* calculator */,
+				A639F2511660995A000C5E02 /* common */,
 				A6B9746F164E1A36007E4AB4 /* console */,
-				A676C0FF164CC36B00C0F859 /* calculus */,
 				A6EEE6AD1662CC1D00310568 /* graph */,
 				A676C107164CD1DF00C0F859 /* ui */,
 				A676C0AF164CC20E00C0F859 /* IDCAppDelegate.h */,
@@ -607,10 +562,9 @@
 		A676C0CD164CC20F00C0F859 /* IDCalculatorTests */ = {
 			isa = PBXGroup;
 			children = (
-				A6AE35041665FE5300AEF12B /* math */,
+				A6AE35041665FE5300AEF12B /* common */,
 				A6CE38B11665B00600EDC49A /* graph */,
 				A67BC01C165291C600072670 /* console */,
-				A6B97476164E8CCC007E4AB4 /* matrix */,
 				A676C102164CC56600C0F859 /* calculus */,
 				A676C0D3164CC20F00C0F859 /* IDCalculatorTests.h */,
 				A676C0D4164CC20F00C0F859 /* IDCalculatorTests.m */,
@@ -628,36 +582,11 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		A676C0FF164CC36B00C0F859 /* calculus */ = {
-			isa = PBXGroup;
-			children = (
-				A602AFE0166B4642007FBA2A /* model */,
-				A6EEE6AC1662CBB900310568 /* parser */,
-				A6EEE6AB1662CBAA00310568 /* cmodel */,
-				A602AFE1166B4911007FBA2A /* Calculator.h */,
-				A602AFE2166B4911007FBA2A /* Calculator.mm */,
-			);
-			name = calculus;
-			sourceTree = "<group>";
-		};
 		A676C100164CC37500C0F859 /* func */ = {
 			isa = PBXGroup;
 			children = (
-				A676C0E8164CC36400C0F859 /* ExpPowerFunction.h */,
-				A676C0E9164CC36400C0F859 /* ExpPowerFunction.m */,
-				A676C0F0164CC36400C0F859 /* PowerFunction.h */,
-				A676C0F1164CC36400C0F859 /* PowerFunction.m */,
-				A676C0DE164CC36400C0F859 /* ArithmeticFunction.h */,
-				A676C0DF164CC36400C0F859 /* ArithmeticFunction.m */,
-				A676C0E0164CC36400C0F859 /* BasicFunction.h */,
-				A676C0E1164CC36400C0F859 /* BasicFunction.m */,
-				A67BC01A165211FF00072670 /* Operator.h */,
-				A6D2B142166AB4DF000144D5 /* InteFunction.h */,
-				A6D2B143166AB4DF000144D5 /* InteFunction.m */,
-				A6D2B145166AB846000144D5 /* DiffFunction.h */,
-				A6D2B146166AB846000144D5 /* DiffFunction.m */,
-				A6E505BE166EF4AB00575845 /* PolynomialFunction.h */,
-				A6E505BF166EF4AB00575845 /* PolynomialFunction.m */,
+				A676C0EC164CC36400C0F859 /* Function.h */,
+				A676C0ED164CC36400C0F859 /* Function.m */,
 			);
 			name = func;
 			sourceTree = "<group>";
@@ -665,10 +594,10 @@
 		A676C101164CC39700C0F859 /* cons */ = {
 			isa = PBXGroup;
 			children = (
+				A676C0E6164CC36400C0F859 /* Constant.h */,
+				A676C0E7164CC36400C0F859 /* Constant.m */,
 				A627E99016500A97001142D5 /* SpecialConstant.h */,
 				A627E99116500A97001142D5 /* SpecialConstant.m */,
-				A602AFC7166B11F0007FBA2A /* NumConstant.h */,
-				A602AFC8166B11F0007FBA2A /* NumConstant.m */,
 				A602AFCB166B1C81007FBA2A /* ArithConstant.h */,
 				A602AFCC166B1C82007FBA2A /* ArithConstant.m */,
 			);
@@ -678,7 +607,6 @@
 		A676C102164CC56600C0F859 /* calculus */ = {
 			isa = PBXGroup;
 			children = (
-				A6D12380166D97F400F256B3 /* model */,
 				A602AFD8166B2575007FBA2A /* parser */,
 			);
 			name = calculus;
@@ -697,22 +625,34 @@
 			name = ui;
 			sourceTree = "<group>";
 		};
-		A67BC00D1650C45800072670 /* expression */ = {
+		A67BC00D1650C45800072670 /* expr */ = {
 			isa = PBXGroup;
 			children = (
-				A6292C8716605DE200C2C554 /* data */,
+				A6D2B142166AB4DF000144D5 /* InteExpression.h */,
+				A6D2B143166AB4DF000144D5 /* InteExpression.m */,
+				A6D2B145166AB846000144D5 /* DiffExpression.h */,
+				A6D2B146166AB846000144D5 /* DiffExpression.m */,
+				A676C0E0164CC36400C0F859 /* BasicFuncExpression.h */,
+				A676C0E1164CC36400C0F859 /* BasicFuncExpression.m */,
+				A67BC01A165211FF00072670 /* Operator.h */,
 				A67BC0111650C53400072670 /* Expression.h */,
 				A67BC0121650C53400072670 /* Expression.m */,
+				A676C0E8164CC36400C0F859 /* ExpPowerExpression.h */,
+				A676C0E9164CC36400C0F859 /* ExpPowerExpression.m */,
 				A67BC0141651FF1800072670 /* ArithmeticExpression.h */,
 				A67BC0151651FF1800072670 /* ArithmeticExpression.m */,
-				A67BC020165295A400072670 /* ConsoleIdentifier.h */,
-				A67BC021165295A400072670 /* ConsoleIdentifier.m */,
 				A6292C98166075B700C2C554 /* ExpressionList.h */,
 				A6292C99166075B800C2C554 /* ExpressionList.m */,
 				A6EEE6831661CD4900310568 /* FuncExpression.h */,
 				A6EEE6841661CD4900310568 /* FuncExpression.m */,
+				A6FE3B0417E213700045A1CE /* PolynomialExpression.h */,
+				A6FE3B0517E213710045A1CE /* PolynomialExpression.m */,
+				A676C0F0164CC36400C0F859 /* PowerExpression.h */,
+				A676C0F1164CC36400C0F859 /* PowerExpression.m */,
+				A676C0F2164CC36400C0F859 /* Variable.h */,
+				A676C0F3164CC36400C0F859 /* Variable.m */,
 			);
-			name = expression;
+			name = expr;
 			sourceTree = "<group>";
 		};
 		A67BC01C165291C600072670 /* console */ = {
@@ -720,20 +660,10 @@
 			children = (
 				A69B8CAB1653099700A64A65 /* parser */,
 				A67BC02A1652C30700072670 /* command */,
-				A67BC0261652AFE800072670 /* expression */,
 				A67BC01D165291DD00072670 /* IDCConsoleTest.h */,
 				A67BC01E165291DD00072670 /* IDCConsoleTest.m */,
 			);
 			name = console;
-			sourceTree = "<group>";
-		};
-		A67BC0261652AFE800072670 /* expression */ = {
-			isa = PBXGroup;
-			children = (
-				A67BC0271652B00100072670 /* ArithmeticExpressionTest.h */,
-				A67BC0281652B00100072670 /* ArithmeticExpressionTest.m */,
-			);
-			name = expression;
 			sourceTree = "<group>";
 		};
 		A67BC02A1652C30700072670 /* command */ = {
@@ -745,6 +675,13 @@
 			name = command;
 			sourceTree = "<group>";
 		};
+		A67D2DC117E38F4C007C2F7F /* cons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = cons;
+			sourceTree = "<group>";
+		};
 		A69B8CAB1653099700A64A65 /* parser */ = {
 			isa = PBXGroup;
 			children = (
@@ -754,13 +691,12 @@
 			name = parser;
 			sourceTree = "<group>";
 		};
-		A6AE35041665FE5300AEF12B /* math */ = {
+		A6AE35041665FE5300AEF12B /* common */ = {
 			isa = PBXGroup;
 			children = (
-				A6AE35061665FE6000AEF12B /* FractionTest.h */,
-				A6AE35071665FE6000AEF12B /* FractionTest.m */,
+				A6FE3B0B17E2BA020045A1CE /* math */,
 			);
-			name = math;
+			name = common;
 			sourceTree = "<group>";
 		};
 		A6B9746F164E1A36007E4AB4 /* console */ = {
@@ -815,23 +751,17 @@
 			name = graph;
 			sourceTree = "<group>";
 		};
-		A6D12380166D97F400F256B3 /* model */ = {
+		A6D12380166D97F400F256B3 /* func */ = {
 			isa = PBXGroup;
 			children = (
 				A6D12381166D981E00F256B3 /* DiffFunctionTest.h */,
 				A6D12382166D981E00F256B3 /* DiffFunctionTest.mm */,
-				A6D1238B166E831900F256B3 /* ArithmeticFunctionTest.h */,
-				A6D1238C166E831900F256B3 /* ArithmeticFunctionTest.mm */,
 				A6D1238E166E886F00F256B3 /* BasicFunctionTest.h */,
 				A6D1238F166E887000F256B3 /* BasicFunctionTest.m */,
-				A6E505BA166EF39500575845 /* VariableTest.h */,
-				A6E505BB166EF39500575845 /* VariableTest.m */,
-				A6E505C11671D1B300575845 /* PolynomialFunctionTest.h */,
-				A6E505C21671D1B300575845 /* PolynomialFunctionTest.m */,
 				A6741B19167F7B85005BCBE5 /* InteFunctionTest.h */,
 				A6741B1A167F7B85005BCBE5 /* InteFunctionTest.mm */,
 			);
-			name = model;
+			name = func;
 			sourceTree = "<group>";
 		};
 		A6D7DF0E1666FB9B00D7B705 /* ipad */ = {
@@ -907,6 +837,122 @@
 				A6741AFA167D6A68005BCBE5 /* gl */,
 			);
 			name = graph;
+			sourceTree = "<group>";
+		};
+		A6FE3AF717E176CB0045A1CE /* calculator */ = {
+			isa = PBXGroup;
+			children = (
+				A6EEE6AC1662CBB900310568 /* parser */,
+				A6EEE6AB1662CBAA00310568 /* cmodel */,
+				A602AFE1166B4911007FBA2A /* Calculator.h */,
+				A602AFE2166B4911007FBA2A /* Calculator.mm */,
+			);
+			name = calculator;
+			sourceTree = "<group>";
+		};
+		A6FE3AF817E177100045A1CE /* num */ = {
+			isa = PBXGroup;
+			children = (
+				A639F25316609970000C5E02 /* Integer.h */,
+				A639F25416609970000C5E02 /* Integer.m */,
+				A639F2561660997C000C5E02 /* Number.h */,
+				A639F2571660997C000C5E02 /* Number.m */,
+				A639F25916609995000C5E02 /* Fraction.h */,
+				A639F25A16609995000C5E02 /* Fraction.m */,
+				A6C5D8E1166C0DD80048E5C2 /* Decimal.h */,
+				A6C5D8E2166C0DD80048E5C2 /* Decimal.m */,
+				A6C5D8E5166C13870048E5C2 /* NumberOperators.h */,
+				A6C5D8E6166C13870048E5C2 /* NumberOperators.m */,
+				A6741AF4167D6977005BCBE5 /* RealNumber.h */,
+				A6741AF5167D6977005BCBE5 /* RealNumber.m */,
+				A6741AF7167D698D005BCBE5 /* ComplexNumber.h */,
+				A6741AF8167D698D005BCBE5 /* ComplexNumber.m */,
+			);
+			name = num;
+			sourceTree = "<group>";
+		};
+		A6FE3AF917E17F710045A1CE /* data */ = {
+			isa = PBXGroup;
+			children = (
+				A676C101164CC39700C0F859 /* cons */,
+				A6292C9B166079FC00C2C554 /* matrix */,
+				A6FE3AF817E177100045A1CE /* num */,
+				A6292C8816605DFC00C2C554 /* Data.h */,
+				A6292C8916605DFC00C2C554 /* Data.m */,
+			);
+			name = data;
+			sourceTree = "<group>";
+		};
+		A6FE3AFA17E17FC60045A1CE /* num */ = {
+			isa = PBXGroup;
+			children = (
+				A6AE35061665FE6000AEF12B /* FractionTest.h */,
+				A6AE35071665FE6000AEF12B /* FractionTest.m */,
+				A67D2DC217E38F7D007C2F7F /* IntegerTest.h */,
+				A67D2DC317E38F7E007C2F7F /* IntegerTest.m */,
+			);
+			name = num;
+			sourceTree = "<group>";
+		};
+		A6FE3AFB17E17FDB0045A1CE /* data */ = {
+			isa = PBXGroup;
+			children = (
+				A67D2DC117E38F4C007C2F7F /* cons */,
+				A6B97476164E8CCC007E4AB4 /* matrix */,
+				A6FE3AFA17E17FC60045A1CE /* num */,
+			);
+			name = data;
+			sourceTree = "<group>";
+		};
+		A6FE3AFC17E206AF0045A1CE /* math */ = {
+			isa = PBXGroup;
+			children = (
+				A67BC00D1650C45800072670 /* expr */,
+				A6FE3AF917E17F710045A1CE /* data */,
+				A676C100164CC37500C0F859 /* func */,
+			);
+			name = math;
+			sourceTree = "<group>";
+		};
+		A6FE3AFD17E206C20045A1CE /* display */ = {
+			isa = PBXGroup;
+			children = (
+				A6FE3AFE17E206EC0045A1CE /* Log.h */,
+				A6FE3AFF17E206EC0045A1CE /* Log.m */,
+			);
+			name = display;
+			sourceTree = "<group>";
+		};
+		A6FE3B0717E2185A0045A1CE /* context */ = {
+			isa = PBXGroup;
+			children = (
+				A6FE3B0817E218740045A1CE /* VariableContext.h */,
+				A6FE3B0917E218740045A1CE /* VariableContext.m */,
+			);
+			name = context;
+			sourceTree = "<group>";
+		};
+		A6FE3B0B17E2BA020045A1CE /* math */ = {
+			isa = PBXGroup;
+			children = (
+				A6FE3B0C17E2BA270045A1CE /* expr */,
+				A6D12380166D97F400F256B3 /* func */,
+				A6FE3AFB17E17FDB0045A1CE /* data */,
+			);
+			name = math;
+			sourceTree = "<group>";
+		};
+		A6FE3B0C17E2BA270045A1CE /* expr */ = {
+			isa = PBXGroup;
+			children = (
+				A6D1238B166E831900F256B3 /* ArithmeticExpressionTest.h */,
+				A6D1238C166E831900F256B3 /* ArithmeticExpressionTest.mm */,
+				A6E505BA166EF39500575845 /* VariableTest.h */,
+				A6E505BB166EF39500575845 /* VariableTest.m */,
+				A6E505C11671D1B300575845 /* PolynomialExpressionTest.h */,
+				A6E505C21671D1B300575845 /* PolynomialExpressionTest.m */,
+			);
+			name = expr;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1039,13 +1085,12 @@
 				A676C0AD164CC20E00C0F859 /* main.m in Sources */,
 				A676C0B1164CC20E00C0F859 /* IDCAppDelegate.m in Sources */,
 				A676C0C0164CC20E00C0F859 /* IDCViewController.m in Sources */,
-				A676C0F4164CC36400C0F859 /* ArithmeticFunction.m in Sources */,
-				A676C0F5164CC36400C0F859 /* BasicFunction.m in Sources */,
+				A676C0F5164CC36400C0F859 /* BasicFuncExpression.m in Sources */,
 				A676C0F6164CC36400C0F859 /* CalculatorViewController.mm in Sources */,
 				A676C0F8164CC36400C0F859 /* Constant.m in Sources */,
-				A676C0F9164CC36400C0F859 /* ExpPowerFunction.m in Sources */,
+				A676C0F9164CC36400C0F859 /* ExpPowerExpression.m in Sources */,
 				A676C0FB164CC36400C0F859 /* Function.m in Sources */,
-				A676C0FD164CC36400C0F859 /* PowerFunction.m in Sources */,
+				A676C0FD164CC36400C0F859 /* PowerExpression.m in Sources */,
 				A676C0FE164CC36400C0F859 /* Variable.m in Sources */,
 				A6B9745E164DEDE5007E4AB4 /* GraphViewController.m in Sources */,
 				A6B97461164DF411007E4AB4 /* ConsoleViewController.m in Sources */,
@@ -1060,7 +1105,6 @@
 				A67BC0101650C49400072670 /* ExpressionCommand.m in Sources */,
 				A67BC0131650C53400072670 /* Expression.m in Sources */,
 				A67BC0161651FF1800072670 /* ArithmeticExpression.m in Sources */,
-				A67BC022165295A400072670 /* ConsoleIdentifier.m in Sources */,
 				A67BC0301652F9BB00072670 /* VariableCommand.m in Sources */,
 				A6C6F59C165FFB5100472E99 /* CModel.cpp in Sources */,
 				A6C6F5CC16601F3D00472E99 /* CommandConverter.mm in Sources */,
@@ -1069,7 +1113,6 @@
 				A639F25516609970000C5E02 /* Integer.m in Sources */,
 				A639F2581660997C000C5E02 /* Number.m in Sources */,
 				A639F25B16609995000C5E02 /* Fraction.m in Sources */,
-				A639F25E1660A06C000C5E02 /* NumberData.m in Sources */,
 				A6EEE6851661CD4900310568 /* FuncExpression.m in Sources */,
 				A6EEE6B01662FAFB00310568 /* OpenGLContext.m in Sources */,
 				A6EEE6D216645DBB00310568 /* HelpViewController.m in Sources */,
@@ -1082,15 +1125,13 @@
 				A6D2B136166A66F2000144D5 /* ConsoleParser.cpp in Sources */,
 				A6D2B140166AB497000144D5 /* CalculusLexer.cpp in Sources */,
 				A6D2B141166AB497000144D5 /* CalculusParser.cpp in Sources */,
-				A6D2B144166AB4DF000144D5 /* InteFunction.m in Sources */,
-				A6D2B147166AB846000144D5 /* DiffFunction.m in Sources */,
+				A6D2B144166AB4DF000144D5 /* InteExpression.m in Sources */,
+				A6D2B147166AB846000144D5 /* DiffExpression.m in Sources */,
 				A6D2B14A166AB88F000144D5 /* FunctionParser.mm in Sources */,
-				A602AFC9166B11F0007FBA2A /* NumConstant.m in Sources */,
 				A602AFCD166B1C82007FBA2A /* ArithConstant.m in Sources */,
 				A602AFE3166B4911007FBA2A /* Calculator.mm in Sources */,
 				A6C5D8E3166C0DD80048E5C2 /* Decimal.m in Sources */,
 				A6C5D8E7166C13880048E5C2 /* NumberOperators.m in Sources */,
-				A6E505C0166EF4AB00575845 /* PolynomialFunction.m in Sources */,
 				A6741AF6167D6977005BCBE5 /* RealNumber.m in Sources */,
 				A6741AF9167D698D005BCBE5 /* ComplexNumber.m in Sources */,
 				A6741B01167D6ED4005BCBE5 /* Canvas2DView.m in Sources */,
@@ -1100,6 +1141,9 @@
 				A6741B12167D77AC005BCBE5 /* Coordinate.m in Sources */,
 				A6741B15167D931E005BCBE5 /* ViewControllerHelper.m in Sources */,
 				A6741B18167DA4BE005BCBE5 /* DrawObject.m in Sources */,
+				A6FE3B0017E206EC0045A1CE /* Log.m in Sources */,
+				A6FE3B0617E213720045A1CE /* PolynomialExpression.m in Sources */,
+				A6FE3B0A17E218740045A1CE /* VariableContext.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1111,18 +1155,18 @@
 				A6B97475164E8CC1007E4AB4 /* MatrixTest.m in Sources */,
 				A6DE83FE164EDDEC002F6FFA /* VectorTest.m in Sources */,
 				A67BC01F165291DD00072670 /* IDCConsoleTest.m in Sources */,
-				A67BC0291652B00100072670 /* ArithmeticExpressionTest.m in Sources */,
 				A67BC02D1652C31700072670 /* AssignCommandTest.m in Sources */,
 				A6C6F5CF1660237A00472E99 /* CommandConverterTest.mm in Sources */,
 				A6CE38B41665B01700EDC49A /* GLESObjectTest.m in Sources */,
 				A6AE35081665FE6000AEF12B /* FractionTest.m in Sources */,
 				A602AFDB166B2591007FBA2A /* FunctionParserTest.mm in Sources */,
 				A6D12383166D981E00F256B3 /* DiffFunctionTest.mm in Sources */,
-				A6D1238D166E831900F256B3 /* ArithmeticFunctionTest.mm in Sources */,
+				A6D1238D166E831900F256B3 /* ArithmeticExpressionTest.mm in Sources */,
 				A6D12390166E887000F256B3 /* BasicFunctionTest.m in Sources */,
 				A6E505BC166EF39500575845 /* VariableTest.m in Sources */,
-				A6E505C31671D1B300575845 /* PolynomialFunctionTest.m in Sources */,
+				A6E505C31671D1B300575845 /* PolynomialExpressionTest.m in Sources */,
 				A6741B1B167F7B86005BCBE5 /* InteFunctionTest.mm in Sources */,
+				A67D2DC417E38F7E007C2F7F /* IntegerTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

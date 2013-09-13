@@ -7,12 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Data.h"
 
-@interface Number : NSObject
-
--(Number*)add:(Number*)input;
--(Number*)sub:(Number*)input;
--(Number*)mul:(Number*)input;
--(Number*)div:(Number*)input;
+@interface Number : Data
 
 @end

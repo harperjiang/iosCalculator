@@ -7,11 +7,10 @@
 //
 
 #import "Variable.h"
-#import "NumConstant.h"
+#import "VariableContext.h"
+#import "PolynomialExpression.h"
 #import "Fraction.h"
 #import "integer.h"
-#import "PolynomialFunction.h"
-
 
 @implementation Variable
 
@@ -19,8 +18,7 @@ static Variable* x;
 
 +(void)initialize {
     if([self class] == [Variable class]) {
-        x = [[Variable alloc] init];
-        x.name = @"x";
+        x = [[Variable alloc] init:@"x"];
     }
 }
 
@@ -28,20 +26,35 @@ static Variable* x;
     return x;
 }
 
--(Function*) evaluate {
+-(Variable*) init:(NSString *)name {
+    self = [super init];
+    if(self){
+        [self setName:name];
+    }
     return self;
 }
 
--(Function*) differentiate:(Variable *)variable {
-    if([self.name compare:variable.name] == NSOrderedSame)
-        return [NumConstant ONE];
-    else
-        return [NumConstant ZERO];
+
+-(Expression*) evaluate {
+    Data* value =[[VariableContext instance] lookup:[self name]];
+    if(value == nil) {
+        return self;
+    }else {
+        return value;
+    }
 }
 
--(Function*) integrate:(Variable *)variable {
-    PolynomialFunction* pf = [[PolynomialFunction alloc] init];
-    NumConstant* oot = [NumConstant construct:[Fraction construct:[Integer construct:1] denominator:[Integer construct:2]]];
+
+-(Expression*) differentiate:(Variable *)variable {
+    if([self.name compare:variable.name] == NSOrderedSame)
+        return [Integer ONE];
+    else
+        return [Integer ZERO];
+}
+
+-(Expression*) integrate:(Variable *)variable {
+    PolynomialExpression* pf = [[PolynomialExpression alloc] init];
+    Number* oot = [Fraction construct:[Integer construct:1] denominator:[Integer construct:2]];
     [pf addItem:oot power:2];
     return pf;
 }
@@ -50,7 +63,7 @@ static Variable* x;
     return self.name;
 }
 
--(Boolean) equals:(Function *)another {
+-(Boolean) equals:(Expression *)another {
     if([another isKindOfClass:[Variable class]]) {
         Variable* av = (Variable*)another;
         return [av.name compare: self.name] == NSOrderedSame;

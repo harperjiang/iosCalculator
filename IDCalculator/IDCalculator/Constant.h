@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Function.h"
+#import "Data.h"
 
-@interface Constant : Function
+@interface Constant : Data
 
 -(Constant*) add:(Constant*)input;
 -(Constant*) sub:(Constant*)input;

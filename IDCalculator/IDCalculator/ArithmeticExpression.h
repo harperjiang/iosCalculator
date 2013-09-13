@@ -15,6 +15,6 @@
 @property(nonatomic,strong) Expression* left;
 @property(nonatomic,strong) Expression* right;
 
--(ArithmeticExpression*) init:(Expression*)left operator:(Operator) opr right:(Expression*) right;
+-(ArithmeticExpression*) init:(Expression*)left opr:(Operator) opr right:(Expression*) right;
 
 @end

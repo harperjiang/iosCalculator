@@ -9,10 +9,22 @@
 #import <Foundation/Foundation.h>
 
 @class Data;
+@class Variable;
 
 @interface Expression : NSObject
 
--(Data*) evaluate;
+-(Expression*) evaluate;
+
+-(Boolean) equals:(Expression*) another;
+
+-(Expression*) integrate: (Variable*) v;
+
+-(Expression*) differentiate: (Variable*) v;
+
 -(void) error:(NSString*)input;
+
 -(void) output:(NSString*)input;
+
++(Boolean) equals:(Expression*)left another:(Expression*) right;
+
 @end

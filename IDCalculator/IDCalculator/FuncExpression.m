@@ -7,12 +7,11 @@
 //
 
 #import "FuncExpression.h"
-#import "ConsoleIdentifier.h"
+#import "Variable.h"
 #import "IDCConsole.h"
 #import "Matrix.h"
 #import "SquareMatrix.h"
 #import "Vector.h"
-#import "NumberData.h"
 #import "Integer.h"
 
 @implementation FuncCallback
@@ -56,7 +55,7 @@
 }
 
 -(Data*) calculate:(ExpressionList *)expList {
-    Data* val = [[expList get:0] evaluate];
+    Expression* val = [[expList get:0] evaluate];
     if([val isKindOfClass:[Matrix class]]) {
         return [(Matrix*)val transpose];
     } else {
@@ -78,7 +77,7 @@
 }
 
 -(Data*) calculate:(ExpressionList *)expList {
-    Data* val = [[expList get:0] evaluate];
+    Expression* val = [[expList get:0] evaluate];
     if([val class] == [Matrix class]) {
         return [(Matrix*)val inverse];
     } else {
@@ -100,11 +99,11 @@
 }
 
 -(Data*) calculate:(ExpressionList *)expList {
-    Data* val = [[expList get:0] evaluate];
-    if([val class] == [NumberData class]) {
-        NumberData* nd = (NumberData*)val;
-        if([[nd number] class] == [Integer class]) {
-            NSInteger intval = [(Integer*)[nd number] value];
+    Expression* val = [[expList get:0] evaluate];
+    if([val isKindOfClass:[Number class]]) {
+        Number* nd = (Number*)val;
+        if([nd class] == [Integer class]) {
+            NSInteger intval = [(Integer*)nd value];
             return [Matrix identity:intval];
         } else {
             [self error:@"Parameter is not an integer"];
@@ -158,11 +157,11 @@ static NSMutableDictionary* callbacks;
         
         [callbacks setObject:[[TransposeFunction alloc] init] forKey:@"transpose"];
         [callbacks setObject:[[IdentityFunction alloc] init] forKey:@"identity"];
-        [callbacks setObject:[[InverseFunction alloc] init] forKey:@"inv"];
+        [callbacks setObject:[[InverseFunction alloc] init] forKey:@"inverse"];
     }
 }
 
--(FuncExpression*) init:(ConsoleIdentifier *)name params:(ExpressionList *)ps {
+-(FuncExpression*) init:(Variable *)name params:(ExpressionList *)ps {
     self = [super init];
     if(self) {
         [self setName:name];

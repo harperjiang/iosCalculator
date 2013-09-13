@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Function.h"
+#import "Expression.h"
 
-@interface Variable : Function
+@interface Variable : Expression
 
 @property(strong,nonatomic) NSString* name;
+
+-(Variable*) init:(NSString*) name;
 
 +(Variable*) x;
 

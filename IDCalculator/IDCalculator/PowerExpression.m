@@ -6,16 +6,16 @@
 //  Copyright (c) 2012 Harper Jiang. All rights reserved.
 //
 
-#import "PowerFunction.h"
-#import "NumConstant.h"
-#import "ArithmeticFunction.h"
-#import "PolynomialFunction.h"
+#import "PowerExpression.h"
+#import "ArithmeticExpression.h"
+#import "PolynomialExpression.h"
+#import "Operator.h"
 #import "Integer.h"
 #import "Number.h"
 
-@implementation PowerFunction
+@implementation PowerExpression
 
--(PowerFunction*) init:(Function *)base power:(Constant *)power {
+-(PowerExpression*) init:(Expression *)base power:(Number *)power {
     self = [super init];
     if(self) {
         [self setBase:base];
@@ -24,35 +24,35 @@
     return self;
 }
 
--(Function*) differentiate:(Variable *)variable {
+-(Expression*) differentiate:(Variable *)variable {
     // (f(x)^b)' = bf(x)^(b-1)*f(x)'
-    Function* dbase = [[self base] differentiate:variable];
-    Function* newPower = [[PowerFunction alloc] init:[self base] power:[[self power] sub:[NumConstant ONE]]];
-    Function* bfx = [[ArithmeticFunction alloc] init:[self power] opr:MUL right:newPower];
-    Function* result = [[ArithmeticFunction alloc] init:bfx opr:MUL right:dbase];
+    Expression* dbase = [[self base] differentiate:variable];
+    Expression* newPower = [[PowerExpression alloc] init:[self base] power:(Number*)[[self power] sub:[Integer ONE]]];
+    Expression* bfx = [[ArithmeticExpression alloc] init:[self power] opr:MUL right:newPower];
+    Expression* result = [[ArithmeticExpression alloc] init:bfx opr:MUL right:dbase];
     
     return result;
 }
 
--(Function*) integrate:(Variable *)variable {
+-(Expression*) integrate:(Variable *)variable {
     // Change to polynomial
-    Function* poly = [PolynomialFunction toPolynomial:self];
+    Expression* poly = [PolynomialExpression toPolynomial:self];
     return [poly integrate:variable];
 }
 
--(Function*) evaluate {
+-(Expression*) evaluate {
     self.base = [self.base evaluate];
-    if(self.power == [NumConstant ONE])
+    if(self.power == [Integer ONE])
         return self.base;
-    if(self.power == [NumConstant ZERO])
-        return [NumConstant ONE];
-    if([self.base isKindOfClass:[PowerFunction class]]) {
+    if(self.power == [Integer ZERO])
+        return [Integer ONE];
+    if([self.base isKindOfClass:[PowerExpression class]]) {
         // Nested Power
-        PowerFunction* oldbase = (PowerFunction*)self.base;
+        PowerExpression* oldbase = (PowerExpression*)self.base;
         self.base = oldbase.base;
-        Function* newpower = [[[ArithmeticFunction alloc] init:oldbase.power opr:ADD right:self.power] evaluate];
-        if([newpower isKindOfClass:[NumConstant class]]) {
-            self.power = (NumConstant*)newpower;
+        Expression* newpower = [[[ArithmeticExpression alloc] init:oldbase.power opr:ADD right:self.power] evaluate];
+        if([newpower isKindOfClass:[Number class]]) {
+            self.power = (Number*)newpower;
         } else {
             return nil;
         }
@@ -62,14 +62,14 @@
 
 -(NSString *)description {
     NSMutableString* result = [[NSMutableString alloc] initWithCapacity:20];
-    if([self.base isKindOfClass:[ArithmeticFunction class]] || [self.base isKindOfClass:[PolynomialFunction class]])
+    if([self.base isKindOfClass:[ArithmeticExpression class]] || [self.base isKindOfClass:[PolynomialExpression class]])
         [result appendFormat:@"(%@)",[self.base description]];
     else
         [result appendString:[self.base description]];
-    if([self.power isKindOfClass:[NumConstant class]]) {
-        NumConstant* power = (NumConstant*) self.power;
+    if([self.power isKindOfClass:[Number class]]) {
+        Number* power = (Number*) self.power;
         
-        NSString* powerstr = [PowerFunction stringForPower:power];
+        NSString* powerstr = [PowerExpression stringForPower:power];
         if(powerstr != nil) {
             [result appendString:powerstr];
             return result;
@@ -77,7 +77,7 @@
     }
     
     [result appendString:@"^"];
-    if([self.power isKindOfClass:[ArithmeticFunction class]])
+    if([self.power isKindOfClass:[ArithmeticExpression class]])
         [result appendFormat:@"(%@)",[self.power description]];
     else
         [result appendString:[self.power description]];
@@ -85,10 +85,10 @@
     
 }
 
-+(NSString*) stringForPower:(NumConstant*) con {
-    if(![con.number isKindOfClass:[Integer class]])
++(NSString*) stringForPower:(Number*) con {
+    if(![con isKindOfClass:[Integer class]])
         return [NSString stringWithFormat:@"^(%@)",[con description]];
-    Integer* intval = (Integer*)con.number;
+    Integer* intval = (Integer*)con;
     NSInteger val = intval.value;
     
     switch(val) {

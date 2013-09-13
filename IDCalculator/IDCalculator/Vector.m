@@ -7,7 +7,6 @@
 //
 
 #import "Vector.h"
-#import "NumberData.h"
 
 @implementation Vector
 

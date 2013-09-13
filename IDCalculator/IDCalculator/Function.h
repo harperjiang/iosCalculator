@@ -7,15 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Expression.h"
 
 @class Variable;
 
 @interface Function : NSObject
 
--(Function*) evaluate;
+@property (nonatomic,strong) Expression* expression;
 
--(Function*) differentiate:(Variable*) variable;
--(Function*) integrate:(Variable*) variable;
+-(Function*) init:(Expression*) exp;
 
 -(Boolean) equals:(Function*) another;
 

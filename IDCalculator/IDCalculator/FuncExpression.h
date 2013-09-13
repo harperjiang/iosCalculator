@@ -7,7 +7,7 @@
 //
 
 #import "Expression.h"
-#import "ConsoleIdentifier.h"
+#import "Variable.h"
 #import "ExpressionList.h"
 
 @interface FuncCallback : NSObject
@@ -39,9 +39,9 @@
 
 @interface FuncExpression : Expression
 
-@property(nonatomic,strong) ConsoleIdentifier* name;
+@property(nonatomic,strong) Variable* name;
 @property(nonatomic,strong) ExpressionList* params;
 
--(FuncExpression*) init:(ConsoleIdentifier*) name params:(ExpressionList*)ps;
+-(FuncExpression*) init:(Variable*) name params:(ExpressionList*)ps;
 
 @end

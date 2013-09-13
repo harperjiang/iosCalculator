@@ -8,7 +8,7 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface PolynomialFunctionTest : SenTestCase
+@interface PolynomialExpressionTest : SenTestCase
 
 -(void) testPolynomialDescription;
 -(void) testAdd;

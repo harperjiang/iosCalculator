@@ -112,6 +112,16 @@
                     <view key="view" contentMode="scaleToFill" id="YrF-xe-fbd" customClass="Canvas2DView">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="V8e-Ed-Yyc">
+                                <rect key="frame" x="0.0" y="361" width="320" height="50"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <requiredContentSizeIdentifiers>
+                                    <string>ADBannerContentSizeLandscape</string>
+                                    <string>ADBannerContentSizePortrait</string>
+                                </requiredContentSizeIdentifiers>
+                            </adBannerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Graph" image="chart_line_24.png" id="kxU-Lg-trf"/>
@@ -681,6 +691,52 @@
         <image name="concole_24.png" width="24" height="24"/>
         <image name="gear_24.png" width="24" height="24"/>
     </resources>
+    <classes>
+        <class className="CalculatorViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CalculatorViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backspaceButtonClicked:"/>
+                <relationship kind="action" name="backspaceButtonRepeated:"/>
+                <relationship kind="action" name="cosButtonClicked:"/>
+                <relationship kind="action" name="equalButtonClicked:"/>
+                <relationship kind="action" name="horizontalSwipeReceived:"/>
+                <relationship kind="action" name="lnButtonClicked:"/>
+                <relationship kind="action" name="powerButtonClicked:"/>
+                <relationship kind="action" name="sinButtonClicked:"/>
+                <relationship kind="action" name="textButtonClicked:"/>
+                <relationship kind="outlet" name="cosButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="lnButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sinButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="Canvas2DView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/Canvas2DView.h"/>
+        </class>
+        <class className="ConsoleViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ConsoleViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="editingDone:"/>
+                <relationship kind="outlet" name="display" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="inputField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="GraphViewController" superclassName="GLKViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GraphViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="pinchReceived:"/>
+                <relationship kind="action" name="rotationReceived:"/>
+                <relationship kind="action" name="swipeReceived:"/>
+                <relationship kind="outlet" name="graphView" candidateClass="GLKView"/>
+            </relationships>
+        </class>
+        <class className="HelpViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HelpViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
