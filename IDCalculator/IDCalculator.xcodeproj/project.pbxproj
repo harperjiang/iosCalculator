@@ -28,7 +28,7 @@
 		A6741B0F167D7751005BCBE5 /* Environment.m in Sources */ = {isa = PBXBuildFile; fileRef = A6741B0E167D7751005BCBE5 /* Environment.m */; };
 		A6741B12167D77AC005BCBE5 /* Coordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6741B11167D77AC005BCBE5 /* Coordinate.m */; };
 		A6741B15167D931E005BCBE5 /* ViewControllerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A6741B14167D931D005BCBE5 /* ViewControllerHelper.m */; };
-		A6741B18167DA4BE005BCBE5 /* DrawObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A6741B17167DA4BE005BCBE5 /* DrawObject.m */; };
+		A6741B18167DA4BE005BCBE5 /* AbstractDrawObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A6741B17167DA4BE005BCBE5 /* AbstractDrawObject.m */; };
 		A6741B1B167F7B86005BCBE5 /* InteExpressionTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6741B1A167F7B85005BCBE5 /* InteExpressionTest.mm */; };
 		A676C0A1164CC20E00C0F859 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A676C0A0164CC20E00C0F859 /* UIKit.framework */; };
 		A676C0A3164CC20E00C0F859 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A676C0A2164CC20E00C0F859 /* Foundation.framework */; };
@@ -198,8 +198,8 @@
 		A6741B11167D77AC005BCBE5 /* Coordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coordinate.m; sourceTree = "<group>"; };
 		A6741B13167D931D005BCBE5 /* ViewControllerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerHelper.h; sourceTree = "<group>"; };
 		A6741B14167D931D005BCBE5 /* ViewControllerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerHelper.m; sourceTree = "<group>"; };
-		A6741B16167DA4BE005BCBE5 /* DrawObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawObject.h; sourceTree = "<group>"; };
-		A6741B17167DA4BE005BCBE5 /* DrawObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawObject.m; sourceTree = "<group>"; };
+		A6741B16167DA4BE005BCBE5 /* AbstractDrawObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractDrawObject.h; sourceTree = "<group>"; };
+		A6741B17167DA4BE005BCBE5 /* AbstractDrawObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractDrawObject.m; sourceTree = "<group>"; };
 		A6741B19167F7B85005BCBE5 /* InteExpressionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteExpressionTest.h; sourceTree = "<group>"; };
 		A6741B1A167F7B85005BCBE5 /* InteExpressionTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = InteExpressionTest.mm; sourceTree = "<group>"; };
 		A676C09C164CC20E00C0F859 /* IDCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -474,8 +474,8 @@
 				A6741B0E167D7751005BCBE5 /* Environment.m */,
 				A6741B10167D77AB005BCBE5 /* Coordinate.h */,
 				A6741B11167D77AC005BCBE5 /* Coordinate.m */,
-				A6741B16167DA4BE005BCBE5 /* DrawObject.h */,
-				A6741B17167DA4BE005BCBE5 /* DrawObject.m */,
+				A6741B16167DA4BE005BCBE5 /* AbstractDrawObject.h */,
+				A6741B17167DA4BE005BCBE5 /* AbstractDrawObject.m */,
 			);
 			name = quartz;
 			sourceTree = "<group>";
@@ -1134,7 +1134,7 @@
 				A6741B0F167D7751005BCBE5 /* Environment.m in Sources */,
 				A6741B12167D77AC005BCBE5 /* Coordinate.m in Sources */,
 				A6741B15167D931E005BCBE5 /* ViewControllerHelper.m in Sources */,
-				A6741B18167DA4BE005BCBE5 /* DrawObject.m in Sources */,
+				A6741B18167DA4BE005BCBE5 /* AbstractDrawObject.m in Sources */,
 				A6FE3B0017E206EC0045A1CE /* Log.m in Sources */,
 				A6FE3B0617E213720045A1CE /* PolynomialExpression.m in Sources */,
 				A6FE3B0A17E218740045A1CE /* VariableContext.m in Sources */,
