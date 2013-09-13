@@ -11,14 +11,14 @@
 #import "CalculusLexer.h"
 #import "Variable.h"
 #import "Integer.h"
-#import "NumConstant.h"
 #import "SpecialConstant.h"
-#import "BasicFunction.h"
-#import "ArithmeticFunction.h"
-#import "PowerFunction.h"
-#import "ExpPowerFunction.h"
-#import "DiffFunction.h"
-#import "InteFunction.h"
+#import "BasicFuncExpression.h"
+#import "ArithmeticExpression.h"
+#import "PowerExpression.h"
+#import "ExpPowerExpression.h"
+#import "DiffExpression.h"
+#import "InteExpression.h"
+#import "Function.h"
 
 extern CFunction* calculus_result;
 extern int calparse();
@@ -44,40 +44,40 @@ extern int calparse();
 }
 
 -(Function*) convert {
-    return translate(self->parse);
+    return [[Function alloc] init:translate(self->parse)];
 }
 
-Function* translate(CFunction* cfunc) {
+Expression* translate(CFunction* cfunc) {
     if(NULL == cfunc)
         return nil;
     switch(cfunc->type()) {
         case CAL_FUNC_ARITH:{
             CArithFunc* car = (CArithFunc*)cfunc;
-            ArithmeticFunction* arith = [[ArithmeticFunction alloc] init:translate(car->left) opr:car->opr right:translate(car->right)];
+            ArithmeticExpression* arith = [[ArithmeticExpression alloc] init:translate(car->left) opr:car->opr right:translate(car->right)];
             return arith;
         }
         case CAL_FUNC_POWER: {
             CPowerFunc* cpf = (CPowerFunc*)cfunc;
-            Function* base = translate(cpf->base);
-            Function* power = translate(cpf->power);
+            Expression* base = translate(cpf->base);
+            Expression* power = translate(cpf->power);
             if(base == [SpecialConstant E]) {
-                return [[ExpPowerFunction alloc] init:power];
-            } else if([power isKindOfClass:[Constant class]]) {
-                return [[PowerFunction alloc] init:base power:(Constant*)power];
+                return [[ExpPowerExpression alloc] init:power];
+            } else if([power isKindOfClass:[Number class]]) {
+                return [[PowerExpression alloc] init:base power:(Number*)power];
             } else {
                 return nil;
             }
         }
         case CAL_FUNC_INT: {
             CIntFunc* cintf = (CIntFunc*)cfunc;
-            InteFunction* inte = [[InteFunction alloc] init];
+            InteExpression* inte = [[InteExpression alloc] init];
             inte.base = translate(cintf->base);
-            inte.variable = translate(cintf->factor);
+            inte.variable = (Variable*)translate(cintf->factor);
             return inte;
         }
         case CAL_FUNC_DIFF: {
             CDiffFunc* cdf = (CDiffFunc*)cfunc;
-            DiffFunction* df = [[DiffFunction alloc] init];
+            DiffExpression* df = [[DiffExpression alloc] init];
             df.base = translate(cdf->base);
             df.variable = (Variable*)translate(cdf->factor);
             return df;
@@ -86,11 +86,11 @@ Function* translate(CFunction* cfunc) {
             CNameFunc* namef = (CNameFunc*)cfunc;
             switch(namef->name) {
                 case NF_SIN:
-                    return [[BasicFunction alloc] init:BT_SIN base:translate(namef->param)];
+                    return [[BasicFuncExpression alloc] init:BT_SIN base:translate(namef->param)];
                 case NF_COS:
-                    return [[BasicFunction alloc] init:BT_COS base:translate(namef->param)];
+                    return [[BasicFuncExpression alloc] init:BT_COS base:translate(namef->param)];
                 case NF_LN:
-                    return [[BasicFunction alloc] init:BT_LN base:translate(namef->param)];
+                    return [[BasicFuncExpression alloc] init:BT_LN base:translate(namef->param)];
                 default:
                     return nil;
             }
@@ -100,7 +100,8 @@ Function* translate(CFunction* cfunc) {
         }
         case CAL_CON_NUM: {
             CNumConstant* cnc = (CNumConstant*)cfunc;
-            return [NumConstant construct:[Integer construct:cnc->value]];
+            // TODO Other numbers
+            return [Integer construct:cnc->value];
         }
         case CAL_CON_SPEC: {
             CSpecialConstant* specc = (CSpecialConstant*)cfunc;

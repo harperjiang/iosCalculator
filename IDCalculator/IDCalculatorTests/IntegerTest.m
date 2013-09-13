@@ -7,7 +7,23 @@
 //
 
 #import "IntegerTest.h"
+#import "Integer.h"
 
 @implementation IntegerTest
+
+-(void) testArithmetic {
+    Integer* a = [Integer construct:4];
+    Integer* b = [Integer construct:6];
+    
+    Data* add = [a add:b];
+    Data* sub = [a sub:b];
+    Data* mul = [a mul:b];
+    Data* div = [a div:b];
+    
+    STAssertTrue([add isKindOfClass:[Integer class]], @"");
+    STAssertTrue([sub isKindOfClass:[Integer class]], @"");
+    STAssertTrue([mul isKindOfClass:[Integer class]], @"");
+    STAssertTrue([div isKindOfClass:[Integer class]], @"");
+}
 
 @end

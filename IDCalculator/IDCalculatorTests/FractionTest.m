@@ -14,7 +14,7 @@
 
 -(void)testNegative {
     Number* number = [Fraction construct:[Integer ONE] denominator:[Integer construct:-7]];
-    Number* num = [[Integer ONE] mul:number];
+    Number* num = (Number*)[[Integer ONE] mul:number];
     STAssertEqualObjects([num description], @"-1/7", @"");
 }
 

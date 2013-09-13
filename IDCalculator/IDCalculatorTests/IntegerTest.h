@@ -10,4 +10,6 @@
 
 @interface IntegerTest : SenTestCase
 
+-(void) testArithmetic;
+
 @end

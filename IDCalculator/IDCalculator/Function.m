@@ -8,20 +8,15 @@
 
 #import "Function.h"
 #import "Variable.h"
-#import "PolynomialFunction.h"
 
 @implementation Function
 
--(Function*) evaluate {
+-(Function*) init:(Expression *)exp {
+    self = [super init];
+    if(self) {
+        [self setExpression:exp];
+    }
     return self;
-}
-
--(Function*) integrate:(Variable*) variable {
-    return nil;
-}
-
--(Function*) differentiate:(Variable*) variable {
-    return nil;
 }
 
 -(Boolean)equals:(Function *)another {
@@ -29,11 +24,9 @@
 }
 
 -(NSString*) description {
-    Function* poly = [PolynomialFunction toPolynomial:self];
-    if(poly != nil) {
-        return [poly description];
-    }
-    return nil;
+    if([self expression] == nil)
+        return nil;
+    return [[self expression] description];
 }
 
 @end

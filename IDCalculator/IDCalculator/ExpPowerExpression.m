@@ -6,14 +6,14 @@
 //  Copyright (c) 2012 Harper Jiang. All rights reserved.
 //
 
-#import "ExpPowerFunction.h"
-#import "ArithmeticFunction.h"
-#import "NumConstant.h"
-#import "PowerFunction.h"
+#import "ExpPowerExpression.h"
+#import "ArithmeticExpression.h"
+#import "Number.h"
+#import "PowerExpression.h"
 
-@implementation ExpPowerFunction
+@implementation ExpPowerExpression
 
--(ExpPowerFunction*) init:(Function *)power {
+-(ExpPowerExpression*) init:(Expression *)power {
     self = [super init];
     if(self) {
         [self setPower:power];
@@ -21,18 +21,19 @@
     return self;
 }
 
--(Function*) differentiate:(Variable *)variable {
+-(Expression*) differentiate:(Variable *)variable {
     // e^f(x) = e^f(x) *f'(x)
-    Function* dpower = [[self power] differentiate:variable];
-    Function* result = [[ArithmeticFunction alloc] init:self opr:MUL right:dpower];
-    return  result;
+    Expression* dpower = [[self power] differentiate:variable];
+    Expression* result = [[ArithmeticExpression alloc] init:self opr:MUL right:dpower];
+    return result;
 }
 
--(Function*) integrate:(Variable *)variable {
-    
+-(Expression*) integrate:(Variable *)variable {
+    // TODO Not implemented
+    return nil;
 }
 
--(Function*) evaluate {
+-(Expression*) evaluate {
     self.power = [self.power evaluate];
     return self;
 }
@@ -40,14 +41,14 @@
 -(NSString*) description {
     NSMutableString* buffer = [[NSMutableString alloc] initWithCapacity:20];
     [buffer appendString:@"e"];
-    if([self.power isKindOfClass:[NumConstant class]]) {
-        NSString* powerstr = [PowerFunction stringForPower:(NumConstant*)self.power];
+    if([self.power isKindOfClass:[Number class]]) {
+        NSString* powerstr = [PowerExpression stringForPower:(Number*)self.power];
         if(powerstr != nil) {
             [buffer appendString:powerstr];
             return buffer;
         }
     }
-    if([self.power isKindOfClass:[NumConstant class]]) {
+    if([self.power isKindOfClass:[Number class]]) {
         [buffer appendFormat:@"^%@",[self.power description]];
     } else {
         [buffer appendFormat:@"^(%@)",[self.power description]];

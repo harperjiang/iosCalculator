@@ -6,11 +6,11 @@
 //  Copyright (c) 2012 Harper Jiang. All rights reserved.
 //
 
-#import "Function.h"
+#import "Expression.h"
 
-@interface InteFunction : Function
+@interface InteExpression : Expression
 
-@property(nonatomic,strong) Function* base;
+@property(nonatomic,strong) Expression* base;
 @property(nonatomic,strong) Variable* variable;
 
 @end

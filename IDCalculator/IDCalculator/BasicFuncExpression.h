@@ -6,19 +6,19 @@
 //  Copyright (c) 2012 Harper Jiang. All rights reserved.
 //
 
-#import "Function.h"
+#import "Expression.h"
 
-typedef enum _BasicFunctionType {
+typedef enum _BasicFuncType {
     BT_SIN,
     BT_COS,
     BT_LN
-} BasicFunctionType;
+} BasicFuncType;
 
-@interface BasicFunction : Function
+@interface BasicFuncExpression : Expression
 
-@property(nonatomic) BasicFunctionType type;
-@property(nonatomic,strong) Function* base;
+@property(nonatomic) BasicFuncType type;
+@property(nonatomic,strong) Expression* base;
 
--(BasicFunction*) init: (BasicFunctionType) type base:(Function*)base;
+-(BasicFuncExpression*) init: (BasicFuncType) type base:(Expression*)base;
 
 @end

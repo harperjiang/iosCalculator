@@ -11,9 +11,7 @@
 #import "ExpressionList.h"
 #import "ArithmeticExpression.h"
 #import "FuncExpression.h"
-
-#import "NumberData.h"
-#import "ConsoleIdentifier.h"
+#import "Variable.h"
 
 #import "ClearCommand.h"
 #import "AssignCommand.h"
@@ -101,26 +99,26 @@ Expression* translate(CExpression* input) {
         case EXP_ARITH:
         {
             CArithExpression* carith = (CArithExpression*)input;
-            ArithmeticExpression* arith = [[ArithmeticExpression alloc] init:translate(carith->left) operator:carith->opr right:translate(carith->right)];
+            ArithmeticExpression* arith = [[ArithmeticExpression alloc] init:translate(carith->left) opr:carith->opr right:translate(carith->right)];
             return arith;
         }
         case EXP_ID:
         {
             CIdentifier* cid = (CIdentifier*) input;
-            ConsoleIdentifier* id = [[ConsoleIdentifier alloc] init:translate(cid->name)];
+            Variable* id = [[Variable alloc] init:translate(cid->name)];
             return id;
         }
         case EXP_FUNC:
         {
             CFuncExpression* cf = (CFuncExpression*)input;
-            FuncExpression* func = [[FuncExpression alloc] init:(ConsoleIdentifier*)translate(cf->name) params:(ExpressionList*)translate(cf->params)];
+            FuncExpression* func = [[FuncExpression alloc] init:(Variable*)translate(cf->name) params:(ExpressionList*)translate(cf->params)];
             return func;
         }
         case CONST_MATRIX:
         {
             CMatrix* cm = (CMatrix*)input;
             ExpressionList* expList = (ExpressionList*)translate(cm->content);
-            Matrix* matrix = [[Matrix alloc] init:expList];
+            Matrix* matrix = [[Matrix alloc] initWithExpression:expList];
             return matrix;
         }
         case CONST_NUM:
@@ -134,7 +132,7 @@ Expression* translate(CExpression* input) {
             } else {
                 num = [Integer construct:cnd->value];
             }
-            return [[NumberData alloc] init:num];
+            return num;
             
         }
         default:

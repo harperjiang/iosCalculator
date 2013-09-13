@@ -6,12 +6,12 @@
 //  Copyright (c) 2012 Harper Jiang. All rights reserved.
 //
 
-#import "Function.h"
+#import "Expression.h"
 
-@interface ExpPowerFunction : Function
+@interface ExpPowerExpression : Expression
 
-@property(nonatomic,strong) Function* power;
+@property(nonatomic,strong) Expression* power;
 
--(ExpPowerFunction*) init:(Function*) power;
+-(ExpPowerExpression*) init:(Expression*) power;
 
 @end

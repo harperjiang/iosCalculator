@@ -16,7 +16,6 @@
 
 -(Fraction*) init:(Integer*) numerator denominator:(Integer*) denominator;
 
-+(Number*) construct:(Number*) n
-            denominator:(Number*) d;
++(Number*) construct:(Number*) n denominator:(Number*) d;
 
 @end

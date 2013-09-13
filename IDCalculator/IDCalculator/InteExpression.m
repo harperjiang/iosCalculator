@@ -6,17 +6,17 @@
 //  Copyright (c) 2012 Harper Jiang. All rights reserved.
 //
 
-#import "InteFunction.h"
-#import "PolynomialFunction.h"
+#import "InteExpression.h"
+#import "PolynomialExpression.h"
 
-@implementation InteFunction
+@implementation InteExpression
 
--(Function*) evaluate {
+-(Expression*) evaluate {
     self.base = [self.base evaluate];
-    Function* inte = [self.base integrate:self.variable];
+    Expression* inte = [self.base integrate:self.variable];
     if(nil != inte) {
         inte = [inte evaluate];
-        Function* polyStyle = [PolynomialFunction toPolynomial:inte];
+        Expression* polyStyle = [PolynomialExpression toPolynomial:inte];
         if(nil != polyStyle)
             return polyStyle;
         return inte;

@@ -21,7 +21,7 @@
 }
 
 -(void) execute {
-    Data* object = [[self exp] evaluate];
+    Expression* object = [[self exp] evaluate];
     [[[IDCConsole instance] variables] setValue:object forKey:[self name]];
     // Set up the display
     [[IDCConsole instance] output:[NSString stringWithFormat:@"%@ =\n%@",[self name],[object description]]];

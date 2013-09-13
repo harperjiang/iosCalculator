@@ -6,17 +6,17 @@
 //  Copyright (c) 2012 Harper Jiang. All rights reserved.
 //
 
-#import "DiffFunction.h"
-#import "PolynomialFunction.h"
+#import "DiffExpression.h"
+#import "PolynomialExpression.h"
 
-@implementation DiffFunction
+@implementation DiffExpression
 
--(Function*) evaluate {
+-(Expression*) evaluate {
     self.base = [self.base evaluate];
-    Function* diff = [self.base differentiate:self.variable];
+    Expression* diff = [self.base differentiate:self.variable];
     if(diff != nil) {
         diff = [diff evaluate];
-        Function* polyStyle = [PolynomialFunction toPolynomial:diff];
+        Expression* polyStyle = [PolynomialExpression toPolynomial:diff];
         if(nil != polyStyle)
             return polyStyle;
         return diff;

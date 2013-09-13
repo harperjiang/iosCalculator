@@ -6,17 +6,17 @@
 //  Copyright (c) 2012 Harper Jiang. All rights reserved.
 //
 
-#import "BasicFunction.h"
-#import "ArithmeticFunction.h"
-#import "NumConstant.h"
+#import "BasicFuncExpression.h"
+#import "ArithmeticExpression.h"
+#import "Number.h"
 #import "Integer.h"
 #import "SpecialConstant.h"
-#import "ExpPowerFunction.h"
-#import "PolynomialFunction.h"
+#import "ExpPowerExpression.h"
+#import "PolynomialExpression.h"
 
-@implementation BasicFunction
+@implementation BasicFuncExpression
 
--(BasicFunction*) init: (BasicFunctionType) type base:(Function*)base {
+-(BasicFuncExpression*) init: (BasicFuncType) type base:(Expression*)base {
     self = [super init];
     if(self) {
         [self setType:type];
@@ -25,88 +25,90 @@
     return self;
 }
 
--(Function*) evaluate {
+-(Expression*) evaluate {
     self.base = [self.base evaluate];
     switch(self.type) {
         case BT_SIN:
-            if(self.base == [NumConstant ZERO]) {
-                return [NumConstant ZERO];
+            if(self.base == [Integer ZERO]) {
+                return [Integer ZERO];
             }
             if(self.base == [SpecialConstant PI]) {
-                return [NumConstant ZERO];
+                return [Integer ZERO];
             }
-            if([self.base isKindOfClass:[ArithmeticFunction class]]) {
-                
+            if([self.base isKindOfClass:[ArithmeticExpression class]]) {
+                // TODO Not implemented
+                // should implement special values
             }
             break;
         case BT_COS:
-            if(self.base == [NumConstant ZERO]) {
-                return [NumConstant ONE];
+            if(self.base == [Integer ZERO]) {
+                return [Integer ONE];
             }
             if(self.base == [SpecialConstant PI]) {
-                return [NumConstant construct:[Integer construct:-1]];
+                return [Integer construct:-1];
             }
-            if([self.base isKindOfClass:[ArithmeticFunction class]]) {
-                
+            if([self.base isKindOfClass:[ArithmeticExpression class]]) {
+                // TODO Not implemented
+                // should implement special values
             }
             break;
         case BT_LN:
             if(self.base == [SpecialConstant E]) {
-                return [NumConstant ONE];
+                return [Integer ONE];
             }
-            if([self.base isKindOfClass:[ExpPowerFunction class]]) {
-                return [(ExpPowerFunction*)self.base power];
+            if([self.base isKindOfClass:[ExpPowerExpression class]]) {
+                return [(ExpPowerExpression*)self.base power];
             }
             break;
     }
     return self;
 }
 
--(Function*) differentiate:(Variable *) variable{
-    Function* inner = [self.base differentiate:variable];
-    Function* transformed = nil;
+-(Expression*) differentiate:(Variable *) variable{
+    Expression* inner = [self.base differentiate:variable];
+    Expression* transformed = nil;
     switch ([self type]) {
         case BT_SIN:
-            transformed = [[BasicFunction alloc] init:BT_COS base:[self base]];
+            transformed = [[BasicFuncExpression alloc] init:BT_COS base:[self base]];
             break;
         case BT_COS:
-            transformed = [[ArithmeticFunction alloc] init:nil opr:SUB right:[[BasicFunction alloc] init:BT_SIN base:[self base]]];
+            transformed = [[ArithmeticExpression alloc] init:nil opr:SUB right:[[BasicFuncExpression alloc] init:BT_SIN base:[self base]]];
             break;
         case BT_LN:
-            transformed = [[ArithmeticFunction alloc] init:[NumConstant ONE] opr:DIV right:[self base]];
+            transformed = [[ArithmeticExpression alloc] init:[Integer ONE] opr:DIV right:[self base]];
             break;
         default:
             return nil;
     }
-    return [[ArithmeticFunction alloc] init:inner opr:MUL right:transformed];
+    return [[ArithmeticExpression alloc] init:inner opr:MUL right:transformed];
 }
 
--(Function*) integrate:(Variable *)variable {
-    Function* pf = [PolynomialFunction toPolynomial:self.base under:variable];
-    if([pf isKindOfClass:[PolynomialFunction class]]) {
-        PolynomialFunction* poly = (PolynomialFunction*)pf;
+-(Expression*) integrate:(Variable *)variable {
+    Expression* pf = [PolynomialExpression toPolynomial:self.base under:variable];
+    if([pf isKindOfClass:[PolynomialExpression class]]) {
+        PolynomialExpression* poly = (PolynomialExpression*)pf;
         if([poly order] == 1) {
-            Constant* coefficient = [[NumConstant ONE] div:[poly getCoefficient:[poly order]]];
-            Function* result = nil;
+            Data* coefficient = [[Integer ONE] div:[poly getCoefficient:[poly order]]];
+            Expression* result = nil;
             switch(self.type) {
                 case BT_SIN:
-                    result = [[ArithmeticFunction alloc] init:nil opr:SUB right:[[BasicFunction alloc] init:BT_COS base:poly]];
+                    result = [[ArithmeticExpression alloc] init:nil opr:SUB right:[[BasicFuncExpression alloc] init:BT_COS base:poly]];
                     break;
                 case BT_COS:
-                    result = [[BasicFunction alloc] init:BT_SIN base:poly];
+                    result = [[BasicFuncExpression alloc] init:BT_SIN base:poly];
                     break;
                 case BT_LN: {
                     // ∫ln(x)dx = ln(x)*x - x
-                    Function* lnpart = [[BasicFunction alloc] init:BT_LN base:poly];
-                    Function* firstLn = [[ArithmeticFunction alloc] init:lnpart opr:MUL right:poly];
-                    result = [[ArithmeticFunction alloc] init:firstLn opr:SUB right:poly];
+                    Expression* lnpart = [[BasicFuncExpression alloc] init:BT_LN base:poly];
+                    Expression* firstLn = [[ArithmeticExpression alloc] init:lnpart opr:MUL right:poly];
+                    result = [[ArithmeticExpression alloc] init:firstLn opr:SUB right:poly];
                     break;
                 }
                 default:
                     result = nil;
             }
             if(nil != result) {
-                result = [[ArithmeticFunction alloc] init:coefficient opr:MUL right:result];
+                result = [[ArithmeticExpression alloc] init:coefficient opr:MUL right:result];
                 return result;
             } else {
                 return nil;

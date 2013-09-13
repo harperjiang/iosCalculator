@@ -9,22 +9,21 @@
 #import "Constant.h"
 #import "Integer.h"
 #import "Operator.h"
-#import "NumConstant.h"
 #import "ArithConstant.h"
-#import "PolynomialFunction.h"
+#import "PolynomialExpression.h"
 
 @implementation Constant
 
--(Function*) evaluate {
+-(Expression*) evaluate {
     return self;
 }
 
--(Function*) differentiate:(Variable *)variable {
-    return [NumConstant ZERO];
+-(Expression*) differentiate:(Variable *)variable {
+    return [Integer ZERO];
 }
 
--(Function *)integrate:(Variable *)variable {
-    PolynomialFunction* pf = [[PolynomialFunction alloc] init];
+-(Expression *)integrate:(Variable *)variable {
+    PolynomialExpression* pf = [[PolynomialExpression alloc] init];
     [pf addItem:self power:1];
     return pf;
 }

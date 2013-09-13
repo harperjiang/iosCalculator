@@ -26,7 +26,7 @@ static Calculator* instance;
     if(nil == func) {
         return @"Error: cannot recognize the input";
     } else {
-        Function* eval = [func evaluate];
+        Expression* eval = [[func expression]evaluate];
         if(eval != nil) {
             return [eval description];
         }
