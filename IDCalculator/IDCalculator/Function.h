@@ -17,6 +17,8 @@
 
 -(Function*) init:(Expression*) exp;
 
+-(Function*) evaluate;
+
 -(Boolean) equals:(Function*) another;
 
 @end

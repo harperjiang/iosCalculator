@@ -6,25 +6,22 @@
 //  Copyright (c) 2012 Harper Jiang. All rights reserved.
 //
 
-#import "InteFunctionTest.h"
+#import "InteExpressionTest.h"
 #import "FunctionParser.h"
 
-@implementation InteFunctionTest
+@implementation InteExpressionTest
 
 -(void)testBasic {
     NSString* input = @"∫sin(x)dx";
-    Function* func = [FunctionParser parse:input];
-    func = [func evaluate];
+    Function* func = [[FunctionParser parse:input] evaluate];
     STAssertEqualObjects([func description], @"-cos(x)", @"");
     
     input = @"∫cos(x)dx";
-    func = [FunctionParser parse:input];
-    func = [func evaluate];
+    func = [[FunctionParser parse:input] evaluate];
     STAssertEqualObjects([func description], @"sin(x)", @"");
     
     input = @"∫ln(x)dx";
-    func = [FunctionParser parse:input];
-    func = [func evaluate];
+    func = [[FunctionParser parse:input] evaluate];
     STAssertEqualObjects([func description], @"ln(x)*x-x", @"");
 }
 
@@ -34,7 +31,7 @@
     STAssertEqualObjects([func description],@"-cos(x)+sin(x)",@"");
     
     input = @"∫(sin(x)-cos(x))dx";
-    func = [[FunctionParser parse:input] evaluate];
+    func = [[FunctionParser parse:input ]evaluate];
     STAssertEqualObjects([func description],@"-cos(x)-sin(x)",@"");
     
     input = @"∫(cos(x)-sin(x))dx";

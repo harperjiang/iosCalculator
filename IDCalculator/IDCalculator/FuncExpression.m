@@ -10,7 +10,6 @@
 #import "Variable.h"
 #import "IDCConsole.h"
 #import "Matrix.h"
-#import "SquareMatrix.h"
 #import "Vector.h"
 #import "Integer.h"
 

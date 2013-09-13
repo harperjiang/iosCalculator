@@ -8,7 +8,7 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface InteFunctionTest : SenTestCase
+@interface InteExpressionTest : SenTestCase
 
 -(void) testBasic;
 -(void) testBasicArith;

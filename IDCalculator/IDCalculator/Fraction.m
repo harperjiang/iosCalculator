@@ -51,17 +51,17 @@
     if([n class] == [Integer class] && [d class] == [Fraction class]) {
         Integer* icn = (Integer*)n;
         Fraction* fcd = (Fraction*)d;
-        return [Fraction construct:[icn mul:[fcd denominator]] denominator:[fcd numerator]];
+        return [Fraction construct:(Number*)[icn mul:[fcd denominator]] denominator:[fcd numerator]];
     }
     if([n class] == [Fraction class] && [d class] == [Integer class]) {
         Fraction* fcn = (Fraction*)n;
         Integer* icd = (Integer*)d;
-        return [Fraction construct:[fcn numerator] denominator:[[fcn denominator] mul:icd]];
+        return [Fraction construct:[fcn numerator] denominator:(Number*)[[fcn denominator] mul:icd]];
     }
     if([n class] == [Fraction class] && [d class] == [Fraction class]) {
         Fraction* fcn = (Fraction*)n;
         Fraction* fcd = (Fraction*)d;
-        return [Fraction construct:[[fcn numerator] mul:[fcd denominator]] denominator:[[fcn denominator] mul:[fcd numerator]]];
+        return [Fraction construct:(Number*)[[fcn numerator] mul:[fcd denominator]] denominator:(Number*)[[fcn denominator] mul:[fcd numerator]]];
     }
     return nil;
 }
@@ -74,11 +74,11 @@
     if([input class] == [Fraction class]) {
         Fraction* fc = (Fraction*)input;
         
-        Number* denominator = [[self denominator] mul:[fc denominator]];
-        Number* numLeft = [[fc numerator] mul:[self denominator]];
-        Number* numRight = [[fc denominator] mul:[self numerator]];
+        Number* denominator = (Number*)[[self denominator] mul:[fc denominator]];
+        Number* numLeft = (Number*)[[fc numerator] mul:[self denominator]];
+        Number* numRight = (Number*)[[fc denominator] mul:[self numerator]];
         
-        return [Fraction construct:[numLeft add:numRight] denominator:denominator];
+        return [Fraction construct:(Number*)[numLeft add:numRight] denominator:denominator];
     }
     return [NumberOperators add:self right:input];
 }
@@ -90,10 +90,10 @@
 //    } else
     if([input class] == [Fraction class]) {
         Fraction* fc = (Fraction*)input;
-        Number* denominator = [[self denominator] mul:[fc denominator]];
-        Number* numLeft = [[self numerator] mul:[fc denominator]];
-        Number* numRight = [[self denominator] mul:[fc numerator]];
-        return [Fraction construct:[numLeft sub:numRight] denominator:denominator];
+        Number* denominator = (Number*)[[self denominator] mul:[fc denominator]];
+        Number* numLeft = (Number*)[[self numerator] mul:[fc denominator]];
+        Number* numRight = (Number*)[[self denominator] mul:[fc numerator]];
+        return [Fraction construct:(Number*)[numLeft sub:numRight] denominator:denominator];
         
     }
     return [NumberOperators sub:self right:input];
@@ -106,7 +106,7 @@
 //    } else
     if([input class] == [Fraction class]) {
         Fraction* fc = (Fraction*)input;
-        return [Fraction construct:[[self numerator] mul:[fc numerator]] denominator:[[self denominator] mul:[fc denominator]]];
+        return [Fraction construct:(Number*)[[self numerator] mul:[fc numerator]] denominator:(Number*)[[self denominator] mul:[fc denominator]]];
     }
     return [NumberOperators mul:self right:input];
 }

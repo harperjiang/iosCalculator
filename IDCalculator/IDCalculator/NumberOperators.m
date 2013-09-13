@@ -17,41 +17,41 @@ extern short DEFAULT_ROUND;
 
 +(Number*) add:(Number*) left right:(Number*) right {
     if([self level:left] < [self level:right]) {
-        return [[self convert:left type:[self level:right]] add:right];
+        return (Number*)[[self convert:left type:[self level:right]] add:right];
     } else if([self level:left] > [self level:right]) {
-        return [left add:[self convert:right type:[self level:left]]];
+        return (Number*)[left add:[self convert:right type:[self level:left]]];
     } else {
-        return [left add:right];
+        return (Number*)[left add:right];
     }
 }
 
 +(Number*) sub:(Number*) left right:(Number*) right {
     if([self level:left] < [self level:right]) {
-        return [[self convert:left type:[self level:right]] sub:right];
+        return (Number*)[[self convert:left type:[self level:right]] sub:right];
     } else if([self level:left] > [self level:right]) {
-        return [left sub:[self convert:right type:[self level:left]]];
+        return (Number*)[left sub:[self convert:right type:[self level:left]]];
     } else {
-        return [left sub:right];
+        return (Number*)[left sub:right];
     }
 }
 
 +(Number*) mul:(Number*) left right:(Number*) right {
     if([self level:left] < [self level:right]) {
-        return [[self convert:left type:[self level:right]] mul:right];
+        return (Number*)[[self convert:left type:[self level:right]] mul:right];
     } else if([self level:left] > [self level:right]) {
-        return [left mul:[self convert:right type:[self level:left]]];
+        return (Number*)[left mul:[self convert:right type:[self level:left]]];
     } else {
-        return [left mul:right];
+        return (Number*)[left mul:right];
     }
 }
 
 +(Number*) div:(Number*) left right:(Number*) right {
     if([self level:left] < [self level:right]) {
-        return [[self convert:left type:[self level:right]] div:right];
+        return (Number*)[[self convert:left type:[self level:right]] div:right];
     } else if([self level:left] > [self level:right]) {
-        return [left div:[self convert:right type:[self level:left]]];
+        return (Number*)[left div:[self convert:right type:[self level:left]]];
     } else {
-        return [left div:right];
+        return (Number*)[left div:right];
     }
 }
 

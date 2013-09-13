@@ -28,19 +28,21 @@
 
 -(Matrix*) initWithExpression:(ExpressionList*) data;
 
-- (Number*) val:(NSInteger) i n:(NSInteger)j;
+-(Number*) val:(NSInteger) i n:(NSInteger)j;
 
-- (void) setVal:(NSInteger) i n:(NSInteger)j val:(Number*)value;
+-(void) setVal:(NSInteger) i n:(NSInteger)j val:(Number*)value;
 
-- (NSInteger) rank;
+-(NSInteger) rank;
 
-- (Number*) determinant;
+-(Number*) determinant;
 
-- (Matrix*) transpose;
+-(Matrix*) transpose;
 
-- (Matrix*) submatrix:(NSRange) rowrange column:(NSRange) colrange;
+-(Matrix*) submatrix:(NSRange) rowrange column:(NSRange) colrange;
 
-- (Matrix*) inverse;
+-(Matrix*) inverse;
+
+-(Matrix*) duplicate;
 
 -(Vector*) asVector;
 

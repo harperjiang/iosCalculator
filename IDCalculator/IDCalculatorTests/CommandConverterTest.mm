@@ -12,11 +12,12 @@
 #import "ExpressionCommand.h"
 #import "AssignCommand.h"
 #import "Command.h"
-#import "ConsoleIdentifier.h"
+#import "Variable.h"
 #import "ArithmeticExpression.h"
 #import "FuncExpression.h"
 #import "Matrix.h"
-#import "NumberData.h"
+#import "Number.h"
+#import "Decimal.h"
 
 @implementation CommandConverterTest
 
@@ -56,8 +57,8 @@
     
     STAssertTrue([cmd class] == [ExpressionCommand class], @"");
     ExpressionCommand* varc = (ExpressionCommand*)cmd;
-    STAssertEqualObjects([ConsoleIdentifier class], [varc.expression class], @"");
-    ConsoleIdentifier* cid = (ConsoleIdentifier*)varc.expression;
+    STAssertEqualObjects([Variable class], [varc.expression class], @"");
+    Variable* cid = (Variable*)varc.expression;
     STAssertEqualObjects(@"p",cid.name,@"");
 }
 
@@ -72,8 +73,8 @@
     
     ArithmeticExpression* arith = (ArithmeticExpression*)[expcmd expression];
     
-    STAssertEqualObjects([[arith left] class],[ConsoleIdentifier class],@"");
-    STAssertEqualObjects([[arith right] class],[ConsoleIdentifier class],@"");
+    STAssertEqualObjects([[arith left] class],[Variable class],@"");
+    STAssertEqualObjects([[arith right] class],[Variable class],@"");
 }
 
 -(void) testParseSingleQuote {
@@ -112,8 +113,8 @@
     STAssertEqualObjects([ArithmeticExpression class], [expcmd.expression class], @"");
     
     ArithmeticExpression* arith = (ArithmeticExpression*)[expcmd expression];
-    STAssertEqualObjects([arith.left class], [NumberData class],@"");
-    STAssertEqualObjects([arith.right class], [NumberData class],@"");
+    STAssertEqualObjects([arith.left class], [Decimal class],@"");
+    STAssertEqualObjects([arith.right class], [Decimal class],@"");
     
     STAssertEqualObjects([arith.left description], @"3.8583", @"");
     STAssertEqualObjects([arith.right description], @"6.7", @"");

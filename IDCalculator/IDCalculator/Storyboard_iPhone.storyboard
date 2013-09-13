@@ -115,7 +115,7 @@
                         <subviews>
                             <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="V8e-Ed-Yyc">
                                 <rect key="frame" x="0.0" y="361" width="320" height="50"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <requiredContentSizeIdentifiers>
                                     <string>ADBannerContentSizeLandscape</string>
                                     <string>ADBannerContentSizePortrait</string>
@@ -669,7 +669,7 @@
                             </label>
                             <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="YYH-5b-WM9">
                                 <rect key="frame" x="0.0" y="317" width="320" height="50"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <requiredContentSizeIdentifiers>
                                     <string>ADBannerContentSizeLandscape</string>
                                     <string>ADBannerContentSizePortrait</string>

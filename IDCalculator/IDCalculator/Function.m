@@ -23,6 +23,10 @@
     return false;
 }
 
+-(Function*) evaluate {
+    return [[Function alloc] init:[[self expression] evaluate]];
+}
+
 -(NSString*) description {
     if([self expression] == nil)
         return nil;

@@ -6,15 +6,15 @@
 //  Copyright (c) 2012 Harper Jiang. All rights reserved.
 //
 
-#import "BasicFunctionTest.h"
-#import "BasicFunction.h"
+#import "BasicFuncExpressionTest.h"
+#import "BasicFuncExpression.h"
 #import "Variable.h"
 
-@implementation BasicFunctionTest
+@implementation BasicFuncExpressionTest
 
 -(void)testEvaluate {
-    BasicFunction* bf = [[BasicFunction alloc] init:BT_SIN base:[Variable x]];
-    Function* eval = [bf evaluate];
+    BasicFuncExpression* bf = [[BasicFuncExpression alloc] init:BT_SIN base:[Variable x]];
+    Expression* eval = [bf evaluate];
     STAssertEqualObjects(eval,bf,@"");
     
     bf.type = BT_COS;

@@ -7,7 +7,6 @@
 //
 
 #import "Matrix.h"
-#import "SquareMatrix.h"
 #import "Vector.h"
 #import "Integer.h"
 #import "Number.h"
@@ -177,7 +176,7 @@
 }
 
 -(Data*) mul:(Data *)another {
-    if([another class] == [Matrix class] || [another class] == [SquareMatrix class] || [another class] == [Vector class]) {
+    if([another class] == [Matrix class] || [another class] == [Vector class]) {
         Matrix* am = (Matrix*) another;
         if([am m] == [self n]) {
             // n cube speed
@@ -240,7 +239,7 @@
 -(Number*) val:(NSInteger) i n:(NSInteger)j {
     NSMutableArray* row = (NSMutableArray*)[[self data] objectAtIndex:i];
     Data* item = [row objectAtIndex:j];
-    assert([item class] == [Number class]);
+    assert([item isKindOfClass: [Number class]]);
     return (Number*)item;
 }
 
@@ -252,7 +251,7 @@
     }
     NSMutableArray* row = (NSMutableArray*)[[self data] objectAtIndex:i];
     while(j>= [row count]) {
-        [row addObject:nil];
+        [row addObject:[Integer ZERO]];
     }
     [row setObject:value atIndexedSubscript:j];
     if(i >= [self m])

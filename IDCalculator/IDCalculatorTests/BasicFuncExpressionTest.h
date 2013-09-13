@@ -8,7 +8,7 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface BasicFunctionTest : SenTestCase
+@interface BasicFuncExpressionTest : SenTestCase
 
 -(void) testEvaluate;
 

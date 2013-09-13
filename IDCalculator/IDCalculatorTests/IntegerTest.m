@@ -8,6 +8,7 @@
 
 #import "IntegerTest.h"
 #import "Integer.h"
+#import "Fraction.h"
 
 @implementation IntegerTest
 
@@ -23,7 +24,7 @@
     STAssertTrue([add isKindOfClass:[Integer class]], @"");
     STAssertTrue([sub isKindOfClass:[Integer class]], @"");
     STAssertTrue([mul isKindOfClass:[Integer class]], @"");
-    STAssertTrue([div isKindOfClass:[Integer class]], @"");
+    STAssertTrue([div isKindOfClass:[Fraction class]], @"");
 }
 
 @end

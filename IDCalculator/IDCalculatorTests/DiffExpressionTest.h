@@ -8,7 +8,7 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface DiffFunctionTest : SenTestCase
+@interface DiffExpressionTest : SenTestCase
 
 -(void) testDifferentiate;
 -(void) testPolynomialDiff;

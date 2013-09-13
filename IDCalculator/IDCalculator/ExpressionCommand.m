@@ -21,7 +21,7 @@
 
 -(void) execute {
     // Evaluate the expression
-    Data* result = [[self expression] evaluate];
+    Expression* result = [[self expression] evaluate];
     if(nil != result) {
     // Print the result
         [[IDCConsole instance] output:[result description]];

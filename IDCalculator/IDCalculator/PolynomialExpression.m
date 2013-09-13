@@ -83,7 +83,7 @@
         }
         return function;
     }
-    if([function isKindOfClass:[Data class]]) {
+    if([function isKindOfClass:[Number class]] || [function isKindOfClass:[Constant class]]) {
         PolynomialExpression* poly = [[PolynomialExpression alloc] init];
         [poly addItem:(Data*)function power:0];
         return poly;

@@ -24,7 +24,7 @@
 -(void) testInverse {
     ExpressionList* empty = [[ExpressionList alloc] init];
     
-    Matrix* m = [[Matrix alloc] init:empty];
+    Matrix* m = [[Matrix alloc] initWithExpression:empty];
     
     for(int i = 1 ; i < 10 ; i++) {
        [m setVal:(i-1)/3 n:(i-1)%3 val:[Integer construct:i]];
@@ -37,7 +37,7 @@
     STAssertEqualObjects([[inv mul:m] description],result,@"");
     
     empty = [[ExpressionList alloc] init];
-    m = [[Matrix alloc] init:empty];
+    m = [[Matrix alloc] initWithExpression:empty];
     [m setVal:0 n:0 val: [Integer construct:1]];
     [m setVal:0 n:1 val: [Integer construct:4]];
     [m setVal:1 n:0 val: [Integer construct:3]];

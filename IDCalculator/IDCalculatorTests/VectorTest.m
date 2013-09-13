@@ -10,18 +10,17 @@
 #import "Vector.h"
 #import "Integer.h"
 #import "ExpressionList.h"
-#import "NumberData.h"
 
 @implementation VectorTest
 
 
 -(void) testVar {
-    ExpressionList* row = [[ExpressionList alloc] init];
+    NSMutableArray* row = [[NSMutableArray alloc] init];
     for(int i = 0 ; i < 10 ; i ++) {
-        [row add:[[NumberData alloc] init:[Integer construct:i]]];
+        [row addObject:[Integer construct:i]];
     }
-    ExpressionList* array = [[ExpressionList alloc] init];
-    [array add:row];
+    NSMutableArray* array = [[NSMutableArray alloc] init];
+    [array addObject:row];
     Vector* v = [[Vector alloc] init:array];
     for(int i = 0 ; i < 10 ; i++) {
         NSString* expect = [NSString stringWithFormat:@"%d",i];

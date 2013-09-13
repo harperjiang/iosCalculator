@@ -31,7 +31,7 @@
     
     Matrix* matrixB = [[Matrix alloc] init:dataB m:2 n:5];
     
-    ArithmeticExpression* exp = [[ArithmeticExpression alloc] init:matrixA operator:MUL right:matrixB];
+    ArithmeticExpression* exp = [[ArithmeticExpression alloc] init:matrixA opr:MUL right:matrixB];
     
     
     AssignCommand* assign = [[AssignCommand alloc] init:@"p" value:exp];
