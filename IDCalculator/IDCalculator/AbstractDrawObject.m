@@ -6,14 +6,15 @@
 //  Copyright (c) 2012 Harper Jiang. All rights reserved.
 //
 
-#import "DrawObject.h"
+#import "AbstractDrawObject.h"
 
-@implementation DrawObject
+@implementation AbstractDrawObject
 
 -(id)init {
     self = [super init];
     if(self) {
         self.lineWidth = 1.0f;
+        self.fontSize = 10;
     }
     return self;
 }
@@ -22,6 +23,10 @@
     CGContextSaveGState(context);
     CGContextSetFillColorWithColor(context, self.fillColor);
     CGContextSetStrokeColorWithColor(context, self.lineColor);
+    // Fonts
+    CGContextSetTextDrawingMode(context, kCGTextFill);
+    CGContextSelectFont (context, "Helvetica-Bold",self.fontSize, kCGEncodingMacRoman);
+    
     CGContextSetLineWidth(context, self.lineWidth);
     [self paint:context];
     CGContextRestoreGState(context);

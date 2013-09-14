@@ -10,12 +10,12 @@
 #import <UIKit/UIKit.h>
 #import "Drawable.h"
 
-@interface DrawObject : NSObject <Drawable>
+@interface AbstractDrawObject : NSObject <Drawable>
 
 @property(nonatomic) CGColorRef fillColor;
 @property(nonatomic) CGColorRef lineColor;
 @property(nonatomic) CGFloat lineWidth;
-
+@property(nonatomic) CGFloat fontSize;
 
 -(void) paint:(CGContextRef) context;
 
