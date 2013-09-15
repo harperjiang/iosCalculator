@@ -108,6 +108,7 @@
         <!--View Controller - Graph-->
         <scene sceneID="Nyj-8b-dZJ">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jpl-Ex-ejo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="yMC-G2-Gh5" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YrF-xe-fbd" customClass="Canvas2DView">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
@@ -123,10 +124,18 @@
                             </adBannerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="QpQ-gP-aQX" appends="YES" id="yVk-B9-xNB"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Graph" image="chart_line_24.png" id="kxU-Lg-trf"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jpl-Ex-ejo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" maximumNumberOfTouches="1" id="QpQ-gP-aQX">
+                    <connections>
+                        <action selector="dragReceived:" destination="YrF-xe-fbd" id="l2D-ey-xYr"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="880" y="829"/>
         </scene>
@@ -712,6 +721,9 @@
         </class>
         <class className="Canvas2DView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/Canvas2DView.h"/>
+            <relationships>
+                <relationship kind="action" name="dragReceived:"/>
+            </relationships>
         </class>
         <class className="ConsoleViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ConsoleViewController.h"/>

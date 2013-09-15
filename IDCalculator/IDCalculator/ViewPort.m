@@ -23,7 +23,8 @@
 }
 
 -(void) transform:(CGPoint*) input {
-    
+    input->x = input->x*[self proportion];
+    input->y = -input->y*[self proportion];
 }
 
 -(void) paint:(CGContextRef)context {

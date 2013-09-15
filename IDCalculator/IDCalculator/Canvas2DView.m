@@ -47,10 +47,13 @@
         // Doing transformation
         [[self viewPort] transform: &vector];
         CGPoint currentCenter = [[self viewPort] center];
-        [[self viewPort] setCenter:CGPointMake(currentCenter.x+vector.x, currentCenter.y+vector.y)];
+        [[self viewPort] setCenter:CGPointMake(currentCenter.x-vector.x, currentCenter.y-vector.y)];
+        [self setNeedsDisplay];
+        lastPoint.x = point.x;
+        lastPoint.y = point.y;
     }
     if(state == UIGestureRecognizerStateEnded) {
-        [self setNeedsDisplay];
+        
     }
 }
 
