@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AbstractDrawObject.h"
+#import "Element.h"
+#import "Environment.h"
 
-@interface Coordinate : AbstractDrawObject
+@interface Coordinate : Element
 
 @end

@@ -19,24 +19,31 @@
 }
 
 -(void)paint:(CGContextRef)context {
+    CGRect range = [[self environment] range];
+    
     CGContextBeginPath(context);
-    CGRect rect = CGContextGetClipBoundingBox(context);
     
-    CGContextSetTextMatrix(context, CGAffineTransformMake(1, 0, 0, -1, 0, 0));
-    // Draw Y axis
-    CGContextSetTextPosition(context, rect.size.width/2+5, 20);
-    CGContextShowText(context, "Y", 1);
+    if(range.origin.x < 0 && range.origin.x + range.size.width > 0) {
+        // Draw Y label
+        CGContextSetTextPosition(context, [self translate:5], range.origin.y+range.size.height-[self translate:15]);
+        CGContextShowText(context, "Y", 1);
+        
+        // Draw Y axis line
+        CGContextMoveToPoint(context, 0, range.origin.y);
+        CGContextAddLineToPoint(context, 0, range.origin.y + range.size.height);
+
+    }
     
-    // Draw X axis
-    CGContextSetTextPosition(context, rect.size.width - 15, rect.size.height/2-5);
-    CGContextShowText(context, "X", 1);
-    
-    // Draw axis line
-    CGContextMoveToPoint(context, rect.origin.x, rect.origin.y + rect.size.height / 2);
-    CGContextAddLineToPoint(context, rect.origin.x + rect.size.width, rect.origin.y + rect.size.height / 2);
-    CGContextMoveToPoint(context, rect.origin.x + rect.size.width / 2, rect.origin.y);
-    CGContextAddLineToPoint(context, rect.origin.x + rect.size.width / 2, rect.origin.y + rect.size.height);
-    
+    if(range.origin.y < 0 && range.origin.y + range.size.height > 0) {
+        // Draw X label
+        CGContextSetTextPosition(context, range.origin.x+range.size.width-[self translate:15], [self translate:5]);
+        CGContextShowText(context, "X", 1);
+        
+        // Draw X axis line
+        CGContextMoveToPoint(context, range.origin.x, 0);
+        CGContextAddLineToPoint(context, range.origin.x + range.size.width, 0);
+    }
+  
     CGContextStrokePath(context);
 }
 

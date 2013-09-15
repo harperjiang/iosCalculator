@@ -1,5 +1,5 @@
 //
-//  DrawObject.h
+//  AbstractDrawObject.h
 //  IDCalculator
 //
 //  Created by Harper Jiang on 12/16/12.

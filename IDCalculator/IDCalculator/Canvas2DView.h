@@ -6,11 +6,16 @@
 //  Copyright (c) 2012 Harper Jiang. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "Environment.h"
+#import "ViewPort.h"
+
 
 @interface Canvas2DView : UIView
 
-@property(nonatomic,strong) Environment* environment;
+@property(nonatomic,strong) ViewPort* viewPort;
+
+-(IBAction) dragReceived:(id) gesture;
+
 
 @end

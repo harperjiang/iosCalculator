@@ -8,13 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "Drawable.h"
-#import "DrawContainer.h"
-#import "Coordinate.h"
+#import "ElementContainer.h"
 
-@interface Environment : NSObject <Drawable>
+@class ViewPort;
 
-@property(nonatomic,strong) Coordinate* coordinate;
-@property(nonatomic,strong) DrawContainer* content;
+@interface Environment : ElementContainer
+
+@property(nonatomic,strong) ViewPort* viewPort;
 
 @end

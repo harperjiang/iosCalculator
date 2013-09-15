@@ -1,5 +1,5 @@
 //
-//  DrawObject.m
+//  AbstractDrawObject.m
 //  IDCalculator
 //
 //  Created by Harper Jiang on 12/16/12.
@@ -13,7 +13,7 @@
 -(id)init {
     self = [super init];
     if(self) {
-        self.lineWidth = 1.0f;
+        self.lineWidth = 0;
         self.fontSize = 10;
     }
     return self;
@@ -27,13 +27,16 @@
     CGContextSetTextDrawingMode(context, kCGTextFill);
     CGContextSelectFont (context, "Helvetica-Bold",self.fontSize, kCGEncodingMacRoman);
     
-    CGContextSetLineWidth(context, self.lineWidth);
+    //
+    if(self.lineWidth != 0) {
+        CGContextSetLineWidth(context, self.lineWidth);
+    }
     [self paint:context];
     CGContextRestoreGState(context);
 }
 
 -(void)paint:(CGContextRef)context {
-    // Do nothing
+    // Child class must implement this method to do the actual drawing work
 }
 
 @end
