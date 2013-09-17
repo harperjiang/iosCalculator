@@ -18,4 +18,5 @@
 -(void) testMod;
 -(void) testToPolynomial;
 -(void) testDifferentiate;
+-(void) testCalculate;
 @end

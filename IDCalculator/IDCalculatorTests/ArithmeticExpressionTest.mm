@@ -13,6 +13,7 @@
 #import "Function.h"
 #import "Integer.h"
 #import "Variable.h"
+#import "VariableContext.h"
 #import "Number.h"
 #import "Matrix.h"
 
@@ -88,6 +89,26 @@
     STAssertEqualObjects([[result val:2 n:2] description], @"88", @"");
     STAssertEqualObjects([[result val:2 n:3] description], @"97", @"");
     STAssertEqualObjects([[result val:2 n:4] description], @"106", @"");
+}
+
+-(void) testCalculate {
+    [[VariableContext instance] assign:@"x" value:[Integer construct:10]];
+    Expression* left = [Variable x];
+    Expression* right = [Integer construct:5];
+    
+    ArithmeticExpression* add = [[ArithmeticExpression alloc] init:left opr:ADD right:right];
+    STAssertEqualObjects([[add evaluate] description], @"15", @"");
+    
+    ArithmeticExpression* sub = [[ArithmeticExpression alloc] init:left opr:SUB right:right];
+    STAssertEqualObjects([[sub evaluate] description], @"5", @"");
+    
+    ArithmeticExpression* mul = [[ArithmeticExpression alloc] init:left opr:MUL right:right];
+    STAssertEqualObjects([[mul evaluate] description], @"50", @"");
+    
+    ArithmeticExpression* div = [[ArithmeticExpression alloc] init:left opr:DIV right:right];
+    STAssertEqualObjects([[div evaluate] description], @"2", @"");
+    
+    [[VariableContext instance] remove:@"x"];
 }
 
 @end

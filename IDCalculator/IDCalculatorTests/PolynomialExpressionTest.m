@@ -11,6 +11,7 @@
 #import "Integer.h"
 #import "ArithmeticExpression.h"
 #import "Variable.h"
+#import "VariableContext.h"
 
 @implementation PolynomialExpressionTest
 
@@ -174,6 +175,17 @@
     [pf1 addItem:[Integer construct:1] power:0];
    
     STAssertEqualObjects([[pf1 differentiate:[Variable x]] description], @"4x³-3x²+10x-7", @"");
+}
+
+-(void) testCalculate {
+    PolynomialExpression* pe = [[PolynomialExpression alloc] init];
+    [pe addItem:[Integer construct:3] power:2];
+    
+    [[VariableContext instance] assign:@"x" value:[Integer construct:3]];
+    
+    STAssertEqualObjects([[pe evaluate] description], @"27",@"");
+    
+    [[VariableContext instance] remove:@"x"];
 }
 
 @end

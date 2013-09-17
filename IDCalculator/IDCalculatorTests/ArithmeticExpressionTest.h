@@ -15,4 +15,5 @@
 -(void) testPolyMultiply;
 -(void) testMatrixMul;
 -(void) testAddConstant;
+-(void) testCalculate;
 @end
