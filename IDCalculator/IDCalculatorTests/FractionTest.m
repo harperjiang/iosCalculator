@@ -18,4 +18,8 @@
     STAssertEqualObjects([num description], @"-1/7", @"");
 }
 
+-(void) testCalculate {
+    
+}
+
 @end

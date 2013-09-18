@@ -8,7 +8,9 @@
 
 #import "Fraction.h"
 #import "Integer.h"
+#import "Decimal.h"
 #import "NumberOperators.h"
+#import "VariableContext.h"
 
 @implementation Fraction
 
@@ -116,6 +118,17 @@
         return [Fraction construct:self denominator:input];
     }
     return [NumberOperators div:self right:input];
+}
+
+-(Decimal*) toDecimal {
+    return (Decimal*)[[[Decimal alloc] initWithNumber: [self numerator]] div:[[Decimal alloc] initWithNumber:[self denominator]]];
+}
+
+-(Expression*) evaluate {
+    if([[VariableContext instance] isTrue:@"calculate"]) {
+        return [self toDecimal];
+    }
+    return self;
 }
 
 -(NSString*) description {

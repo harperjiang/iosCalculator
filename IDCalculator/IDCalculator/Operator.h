@@ -10,7 +10,7 @@
 #define IDCalculator_Operator_h
 
 typedef enum _Operator {
-    ADD = 1,SUB,MUL,DIV
+    ADD = 1,SUB,MUL,DIV, POW
 } Operator;
 
 

@@ -8,6 +8,9 @@
 
 #import "Number.h"
 
+@class Decimal;
 @interface RealNumber : Number
+
+-(Decimal*) toDecimal;
 
 @end

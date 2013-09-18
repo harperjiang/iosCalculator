@@ -10,9 +10,12 @@
 #import "ArithmeticExpression.h"
 #import "Number.h"
 #import "Integer.h"
+#import "Decimal.h"
 #import "SpecialConstant.h"
 #import "ExpPowerExpression.h"
 #import "PolynomialExpression.h"
+#import "VariableContext.h"
+#include "math.h"
 
 @implementation BasicFuncExpression
 
@@ -26,42 +29,59 @@
 }
 
 -(Expression*) evaluate {
-    self.base = [self.base evaluate];
-    switch(self.type) {
-        case BT_SIN:
-            if(self.base == [Integer ZERO]) {
-                return [Integer ZERO];
-            }
-            if(self.base == [SpecialConstant PI]) {
-                return [Integer ZERO];
-            }
-            if([self.base isKindOfClass:[ArithmeticExpression class]]) {
-                // TODO Not implemented
-                // should implement special values
-            }
-            break;
-        case BT_COS:
-            if(self.base == [Integer ZERO]) {
-                return [Integer ONE];
-            }
-            if(self.base == [SpecialConstant PI]) {
-                return [Integer construct:-1];
-            }
-            if([self.base isKindOfClass:[ArithmeticExpression class]]) {
-                // TODO Not implemented
-                // should implement special values
-            }
-            break;
-        case BT_LN:
-            if(self.base == [SpecialConstant E]) {
-                return [Integer ONE];
-            }
-            if([self.base isKindOfClass:[ExpPowerExpression class]]) {
-                return [(ExpPowerExpression*)self.base power];
-            }
-            break;
+    if([[VariableContext instance] isTrue:@"calculate"]) {
+        Expression* value = [self.base evaluate];
+        if([value isKindOfClass:[Decimal class]])
+            return nil;
+        Decimal* dec = (Decimal*)value;
+        switch(self.type) {
+            case BT_SIN:
+                return [[Decimal alloc] init: [[NSDecimalNumber alloc] initWithDouble: sin([[dec value] doubleValue])]];
+            case BT_COS:
+                return [[Decimal alloc] init: [[NSDecimalNumber alloc] initWithDouble: cos([[dec value] doubleValue])]];
+            case BT_LN:
+                return [[Decimal alloc] init: [[NSDecimalNumber alloc] initWithDouble: log([[dec value] doubleValue])]];
+            default:
+                return nil;
+        }
+    } else {
+        self.base = [self.base evaluate];
+        switch(self.type) {
+            case BT_SIN:
+                if(self.base == [Integer ZERO]) {
+                    return [Integer ZERO];
+                }
+                if(self.base == [SpecialConstant PI]) {
+                    return [Integer ZERO];
+                }
+                if([self.base isKindOfClass:[ArithmeticExpression class]]) {
+                    // TODO Not implemented
+                    // should implement special values
+                }
+                break;
+            case BT_COS:
+                if(self.base == [Integer ZERO]) {
+                    return [Integer ONE];
+                }
+                if(self.base == [SpecialConstant PI]) {
+                    return [Integer construct:-1];
+                }
+                if([self.base isKindOfClass:[ArithmeticExpression class]]) {
+                    // TODO Not implemented
+                    // should implement special values
+                }
+                break;
+            case BT_LN:
+                if(self.base == [SpecialConstant E]) {
+                    return [Integer ONE];
+                }
+                if([self.base isKindOfClass:[ExpPowerExpression class]]) {
+                    return [(ExpPowerExpression*)self.base power];
+                }
+                break;
+        }
+        return self;
     }
-    return self;
 }
 
 -(Expression*) differentiate:(Variable *) variable{

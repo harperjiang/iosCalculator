@@ -23,17 +23,65 @@ static VariableContext* instance;
 -(VariableContext*) init {
     self = [super init];
     if(self) {
-        self->_variables = [[NSMutableDictionary alloc] init];
+        self->_content = [[Stack alloc] init];
+        NSMutableDictionary* current = [[NSMutableDictionary alloc] init];
+        [current setValue:[[NSMutableDictionary alloc] init] forKey:@"variables"];
+        [current setValue:[[NSMutableDictionary alloc] init] forKey:@"configures"];
+        [self->_content push:current];
     }
     return self;
 }
 
+-(NSMutableDictionary*) variables {
+    return (NSMutableDictionary*)[(NSDictionary*)[[self content] peek] objectForKey: @"variables"];
+}
+
+-(NSMutableDictionary*) configures {
+    return (NSMutableDictionary*)[(NSDictionary*)[[self content] peek] objectForKey: @"configures"];
+}
+
 -(void) assign:(NSString*) name value:(Data*) data {
-    [self.variables setValue:data forKey:name];
+    [[self variables] setObject:data forKey:name];
+}
+
+-(void) assignAll:(NSDictionary *)dict {
+    NSEnumerator* enume = [dict keyEnumerator];
+    id object;
+    while((object = [enume nextObject]) != nil) {
+        [self assign:(NSString*)object value:(Data*)[dict objectForKey:(NSString*)object]];
+    }
 }
 
 -(Data*) lookup:(NSString*) name {
-    return [self.variables objectForKey:name];
+    return [[self variables] objectForKey:name];
+}
+
+-(void) remove:(NSString *)name {
+    [[self variables] removeObjectForKey:name];
+}
+
+-(void) set:(NSString*)key value:(id) value {
+    [[self configures] setObject:value forKey:key];
+}
+
+-(id) get:(NSString*) key {
+    return [[self configures] objectForKey:key];
+}
+
+-(BOOL) isTrue:(NSString *)key {
+    id val = [[self configures] objectForKey:key];
+    return val != nil;
+}
+
+-(void) push {
+    NSMutableDictionary* newinst = [[NSMutableDictionary alloc] init];
+    [newinst setObject:[[NSMutableDictionary alloc] init] forKey:@"variables"];
+    [newinst setObject:[[NSMutableDictionary alloc] init] forKey:@"configures"];
+    [self.content push:newinst];
+}
+
+-(void) pop {    
+    [[self content] pop];
 }
 
 @end

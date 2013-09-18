@@ -9,9 +9,13 @@
 #import "PowerExpression.h"
 #import "ArithmeticExpression.h"
 #import "PolynomialExpression.h"
+#import "VariableContext.h"
 #import "Operator.h"
 #import "Integer.h"
+#import "Fraction.h"
+#import "Decimal.h"
 #import "Number.h"
+#include "math.h"
 
 @implementation PowerExpression
 
@@ -41,23 +45,40 @@
 }
 
 -(Expression*) evaluate {
-    self.base = [self.base evaluate];
-    if(self.power == [Integer ONE])
-        return self.base;
-    if(self.power == [Integer ZERO])
-        return [Integer ONE];
-    if([self.base isKindOfClass:[PowerExpression class]]) {
-        // Nested Power
-        PowerExpression* oldbase = (PowerExpression*)self.base;
-        self.base = oldbase.base;
-        Expression* newpower = [[[ArithmeticExpression alloc] init:oldbase.power opr:ADD right:self.power] evaluate];
-        if([newpower isKindOfClass:[Number class]]) {
-            self.power = (Number*)newpower;
-        } else {
+    if([[VariableContext instance] isTrue:@"calculate"]) {
+        Expression* base = [self.base evaluate];
+        if(![base isKindOfClass:[Decimal class]])
             return nil;
+        Decimal* value = (Decimal*)base;
+        if([[self power] isKindOfClass:[RealNumber class]]) {
+            return [PowerExpression power:value power:(RealNumber*)[self power]];
         }
+        return nil;
+    } else {
+        self.base = [self.base evaluate];
+        if(self.power == [Integer ONE])
+            return self.base;
+        if(self.power == [Integer ZERO])
+            return [Integer ONE];
+        if([self.base isKindOfClass:[Integer class]] && [self.power isKindOfClass:[Integer class]]) {
+            // An Integer number
+            Integer* base = (Integer*)self.base;
+            Integer* power = (Integer*)self.power;
+            return [Integer construct:(int)pow(base.value, power.value)];
+        }
+        if([self.base isKindOfClass:[PowerExpression class]]) {
+            // Nested Power
+            PowerExpression* oldbase = (PowerExpression*)self.base;
+            self.base = oldbase.base;
+            Expression* newpower = [[[ArithmeticExpression alloc] init:oldbase.power opr:ADD right:self.power] evaluate];
+            if([newpower isKindOfClass:[Number class]]) {
+                self.power = (Number*)newpower;
+            } else {
+                return nil;
+            }
+        }
+        return self;
     }
-    return self;
 }
 
 -(NSString *)description {
@@ -115,8 +136,11 @@
         default:
             return [NSString stringWithFormat:@"^%@",[con description]];
     }
-    
     return @"";
+}
+
++(Decimal*) power:(RealNumber *)base power:(RealNumber *)power {
+    return [[Decimal alloc] init: [[NSDecimalNumber alloc] initWithDouble:pow([[[base toDecimal] value] doubleValue], [[[power toDecimal]value] doubleValue])]];
 }
 
 @end

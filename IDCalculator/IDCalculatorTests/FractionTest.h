@@ -11,5 +11,5 @@
 @interface FractionTest : SenTestCase
 
 -(void) testNegative;
-
+-(void) testCalculate;
 @end

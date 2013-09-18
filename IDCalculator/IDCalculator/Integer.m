@@ -9,6 +9,7 @@
 #import "Integer.h"
 #import "Fraction.h"
 #import "NumberOperators.h"
+#import "Decimal.h"
 
 @implementation Integer
 
@@ -68,6 +69,10 @@ static Integer* NEGAONE;
         return [Fraction construct:self denominator:input];
     }
     return [NumberOperators div:self right:input];
+}
+
+-(Decimal*) toDecimal {
+    return [[Decimal alloc] init: [[NSDecimalNumber alloc] initWithInteger:[self value]]];
 }
 
 +(Integer*) construct:(NSInteger)input {

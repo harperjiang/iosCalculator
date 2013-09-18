@@ -7,6 +7,9 @@
 //
 
 #import "ArithConstant.h"
+#import "ArithmeticExpression.h"
+#import "Decimal.h"
+#import "VariableContext.h"
 
 @implementation ArithConstant
 
@@ -16,6 +19,17 @@
         self.left = left;
         self.right = right;
         self.opr = opr;
+    }
+    return self;
+}
+
+-(Decimal*) toDecimal {
+    return (Decimal*)[[[ArithmeticExpression alloc] init:[[self left] toDecimal] opr:[self opr] right:[[self right] toDecimal]] evaluate];
+}
+
+-(Expression*) evaluate {
+    if([[VariableContext instance] isTrue:@"calculate"]) {
+        return [self toDecimal];
     }
     return self;
 }

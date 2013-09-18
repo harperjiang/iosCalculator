@@ -7,23 +7,9 @@
 //
 
 #import "Number.h"
+#import "Integer.h"
 
 @implementation Number
 
--(Number*) add:(Number *)input {
-    return nil;
-}
-
--(Number*) sub:(Number *)input {
-    return nil;
-}
-
--(Number*) mul:(Number *)input {
-    return nil;
-}
-
--(Number*) div:(Number *)input {
-    return nil;
-}
 
 @end

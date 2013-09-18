@@ -22,6 +22,9 @@
 @property(nonatomic,strong) ScaleBehavior* scale;
 
 -(Decimal*) init:(NSDecimalNumber*) value;
+-(Decimal*) initWithNumber:(Number*) value;
 -(Decimal*) init:(NSDecimalNumber*) value scale:(short) scale;
 
++(Decimal*) constructDouble: (double) d;
++(Decimal*) constructFloat: (float) f;
 @end

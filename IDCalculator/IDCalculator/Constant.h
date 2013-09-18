@@ -7,13 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Data.h"
+#import "RealNumber.h"
 
-@interface Constant : Data
+@class Decimal;
+
+@interface Constant : RealNumber
 
 -(Constant*) add:(Constant*)input;
 -(Constant*) sub:(Constant*)input;
 -(Constant*) mul:(Constant*)input;
 -(Constant*) div:(Constant*)input;
 
+-(Decimal*) toDecimal;
 @end

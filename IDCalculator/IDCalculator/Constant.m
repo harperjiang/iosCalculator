@@ -18,6 +18,10 @@
     return self;
 }
 
+-(Decimal*) toDecimal {
+    return nil;
+}
+
 -(Expression*) differentiate:(Variable *)variable {
     return [Integer ZERO];
 }

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Expression.h"
+#import "Decimal.h"
 
 @class Variable;
 
@@ -18,6 +19,8 @@
 -(Function*) init:(Expression*) exp;
 
 -(Function*) evaluate;
+
+-(Decimal*) calculate:(NSDictionary*) vars;
 
 -(Boolean) equals:(Function*) another;
 

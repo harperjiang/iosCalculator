@@ -7,7 +7,12 @@
 //
 
 #import "RealNumber.h"
+#import "Decimal.h"
 
 @implementation RealNumber
+
+-(Decimal*) toDecimal {
+    return nil;
+}
 
 @end

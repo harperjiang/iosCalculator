@@ -10,7 +10,10 @@
 #import "PowerExpression.h"
 #import "ArithmeticExpression.h"
 #import "SpecialConstant.h"
+#import "RealNumber.h"
+#import "Decimal.h"
 #import "Integer.h"
+#include "math.h"
 
 @implementation PolynomialExpression {
     NSInteger _validCount;
@@ -143,7 +146,19 @@
         return [self.coefficients objectAtIndex:0];
     if([self.coefficients count] == 0)
         return [Integer ZERO];
-    return self;
+    // Calculate the value if the variable is assigned a value
+    Expression* var = [[self variable] evaluate];
+    if([var isKindOfClass:[RealNumber class]]) {
+        RealNumber* value = (RealNumber*)var;
+        Data* sum = [Integer ZERO];
+        for(NSInteger i = 0 ; i < [[self coefficients] count];i++) {
+            Decimal* exp = [[Decimal alloc] init: [[NSDecimalNumber alloc] initWithDouble: pow([[value toDecimal].value doubleValue],i)]];
+            sum = [sum add:[exp mul:(Data*)[[self coefficients] objectAtIndex:i]]];
+        }
+        return sum;
+    } else {
+        return self;
+    }
 }
 
 -(NSString*) description {

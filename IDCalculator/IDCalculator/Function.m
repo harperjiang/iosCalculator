@@ -8,6 +8,7 @@
 
 #import "Function.h"
 #import "Variable.h"
+#import "VariableContext.h"
 
 @implementation Function
 
@@ -25,6 +26,14 @@
 
 -(Function*) evaluate {
     return [[Function alloc] init:[[self expression] evaluate]];
+}
+
+-(Decimal*) calculate:(NSDictionary*) vars {
+    [[VariableContext instance] push];
+    [[VariableContext instance] assignAll:vars];
+    Decimal* result = (Decimal*)[[self expression] evaluate];
+    [[VariableContext instance] pop];
+    return result;
 }
 
 -(NSString*) description {

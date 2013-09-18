@@ -79,6 +79,19 @@ static ScaleBehavior* CALCULATE;
     return self;
 }
 
+-(Decimal*) initWithNumber:(Number *)value {
+    self = [super init];
+    if(self) {
+        self.value = [[NSDecimalNumber alloc] initWithString:[value description]];
+        self.scale = CALCULATE;
+    }
+    return self;
+}
+
+-(Decimal*) toDecimal {
+    return self;
+}
+
 -(Number*) add:(Number*)input {
     if([input class]== [self class]) {
         Decimal* dinput = (Decimal*)input;
@@ -109,6 +122,14 @@ static ScaleBehavior* CALCULATE;
         return [[Decimal alloc] init:[self.value decimalNumberByDividingBy:dinput.value withBehavior:self.scale]];
     }
     return [NumberOperators div:self right:input];
+}
+
++(Decimal*) constructDouble: (double) d {
+    return [[Decimal alloc] init:[[NSDecimalNumber alloc] initWithDouble:d]];
+}
+
++(Decimal*) constructFloat: (float) f {
+    return [[Decimal alloc] init:[[NSDecimalNumber alloc] initWithFloat:f]];
 }
 
 -(NSString*) description {

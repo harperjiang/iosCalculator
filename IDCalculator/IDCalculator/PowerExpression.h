@@ -8,6 +8,8 @@
 
 #import "Number.h"
 #import "Expression.h"
+#import "Decimal.h"
+#import "RealNumber.h"
 
 @interface PowerExpression : Expression
 
@@ -16,4 +18,5 @@
 
 -(PowerExpression*) init:(Expression*)base power:(Number*)power;
 +(NSString*) stringForPower:(Number*) val;
++(Decimal*) power:(RealNumber*) base power:(RealNumber*)power;
 @end
