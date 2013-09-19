@@ -364,8 +364,8 @@ static void yy_fatal_error (yyconst char msg[]  );
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
 
-#define YY_NUM_RULES 19
-#define YY_END_OF_BUFFER 20
+#define YY_NUM_RULES 23
+#define YY_END_OF_BUFFER 24
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -373,12 +373,13 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static yyconst flex_int16_t yy_accept[32] =
+static yyconst flex_int16_t yy_accept[46] =
     {   0,
-        0,    0,   20,   18,   17,   17,    5,    8,    9,   12,
-       10,   14,   11,   13,    2,    4,    3,    6,    7,   16,
-       16,   17,    0,    2,   16,   16,    1,   16,   16,   15,
-        0
+        0,    0,   24,   22,   21,   21,    5,    8,    9,   12,
+       10,   14,   11,   13,    2,    4,    3,    6,    7,   20,
+       20,   20,   20,   20,   21,    0,    2,   20,   20,   16,
+       20,   20,   20,    1,   19,   20,   20,   20,   20,   15,
+       20,   18,   20,   17,    0
     } ;
 
 static yyconst flex_int32_t yy_ec[256] =
@@ -394,8 +395,8 @@ static yyconst flex_int32_t yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
        16,    1,   17,    1,    1,    1,   18,   19,   20,   19,
 
-       21,   19,   19,   19,   19,   19,   19,   22,   19,   19,
-       19,   19,   19,   23,   19,   19,   19,   19,   19,   19,
+       21,   19,   19,   19,   19,   19,   19,   22,   23,   19,
+       24,   25,   19,   26,   27,   28,   19,   29,   19,   19,
        19,   19,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -413,49 +414,55 @@ static yyconst flex_int32_t yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static yyconst flex_int32_t yy_meta[24] =
+static yyconst flex_int32_t yy_meta[30] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    2,    1,    1,    1,    1,    2,    2,    2,
-        2,    2,    2
+        2,    2,    2,    2,    2,    2,    2,    2,    2
     } ;
 
-static yyconst flex_int16_t yy_base[33] =
+static yyconst flex_int16_t yy_base[47] =
     {   0,
-        0,    0,   41,   42,   22,   24,   42,   42,   42,   42,
-       42,   42,   42,   42,   17,   42,   42,   42,   42,    0,
-       18,   29,   26,   22,    0,   17,   24,   18,   11,    0,
-       42,   27
+        0,    0,   58,   59,   28,   30,   59,   59,   59,   59,
+       59,   59,   59,   59,   23,   59,   59,   59,   59,   13,
+        0,   35,   34,   34,   35,   41,   28,    0,   31,    0,
+       31,   27,   27,   36,    0,   30,   19,   22,   19,    0,
+       15,    0,   22,    0,   59,   40
     } ;
 
-static yyconst flex_int16_t yy_def[33] =
+static yyconst flex_int16_t yy_def[47] =
     {   0,
-       31,    1,   31,   31,   31,   31,   31,   31,   31,   31,
-       31,   31,   31,   31,   31,   31,   31,   31,   31,   32,
-       32,   31,   31,   31,   32,   32,   31,   32,   32,   32,
-        0,   31
+       45,    1,   45,   45,   45,   45,   45,   45,   45,   45,
+       45,   45,   45,   45,   45,   45,   45,   45,   45,   46,
+       46,   46,   46,   46,   45,   45,   45,   46,   46,   46,
+       46,   46,   46,   45,   46,   46,   46,   46,   46,   46,
+       46,   46,   46,   46,    0,   45
     } ;
 
-static yyconst flex_int16_t yy_nxt[66] =
+static yyconst flex_int16_t yy_nxt[89] =
     {   0,
         4,    5,    6,    7,    8,    9,   10,   11,   12,   13,
-        4,   14,   15,   16,   17,   18,   19,   20,   20,   21,
-       20,   20,   20,   22,   22,   22,   22,   23,   25,   24,
-       22,   22,   23,   30,   24,   29,   27,   28,   27,   26,
-       31,    3,   31,   31,   31,   31,   31,   31,   31,   31,
-       31,   31,   31,   31,   31,   31,   31,   31,   31,   31,
-       31,   31,   31,   31,   31
+        4,   14,   15,   16,   17,   18,   19,   20,   21,   22,
+       21,   21,   21,   21,   23,   24,   21,   21,   21,   25,
+       25,   25,   25,   26,   29,   27,   25,   25,   26,   30,
+       27,   28,   44,   43,   42,   41,   40,   39,   34,   38,
+       37,   36,   35,   34,   33,   32,   31,   45,    3,   45,
+       45,   45,   45,   45,   45,   45,   45,   45,   45,   45,
+       45,   45,   45,   45,   45,   45,   45,   45,   45,   45,
+       45,   45,   45,   45,   45,   45,   45,   45
     } ;
 
-static yyconst flex_int16_t yy_chk[66] =
+static yyconst flex_int16_t yy_chk[89] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    5,    5,    6,    6,   15,   32,   15,
-       22,   22,   24,   29,   24,   28,   27,   26,   23,   21,
-        3,   31,   31,   31,   31,   31,   31,   31,   31,   31,
-       31,   31,   31,   31,   31,   31,   31,   31,   31,   31,
-       31,   31,   31,   31,   31
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    5,
+        5,    6,    6,   15,   20,   15,   25,   25,   27,   20,
+       27,   46,   43,   41,   39,   38,   37,   36,   34,   33,
+       32,   31,   29,   26,   24,   23,   22,    3,   45,   45,
+       45,   45,   45,   45,   45,   45,   45,   45,   45,   45,
+       45,   45,   45,   45,   45,   45,   45,   45,   45,   45,
+       45,   45,   45,   45,   45,   45,   45,   45
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -480,7 +487,7 @@ char *yytext;
 
 extern void yyerror(char* input);
 
-#line 484 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/ConsoleLexer.cpp"
+#line 491 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/ConsoleLexer.cpp"
 
 #define INITIAL 0
 
@@ -665,7 +672,7 @@ YY_DECL
 #line 12 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
 
 
-#line 669 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/ConsoleLexer.cpp"
+#line 676 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/ConsoleLexer.cpp"
 
 	if ( !(yy_init) )
 		{
@@ -718,13 +725,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 32 )
+				if ( yy_current_state >= 46 )
 					yy_c = yy_meta[(unsigned int) yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 42 );
+		while ( yy_base[yy_current_state] != 59 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -821,30 +828,50 @@ YY_RULE_SETUP
 case 15:
 YY_RULE_SETUP
 #line 28 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
-{return CLEAR;}
+{return PLOT;}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
 #line 29 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
-{yylval.stringTerm = yytext; return ID;}
+{return AS;}
 	YY_BREAK
 case 17:
-/* rule 17 can match eol */
 YY_RULE_SETUP
 #line 30 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
-{/*Ignore Space*/}
+{return REMOVE;}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
 #line 31 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
-{yyerror(yytext);return ABORT;}
+{return CLEAR;}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
 #line 32 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
+{return ALL;}
+	YY_BREAK
+case 20:
+YY_RULE_SETUP
+#line 33 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
+{yylval.stringTerm = yytext; return ID;}
+	YY_BREAK
+case 21:
+/* rule 21 can match eol */
+YY_RULE_SETUP
+#line 34 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
+{/*Ignore Space*/}
+	YY_BREAK
+case 22:
+YY_RULE_SETUP
+#line 35 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
+{yyerror(yytext);return ABORT;}
+	YY_BREAK
+case 23:
+YY_RULE_SETUP
+#line 36 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
 ECHO;
 	YY_BREAK
-#line 848 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/ConsoleLexer.cpp"
+#line 875 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/ConsoleLexer.cpp"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1136,7 +1163,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 32 )
+			if ( yy_current_state >= 46 )
 				yy_c = yy_meta[(unsigned int) yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
@@ -1164,11 +1191,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 32 )
+		if ( yy_current_state >= 46 )
 			yy_c = yy_meta[(unsigned int) yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
-	yy_is_jam = (yy_current_state == 31);
+	yy_is_jam = (yy_current_state == 45);
 
 	return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1841,6 +1868,6 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 32 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
+#line 36 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
 
 
