@@ -36,7 +36,7 @@ static Variable* x;
 
 
 -(Expression*) evaluate {
-    Data* value =[[VariableContext instance] lookup:[self name]];
+    Expression* value =[[VariableContext instance] lookup:[self name]];
     if(value == nil) {
         return self;
     }else {
@@ -46,7 +46,7 @@ static Variable* x;
 
 
 -(Expression*) differentiate:(Variable *)variable {
-    if([self.name compare:variable.name] == NSOrderedSame)
+    if([self.name isEqualToString:variable.name])
         return [Integer ONE];
     else
         return [Integer ZERO];
@@ -66,7 +66,7 @@ static Variable* x;
 -(Boolean) equals:(Expression *)another {
     if([another isKindOfClass:[Variable class]]) {
         Variable* av = (Variable*)another;
-        return [av.name compare: self.name] == NSOrderedSame;
+        return [av.name isEqualToString: self.name];
     }
     return false;
 }

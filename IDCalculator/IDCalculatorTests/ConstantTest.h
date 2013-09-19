@@ -10,4 +10,6 @@
 
 @interface ConstantTest : SenTestCase
 
+-(void) testOperationWithConstant;
+
 @end

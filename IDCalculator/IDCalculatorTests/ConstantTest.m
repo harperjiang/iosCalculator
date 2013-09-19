@@ -7,7 +7,18 @@
 //
 
 #import "ConstantTest.h"
+#import "Expression.h"
+#import "SpecialConstant.h"
+#import "ArithConstant.h"
+#import "Integer.h"
 
 @implementation ConstantTest
+
+
+-(void) testOperationWithConstant {
+    Expression* exp = [[Integer ZERO] sub:[SpecialConstant PI]];
+    STAssertEqualObjects([exp class],[ArithConstant class], @"");
+    STAssertEqualObjects([exp description],@"0-π",@"");
+}
 
 @end

@@ -15,4 +15,6 @@
 
 @property(nonatomic,strong) Function* function;
 
+-(FunctionGraph*) init:(Function*) func;
+
 @end

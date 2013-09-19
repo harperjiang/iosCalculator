@@ -57,4 +57,9 @@
     }
 }
 
+-(IBAction) tapReceived:(UITapGestureRecognizer*)gesture {
+    [[self viewPort] setCenter:CGPointMake(0,0)];
+    [self setNeedsDisplay];
+}
+
 @end

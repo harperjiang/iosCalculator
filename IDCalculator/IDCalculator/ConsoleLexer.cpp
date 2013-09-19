@@ -1,6 +1,6 @@
-#line 2 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/ConsoleLexer.cpp"
+#line 2 "ConsoleLexer.cpp"
 
-#line 4 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/ConsoleLexer.cpp"
+#line 4 "ConsoleLexer.cpp"
 
 #define  YY_INT_ALIGNED short int
 
@@ -479,15 +479,15 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
-#line 2 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
+#line 1 "console.lpp"
+#line 2 "console.lpp"
 #include <stdio.h>
 #include "CModel.h"
 #include "ConsoleParser.h"
 
 extern void yyerror(char* input);
 
-#line 491 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/ConsoleLexer.cpp"
+#line 491 "ConsoleLexer.cpp"
 
 #define INITIAL 0
 
@@ -669,10 +669,10 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
     
-#line 12 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
+#line 12 "console.lpp"
 
 
-#line 676 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/ConsoleLexer.cpp"
+#line 676 "ConsoleLexer.cpp"
 
 	if ( !(yy_init) )
 		{
@@ -757,121 +757,121 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 14 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
+#line 14 "console.lpp"
 {yylval.stringTerm = yytext; return DECIMAL;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 15 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
+#line 15 "console.lpp"
 {yylval.stringTerm = yytext; return NUM;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 16 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
+#line 16 "console.lpp"
 {return EQUAL;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 17 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
+#line 17 "console.lpp"
 {return SEMICOLON;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 18 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
+#line 18 "console.lpp"
 {return SIQ;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 19 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
+#line 19 "console.lpp"
 {return LBR;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 20 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
+#line 20 "console.lpp"
 {return RBR;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 21 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
+#line 21 "console.lpp"
 {return LP;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 22 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
+#line 22 "console.lpp"
 {return RP;}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 23 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
+#line 23 "console.lpp"
 {return OADD;}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 24 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
+#line 24 "console.lpp"
 {return OSUB;}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 25 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
+#line 25 "console.lpp"
 {return OMUL;}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 26 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
+#line 26 "console.lpp"
 {return ODIV;}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 27 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
+#line 27 "console.lpp"
 {return COMMA;}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 28 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
+#line 28 "console.lpp"
 {return PLOT;}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 29 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
+#line 29 "console.lpp"
 {return AS;}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 30 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
+#line 30 "console.lpp"
 {return REMOVE;}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 31 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
+#line 31 "console.lpp"
 {return CLEAR;}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 32 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
+#line 32 "console.lpp"
 {return ALL;}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 33 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
+#line 33 "console.lpp"
 {yylval.stringTerm = yytext; return ID;}
 	YY_BREAK
 case 21:
 /* rule 21 can match eol */
 YY_RULE_SETUP
-#line 34 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
+#line 34 "console.lpp"
 {/*Ignore Space*/}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 35 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
+#line 35 "console.lpp"
 {yyerror(yytext);return ABORT;}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 36 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
+#line 36 "console.lpp"
 ECHO;
 	YY_BREAK
-#line 875 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/ConsoleLexer.cpp"
+#line 875 "ConsoleLexer.cpp"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1868,6 +1868,6 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 36 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.lpp"
+#line 36 "console.lpp"
 
 

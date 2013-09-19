@@ -8,6 +8,9 @@
 
 #import "VariableContext.h"
 
+NSString* const KEY_CALCULATE = @"calculate";
+NSString* const KEY_TRANSLATE_CONST = @"translate_const";
+
 @implementation VariableContext
 
 static VariableContext* instance;
@@ -40,7 +43,7 @@ static VariableContext* instance;
     return (NSMutableDictionary*)[(NSDictionary*)[[self content] peek] objectForKey: @"configures"];
 }
 
--(void) assign:(NSString*) name value:(Data*) data {
+-(void) assign:(NSString*) name value:(Expression*) data {
     [[self variables] setObject:data forKey:name];
 }
 
@@ -48,12 +51,12 @@ static VariableContext* instance;
     NSEnumerator* enume = [dict keyEnumerator];
     id object;
     while((object = [enume nextObject]) != nil) {
-        [self assign:(NSString*)object value:(Data*)[dict objectForKey:(NSString*)object]];
+        [self assign:(NSString*)object value:(Expression*)[dict objectForKey:(NSString*)object]];
     }
 }
 
--(Data*) lookup:(NSString*) name {
-    return [[self variables] objectForKey:name];
+-(Expression*) lookup:(NSString*) name {
+    return (Expression*)[[self variables] objectForKey:name];
 }
 
 -(void) remove:(NSString *)name {

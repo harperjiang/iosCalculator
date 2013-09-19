@@ -10,6 +10,8 @@
 #import "Integer.h"
 #import "Fraction.h"
 #import "Decimal.h"
+#import "Constant.h"
+#import "ArithConstant.h"
 
 extern short DEFAULT_ROUND;
 
@@ -62,7 +64,9 @@ extern short DEFAULT_ROUND;
         return 2;
     if([input isKindOfClass:[Decimal class]])
         return 3;
-    return 0;
+    if([input isKindOfClass:[Constant class]])
+        return 4;
+    return 10;
 }
 
 +(Number*) convert:(Number*) input type:(NSInteger) type{
@@ -74,11 +78,20 @@ extern short DEFAULT_ROUND;
         NSDecimalNumber* dn = (NSDecimalNumber*)[NSDecimalNumber numberWithInteger:[(Integer*)input value]];
         return [[Decimal alloc] init:dn];
     }
+    if(current == 1 && type == 4) {
+        return [[ArithConstant alloc] init:(Integer*)input opr:NULL right:nil];
+    }
     if(current == 2 && type == 3) {
         Fraction* finput = (Fraction*)input;
         NSDecimalNumber* num = (NSDecimalNumber*)[NSDecimalNumber numberWithInteger:((Integer*)finput.numerator).value];
         NSDecimalNumber* denom = (NSDecimalNumber*)[NSDecimalNumber numberWithInteger:((Integer*)finput.denominator).value];
         return [[Decimal alloc] init:[num decimalNumberByDividingBy:denom withBehavior:[ScaleBehavior get:4]]];
+    }
+    if(current == 2 && type == 4) {
+        return [[ArithConstant alloc] init:(Fraction*)input opr:NULL right:nil];
+    }
+    if(current == 3 && type == 4) {
+        return [[ArithConstant alloc] init:(Decimal*)input opr:NULL right:nil];
     }
     return nil;
 }

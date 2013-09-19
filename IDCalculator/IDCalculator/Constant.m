@@ -32,19 +32,18 @@
     return pf;
 }
 
--(Constant*)add:(Constant *)input {
+-(Constant*)add:(RealNumber *)input {
     return [[ArithConstant alloc] init:self opr:ADD right:input];
 }
 
--(Constant*)sub:(Constant *)input {
+-(Constant*)sub:(RealNumber *)input {
     return [[ArithConstant alloc] init:self opr:SUB right:input];
 }
--(Constant*)mul:(Constant *)input {
+-(Constant*)mul:(RealNumber *)input {
     return [[ArithConstant alloc] init:self opr:MUL right:input];
 }
--(Constant*)div:(Constant *)input {
+-(Constant*)div:(RealNumber *)input {
     return [[ArithConstant alloc] init:self opr:DIV right:input];
 }
-
 
 @end

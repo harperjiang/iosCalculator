@@ -12,13 +12,11 @@
 #import "AssignCommand.h"
 #import "ArithmeticExpression.h"
 #import "AssignCommandTest.h"
+#import "VariableContext.h"
 
 @implementation AssignCommandTest
 
 -(void) testAssign {
-    IDCConsole* console = [IDCConsole instance];
-    
-    
     NSMutableArray* dataA = [[NSMutableArray alloc] initWithCapacity:10];
     for(int i = 0 ; i < 10 ; i++)
         [dataA insertObject:[Integer construct:i] atIndex:i];
@@ -37,7 +35,7 @@
     AssignCommand* assign = [[AssignCommand alloc] init:@"p" value:exp];
     
     [assign execute];
-    Matrix* result = (Matrix*)[console get:@"p"];
+    Matrix* result = (Matrix*)[[VariableContext instance] lookup:@"p"];
     
     STAssertEqualObjects([[result val:0 n:0] description], @"10", @"");
     STAssertEqualObjects([[result val:0 n:1] description], @"11", @"");

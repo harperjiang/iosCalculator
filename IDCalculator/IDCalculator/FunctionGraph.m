@@ -12,10 +12,10 @@
 
 @implementation FunctionGraph
 
--(FunctionGraph*) init {
+-(FunctionGraph*) init:(Function*) func {
     self = [super init];
     if(self) {
-        
+        self.function = func;
     }
     return self;
 }
@@ -44,7 +44,7 @@
             break;
         }
         [array addObject:[NSValue valueWithCGPoint:CGPointMake(x, y)]];
-        x += unit;
+        x += 5*unit;
     }
     if([array count] == 0)
         return;

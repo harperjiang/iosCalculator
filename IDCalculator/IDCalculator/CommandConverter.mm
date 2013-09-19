@@ -16,11 +16,13 @@
 #import "ClearCommand.h"
 #import "AssignCommand.h"
 #import "ExpressionCommand.h"
+#import "PlotFuncCommand.h"
 
 #import "ConsoleLexer.h"
 #import "ConsoleParser.h"
 
 #import "Matrix.h"
+#import "Function.h"
 #import "Integer.h"
 #import "Fraction.h"
 #import "Decimal.h"
@@ -60,6 +62,18 @@ extern CCommand* parse_result;
                     command = ass;
                 }
                 break;
+            }
+            case PLOTFUNC_COMMAND: {
+                CPlotFuncCommand* cpfc = (CPlotFuncCommand*)self->parse;
+                PlotFuncCommand* pfc = [[PlotFuncCommand alloc] init:[[Function alloc] init: translate(cpfc->exp)] name:[translate(cpfc->name) description]];
+                command = pfc;
+            }
+            case PLOTREM_COMMAND:{
+                CPlotRemoveCommand* cprc = (CPlotRemoveCommand*)self->parse;
+                Expression* identifier = translate(cprc->name);
+                NSString* name = identifier == nil? nil:[identifier description];
+                PlotRemoveCommand* prc = [[PlotRemoveCommand alloc] init:name];
+                command = prc;
             }
             case CMD_EXP: {
                 CExpCommand* cec = (CExpCommand*)self->parse;

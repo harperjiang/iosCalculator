@@ -16,4 +16,6 @@
 
 @property(nonatomic,strong) ViewPort* viewPort;
 
++(Environment*) main;
+
 @end

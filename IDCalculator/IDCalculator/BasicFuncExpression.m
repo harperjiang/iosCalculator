@@ -29,9 +29,9 @@
 }
 
 -(Expression*) evaluate {
-    if([[VariableContext instance] isTrue:@"calculate"]) {
+    if([[VariableContext instance] isTrue:KEY_CALCULATE]) {
         Expression* value = [self.base evaluate];
-        if([value isKindOfClass:[Decimal class]])
+        if(![value isKindOfClass:[Decimal class]])
             return nil;
         Decimal* dec = (Decimal*)value;
         switch(self.type) {

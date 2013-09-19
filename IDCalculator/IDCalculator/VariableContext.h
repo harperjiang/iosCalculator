@@ -10,13 +10,17 @@
 #import "Data.h"
 #import "Stack.h"
 
+
+FOUNDATION_EXPORT NSString* const KEY_CALCULATE;
+FOUNDATION_EXPORT NSString* const KEY_TRANSLATE_CONST;
+
 @interface VariableContext : NSObject
 
 @property(nonatomic,strong,readonly) Stack* content;
 
--(void) assign:(NSString*) name value:(Data*) data;
+-(void) assign:(NSString*) name value:(Expression*) data;
 -(void) assignAll:(NSDictionary*) dict;
--(Data*) lookup:(NSString*) name;
+-(Expression*) lookup:(NSString*) name;
 -(void) remove:(NSString*) name;
 
 -(void) set:(NSString*) key value:(id)value;

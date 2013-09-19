@@ -7,7 +7,19 @@
 //
 
 #import "Command.h"
+#import "Function.h"
 
-@interface PlotCommand : Command
+@interface PlotFuncCommand : Command
 
+@property Function* function;
+@property NSString* identifier;
+
+-(PlotFuncCommand*) init:(Function*) function name:(NSString*)identifier;
+
+@end
+
+@interface PlotRemoveCommand : Command
+@property NSString* identifier;
+
+-(PlotRemoveCommand*) init:(NSString*) identifier;
 @end

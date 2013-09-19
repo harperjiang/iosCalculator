@@ -7,6 +7,7 @@
 //
 
 #import "VariableCommand.h"
+#import "VariableContext.h"
 
 @implementation VariableCommand
 
@@ -19,7 +20,7 @@
 }
 
 -(void) execute {
-    id object = [[IDCConsole instance] get:[self name]];
+    id object = [[VariableContext instance] lookup:[self name]];
     if(object == nil) {
         [[IDCConsole instance] error:[NSString stringWithFormat:@"Cannot find variable: %@",[self name]]];
     } else {

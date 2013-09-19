@@ -14,5 +14,6 @@
 
 -(void) addElement:(Element*) obj;
 -(void) removeElement:(Element*) obj;
+-(NSArray*) elements;
 
 @end

@@ -31,6 +31,7 @@
 -(Decimal*) calculate:(NSDictionary*) vars {
     [[VariableContext instance] push];
     [[VariableContext instance] assignAll:vars];
+    [[VariableContext instance] set:KEY_CALCULATE value:@"true"];
     Decimal* result = (Decimal*)[[self expression] evaluate];
     [[VariableContext instance] pop];
     return result;

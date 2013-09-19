@@ -16,7 +16,7 @@
         [self setProportion: 0.05];
         self->_center.x = 0;
         self->_center.y = 0;
-        [self setEnvironment:[[Environment alloc] init]];
+        [self setEnvironment:[Environment main]];
         [[self environment] setViewPort:self];
     }
     return self;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11G63" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="wZP-kb-xTu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="wZP-kb-xTu">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
         <!--View Controller - About-->
@@ -402,6 +402,7 @@
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="WcB-co-zg0" appends="YES" id="w81-hy-7nT"/>
+                            <outletCollection property="gestureRecognizers" destination="6C4-bE-TvU" appends="YES" id="hoj-k5-gZe"/>
                         </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Graph" image="chart_line_24.png" id="Fhb-r1-v9l"/>
@@ -412,6 +413,11 @@
                         <action selector="dragReceived:" destination="sDl-u3-8Cf" id="Pwy-GI-ZvG"/>
                     </connections>
                 </panGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="6C4-bE-TvU">
+                    <connections>
+                        <action selector="tapReceived:" destination="sDl-u3-8Cf" id="1wB-IW-ghM"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="505" y="599"/>
         </scene>
@@ -445,6 +451,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/Canvas2DView.h"/>
             <relationships>
                 <relationship kind="action" name="dragReceived:"/>
+                <relationship kind="action" name="tapReceived:"/>
             </relationships>
         </class>
         <class className="PadConsoleViewController" superclassName="UIViewController">

@@ -11,13 +11,11 @@
 @interface IDCConsole : NSObject
 
 @property(nonatomic,strong,readonly) NSMutableString* buffer;
-@property(nonatomic,strong,readonly) NSMutableDictionary* variables;
+@property(nonatomic,strong) NSMutableDictionary* plots;
 
 -(void) operate:(NSString*) command;
 -(void) output:(NSString*) string;
 -(void) error:(NSString*) string;
-
--(id) get:(NSString*) var;
 
 +(IDCConsole*) instance;
 

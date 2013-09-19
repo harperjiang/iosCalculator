@@ -27,7 +27,7 @@ CCommand* parse_result;
     CFuncExpression* func;
 }
 %token COMMA SEMICOLON LBR RBR SIQ LP RP
-%token CLEAR
+%token CLEAR AS PLOT REMOVE ALL
 %token EQUAL 
 %token OADD OSUB OMUL ODIV
 %token ID NUM DECIMAL
@@ -62,7 +62,10 @@ CCommand* parse_result;
 %%
 command :	CLEAR                           {parse_result = new CClearCommand();YYACCEPT;}
         |	id EQUAL exp                    {parse_result = new CAssignCommand($1,$3);}
-        |	exp                             {parse_result = new CExpCommand($1);};
+        |	exp                             {parse_result = new CExpCommand($1);}
+        |   PLOT exp AS id                  {parse_result = new CPlotFuncCommand($2, $4);}
+        |   PLOT REMOVE id                  {parse_result = new CPlotRemoveCommand($3);}
+        |   PLOT REMOVE ALL                 {parse_result = new CPlotRemoveCommand();};
 
 func    :   exp SIQ                         {CExpList* expList = new CExpList(); expList->add($1);$$ = new CFuncExpression(new
                                                 CIdentifier("transpose"),expList);}

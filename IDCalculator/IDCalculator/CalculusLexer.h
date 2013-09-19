@@ -2,9 +2,9 @@
 #define calHEADER_H 1
 #define calIN_HEADER 1
 
-#line 6 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/CalculusLexer.h"
+#line 6 "CalculusLexer.h"
 
-#line 8 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/CalculusLexer.h"
+#line 8 "CalculusLexer.h"
 
 #define  YY_INT_ALIGNED short int
 
@@ -314,9 +314,9 @@ extern int callex (void);
 #undef YY_DECL
 #endif
 
-#line 32 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
+#line 32 "calculus.lpp"
 
 
-#line 321 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/CalculusLexer.h"
+#line 321 "CalculusLexer.h"
 #undef calIN_HEADER
 #endif /* calHEADER_H */

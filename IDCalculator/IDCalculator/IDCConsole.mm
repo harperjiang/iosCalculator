@@ -26,8 +26,8 @@ static IDCConsole* instance;
     self = [super init];
     if(self) {
         self->_buffer = [[NSMutableString alloc] initWithCapacity:100];
-        self->_variables = [[NSMutableDictionary alloc] initWithCapacity:100];
         [self->_buffer appendString:@">> "];
+        [self setPlots:[[NSMutableDictionary alloc] init]];
     }
     return self;
 }
@@ -56,8 +56,5 @@ static IDCConsole* instance;
 
 }
 
--(id) get:(NSString*) var{
-    return [[self variables] objectForKey:var];
-}
 
 @end

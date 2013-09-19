@@ -12,8 +12,9 @@
 @interface ArithConstant : Constant
 
 @property(nonatomic) Operator opr;
-@property(nonatomic,strong) Constant* left;
-@property(nonatomic,strong) Constant* right;
+@property(nonatomic,strong) RealNumber* left;
+@property(nonatomic,strong) RealNumber* right;
 
--(ArithConstant*) init:(Constant*) left opr:(Operator) opr right:(Constant*) right;
+-(ArithConstant*) init:(RealNumber*) left opr:(Operator) opr right:(RealNumber*) right;
+
 @end

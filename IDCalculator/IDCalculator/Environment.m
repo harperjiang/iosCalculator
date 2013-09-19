@@ -11,25 +11,35 @@
 #import "FunctionGraph.h"
 #import "Coordinate.h"
 #import "PolynomialExpression.h"
+#import "BasicFuncExpression.h"
 #import "Element.h"
 #import "Integer.h"
 #import "ViewPort.h"
 
 @implementation Environment
 
+static Environment* mainInstance;
+
 -(Environment*)init {
     self = [super init];
     if(self) {
-        // FIXME For test only, add test item to environment
         [self addElement:[[Coordinate alloc] init]];
+        
+        // FIXME For test only, add test item to environment
         FunctionGraph* fg = [[FunctionGraph alloc] init];
         [fg setFunction:[[Function alloc] init]];
-        PolynomialExpression* pe = [[PolynomialExpression alloc] init];
-        [pe addItem:[Decimal constructDouble:0.017] power:3];
-        [[fg function] setExpression:pe];
+        BasicFuncExpression* sin = [[BasicFuncExpression alloc] init:BT_COS base:[Variable x]];
+        [[fg function] setExpression:sin];
         [self addElement:fg];
     }
     return self;
+}
+
++(Environment*) main {
+    if(nil == mainInstance) {
+        mainInstance = [[Environment alloc] init];
+    }
+    return mainInstance;
 }
 
 @end

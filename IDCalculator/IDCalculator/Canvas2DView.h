@@ -16,6 +16,6 @@
 @property(nonatomic,strong) ViewPort* viewPort;
 
 -(IBAction) dragReceived:(id) gesture;
-
+-(IBAction) tapReceived:(id) gesture;
 
 @end

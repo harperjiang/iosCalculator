@@ -16,6 +16,8 @@ typedef enum _CModelType {
     ASSIGN_COMMAND = 100,
     CLEAR_COMMAND,
     VAR_COMMAND,
+    PLOTFUNC_COMMAND,
+    PLOTREM_COMMAND,
     CMD_EXP,
     
     EXP_LIST = 200,
@@ -238,5 +240,32 @@ public:
     }
 };
 
+class CPlotFuncCommand : public CCommand {
+public:
+    CExpression* exp;
+    CIdentifier* name;
+    
+    CPlotFuncCommand(CExpression* exp, CIdentifier* id) {
+        this->exp = exp;
+        this->name = id;
+    }
+    
+    int type();
+};
+
+class CPlotRemoveCommand : public CCommand {
+public:
+    CIdentifier* name;
+    
+    CPlotRemoveCommand(CIdentifier* id) {
+        this->name = id;
+    }
+    
+    CPlotRemoveCommand() {
+        this->name = NULL;
+    }
+    
+    int type();
+};
 
 #endif /* defined(__IDCalculator__CModel__) */

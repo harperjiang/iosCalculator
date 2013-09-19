@@ -1,6 +1,6 @@
-#line 2 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/CalculusLexer.cpp"
+#line 2 "CalculusLexer.cpp"
 
-#line 4 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/CalculusLexer.cpp"
+#line 4 "CalculusLexer.cpp"
 
 #define  YY_INT_ALIGNED short int
 
@@ -491,15 +491,15 @@ int cal_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *caltext;
-#line 1 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
-#line 2 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
+#line 1 "calculus.lpp"
+#line 2 "calculus.lpp"
 #include <stdio.h>
 #include "CalModel.h"
 #include "CalculusParser.h"
 
 extern void calerror(char* input);
 
-#line 503 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/CalculusLexer.cpp"
+#line 503 "CalculusLexer.cpp"
 
 #define INITIAL 0
 
@@ -681,9 +681,9 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
     
-#line 13 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
+#line 13 "calculus.lpp"
 
-#line 687 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/CalculusLexer.cpp"
+#line 687 "CalculusLexer.cpp"
 
 	if ( !(yy_init) )
 		{
@@ -768,100 +768,100 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 14 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
+#line 14 "calculus.lpp"
 {callval.stringTerm = caltext; return NUM;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 15 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
+#line 15 "calculus.lpp"
 {return LP;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 16 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
+#line 16 "calculus.lpp"
 {return RP;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 17 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
+#line 17 "calculus.lpp"
 {return OADD;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 18 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
+#line 18 "calculus.lpp"
 {return OSUB;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 19 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
+#line 19 "calculus.lpp"
 {return OMUL;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 20 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
+#line 20 "calculus.lpp"
 {return ODIV;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 21 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
+#line 21 "calculus.lpp"
 {return POWER;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 22 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
+#line 22 "calculus.lpp"
 {return FUNC_SIN;}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 23 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
+#line 23 "calculus.lpp"
 {return FUNC_COS;}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 24 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
+#line 24 "calculus.lpp"
 {return FUNC_LN;}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 25 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
+#line 25 "calculus.lpp"
 {return DX;}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 26 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
+#line 26 "calculus.lpp"
 {return DOPR;}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 27 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
+#line 27 "calculus.lpp"
 {return VAR;}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 28 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
+#line 28 "calculus.lpp"
 {return IOPR;}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 29 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
+#line 29 "calculus.lpp"
 {return CONST_E;}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 30 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
+#line 30 "calculus.lpp"
 {return CONST_PI;}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 31 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
+#line 31 "calculus.lpp"
 {calerror(caltext);}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 32 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
+#line 32 "calculus.lpp"
 ECHO;
 	YY_BREAK
-#line 865 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/CalculusLexer.cpp"
+#line 865 "CalculusLexer.cpp"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1858,6 +1858,6 @@ void calfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 32 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/calculus.lpp"
+#line 32 "calculus.lpp"
 
 

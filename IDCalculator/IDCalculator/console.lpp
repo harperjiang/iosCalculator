@@ -25,7 +25,11 @@ extern void yyerror(char* input);
 "*"                     {return OMUL;}
 "/"                     {return ODIV;}
 ","                     {return COMMA;}
+"plot"                  {return PLOT;}
+"as"                    {return AS;}
+"remove"                {return REMOVE;}
 "clear"                 {return CLEAR;}
+"all"                   {return ALL;}
 [a-z][a-z0-9]*          {yylval.stringTerm = yytext; return ID;}
 [ \t\n]+                {/*Ignore Space*/}
 .                       {yyerror(yytext);return ABORT;}

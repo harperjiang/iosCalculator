@@ -10,4 +10,5 @@
 
 @interface NumberTest : SenTestCase
 
+
 @end

@@ -70,10 +70,15 @@
 
 +(Expression*) toPolynomial:(Expression*) function under:(Variable *)var{
     if([function isKindOfClass:[Variable class]]) {
-        PolynomialExpression* poly = [[PolynomialExpression alloc] init];
-        poly.variable = (Variable*)function;
-        [poly addItem:[Integer ONE] power:1];
-        return poly;
+        Variable* v = (Variable*) function;
+        if([v.name isEqualToString:[Variable x].name]) {
+            PolynomialExpression* poly = [[PolynomialExpression alloc] init];
+            poly.variable = (Variable*)function;
+            [poly addItem:[Integer ONE] power:1];
+            return poly;
+        } else {
+            return nil;
+        }
     }
     if([function isKindOfClass:[PowerExpression class]]) {
         PowerExpression* pf = (PowerExpression*)function;

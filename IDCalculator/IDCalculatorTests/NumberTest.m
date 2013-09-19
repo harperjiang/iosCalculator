@@ -7,7 +7,12 @@
 //
 
 #import "NumberTest.h"
+#import "Integer.h"
+#import "Constant.h"
+#import "SpecialConstant.h"
+#import "ArithConstant.h"
 
 @implementation NumberTest
+
 
 @end

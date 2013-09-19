@@ -28,6 +28,10 @@
     [obj setParent:nil];
 }
 
+-(NSArray*) elements {
+    return [self objects];
+}
+
 -(void)paint:(CGContextRef)context {
     /*
      CGContextBeginPath(context);

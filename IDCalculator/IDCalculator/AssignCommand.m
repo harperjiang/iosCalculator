@@ -7,6 +7,7 @@
 //
 
 #import "AssignCommand.h"
+#import "VariableContext.h"
 #import "Data.h"
 
 @implementation AssignCommand
@@ -22,7 +23,7 @@
 
 -(void) execute {
     Expression* object = [[self exp] evaluate];
-    [[[IDCConsole instance] variables] setValue:object forKey:[self name]];
+    [[VariableContext instance] assign:[self name] value:object];
     // Set up the display
     [[IDCConsole instance] output:[NSString stringWithFormat:@"%@ =\n%@",[self name],[object description]]];
 }

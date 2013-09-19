@@ -23,3 +23,11 @@ int CVarCommand::type() {
 int CAssignCommand::type() {
     return ASSIGN_COMMAND;
 }
+
+int CPlotFuncCommand::type() {
+    return PLOTFUNC_COMMAND;
+}
+
+int CPlotRemoveCommand::type() {
+    return PLOTREM_COMMAND;
+}

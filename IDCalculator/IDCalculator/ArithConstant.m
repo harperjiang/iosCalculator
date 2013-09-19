@@ -13,7 +13,7 @@
 
 @implementation ArithConstant
 
--(ArithConstant *)init:(Constant *)left opr:(Operator)opr right:(Constant *)right {
+-(ArithConstant *)init:(RealNumber *)left opr:(Operator)opr right:(RealNumber *)right {
     self = [super init];
     if(self) {
         self.left = left;
@@ -28,10 +28,46 @@
 }
 
 -(Expression*) evaluate {
-    if([[VariableContext instance] isTrue:@"calculate"]) {
+    if([[VariableContext instance] isTrue:KEY_CALCULATE]) {
         return [self toDecimal];
     }
     return self;
+}
+
+-(Constant*)add:(RealNumber*)input {
+    if(self.opr == 0) {
+        [self setOpr:ADD];
+        [self setRight:input];
+        return self;
+    }
+    return [[ArithConstant alloc] init:self opr:ADD right:input];
+}
+
+-(Constant*)sub:(RealNumber*)input {
+    if(self.opr == 0) {
+        [self setOpr:SUB];
+        [self setRight:input];
+        return self;
+    }
+    return [[ArithConstant alloc] init:self opr:SUB right:input];
+}
+
+-(Constant*)mul:(RealNumber*)input {
+    if(self.opr == 0) {
+        [self setOpr:MUL];
+        [self setRight:input];
+        return self;
+    }
+    return [[ArithConstant alloc] init:self opr:MUL right:input];
+}
+
+-(Constant*)div:(RealNumber*)input {
+    if(self.opr == 0) {
+        [self setOpr:DIV];
+        [self setRight:input];
+        return self;
+    }
+    return [[ArithConstant alloc] init:self opr:DIV right:input];
 }
 
 -(NSString *)description {
