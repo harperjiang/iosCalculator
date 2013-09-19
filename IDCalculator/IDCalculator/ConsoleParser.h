@@ -47,20 +47,24 @@
      LP = 263,
      RP = 264,
      CLEAR = 265,
-     EQUAL = 266,
-     OADD = 267,
-     OSUB = 268,
-     OMUL = 269,
-     ODIV = 270,
-     ID = 271,
-     NUM = 272,
-     DECIMAL = 273,
-     ABORT = 274,
-     LOW = 275,
-     POWER = 276,
-     LV3 = 277,
-     LV2 = 278,
-     LV1 = 279
+     AS = 266,
+     PLOT = 267,
+     REMOVE = 268,
+     ALL = 269,
+     EQUAL = 270,
+     OADD = 271,
+     OSUB = 272,
+     OMUL = 273,
+     ODIV = 274,
+     ID = 275,
+     NUM = 276,
+     DECIMAL = 277,
+     ABORT = 278,
+     LOW = 279,
+     POWER = 280,
+     LV3 = 281,
+     LV2 = 282,
+     LV1 = 283
    };
 #endif
 /* Tokens.  */
@@ -72,27 +76,31 @@
 #define LP 263
 #define RP 264
 #define CLEAR 265
-#define EQUAL 266
-#define OADD 267
-#define OSUB 268
-#define OMUL 269
-#define ODIV 270
-#define ID 271
-#define NUM 272
-#define DECIMAL 273
-#define ABORT 274
-#define LOW 275
-#define POWER 276
-#define LV3 277
-#define LV2 278
-#define LV1 279
+#define AS 266
+#define PLOT 267
+#define REMOVE 268
+#define ALL 269
+#define EQUAL 270
+#define OADD 271
+#define OSUB 272
+#define OMUL 273
+#define ODIV 274
+#define ID 275
+#define NUM 276
+#define DECIMAL 277
+#define ABORT 278
+#define LOW 279
+#define POWER 280
+#define LV3 281
+#define LV2 282
+#define LV1 283
 
 
 
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef union YYSTYPE
-#line 15 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/console.ypp"
+#line 15 "console.ypp"
 {
     char* stringTerm;
     CExpression* data;
@@ -108,7 +116,7 @@ typedef union YYSTYPE
     CFuncExpression* func;
 }
 /* Line 1529 of yacc.c.  */
-#line 112 "/Users/harper/Projects/iosCalculator/IDCalculator/IDCalculator/ConsoleParser.h"
+#line 120 "ConsoleParser.h"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
