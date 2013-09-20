@@ -11,6 +11,7 @@
 #import "PolynomialExpression.h"
 #import "ExpPowerExpression.h"
 #import "BasicFuncExpression.h"
+#import "VariableContext.h"
 #import "Integer.h"
 #import "Matrix.h"
 
@@ -34,49 +35,98 @@
     return false;
 }
 
--(Expression*) evaluate {
-    Expression* result = [self arithevaluate];
-    Expression* polyeval = [PolynomialExpression toPolynomial:result];
-    if(polyeval != nil) {
-        if([polyeval isKindOfClass:[PolynomialExpression class]]){
-            return [polyeval evaluate];
-        }
-        else {
-            return polyeval;
+-(Expression*) simplify {
+    // NOP means already processed
+    if(self.opr == NOP)
+        return self.left;
+    
+    // Merge Polynomialable
+    PolynomialExpression* polyleft = [PolynomialExpression toPolynomial:self.left under:[Variable x]];
+    PolynomialExpression* polyright = [PolynomialExpression toPolynomial:self.right under:[Variable x]];
+    if(polyleft != nil && polyright != nil && [polyleft isKindOfClass:[PolynomialExpression class]] && [polyright isKindOfClass:[PolynomialExpression class]]) {
+        switch (self.opr) {
+            case ADD:
+                self.left = [[polyleft add:polyright] evaluate];
+                self.right = nil;
+                self.opr = NOP;
+                return self.left;
+            case SUB:
+                self.left = [[polyleft sub:polyright] evaluate];
+                self.right = nil;
+                self.opr = NOP;
+                return self.left;
+            case MUL:
+                self.left = [[polyleft mul:polyright] evaluate];
+                self.right = nil;
+                self.opr = NOP;
+                return self.left;
+            case DIV: {// DIV cannot be solved easily, only process when mod is 0
+                PolynomialExpression* mod = [polyleft mod: polyright];
+                if([mod evaluate] == [Integer ZERO]) {
+                    self.left = [[polyleft div:polyright] evaluate];
+                    self.right = nil;
+                    self.opr = NOP;
+                } else {
+                    // mod is not 0, leave the polynomial numerator/denominator
+                    self.left = polyleft;
+                    self.right = polyright;
+                    return self;
+                }
+            }
+            case NOP: // NOP operator means always only left is valid
+                return self.left;
+            default:
+                break;
         }
     }
-    else {
-        return result;
+    
+    // Do best to deal with non-polynomiable
+    if([self.left isKindOfClass:[ArithmeticExpression class]]) {
+        self.left = [(ArithmeticExpression*)self.left simplify];
     }
-}
-
--(Expression*) arithevaluate {
-    if(nil != self.left)
-        self.left = [self.left evaluate];
-    self.right = [self.right evaluate];
+    if([self.right isKindOfClass:[ArithmeticExpression class]]) {
+        self.right = [(ArithmeticExpression*)self.right simplify];
+    }
+    
     if([self.left isKindOfClass:[Data class]] && [self.right isKindOfClass:[Data class]]) {
         switch(self.opr) {
             case ADD:
-                return [(Data*)self.left add:(Data*)self.right];
+                self.left = [(Data*)self.left add:(Data*)self.right];
+                self.opr = NOP;
+                self.right = nil;
+                return self.left;
             case SUB:
-                return [(Data*)self.left sub:(Data*)self.right];
+                self.left = [(Data*)self.left sub:(Data*)self.right];
+                self.opr = NOP;
+                self.right = nil;
+                return self.left;
             case MUL:
-                return [(Data*)self.left mul:(Data*)self.right];
+                self.left = [(Data*)self.left mul:(Data*)self.right];
+                self.opr = NOP;
+                self.right = nil;
+                return self.left;
             case DIV:
-                return [(Data*)self.left div:(Data*)self.right];
+                self.left = [(Data*)self.left div:(Data*)self.right];
+                self.opr = NOP;
+                self.right = nil;
+                return self.left;
             default:
-                return nil;
+                // Do nothing but this should not happen
+                return self;
         }
     }
     if(self.left == nil && [self.right isKindOfClass:[Number class]] && self.opr == SUB) {
-        return [[Integer ZERO] sub:(Number*)self.right];
+        self.left = [[Integer ZERO] sub:(Number*)self.right];
+        self.right = nil;
+        self.opr = NOP;
+        return self.left;
     }
     if(![self.left isKindOfClass:[Data class]] && [self.right isKindOfClass:[Data class]] && self.opr == MUL) {
         // switch Left and right
         Expression* temp = self.left;
         self.left = self.right;
         self.right = temp;
-        return [self evaluate];
+        return self;
     }
     
     // If MUL/DIV with ZERO/ONE
@@ -84,12 +134,24 @@
     Integer* ONE = [Integer ONE];
     if([self.left isKindOfClass:[Data class]]) {
         Data* cleft = (Data*)self.left;
-        if(self.opr == MUL && cleft == ZERO)
-            return ZERO;
-        if(self.opr == MUL && cleft == ONE)
-            return self.right;
-        if(self.opr == ADD && cleft == ZERO)
-            return self.right;
+        if(self.opr == MUL && cleft == ZERO) {
+            self.left = ZERO;
+            self.right = nil;
+            self.opr = NOP;
+            return self.left;
+        }
+        if(self.opr == MUL && cleft == ONE) {
+            self.left = self.right;
+            self.right = nil;
+            self.opr = NOP;
+            return self.left;
+        }
+        if(self.opr == ADD && cleft == ZERO) {
+            self.left = self.right;
+            self.right = nil;
+            self.opr = NOP;
+            return self.left;
+        }
         if(self.opr == SUB && cleft == ZERO) {
             self.left = nil;
             return self;
@@ -97,36 +159,45 @@
     }
     if([self.right isKindOfClass:[Data class]]) {
         Data* cright = (Data*)self.right;
-        if(self.opr == MUL && cright == ZERO)
-            return ZERO;
-        if(self.opr == MUL && cright == ONE)
+        if(self.opr == MUL && cright == ZERO) {
+            self.left = ZERO;
+            self.right = nil;
+            self.opr = NOP;
             return self.left;
-        if(self.opr == ADD && cright == ZERO)
+        }
+        if(self.opr == MUL && cright == ONE) {
+            self.right = nil;
+            self.opr = NOP;
             return self.left;
+        }
+        if(self.opr == ADD && cright == ZERO) {
+            self.right = nil;
+            self.opr = NOP;
+            return self.left;
+        }
         if(self.opr == SUB && cright == ZERO) {
+            self.right = nil;
+            self.opr = NOP;
             return self.left;
         }
     }
-    // Merge a*//(b*//x) a+/-(b+/-x)
+    
+    // Decrease Layer
     if([self.right isKindOfClass:[ArithmeticExpression class]]) {
-        ArithmeticExpression* innerRight = (ArithmeticExpression*)self.right;
-        if([innerRight opr] / 3 == self.opr / 3 && [innerRight.left isKindOfClass:[Data class]]) {
-            Expression* newLeft = [[ArithmeticExpression alloc] init:self.left opr:self.opr right:[innerRight left]];
-            Expression* newRight = [innerRight right];
-            Operator oldopr1 = self.opr;
-            Operator oldopr2 = [innerRight opr];
-            Operator newopr = 0;
-            if(oldopr1/3 == 0) {
-                newopr = ((oldopr1 + oldopr2)%2 == 0)?ADD:SUB;
+        ArithmeticExpression* rightarith = (ArithmeticExpression*)self.right;
+        if(self.opr <= SUB && rightarith.opr <= SUB && (rightarith.left == nil || rightarith.right == nil || rightarith.left == [Integer ZERO])) {
+            if(rightarith.right == nil) {
+                self.right = rightarith.left;
             } else {
-                newopr = ((oldopr1 + oldopr2)%2 == 0)?MUL:DIV;
+                self.opr = ((self.opr + rightarith.opr)%2 == 0)?ADD:SUB;
+                self.right = rightarith.right;
             }
-            return [[ArithmeticExpression alloc] init:[newLeft evaluate] opr:newopr right:[newRight evaluate]];
+            return self;
         }
-        // Merge a+(-x) or a-(-x)
-        if((self.opr == ADD || self.opr == SUB) && innerRight.opr == SUB && innerRight.left == nil) {
-            Operator newopr = (self.opr + 1) % 2;
-            return [[ArithmeticExpression alloc] init:self.left opr:newopr right:innerRight.right];
+        if(self.opr >= MUL && rightarith.opr >= MUL && rightarith.left == [Integer ONE]) {
+            self.opr = ((self.opr + rightarith.opr)%2 == 0)? MUL:DIV;
+            self.right = rightarith.right;
+            return self;
         }
     }
     
@@ -151,8 +222,49 @@
     return self;
 }
 
+-(Expression*) evaluate {
+    // disable calculation and simplify
+    id oldval = [[VariableContext instance] get:KEY_CALCULATE];
+    [[VariableContext instance] set:KEY_CALCULATE value:nil];
+    [self simplify];
+    [[VariableContext instance] set:KEY_CALCULATE value:oldval];
+    
+    // Start Evaluation
+    if(self.opr == NOP)
+        return [self.left evaluate];
+    if([[VariableContext instance] isTrue:KEY_CALCULATE]) {
+        Expression* left = [self.left evaluate];
+        Expression* right = [self.right evaluate];
+        
+        if(left == [Decimal nan] || right == [Decimal nan]) {
+            return [Decimal nan];
+        }
+        if(left == nil || right == nil || ![left isKindOfClass:[Data class]] || ![right isKindOfClass:[Data class]]) {
+            return nil;
+        }
+        switch(self.opr) {
+            case ADD:
+                return [(Data*)self.left add:(Data*)self.right];
+            case SUB:
+                return [(Data*)self.left sub:(Data*)self.right];
+            case MUL:
+                return [(Data*)self.left mul:(Data*)self.right];
+            case DIV:
+                if(self.right == [Integer ZERO])
+                    return [Decimal nan];
+                return [(Data*)self.left div:(Data*)self.right];
+            default:
+                return nil;
+        }
+    } else {
+        return self;
+    }
+}
+
 
 -(Expression*) differentiate:(Variable *)variable {
+    if(self.opr == NOP)
+        return [self.left differentiate:variable];
     if([self.left isKindOfClass:[Data class]] && self.opr == MUL) {
         return [[ArithmeticExpression alloc] init:self.left opr:MUL right:[self.right differentiate:variable]];
     }
@@ -186,6 +298,9 @@
 }
 
 -(Expression*) integrate:(Variable *)variable {
+    if(self.opr == NOP) {
+        return [self.left integrate:variable];
+    }
     Expression* iu = (self.left == nil)? nil:[self.left integrate:variable];
     Expression* iv = [self.right integrate:variable];
     if((self.left != nil && iu == nil) || iv == nil)
@@ -274,10 +389,12 @@
                 [result appendString:@"-"];
                 break;
             case MUL:
-                [result appendString:@"*"];
+                [result appendString:@""];
                 break;
             case DIV:
                 [result appendString:@"/"];
+                break;
+            case NOP:
                 break;
         }
     }

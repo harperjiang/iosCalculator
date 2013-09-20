@@ -10,6 +10,7 @@
 #import "PowerExpression.h"
 #import "ArithmeticExpression.h"
 #import "SpecialConstant.h"
+#import "VariableContext.h"
 #import "RealNumber.h"
 #import "Decimal.h"
 #import "Integer.h"
@@ -152,15 +153,18 @@
     if([self.coefficients count] == 0)
         return [Integer ZERO];
     // Calculate the value if the variable is assigned a value
-    Expression* var = [[self variable] evaluate];
-    if([var isKindOfClass:[RealNumber class]]) {
-        RealNumber* value = (RealNumber*)var;
-        Data* sum = [Integer ZERO];
-        for(NSInteger i = 0 ; i < [[self coefficients] count];i++) {
-            Decimal* exp = [[Decimal alloc] init: [[NSDecimalNumber alloc] initWithDouble: pow([[value toDecimal].value doubleValue],i)]];
-            sum = [sum add:[exp mul:(Data*)[[self coefficients] objectAtIndex:i]]];
+    if([[VariableContext instance] isTrue:KEY_CALCULATE]) {
+        Expression* var = [[self variable] evaluate];
+        if([var isKindOfClass:[RealNumber class]]) {
+            RealNumber* value = (RealNumber*)var;
+            Data* sum = [Integer ZERO];
+            for(NSInteger i = 0 ; i < [[self coefficients] count];i++) {
+                Decimal* exp = [[Decimal alloc] init: [[NSDecimalNumber alloc] initWithDouble: pow([[value toDecimal].value doubleValue],i)]];
+                sum = [sum add:[exp mul:(Data*)[[self coefficients] objectAtIndex:i]]];
+            }
+            return sum;
         }
-        return sum;
+        return self;
     } else {
         return self;
     }
@@ -264,6 +268,10 @@
     return 0;
 }
 
+-(NSInteger) degree {
+    return [self order];
+}
+
 -(PolynomialExpression*) add:(PolynomialExpression *)another {
     PolynomialExpression* pf = [[PolynomialExpression alloc] init];
     NSInteger max = MAX([self.coefficients count],[another.coefficients count]);
@@ -304,6 +312,19 @@
 
 -(PolynomialExpression *)div:(PolynomialExpression *)another {
     PolynomialExpression* pf = [[PolynomialExpression alloc] init];
+    if( [another degree] == 0) {// Divide a constant
+        if(another.coefficients.count == 0) {
+            return nil;
+        }
+        Data* denominator = [[another coefficients] objectAtIndex:0];
+        if(denominator == [Integer ZERO]) {
+            return nil;
+        }
+        for(int i = 0 ; i < self.coefficients.count ;i++) {
+            [pf addItem:(RealNumber*)[(Data*)[self.coefficients objectAtIndex:i] div: denominator] power:i];
+        }
+        return pf;
+    }
     if([another order] > [self order]) {
         [pf addItem:[Integer ZERO] power:0];
     } else {
@@ -320,6 +341,9 @@
 }
 
 -(PolynomialExpression *)mod:(PolynomialExpression *)another {
+    if([another degree] == 0) {
+        return [[PolynomialExpression alloc] init];
+    }
     if([another order] > [self order]) {
         return self;
     } else {

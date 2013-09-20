@@ -21,6 +21,7 @@
 -(Data*) getCoefficient:(NSInteger) power;
 
 -(NSInteger) order;
+-(NSInteger) degree;
 
 -(PolynomialExpression*) add:(PolynomialExpression*) another;
 -(PolynomialExpression*) sub:(PolynomialExpression*) another;

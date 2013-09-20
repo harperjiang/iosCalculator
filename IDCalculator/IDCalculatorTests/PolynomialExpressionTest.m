@@ -131,6 +131,13 @@
     
     pf = [pf1 div:pf1];
     STAssertEqualObjects([pf description], @"1", @"");
+    
+    PolynomialExpression* pfx = [[PolynomialExpression alloc] init];
+    [pfx addItem:[Integer construct:1] power:1];
+    PolynomialExpression* constant = [[PolynomialExpression alloc] init];
+    [constant addItem:[Integer construct:5] power:0];
+    pf = [pfx div: constant];
+    STAssertEqualObjects([pf description], @"(1/5)x", @"");
 }
 
 -(void) testMod {
@@ -153,6 +160,14 @@
     STAssertEqualObjects([pf description], @"8x²+12x-17", @"");
     
     pf = [pf1 mod:pf1];
+    STAssertEqualObjects([pf description], @"0", @"");
+    
+    
+    PolynomialExpression* pfx = [[PolynomialExpression alloc] init];
+    [pfx addItem:[Integer construct:1] power:1];
+    PolynomialExpression* constant = [[PolynomialExpression alloc] init];
+    [constant addItem:[Integer construct:5] power:0];
+    pf = [pfx mod: constant];
     STAssertEqualObjects([pf description], @"0", @"");
 }
 
@@ -182,10 +197,12 @@
     [pe addItem:[Integer construct:3] power:2];
     
     [[VariableContext instance] assign:@"x" value:[Integer construct:3]];
+    [[VariableContext instance] set:KEY_CALCULATE value:@"true"];
     
     STAssertEqualObjects([[pe evaluate] description], @"27",@"");
     
     [[VariableContext instance] remove:@"x"];
+    [[VariableContext instance] set:KEY_CALCULATE value:@"nil"];
 }
 
 @end

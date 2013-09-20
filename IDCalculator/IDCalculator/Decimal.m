@@ -66,6 +66,8 @@ static ScaleBehavior* CALCULATE;
 
 @implementation Decimal
 
+static Decimal* INST_NAN;
+
 -(Decimal *)init:(NSDecimalNumber*)value {
     return [self init:value scale:DEFAULT_ROUND];
 }
@@ -130,6 +132,13 @@ static ScaleBehavior* CALCULATE;
 
 +(Decimal*) constructFloat: (float) f {
     return [[Decimal alloc] init:[[NSDecimalNumber alloc] initWithFloat:f]];
+}
+
++(Decimal*) nan {
+    if(INST_NAN == nil) {
+        INST_NAN = [[Decimal alloc] init:nil];
+    }
+    return INST_NAN;
 }
 
 -(NSString*) description {

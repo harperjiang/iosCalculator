@@ -67,6 +67,7 @@ extern CCommand* parse_result;
                 CPlotFuncCommand* cpfc = (CPlotFuncCommand*)self->parse;
                 PlotFuncCommand* pfc = [[PlotFuncCommand alloc] init:[[Function alloc] init: translate(cpfc->exp)] name:[translate(cpfc->name) description]];
                 command = pfc;
+                break;
             }
             case PLOTREM_COMMAND:{
                 CPlotRemoveCommand* cprc = (CPlotRemoveCommand*)self->parse;
@@ -74,6 +75,7 @@ extern CCommand* parse_result;
                 NSString* name = identifier == nil? nil:[identifier description];
                 PlotRemoveCommand* prc = [[PlotRemoveCommand alloc] init:name];
                 command = prc;
+                break;
             }
             case CMD_EXP: {
                 CExpCommand* cec = (CExpCommand*)self->parse;

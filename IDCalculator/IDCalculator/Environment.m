@@ -24,13 +24,6 @@ static Environment* mainInstance;
     self = [super init];
     if(self) {
         [self addElement:[[Coordinate alloc] init]];
-        
-        // FIXME For test only, add test item to environment
-        FunctionGraph* fg = [[FunctionGraph alloc] init];
-        [fg setFunction:[[Function alloc] init]];
-        BasicFuncExpression* sin = [[BasicFuncExpression alloc] init:BT_COS base:[Variable x]];
-        [[fg function] setExpression:sin];
-        [self addElement:fg];
     }
     return self;
 }

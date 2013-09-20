@@ -25,4 +25,9 @@
 -(void) testParsingFunction;
 
 -(void) testParseDecimal;
+
+-(void) testParsePlot;
+
+-(void) testParseRemove;
+
 @end

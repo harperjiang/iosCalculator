@@ -64,7 +64,11 @@ static VariableContext* instance;
 }
 
 -(void) set:(NSString*)key value:(id) value {
-    [[self configures] setObject:value forKey:key];
+    if(value == nil) {
+        [[self configures] removeObjectForKey:key];
+    } else {
+        [[self configures] setObject:value forKey:key];
+    }
 }
 
 -(id) get:(NSString*) key {

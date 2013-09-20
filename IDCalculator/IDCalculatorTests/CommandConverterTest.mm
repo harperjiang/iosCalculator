@@ -11,12 +11,14 @@
 #import "ClearCommand.h"
 #import "ExpressionCommand.h"
 #import "AssignCommand.h"
+#import "PlotFuncCommand.h"
 #import "Command.h"
 #import "Variable.h"
 #import "ArithmeticExpression.h"
 #import "FuncExpression.h"
 #import "Matrix.h"
 #import "Number.h"
+#import "Integer.h"
 #import "Decimal.h"
 
 @implementation CommandConverterTest
@@ -118,6 +120,36 @@
     
     STAssertEqualObjects([arith.left description], @"3.8583", @"");
     STAssertEqualObjects([arith.right description], @"6.7", @"");
+}
+
+-(void) testParsePlot {
+    NSString* input = @"plot x+4 as a";
+    Command* cmd = [CommandConverter parse:input];
+    
+    STAssertTrue([cmd class] == [PlotFuncCommand class], @"");
+    PlotFuncCommand* pfc = (PlotFuncCommand*)cmd;
+    STAssertEqualObjects([pfc.function.expression class], [ArithmeticExpression class], @"");
+    
+    ArithmeticExpression* arith = (ArithmeticExpression*) pfc.function.expression;
+    
+    STAssertEqualObjects([arith.left class], [Variable class], @"");
+    STAssertEqualObjects([arith.right class], [Integer class], @"");
+    
+}
+
+-(void) testParseRemove {
+    NSString* input1 = @"plot remove x";
+    Command* cmd = [CommandConverter parse:input1];
+    
+    STAssertTrue([cmd class] == [PlotRemoveCommand class], @"");
+    PlotRemoveCommand* prc = (PlotRemoveCommand*) cmd;
+    STAssertEqualObjects(prc.identifier, @"x",@"");
+    
+    NSString* input2 = @"plot remove all";
+    cmd = [CommandConverter parse:input2];
+    
+    STAssertTrue([cmd class] == [PlotRemoveCommand class], @"");
+    STAssertEqualObjects([(PlotRemoveCommand*)cmd identifier], nil, @"");
 }
 
 @end

@@ -27,4 +27,5 @@
 
 +(Decimal*) constructDouble: (double) d;
 +(Decimal*) constructFloat: (float) f;
++(Decimal*) nan;
 @end

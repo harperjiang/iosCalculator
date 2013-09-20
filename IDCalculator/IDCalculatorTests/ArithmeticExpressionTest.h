@@ -16,4 +16,5 @@
 -(void) testMatrixMul;
 -(void) testAddConstant;
 -(void) testCalculate;
+-(void) testSimplify;
 @end

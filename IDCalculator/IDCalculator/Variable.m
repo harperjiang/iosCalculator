@@ -10,7 +10,7 @@
 #import "VariableContext.h"
 #import "PolynomialExpression.h"
 #import "Fraction.h"
-#import "integer.h"
+#import "Integer.h"
 
 @implementation Variable
 
@@ -36,6 +36,9 @@ static Variable* x;
 
 
 -(Expression*) evaluate {
+    if(![[VariableContext instance] isTrue:KEY_CALCULATE]) {
+        return self;
+    }
     Expression* value =[[VariableContext instance] lookup:[self name]];
     if(value == nil) {
         return self;
