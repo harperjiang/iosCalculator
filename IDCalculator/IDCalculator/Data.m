@@ -7,6 +7,9 @@
 //
 
 #import "Data.h"
+#import "Integer.h"
+#import "Variable.h"
+#import "ArithmeticExpression.h"
 
 @implementation Data
 
@@ -32,6 +35,14 @@
 
 -(Data*) pow:(NSInteger)power {
     return nil;
+}
+
+-(Expression*) differentiate:(Variable *)v {
+    return [Integer ZERO];
+}
+
+-(Expression*) integrate:(Variable *)v {
+    return [[ArithmeticExpression alloc] init:self opr:MUL right:v];
 }
 
 @end

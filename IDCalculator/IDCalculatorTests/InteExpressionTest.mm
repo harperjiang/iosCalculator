@@ -22,7 +22,7 @@
     
     input = @"∫ln(x)dx";
     func = [[FunctionParser parse:input] evaluate];
-    STAssertEqualObjects([func description], @"ln(x)*x-x", @"");
+    STAssertEqualObjects([func description], @"ln(x)x-x", @"");
 }
 
 -(void) testBasicArith {
