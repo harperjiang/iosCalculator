@@ -1,18 +1,18 @@
 //
-//  DummyViewController.m
+//  PadHelpViewController.m
 //  IDCalculator
 //
-//  Created by Harper Jiang on 11/26/12.
-//  Copyright (c) 2012 Harper Jiang. All rights reserved.
+//  Created by Harper Jiang on 9/20/13.
+//  Copyright (c) 2013 Harper Jiang. All rights reserved.
 //
 
-#import "HelpViewController.h"
+#import "PadHelpViewController.h"
 
-@interface HelpViewController ()
+@interface PadHelpViewController ()
 
 @end
 
-@implementation HelpViewController
+@implementation PadHelpViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,7 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Load the page
+	// Do any additional setup after loading the view.
     
     [self.webView loadRequest:[NSURLRequest requestWithURL:[[NSURL alloc] initWithString:@"http://www.clarkson.edu"]]];
 }

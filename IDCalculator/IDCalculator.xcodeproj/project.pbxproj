@@ -21,6 +21,7 @@
 		A639F25B16609995000C5E02 /* Fraction.m in Sources */ = {isa = PBXBuildFile; fileRef = A639F25A16609995000C5E02 /* Fraction.m */; };
 		A65167DF17ECB97D005B8C71 /* Canvas2DViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65167DE17ECB97D005B8C71 /* Canvas2DViewController.m */; };
 		A65167E217ECB999005B8C71 /* PadCanvaas2DViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65167E117ECB999005B8C71 /* PadCanvaas2DViewController.m */; };
+		A65167E517ED37F3005B8C71 /* PadHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65167E417ED37F3005B8C71 /* PadHelpViewController.m */; };
 		A659DC6A17E6489700133A7C /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = A659DC6917E6489700133A7C /* Stack.m */; };
 		A67415611650266600C33D7C /* AssignCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = A67415601650266600C33D7C /* AssignCommand.m */; };
 		A6741AF6167D6977005BCBE5 /* RealNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = A6741AF5167D6977005BCBE5 /* RealNumber.m */; };
@@ -194,6 +195,8 @@
 		A65167DE17ECB97D005B8C71 /* Canvas2DViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Canvas2DViewController.m; sourceTree = "<group>"; };
 		A65167E017ECB999005B8C71 /* PadCanvaas2DViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadCanvaas2DViewController.h; sourceTree = "<group>"; };
 		A65167E117ECB999005B8C71 /* PadCanvaas2DViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadCanvaas2DViewController.m; sourceTree = "<group>"; };
+		A65167E317ED37F3005B8C71 /* PadHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadHelpViewController.h; sourceTree = "<group>"; };
+		A65167E417ED37F3005B8C71 /* PadHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadHelpViewController.m; sourceTree = "<group>"; };
 		A659DC6817E6489700133A7C /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
 		A659DC6917E6489700133A7C /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
 		A674155F1650266600C33D7C /* AssignCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignCommand.h; sourceTree = "<group>"; };
@@ -836,6 +839,8 @@
 				A6D7DF121666FBD400D7B705 /* PadConsoleViewController.m */,
 				A65167E017ECB999005B8C71 /* PadCanvaas2DViewController.h */,
 				A65167E117ECB999005B8C71 /* PadCanvaas2DViewController.m */,
+				A65167E317ED37F3005B8C71 /* PadHelpViewController.h */,
+				A65167E417ED37F3005B8C71 /* PadHelpViewController.m */,
 			);
 			name = ipad;
 			sourceTree = "<group>";
@@ -1228,6 +1233,7 @@
 				A6ADAE8117ECB1C20069DD6B /* BrowseUtils.m in Sources */,
 				A65167DF17ECB97D005B8C71 /* Canvas2DViewController.m in Sources */,
 				A65167E217ECB999005B8C71 /* PadCanvaas2DViewController.m in Sources */,
+				A65167E517ED37F3005B8C71 /* PadHelpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
