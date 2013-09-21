@@ -19,6 +19,8 @@
 		A639F25516609970000C5E02 /* Integer.m in Sources */ = {isa = PBXBuildFile; fileRef = A639F25416609970000C5E02 /* Integer.m */; };
 		A639F2581660997C000C5E02 /* Number.m in Sources */ = {isa = PBXBuildFile; fileRef = A639F2571660997C000C5E02 /* Number.m */; };
 		A639F25B16609995000C5E02 /* Fraction.m in Sources */ = {isa = PBXBuildFile; fileRef = A639F25A16609995000C5E02 /* Fraction.m */; };
+		A65167DF17ECB97D005B8C71 /* Canvas2DViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65167DE17ECB97D005B8C71 /* Canvas2DViewController.m */; };
+		A65167E217ECB999005B8C71 /* PadCanvaas2DViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65167E117ECB999005B8C71 /* PadCanvaas2DViewController.m */; };
 		A659DC6A17E6489700133A7C /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = A659DC6917E6489700133A7C /* Stack.m */; };
 		A67415611650266600C33D7C /* AssignCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = A67415601650266600C33D7C /* AssignCommand.m */; };
 		A6741AF6167D6977005BCBE5 /* RealNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = A6741AF5167D6977005BCBE5 /* RealNumber.m */; };
@@ -74,6 +76,8 @@
 		A67D23DC17E9F454006DE54D /* NumberTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A67D23DB17E9F454006DE54D /* NumberTest.m */; };
 		A67D23DF17EA146E006DE54D /* ConstantTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A67D23DE17EA146E006DE54D /* ConstantTest.m */; };
 		A67D2DC417E38F7E007C2F7F /* IntegerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A67D2DC317E38F7E007C2F7F /* IntegerTest.m */; };
+		A6ADAE7E17ECAA930069DD6B /* ViewUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A6ADAE7D17ECAA930069DD6B /* ViewUtils.m */; };
+		A6ADAE8117ECB1C20069DD6B /* BrowseUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A6ADAE8017ECB1C20069DD6B /* BrowseUtils.m */; };
 		A6AE35081665FE6000AEF12B /* FractionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6AE35071665FE6000AEF12B /* FractionTest.m */; };
 		A6B9745E164DEDE5007E4AB4 /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B9745D164DEDE5007E4AB4 /* GraphViewController.m */; };
 		A6B97461164DF411007E4AB4 /* ConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B97460164DF411007E4AB4 /* ConsoleViewController.m */; };
@@ -186,6 +190,10 @@
 		A639F2571660997C000C5E02 /* Number.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Number.m; sourceTree = "<group>"; };
 		A639F25916609995000C5E02 /* Fraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fraction.h; sourceTree = "<group>"; };
 		A639F25A16609995000C5E02 /* Fraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fraction.m; sourceTree = "<group>"; };
+		A65167DD17ECB97D005B8C71 /* Canvas2DViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Canvas2DViewController.h; sourceTree = "<group>"; };
+		A65167DE17ECB97D005B8C71 /* Canvas2DViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Canvas2DViewController.m; sourceTree = "<group>"; };
+		A65167E017ECB999005B8C71 /* PadCanvaas2DViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadCanvaas2DViewController.h; sourceTree = "<group>"; };
+		A65167E117ECB999005B8C71 /* PadCanvaas2DViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadCanvaas2DViewController.m; sourceTree = "<group>"; };
 		A659DC6817E6489700133A7C /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
 		A659DC6917E6489700133A7C /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
 		A674155F1650266600C33D7C /* AssignCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignCommand.h; sourceTree = "<group>"; };
@@ -283,6 +291,10 @@
 		A67D2DC317E38F7E007C2F7F /* IntegerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntegerTest.m; sourceTree = "<group>"; };
 		A69B8CA6165302AC00A64A65 /* console.lpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lex; path = console.lpp; sourceTree = "<group>"; };
 		A69B8CA7165302AC00A64A65 /* console.ypp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.yacc; path = console.ypp; sourceTree = "<group>"; };
+		A6ADAE7C17ECAA930069DD6B /* ViewUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewUtils.h; sourceTree = "<group>"; };
+		A6ADAE7D17ECAA930069DD6B /* ViewUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewUtils.m; sourceTree = "<group>"; };
+		A6ADAE7F17ECB1C20069DD6B /* BrowseUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseUtils.h; sourceTree = "<group>"; };
+		A6ADAE8017ECB1C20069DD6B /* BrowseUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseUtils.m; sourceTree = "<group>"; };
 		A6AE35061665FE6000AEF12B /* FractionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FractionTest.h; sourceTree = "<group>"; };
 		A6AE35071665FE6000AEF12B /* FractionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FractionTest.m; sourceTree = "<group>"; };
 		A6B9745C164DEDE5007E4AB4 /* GraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewController.h; sourceTree = "<group>"; };
@@ -739,6 +751,17 @@
 			name = parser;
 			sourceTree = "<group>";
 		};
+		A6ADAE7B17ECAA7A0069DD6B /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				A6ADAE7C17ECAA930069DD6B /* ViewUtils.h */,
+				A6ADAE7D17ECAA930069DD6B /* ViewUtils.m */,
+				A6ADAE7F17ECB1C20069DD6B /* BrowseUtils.h */,
+				A6ADAE8017ECB1C20069DD6B /* BrowseUtils.m */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
 		A6AE35041665FE5300AEF12B /* common */ = {
 			isa = PBXGroup;
 			children = (
@@ -811,6 +834,8 @@
 			children = (
 				A6D7DF111666FBD400D7B705 /* PadConsoleViewController.h */,
 				A6D7DF121666FBD400D7B705 /* PadConsoleViewController.m */,
+				A65167E017ECB999005B8C71 /* PadCanvaas2DViewController.h */,
+				A65167E117ECB999005B8C71 /* PadCanvaas2DViewController.m */,
 			);
 			name = ipad;
 			sourceTree = "<group>";
@@ -818,6 +843,8 @@
 		A6D7DF101666FBA200D7B705 /* iphone */ = {
 			isa = PBXGroup;
 			children = (
+				A65167DD17ECB97D005B8C71 /* Canvas2DViewController.h */,
+				A65167DE17ECB97D005B8C71 /* Canvas2DViewController.m */,
 				A676C0E2164CC36400C0F859 /* CalculatorViewController.h */,
 				A676C0E3164CC36400C0F859 /* CalculatorViewController.mm */,
 				A676C0BE164CC20E00C0F859 /* IDCViewController.h */,
@@ -875,6 +902,7 @@
 		A6EEE6AD1662CC1D00310568 /* graph */ = {
 			isa = PBXGroup;
 			children = (
+				A6ADAE7B17ECAA7A0069DD6B /* utils */,
 				A6741AFB167D6A78005BCBE5 /* 2d */,
 				A6741AFA167D6A68005BCBE5 /* gl */,
 			);
@@ -1196,6 +1224,10 @@
 				A67A226A17E8F29600B74507 /* FunctionGraph.m in Sources */,
 				A67D23D917E97DC5006DE54D /* PlotFuncCommand.m in Sources */,
 				A67A770D17EB87820057656C /* ConsoleParser.cpp in Sources */,
+				A6ADAE7E17ECAA930069DD6B /* ViewUtils.m in Sources */,
+				A6ADAE8117ECB1C20069DD6B /* BrowseUtils.m in Sources */,
+				A65167DF17ECB97D005B8C71 /* Canvas2DViewController.m in Sources */,
+				A65167E217ECB999005B8C71 /* PadCanvaas2DViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

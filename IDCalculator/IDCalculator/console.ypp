@@ -29,7 +29,7 @@ CCommand* parse_result;
 %token COMMA SEMICOLON LBR RBR SIQ LP RP
 %token CLEAR AS PLOT REMOVE ALL
 %token EQUAL 
-%token OADD OSUB OMUL ODIV
+%token OADD OSUB OMUL ODIV OPWR
 %token ID NUM DECIMAL
 %token ABORT
 
@@ -49,9 +49,10 @@ CCommand* parse_result;
 %left NUM SEMICOLON ID
 %left OADD OSUB
 %left OMUL ODIV
+%left OPWR
 %left LP 
 %left RP
-%left SIQ POWER
+%left SIQ
 
 %left LV3
 %left LV2
@@ -87,6 +88,7 @@ exp     :   num       %prec NUM             {$$ = $1;}
         |   OSUB exp  %prec OMUL            {$$ = new CArithExpression(NULL,SUB,$2);} 
         |   exp OMUL exp                    {$$ = new CArithExpression($1,MUL,$3);}
         |   exp ODIV exp                    {$$ = new CArithExpression($1,DIV,$3);}
+        |   exp OPWR exp                    {$$ = new CPowerExpression($1,$3);}
         |   matrix                          {$$ = $1;}
         |   func                            {$$ = $1;};
 

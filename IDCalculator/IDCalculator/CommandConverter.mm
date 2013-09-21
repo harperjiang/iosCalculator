@@ -11,6 +11,9 @@
 #import "ExpressionList.h"
 #import "ArithmeticExpression.h"
 #import "FuncExpression.h"
+#import "PowerExpression.h"
+#import "BasicFuncExpression.h"
+#import "ExpPowerExpression.h"
 #import "Variable.h"
 
 #import "ClearCommand.h"
@@ -127,8 +130,32 @@ Expression* translate(CExpression* input) {
         case EXP_FUNC:
         {
             CFuncExpression* cf = (CFuncExpression*)input;
-            FuncExpression* func = [[FuncExpression alloc] init:(Variable*)translate(cf->name) params:(ExpressionList*)translate(cf->params)];
+            Variable* name = (Variable*)translate(cf->name);
+            ExpressionList* params = (ExpressionList*)translate(cf->params);
+            // Filter out known basic functions 
+            if([name.name isEqualToString:@"sin"] && params.count == 1) {
+                return [[BasicFuncExpression alloc] init:BT_SIN base: [params get:0]];
+            }
+            if([name.name isEqualToString:@"cos"] && params.count == 1) {
+                return [[BasicFuncExpression alloc] init:BT_COS base: [params get:0]];
+            }
+            if([name.name isEqualToString:@"ln"] && params.count == 1) {
+                return [[BasicFuncExpression alloc] init:BT_LN base: [params get:0]];
+            }
+            FuncExpression* func = [[FuncExpression alloc] init:name params:params];
             return func;
+        }
+        case EXP_POWER: {
+            CPowerExpression* cpe = (CPowerExpression*)input;
+            Expression* power = translate(cpe->power);
+            Expression* base = translate(cpe->base);
+            if([power isKindOfClass:[Number class]]) {
+                return [[PowerExpression alloc] init:base power:(Number*)power];
+            }
+            if([base isKindOfClass:[Number class]]) {
+                return [[ExpPowerExpression alloc] init:(Number*)base power:power];
+            }
+            return nil;
         }
         case CONST_MATRIX:
         {

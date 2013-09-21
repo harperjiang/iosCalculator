@@ -391,10 +391,10 @@
             </objects>
             <point key="canvasLocation" x="-477" y="-8"/>
         </scene>
-        <!--View Controller - Graph-->
+        <!--Pad Canvaas2D View Controller - Graph-->
         <scene sceneID="r8c-EL-Iu8">
             <objects>
-                <viewController id="qQ5-d6-uXi" sceneMemberID="viewController">
+                <viewController id="qQ5-d6-uXi" customClass="PadCanvaas2DViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sDl-u3-8Cf" customClass="Canvas2DView">
                         <rect key="frame" x="0.0" y="20" width="768" height="955"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -406,6 +406,9 @@
                         </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Graph" image="chart_line_24.png" id="Fhb-r1-v9l"/>
+                    <connections>
+                        <outlet property="canvas" destination="sDl-u3-8Cf" id="Qqo-sY-Z0K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b7D-i5-kn0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="WcB-co-zg0">
@@ -452,6 +455,12 @@
             <relationships>
                 <relationship kind="action" name="dragReceived:"/>
                 <relationship kind="action" name="tapReceived:"/>
+            </relationships>
+        </class>
+        <class className="PadCanvaas2DViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PadCanvaas2DViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="canvas" candidateClass="Canvas2DView"/>
             </relationships>
         </class>
         <class className="PadConsoleViewController" superclassName="UIViewController">

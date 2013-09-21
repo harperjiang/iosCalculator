@@ -6,18 +6,18 @@
          contextName = "-[PolynomialFunction evaluate]:PolynomialFunction.m">
       </ContextState>
       <ContextState
-         contextName = "yyparse():console.ypp">
-         <PersistentStrings>
-            <PersistentString
-               value = "yylval">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "-[DiffExpressionTest testBasicFunc]:DiffExpressionTest.mm">
          <PersistentStrings>
             <PersistentString
                value = "[func expression]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "yyparse():console.ypp">
+         <PersistentStrings>
+            <PersistentString
+               value = "yylval">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -36,6 +36,14 @@
          contextName = "-[ArithmeticExpression arithevaluate]:ArithmeticExpression.m">
       </ContextState>
       <ContextState
+         contextName = "-[BasicFuncExpression evaluate]:BasicFuncExpression.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[value description]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[Matrix init:m:n:]:Matrix.m">
          <PersistentStrings>
             <PersistentString
@@ -43,14 +51,6 @@
             </PersistentString>
             <PersistentString
                value = "(Integer*)number">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[BasicFuncExpression evaluate]:BasicFuncExpression.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "[value description]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -64,10 +64,10 @@
                value = "[self description]">
             </PersistentString>
             <PersistentString
-               value = "(NumConstant*)coefficient">
+               value = "[NumConstant NEGAONE]">
             </PersistentString>
             <PersistentString
-               value = "[NumConstant NEGAONE]">
+               value = "(NumConstant*)coefficient">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -122,6 +122,14 @@
             </PersistentString>
             <PersistentString
                value = "[factor description]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[FunctionGraph paint:]:FunctionGraph.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "ymax">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -190,15 +198,15 @@
          contextName = "+[Fraction construct:denominator:]:Fraction.m">
       </ContextState>
       <ContextState
-         contextName = "-[ArithmeticFunction description]:ArithmeticFunction.m">
-      </ContextState>
-      <ContextState
          contextName = "-[DiffExpression evaluate]:DiffExpression.m">
          <PersistentStrings>
             <PersistentString
                value = "[diff description]">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ArithmeticFunction description]:ArithmeticFunction.m">
       </ContextState>
       <ContextState
          contextName = "-[Variable differentiate:]:Variable.m">
@@ -229,10 +237,13 @@
                value = "[self.right description]">
             </PersistentString>
             <PersistentString
-               value = "[self.left description]">
+               value = "(ArithmeticFunction*)result">
             </PersistentString>
             <PersistentString
                value = "[(ArithmeticFunction*)result description]">
+            </PersistentString>
+            <PersistentString
+               value = "[self.left description]">
             </PersistentString>
             <PersistentString
                value = "[(ArithmeticFunction*) vdu description]">
@@ -242,9 +253,6 @@
             </PersistentString>
             <PersistentString
                value = "[(ArithmeticFunction*)dv description]">
-            </PersistentString>
-            <PersistentString
-               value = "(ArithmeticFunction*)result">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -294,13 +302,13 @@
          contextName = "-[Matrix val:n:]:Matrix.m">
          <PersistentStrings>
             <PersistentString
+               value = "[self val:1 n:0]">
+            </PersistentString>
+            <PersistentString
                value = "[[self data] get:2]">
             </PersistentString>
             <PersistentString
                value = "(NumberData*)item">
-            </PersistentString>
-            <PersistentString
-               value = "[self val:1 n:0]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -323,6 +331,9 @@
             </PersistentString>
             <PersistentString
                value = "[self.left description]">
+            </PersistentString>
+            <PersistentString
+               value = "[right description]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -361,7 +372,7 @@
                value = "[mod description]">
             </PersistentString>
             <PersistentString
-               value = "[polyright description]">
+               value = "[self description]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -369,7 +380,7 @@
          contextName = "-[ArithmeticExpression differentiate:]:ArithmeticExpression.m">
          <PersistentStrings>
             <PersistentString
-               value = "[vv description]">
+               value = "[du description]">
             </PersistentString>
             <PersistentString
                value = "[dv description]">
@@ -378,7 +389,18 @@
                value = "[self description]">
             </PersistentString>
             <PersistentString
-               value = "[du description]">
+               value = "[vv description]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ElementContainer paint:]:ElementContainer.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[Function calculate:]:Function.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[decimal description]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

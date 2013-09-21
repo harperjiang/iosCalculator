@@ -24,6 +24,7 @@ typedef enum _CModelType {
     EXP_ARITH,
     EXP_ID,
     EXP_FUNC,
+    EXP_POWER,
     
     CONST_MATRIX = 300,
     CONST_NUM,
@@ -56,6 +57,28 @@ public:
             delete left;
         if(right != NULL)
             delete right;
+    }
+};
+
+class CPowerExpression : public CExpression {
+public:
+    CExpression* base;
+    CExpression* power;
+    
+    CPowerExpression(CExpression* base, CExpression* power) {
+        this->base = base;
+        this->power = power;
+    }
+    
+    int type() {
+        return EXP_POWER;
+    }
+    
+    ~CPowerExpression() {
+        if(this->base != NULL)
+            delete this->base;
+        if(this->power != NULL)
+            delete this->power;
     }
 };
 

@@ -8,24 +8,34 @@
 
 #import "ExpPowerExpression.h"
 #import "ArithmeticExpression.h"
+#import "BasicFuncExpression.h"
 #import "Number.h"
 #import "PowerExpression.h"
+#import "SpecialConstant.h"
 
 @implementation ExpPowerExpression
 
--(ExpPowerExpression*) init:(Expression *)power {
+-(ExpPowerExpression*) init:(Number*) base power:(Expression *) power {
     self = [super init];
     if(self) {
+        [self setBase:base];
         [self setPower:power];
     }
     return self;
+}
+
+-(ExpPowerExpression*) init:(Expression *)power {
+    return [self init:[SpecialConstant E] power:power];
 }
 
 -(Expression*) differentiate:(Variable *)variable {
     // e^f(x) = e^f(x) *f'(x)
     Expression* dpower = [[self power] differentiate:variable];
     Expression* result = [[ArithmeticExpression alloc] init:self opr:MUL right:dpower];
-    return result;
+    if(self.base == [SpecialConstant E])
+        return result;
+    BasicFuncExpression* ln = [[BasicFuncExpression alloc] init:BT_LN base:self.base];
+    return [[ArithmeticExpression alloc] init: ln opr:MUL right:result];
 }
 
 -(Expression*) integrate:(Variable *)variable {
@@ -40,7 +50,7 @@
 
 -(NSString*) description {
     NSMutableString* buffer = [[NSMutableString alloc] initWithCapacity:20];
-    [buffer appendString:@"e"];
+    [buffer appendString:[self.base description]];
     if([self.power isKindOfClass:[Number class]]) {
         NSString* powerstr = [PowerExpression stringForPower:(Number*)self.power];
         if(powerstr != nil) {

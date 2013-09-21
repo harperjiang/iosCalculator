@@ -11,6 +11,9 @@
 #import "VariableContext.h"
 #import "FunctionGraph.h"
 #import "IDCConsole.h"
+#import "BrowseUtils.h"
+#import "ViewUtils.h"
+#import "Canvas2DView.h"
 
 @implementation PlotFuncCommand
 
@@ -24,9 +27,19 @@
 }
 
 -(void) execute {
+    Environment* env = [BrowseUtils findGraphEnvironment];
+    
+    // Remove old graphs
+    FunctionGraph* oldfg = [[[IDCConsole instance] plots] objectForKey:self.identifier];
+    if(oldfg != nil) {
+        [env removeElement:oldfg];
+    }
+    // Add new graphs
     FunctionGraph* fg = [[FunctionGraph alloc] init:[self function]];
-    [[Environment main] addElement:fg];
+    [env addElement:fg];
     [[[IDCConsole instance] plots] setObject:fg forKey:[self identifier]];
+    // Refresh
+    [[ViewUtils getViewByClass:[Canvas2DView class]] setNeedsDisplay];
 }
 
 @end
@@ -44,17 +57,18 @@
 -(void) execute {
     if(self.identifier != nil) {
         FunctionGraph* fg = (FunctionGraph*)[[[IDCConsole instance] plots] objectForKey:self.identifier];
-        [[Environment main] removeElement:fg];
+        [[BrowseUtils findGraphEnvironment] removeElement:fg];
     } else {
-        NSArray* elements = [[Environment main] elements];
+        NSArray* elements = [[BrowseUtils findGraphEnvironment] elements];
         for(NSInteger index = 0; index < elements.count; index++) {
             Element* e = (Element*) [elements objectAtIndex:index];
             if([e isKindOfClass:[FunctionGraph class]]) {
-                [[Environment main] removeElement:e];
+                [[BrowseUtils findGraphEnvironment] removeElement:e];
                 index--;
             }
         }
     }
+    [[ViewUtils getViewByClass:[Canvas2DView class]] setNeedsDisplay];
 }
 
 @end

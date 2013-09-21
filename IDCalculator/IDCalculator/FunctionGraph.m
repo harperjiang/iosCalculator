@@ -10,6 +10,7 @@
 #import "Environment.h"
 #import "Decimal.h"
 
+
 @implementation FunctionGraph
 
 -(FunctionGraph*) init:(Function*) func {
@@ -31,19 +32,19 @@
     NSMutableDictionary* vars = [[NSMutableDictionary alloc] init];
     
     NSMutableArray* array = [[NSMutableArray alloc] initWithCapacity:(int)ceil(range.size.height/unit)];
+    
     while(x <= stop) {
+        
         [vars setObject:[Decimal constructDouble:(double)x] forKey:@"x"];
         Decimal* result = [[self function] calculate:vars];
-        CGFloat y = (CGFloat)[[result value] doubleValue];
-        if(y<=ymin) {
-            [array removeAllObjects];
-            [array addObject:[NSValue valueWithCGPoint:CGPointMake(x, y)]];
+        if(result == [Decimal nan]) {
+            // Ignore
+        } else {
+            CGFloat y = (CGFloat)[[result value] doubleValue];
+            if(y <= ymax && y >= ymin) {
+                [array addObject:[NSValue valueWithCGPoint:CGPointMake(x, y)]];
+            }
         }
-        if(y>=ymax) {
-            [array addObject:[NSValue valueWithCGPoint:CGPointMake(x,y)]];
-            break;
-        }
-        [array addObject:[NSValue valueWithCGPoint:CGPointMake(x, y)]];
         x += 5*unit;
     }
     if([array count] == 0)

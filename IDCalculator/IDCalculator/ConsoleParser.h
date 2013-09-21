@@ -56,12 +56,12 @@
      OSUB = 272,
      OMUL = 273,
      ODIV = 274,
-     ID = 275,
-     NUM = 276,
-     DECIMAL = 277,
-     ABORT = 278,
-     LOW = 279,
-     POWER = 280,
+     OPWR = 275,
+     ID = 276,
+     NUM = 277,
+     DECIMAL = 278,
+     ABORT = 279,
+     LOW = 280,
      LV3 = 281,
      LV2 = 282,
      LV1 = 283
@@ -85,12 +85,12 @@
 #define OSUB 272
 #define OMUL 273
 #define ODIV 274
-#define ID 275
-#define NUM 276
-#define DECIMAL 277
-#define ABORT 278
-#define LOW 279
-#define POWER 280
+#define OPWR 275
+#define ID 276
+#define NUM 277
+#define DECIMAL 278
+#define ABORT 279
+#define LOW 280
 #define LV3 281
 #define LV2 282
 #define LV1 283

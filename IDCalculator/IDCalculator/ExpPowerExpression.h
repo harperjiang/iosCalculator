@@ -7,11 +7,15 @@
 //
 
 #import "Expression.h"
+#import "Number.h"
 
 @interface ExpPowerExpression : Expression
 
 @property(nonatomic,strong) Expression* power;
+@property(nonatomic,strong) Number* base;
 
+
+-(ExpPowerExpression*) init:(Number*) base power:(Expression*) power;
 -(ExpPowerExpression*) init:(Expression*) power;
 
 @end

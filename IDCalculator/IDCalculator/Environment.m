@@ -18,21 +18,12 @@
 
 @implementation Environment
 
-static Environment* mainInstance;
-
 -(Environment*)init {
     self = [super init];
     if(self) {
         [self addElement:[[Coordinate alloc] init]];
     }
     return self;
-}
-
-+(Environment*) main {
-    if(nil == mainInstance) {
-        mainInstance = [[Environment alloc] init];
-    }
-    return mainInstance;
 }
 
 @end

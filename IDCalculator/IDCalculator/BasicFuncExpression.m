@@ -75,6 +75,9 @@
                 if(self.base == [SpecialConstant E]) {
                     return [Integer ONE];
                 }
+                if(self.base == [Integer ONE]) {
+                    return [Integer ZERO];
+                }
                 if([self.base isKindOfClass:[ExpPowerExpression class]]) {
                     return [(ExpPowerExpression*)self.base power];
                 }

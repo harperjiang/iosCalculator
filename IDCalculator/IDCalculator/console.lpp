@@ -24,6 +24,7 @@ extern void yyerror(char* input);
 "-"                     {return OSUB;}
 "*"                     {return OMUL;}
 "/"                     {return ODIV;}
+"^"                     {return OPWR;}
 ","                     {return COMMA;}
 "plot"                  {return PLOT;}
 "as"                    {return AS;}

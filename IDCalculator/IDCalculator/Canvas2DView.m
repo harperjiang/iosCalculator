@@ -12,10 +12,11 @@
     CGPoint lastPoint;
 }
 
-- (id)initWithFrame:(CGRect)frame {
+-(id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        [self getViewPort];
     }
     return self;
 }

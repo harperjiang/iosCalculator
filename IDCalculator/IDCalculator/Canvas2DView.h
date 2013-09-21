@@ -18,4 +18,6 @@
 -(IBAction) dragReceived:(id) gesture;
 -(IBAction) tapReceived:(id) gesture;
 
+-(ViewPort*) getViewPort;
+
 @end

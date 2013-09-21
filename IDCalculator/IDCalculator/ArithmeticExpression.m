@@ -244,15 +244,15 @@
         }
         switch(self.opr) {
             case ADD:
-                return [(Data*)self.left add:(Data*)self.right];
+                return [(Data*)left add:(Data*)right];
             case SUB:
-                return [(Data*)self.left sub:(Data*)self.right];
+                return [(Data*)left sub:(Data*)right];
             case MUL:
-                return [(Data*)self.left mul:(Data*)self.right];
+                return [(Data*)left mul:(Data*)right];
             case DIV:
                 if(self.right == [Integer ZERO])
                     return [Decimal nan];
-                return [(Data*)self.left div:(Data*)self.right];
+                return [(Data*)left div:(Data*)right];
             default:
                 return nil;
         }
