@@ -17,4 +17,5 @@
 -(void) testAddConstant;
 -(void) testCalculate;
 -(void) testSimplify;
+-(void) testArithConstant;
 @end

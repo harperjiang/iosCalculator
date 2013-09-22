@@ -8,6 +8,9 @@
 
 #import "BasicFuncExpressionTest.h"
 #import "BasicFuncExpression.h"
+#import "ArithmeticExpression.h"
+#import "SpecialConstant.h"
+#import "Integer.h"
 #import "Variable.h"
 
 @implementation BasicFuncExpressionTest
@@ -24,6 +27,11 @@
     bf.type = BT_LN;
     eval = [bf evaluate];
     STAssertEqualObjects(eval, bf, @"");
+    
+    BasicFuncExpression* fraction = [[BasicFuncExpression alloc] init:BT_SIN base:[[ArithmeticExpression alloc] init:[SpecialConstant PI] opr:DIV right:[Integer construct:2]]];
+    eval = [fraction evaluate];
+    STAssertEqualObjects([eval description], @"sin(π/2)", @"");
 }
+
 
 @end

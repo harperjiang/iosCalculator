@@ -147,8 +147,8 @@ Expression* translate(CExpression* input) {
         }
         case EXP_POWER: {
             CPowerExpression* cpe = (CPowerExpression*)input;
-            Expression* power = translate(cpe->power);
-            Expression* base = translate(cpe->base);
+            Expression* power = [translate(cpe->power) evaluate];
+            Expression* base = [translate(cpe->base) evaluate];
             if([power isKindOfClass:[Number class]]) {
                 return [[PowerExpression alloc] init:base power:(Number*)power];
             }

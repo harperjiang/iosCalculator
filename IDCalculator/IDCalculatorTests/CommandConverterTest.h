@@ -30,4 +30,6 @@
 
 -(void) testParseRemove;
 
+-(void) testParseExp;
+
 @end

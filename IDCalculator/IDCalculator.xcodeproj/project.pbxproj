@@ -106,6 +106,7 @@
 		A6D7DF131666FBD400D7B705 /* PadConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D7DF121666FBD400D7B705 /* PadConsoleViewController.m */; };
 		A6D7DF16166709CD00D7B705 /* ViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D7DF15166709CD00D7B705 /* ViewHelper.m */; };
 		A6DE83FE164EDDEC002F6FFA /* VectorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DE83FD164EDDEC002F6FFA /* VectorTest.m */; };
+		A6DFC0A717ED71FE005184D9 /* ArithConstantTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DFC0A617ED71FE005184D9 /* ArithConstantTest.m */; };
 		A6E505BC166EF39500575845 /* VariableTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E505BB166EF39500575845 /* VariableTest.m */; };
 		A6E505C31671D1B300575845 /* PolynomialExpressionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E505C21671D1B300575845 /* PolynomialExpressionTest.m */; };
 		A6EEE67F16616D5A00310568 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A6EEE67E16616D5A00310568 /* icon.png */; };
@@ -358,6 +359,8 @@
 		A6D7DF15166709CD00D7B705 /* ViewHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewHelper.m; sourceTree = "<group>"; };
 		A6DE83FC164EDDEC002F6FFA /* VectorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VectorTest.h; sourceTree = "<group>"; };
 		A6DE83FD164EDDEC002F6FFA /* VectorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VectorTest.m; sourceTree = "<group>"; };
+		A6DFC0A517ED71FE005184D9 /* ArithConstantTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArithConstantTest.h; sourceTree = "<group>"; };
+		A6DFC0A617ED71FE005184D9 /* ArithConstantTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArithConstantTest.m; sourceTree = "<group>"; };
 		A6E505BA166EF39500575845 /* VariableTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VariableTest.h; sourceTree = "<group>"; };
 		A6E505BB166EF39500575845 /* VariableTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VariableTest.m; sourceTree = "<group>"; };
 		A6E505C11671D1B300575845 /* PolynomialExpressionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolynomialExpressionTest.h; sourceTree = "<group>"; };
@@ -741,6 +744,8 @@
 			children = (
 				A67D23DD17EA146E006DE54D /* ConstantTest.h */,
 				A67D23DE17EA146E006DE54D /* ConstantTest.m */,
+				A6DFC0A517ED71FE005184D9 /* ArithConstantTest.h */,
+				A6DFC0A617ED71FE005184D9 /* ArithConstantTest.m */,
 			);
 			name = cons;
 			sourceTree = "<group>";
@@ -1259,6 +1264,7 @@
 				A67D2DC417E38F7E007C2F7F /* IntegerTest.m in Sources */,
 				A67D23DC17E9F454006DE54D /* NumberTest.m in Sources */,
 				A67D23DF17EA146E006DE54D /* ConstantTest.m in Sources */,
+				A6DFC0A717ED71FE005184D9 /* ArithConstantTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

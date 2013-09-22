@@ -9,6 +9,8 @@
 #import "ArithConstant.h"
 #import "ArithmeticExpression.h"
 #import "Decimal.h"
+#import "Integer.h"
+#import "Fraction.h"
 #import "VariableContext.h"
 
 @implementation ArithConstant
@@ -34,40 +36,129 @@
     return self;
 }
 
--(Constant*)add:(RealNumber*)input {
-    if(self.opr == 0) {
+
++(BOOL) isNotConstant:(RealNumber*) value {
+    if([value isKindOfClass:[Integer class]] || [value isKindOfClass:[Fraction class]] || [value isKindOfClass:[Decimal class]]) {
+        return true;
+    }
+    return false;
+}
+
++(Number*) simplify:(ArithConstant*) input {
+    if([ArithConstant isNotConstant: input.left] && [ArithConstant isNotConstant:input.right]) {
+        return (Number*)[[[ArithmeticExpression alloc] init:input.left opr:input.opr right:input.right] evaluate];
+    }
+    if(input.opr == ADD) {
+        if(input.left == [Integer ZERO])
+            return input.right;
+        if(input.right == [Integer ZERO])
+            return input.left;
+    }
+    if(input.opr == SUB) {
+        if(input.right == [Integer ZERO])
+            return input.right;
+    }
+    if(input.opr == MUL) {
+        if(input.left == [Integer ONE]) {
+            return input.right;
+        }
+        if(input.left == [Integer ZERO]) {
+            return [Integer ZERO];
+        }
+        if(input.right == [Integer ONE]) {
+            return input.left;
+        }
+        if(input.right == [Integer ZERO]) {
+            return [Integer ZERO];
+        }
+    }
+    if(input.opr == DIV) {
+        if(input.left == [Integer ZERO]) {
+            return [Integer ZERO];
+        }
+        if(input.right == [Integer ONE]) {
+            return input.left;
+        }
+        if(input.right == [Integer ZERO]) {
+            return [Decimal nan];
+        }
+    }
+    return input;
+}
+
+-(Number*)add:(RealNumber*)input {
+    ArithConstant* result = nil;
+    if(self.opr == NOP) {
         [self setOpr:ADD];
         [self setRight:input];
-        return self;
+        result = self;
+    } else if([ArithConstant isNotConstant:input] && (self.opr == ADD || self.opr == SUB)) {
+        if([ArithConstant isNotConstant:self.left]) {
+            self.left = (RealNumber*) [self.left add: input];
+        } else if([ArithConstant isNotConstant:self.right]) {
+            self.right = (RealNumber*) ((self.opr == ADD)?[self.right add:input]:[self.right sub:input]);
+        }
+        result = self;
     }
-    return [[ArithConstant alloc] init:self opr:ADD right:input];
+    result = (result == nil)?[[ArithConstant alloc] init:self opr:ADD right:input]:result;
+    return [ArithConstant simplify: result];
 }
 
--(Constant*)sub:(RealNumber*)input {
-    if(self.opr == 0) {
+-(Number*)sub:(RealNumber*)input {
+    ArithConstant* result = nil;
+    if(self.opr == NOP) {
         [self setOpr:SUB];
         [self setRight:input];
-        return self;
+        result = self;
+    } else if([ArithConstant isNotConstant:input] && (self.opr == ADD || self.opr == SUB)) {// Merge
+        if([ArithConstant isNotConstant:self.left]) {
+            self.left = (RealNumber*)[self.left sub:input];
+        }
+        else if ([ArithConstant isNotConstant:self.right]) {
+            self.right = (RealNumber*)(self.opr == ADD?[self.right sub:input]:[self.right add:input]);
+        }
+        result = self;
     }
-    return [[ArithConstant alloc] init:self opr:SUB right:input];
+    result = (result == nil)?[[ArithConstant alloc] init:self opr:SUB right:input]:result;
+    return [ArithConstant simplify: result];
 }
 
--(Constant*)mul:(RealNumber*)input {
-    if(self.opr == 0) {
+-(Number*)mul:(RealNumber*)input {
+    ArithConstant* result = nil;
+    if(self.opr == NOP) {
         [self setOpr:MUL];
         [self setRight:input];
-        return self;
+        result = self;
+    } else if([ArithConstant isNotConstant:input] && (self.opr == MUL || self.opr == DIV)) {
+        if([ArithConstant isNotConstant:self.left]) {
+            self.left = (RealNumber*)[self.left mul:input];
+        }
+        if([ArithConstant isNotConstant:self.right]) {
+            self.right = (RealNumber*) (self.opr == MUL?[self.right mul:input]:[self.right div:input]);
+        }
+        result = self;
     }
-    return [[ArithConstant alloc] init:self opr:MUL right:input];
+    result = (result == nil)?[[ArithConstant alloc] init:self opr:MUL right:input]:result;
+    return [ArithConstant simplify: result];
 }
 
--(Constant*)div:(RealNumber*)input {
-    if(self.opr == 0) {
+-(Number*)div:(RealNumber*)input {
+    ArithConstant* result = nil;
+    if(self.opr == NOP) {
         [self setOpr:DIV];
         [self setRight:input];
-        return self;
+        result = self;
+    } else if([ArithConstant isNotConstant:input] && (self.opr == MUL || self.opr == DIV)) {
+        if([ArithConstant isNotConstant:self.left]) {
+            self.left = (RealNumber*)[self.left div:input];
+        }
+        if([ArithConstant isNotConstant:self.right]) {
+            self.right = (RealNumber*)(self.opr == DIV?[self.right mul:input]:[self.right div:input]);
+        }
+        result = self;
     }
-    return [[ArithConstant alloc] init:self opr:DIV right:input];
+    result = (result == nil)?[[ArithConstant alloc] init:self opr:DIV right:input]:result;
+    return [ArithConstant simplify: result];
 }
 
 -(NSString *)description {

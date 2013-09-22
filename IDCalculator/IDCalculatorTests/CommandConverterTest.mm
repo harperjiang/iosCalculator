@@ -152,4 +152,13 @@
     STAssertEqualObjects([(PlotRemoveCommand*)cmd identifier], nil, @"");
 }
 
+-(void) testParseExp {
+    NSString* input = @"plot (3*x+5)^(1/2) as t";
+    Command* cmd = [CommandConverter parse:input];
+    
+    STAssertEqualObjects([cmd class], [PlotFuncCommand class], @"");
+    PlotFuncCommand* pfc = (PlotFuncCommand*)cmd;
+    STAssertTrue(pfc.function.expression!= nil, @"");
+}
+
 @end

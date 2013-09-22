@@ -79,7 +79,7 @@ extern short DEFAULT_ROUND;
         return [[Decimal alloc] init:dn];
     }
     if(current == 1 && type == 4) {
-        return [[ArithConstant alloc] init:(Integer*)input opr:NULL right:nil];
+        return [[ArithConstant alloc] init:(Integer*)input opr:NOP right:nil];
     }
     if(current == 2 && type == 3) {
         Fraction* finput = (Fraction*)input;

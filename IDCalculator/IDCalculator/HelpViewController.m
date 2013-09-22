@@ -28,7 +28,7 @@
     [super viewDidLoad];
 	// Load the page
     
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[[NSURL alloc] initWithString:@"http://www.clarkson.edu"]]];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[[NSURL alloc] initWithString:@"http://www.clarkson.edu/~hajiang/idcalculator/"]]];
 }
 
 - (void)didReceiveMemoryWarning

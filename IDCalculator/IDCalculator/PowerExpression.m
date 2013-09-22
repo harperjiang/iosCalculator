@@ -140,7 +140,10 @@
 }
 
 +(Decimal*) power:(RealNumber *)base power:(RealNumber *)power {
-    return [[Decimal alloc] init: [[NSDecimalNumber alloc] initWithDouble:pow([[[base toDecimal] value] doubleValue], [[[power toDecimal]value] doubleValue])]];
+    double value = pow([[[base toDecimal] value] doubleValue], [[[power toDecimal]value] doubleValue]);
+    if(isnan(value))
+        return [Decimal nan];
+    return [[Decimal alloc] init: [[NSDecimalNumber alloc] initWithDouble:value]];
 }
 
 @end

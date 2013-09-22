@@ -13,6 +13,7 @@
 #import "FunctionParser.h"
 #import "Function.h"
 #import "Integer.h"
+#import "SpecialConstant.h"
 #import "Variable.h"
 #import "VariableContext.h"
 #import "Number.h"
@@ -135,6 +136,11 @@
     // sinx/1/cos(x)
     l1 = [[ArithmeticExpression alloc] init:[[BasicFuncExpression alloc] init:BT_SIN base:[Variable x]] opr:DIV right:[[ArithmeticExpression alloc] init:[Integer ONE] opr:DIV right:[[BasicFuncExpression alloc] init:BT_COS base:[Variable x]]]];
     STAssertEqualObjects([[l1 evaluate] description], @"sin(x)cos(x)", @"");
+}
+
+-(void) testArithConstant {
+    ArithmeticExpression* ac = [[ArithmeticExpression alloc] init:[SpecialConstant PI] opr:DIV right:[Integer construct:2]];
+    STAssertEqualObjects([[ac evaluate] description], @"π/2",@"");
 }
 
 @end
