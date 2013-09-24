@@ -69,7 +69,7 @@
 #endif
         CGRect oldKeyboardBounds;
         [keyboardBoundsValue getValue:&oldKeyboardBounds];
-        
+        CGRect windowBounds = self.view.window.frame;
         // Keyboard Bounds will not change when rotate changes, manually change
         
         CGRect viewBounds = self.view.frame;
@@ -79,33 +79,60 @@
         CGRect keyboardBounds;
         
         UIInterfaceOrientation orientation = [self interfaceOrientation];
-        
-        keyboardBounds.size.width = MAX(oldKeyboardBounds.size.width,oldKeyboardBounds.size.height);
-        keyboardBounds.size.height = MIN(oldKeyboardBounds.size.width,oldKeyboardBounds.size.height);
-        keyboardBounds.origin.x = 0;
-        if(orientation == UIInterfaceOrientationPortrait || orientation == UIInterfaceOrientationPortraitUpsideDown)
-            keyboardBounds.origin.y = [[self view] window].frame.size.height - keyboardBounds.size.height;
-        else
-            keyboardBounds.origin.y = [[self view] window].frame.size.width - keyboardBounds.size.height;
-        
-        NSLog(@"Old Keyboard Bounds:%f,%f,%f,%f",oldKeyboardBounds.origin.x,oldKeyboardBounds.origin.y,oldKeyboardBounds.size.width,oldKeyboardBounds.size.height);
+        NSInteger temp;
+        switch(orientation) {
+            case UIInterfaceOrientationPortrait:
+                keyboardBounds.origin.x = oldKeyboardBounds.origin.x;
+                keyboardBounds.origin.y = oldKeyboardBounds.origin.y;
+                keyboardBounds.size.height = oldKeyboardBounds.size.height;
+                keyboardBounds.size.width = oldKeyboardBounds.size.width;
+                break;
+            case UIInterfaceOrientationPortraitUpsideDown:
+                keyboardBounds.origin.x = 0 - windowBounds.size.width + oldKeyboardBounds.size.width;
+                keyboardBounds.origin.y = windowBounds.size.height - oldKeyboardBounds.size.height - oldKeyboardBounds.origin.y;
+                keyboardBounds.size.height = oldKeyboardBounds.size.height;
+                keyboardBounds.size.width = oldKeyboardBounds.size.width;
+                break;
+            case UIInterfaceOrientationLandscapeLeft:
+                keyboardBounds.origin.x = 0;
+                keyboardBounds.origin.y = oldKeyboardBounds.origin.x;
+                keyboardBounds.size.height = oldKeyboardBounds.size.width;
+                keyboardBounds.size.width = oldKeyboardBounds.size.height;
+                
+                temp = windowBounds.size.width;
+                windowBounds.size.width = windowBounds.size.height;
+                windowBounds.size.height = temp;
+                break;
+            case UIInterfaceOrientationLandscapeRight:
+                keyboardBounds.origin.x = 0;
+                keyboardBounds.origin.y = oldKeyboardBounds.origin.x + oldKeyboardBounds.size.width;
+                keyboardBounds.size.height = oldKeyboardBounds.size.width;
+                keyboardBounds.size.width = oldKeyboardBounds.size.height;
+                
+                temp = windowBounds.size.width;
+                windowBounds.size.width = windowBounds.size.height;
+                windowBounds.size.height = temp;
+                break;
+            default:
+                break;
+        }
         
         [UIView beginAnimations:@"anim" context:NULL];
         [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
         [UIView setAnimationBeginsFromCurrentState:YES];
         [UIView setAnimationDuration:0.3];
         
-        NSLog(@"Window Size:%f,%f",self.view.window.frame.size.width,self.view.window.frame.size.height);
-        
-        if(oldKeyboardBounds.origin.x < 0 || oldKeyboardBounds.origin.y < 0 || oldKeyboardBounds.origin.x == self.view.window.frame.size.width) {
+        NSInteger IOS7_OFFSET = 56;
+        if(keyboardBounds.origin.y >= windowBounds.size.height) {
             // keyboard is hidden
-            NSInteger offset = viewBounds.size.height - subviewBounds.origin.y - subviewBounds.size.height;
+            NSInteger newtextloc = viewBounds.size.height - IOS7_OFFSET - subviewBounds.size.height;
+            NSInteger offset = newtextloc - subviewBounds.origin.y;
             displayBounds.size.height += offset;
             subviewBounds.origin.y += offset;
             [[self display] setFrame:displayBounds];
             [[self keyboardView] setFrame:subviewBounds];
         } else {
-            NSInteger newtextloc = keyboardBounds.origin.y - subviewBounds.size.height - 20;
+            NSInteger newtextloc = keyboardBounds.origin.y - subviewBounds.size.height;
             NSInteger offset = newtextloc - subviewBounds.origin.y;
             displayBounds.size.height += offset;
             subviewBounds.origin.y += offset;

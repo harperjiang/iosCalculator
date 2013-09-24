@@ -60,6 +60,7 @@
 #else
         NSValue *keyboardBoundsValue = [[notification userInfo] objectForKey:UIKeyboardBoundsUserInfoKey];
 #endif
+
         CGRect keyboardBounds;
         [keyboardBoundsValue getValue:&keyboardBounds];
         
@@ -72,15 +73,17 @@
         [UIView setAnimationBeginsFromCurrentState:YES];
         [UIView setAnimationDuration:0.3];
         
+        int IOS7_OFFSET = 48;
+        
         if(keyboardBounds.origin.y >= viewBounds.size.height) {
             // keyboard is hidden
             NSInteger offset = viewBounds.size.height - textFieldBounds.origin.y - textFieldBounds.size.height;
-            displayBounds.size.height += offset;
-            textFieldBounds.origin.y += offset;
+            displayBounds.size.height += offset - IOS7_OFFSET;
+            textFieldBounds.origin.y += offset - IOS7_OFFSET;
             [[self display] setFrame:displayBounds];
             [[self inputField] setFrame:textFieldBounds];
         } else {
-            NSInteger newtextloc = keyboardBounds.origin.y - textFieldBounds.size.height - 20;
+            NSInteger newtextloc = keyboardBounds.origin.y - textFieldBounds.size.height;
             NSInteger offset = newtextloc - textFieldBounds.origin.y;
             displayBounds.size.height += offset;
             textFieldBounds.origin.y += offset;
