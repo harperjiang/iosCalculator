@@ -54,7 +54,7 @@
     for(int i = ceil(range.origin.x);i<range.origin.x+range.size.width;i++) {
         CGContextMoveToPoint(context, i, range.origin.y);
         CGContextAddLineToPoint(context, i, range.origin.y + range.size.height);
-        CGContextSetTextPosition(context, i, range.origin.y + range.size.height-[self translate:10]);
+        CGContextSetTextPosition(context, i, range.origin.y + range.size.height-[self translate:15]);
         sprintf(textBuffer, "%d",i);
         CGContextShowText(context, textBuffer, strlen(textBuffer));
     }
