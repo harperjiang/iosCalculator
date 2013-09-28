@@ -124,10 +124,12 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="450"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="50"/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="QpQ-gP-aQX" appends="YES" id="fzx-Ys-1Yb"/>
                                     <outletCollection property="gestureRecognizers" destination="WDm-EF-4Lv" appends="YES" id="f5Y-Th-9LO"/>
+                                    <outletCollection property="gestureRecognizers" destination="hyS-vP-55X" appends="YES" id="eMY-bP-qk3"/>
                                 </connections>
                             </view>
                             <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="V8e-Ed-Yyc">
@@ -155,6 +157,11 @@
                         <action selector="tapReceived:" destination="SMj-3p-dS4" id="tdb-eR-d8y"/>
                     </connections>
                 </tapGestureRecognizer>
+                <pinchGestureRecognizer id="hyS-vP-55X">
+                    <connections>
+                        <action selector="pinchReceived:" destination="SMj-3p-dS4" id="f4g-vF-3ho"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="880" y="829"/>
         </scene>
@@ -595,7 +602,6 @@
     </scenes>
     <resources>
         <image name="calculator_24.png" width="24" height="24"/>
-        <image name="chart_line_24.png" width="24" height="24"/>
         <image name="chart_line_24.png" width="24" height="24"/>
         <image name="concole_24.png" width="24" height="24"/>
         <image name="gear_24.png" width="24" height="24"/>

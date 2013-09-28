@@ -12,6 +12,11 @@
 #import "Environment.h"
 
 
+FOUNDATION_EXPORT CGFloat const DEFAULT_PROP;
+FOUNDATION_EXPORT CGFloat const MAX_PROP;
+FOUNDATION_EXPORT CGFloat const MIN_PROP;
+
+
 @interface ViewPort : AbstractDrawObject
 
 @property(nonatomic,strong) Environment* environment;

@@ -69,6 +69,8 @@ static ScaleBehavior* CALCULATE;
 static Decimal* INST_NAN;
 
 -(Decimal *)init:(NSDecimalNumber*)value {
+    if([value isEqualToNumber:[NSDecimalNumber notANumber]])
+        return [Decimal nan];
     return [self init:value scale:DEFAULT_ROUND];
 }
 

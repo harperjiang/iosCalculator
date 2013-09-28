@@ -17,12 +17,25 @@
     return [[tab selectedViewController] view];
 }
 
++(UIView*) lookupView: (UIView*) current class:(id) clazz {
+    if([current isKindOfClass:clazz])
+        return current;
+    for (NSInteger i = 0; i < current.subviews.count; i++) {
+        UIView* sub = [ViewUtils lookupView:(UIView*)[current.subviews objectAtIndex:i] class:clazz];
+        if(sub!= nil)
+            return sub;
+    }
+    return nil;
+}
+
 +(UIView*) getViewByClass: (id) clazz {
     IDCAppDelegate* delegate = [[UIApplication sharedApplication] delegate];
     UITabBarController* tab = (UITabBarController*)delegate.window.rootViewController;
     for(int i = 0 ; i < [tab viewControllers].count; i++) {
-        if([[(UIViewController*)[[tab viewControllers] objectAtIndex:i] view] isKindOfClass:clazz]) {
-            return [[[tab viewControllers] objectAtIndex:i] view];
+        UIViewController* viewController = (UIViewController*)[[tab viewControllers] objectAtIndex:i];
+        UIView* result = [self lookupView:[viewController view] class: clazz];
+        if(result != nil) {
+            return result;
         }
     }
     return nil;

@@ -47,22 +47,31 @@
     CGContextBeginPath(context);
     // Draw grids
     CGContextSetRGBStrokeColor(context, 0.7, 0.7, 0.7, 0.8);
-    CGFloat pattern[] = {0.1,0.1};
+    CGFloat linewidth = [self translate:2];
+    CGFloat pattern[] = {linewidth,linewidth};
     char* textBuffer = (char*)malloc(10);
     CGContextSetFontSize(context, 8);
     CGContextSetLineDash(context, 0, pattern, 2);
-    for(int i = ceil(range.origin.x);i<range.origin.x+range.size.width;i++) {
-        CGContextMoveToPoint(context, i, range.origin.y);
-        CGContextAddLineToPoint(context, i, range.origin.y + range.size.height);
-        CGContextSetTextPosition(context, i, range.origin.y + range.size.height-[self translate:15]);
-        sprintf(textBuffer, "%d",i);
+    CGFloat unit = [self translate:20];
+    
+    CGAffineTransform transform = CGContextGetTextMatrix(context);
+    CGAffineTransform rotated = CGAffineTransformRotate(transform, -M_PI/2);
+    CGContextSetTextMatrix(context, rotated);
+    // Draw vertical line
+    for(CGFloat start = ceil(range.origin.x/unit)*unit;start<range.origin.x+range.size.width;start+=unit) {
+        CGContextMoveToPoint(context, start, range.origin.y);
+        CGContextAddLineToPoint(context, start, range.origin.y + range.size.height);
+        CGContextSetTextPosition(context, start, range.origin.y + range.size.height-[self translate:5]);
+        sprintf(textBuffer, "%.2f",start);
         CGContextShowText(context, textBuffer, strlen(textBuffer));
     }
-    for(int i = ceil(range.origin.y);i<range.origin.y+range.size.height;i++) {
-        CGContextMoveToPoint(context, range.origin.x, i);
-        CGContextAddLineToPoint(context, range.origin.x+range.size.width, i);
-        CGContextSetTextPosition(context, range.origin.x + range.size.width - [self translate:15], i);
-        sprintf(textBuffer, "%d",i);
+    CGContextSetTextMatrix(context, transform);
+    // Draw horizontal line
+    for(CGFloat start = ceil(range.origin.y/unit)*unit;start<range.origin.y+range.size.height;start+=unit) {
+        CGContextMoveToPoint(context, range.origin.x, start);
+        CGContextAddLineToPoint(context, range.origin.x+range.size.width, start);
+        CGContextSetTextPosition(context, range.origin.x + range.size.width - [self translate:20], start);
+        sprintf(textBuffer, "%.2f",start);
         CGContextShowText(context, textBuffer, strlen(textBuffer));
     }
     free(textBuffer);

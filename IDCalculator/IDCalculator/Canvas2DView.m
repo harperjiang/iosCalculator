@@ -60,6 +60,18 @@
 
 -(IBAction) tapReceived:(UITapGestureRecognizer*)gesture {
     [[self viewPort] setCenter:CGPointMake(0,0)];
+    // Default Value
+    [[self viewPort] setProportion:DEFAULT_PROP];
+    [self setNeedsDisplay];
+}
+
+-(IBAction) pinchReceived:(UIPinchGestureRecognizer*)gesture {
+    CGFloat newvalue = self.viewPort.proportion/gesture.scale;
+    if(newvalue >= MAX_PROP)
+        newvalue = MAX_PROP;
+    if(newvalue < MIN_PROP)
+        newvalue = MIN_PROP;
+    [[self viewPort] setProportion:newvalue];
     [self setNeedsDisplay];
 }
 

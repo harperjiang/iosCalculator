@@ -8,12 +8,16 @@
 
 #import "ViewPort.h"
 
+CGFloat const DEFAULT_PROP = 0.05;
+CGFloat const MIN_PROP = 0.001;
+CGFloat const MAX_PROP = 1;
+
 @implementation ViewPort
 
 -(ViewPort*) init {
     self = [super init];
     if(self) {
-        [self setProportion: 0.05];
+        [self setProportion: DEFAULT_PROP];
         self->_center.x = 0;
         self->_center.y = 0;
         [self setEnvironment:[[Environment alloc] init]];

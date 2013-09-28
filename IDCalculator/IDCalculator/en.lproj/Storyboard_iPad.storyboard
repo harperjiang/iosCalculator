@@ -371,6 +371,7 @@
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="WcB-co-zg0" appends="YES" id="w81-hy-7nT"/>
                             <outletCollection property="gestureRecognizers" destination="6C4-bE-TvU" appends="YES" id="hoj-k5-gZe"/>
+                            <outletCollection property="gestureRecognizers" destination="FTG-cv-imd" appends="YES" id="6NQ-wQ-DPx"/>
                         </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Graph" image="chart_line_24.png" id="Fhb-r1-v9l"/>
@@ -389,6 +390,11 @@
                         <action selector="tapReceived:" destination="sDl-u3-8Cf" id="1wB-IW-ghM"/>
                     </connections>
                 </tapGestureRecognizer>
+                <pinchGestureRecognizer id="FTG-cv-imd">
+                    <connections>
+                        <action selector="pinchReceived:" destination="sDl-u3-8Cf" id="uct-XP-mIu"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="505" y="599"/>
         </scene>

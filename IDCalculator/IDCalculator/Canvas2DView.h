@@ -17,6 +17,7 @@
 
 -(IBAction) dragReceived:(id) gesture;
 -(IBAction) tapReceived:(id) gesture;
+-(IBAction) pinchReceived:(id) gesture;
 
 -(ViewPort*) getViewPort;
 

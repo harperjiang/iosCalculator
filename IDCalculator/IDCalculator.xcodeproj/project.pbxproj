@@ -643,10 +643,10 @@
 			children = (
 				A6741AFF167D6ED3005BCBE5 /* Canvas2DView.h */,
 				A6741B00167D6ED3005BCBE5 /* Canvas2DView.m */,
-				A6D7DF101666FBA200D7B705 /* iphone */,
-				A6D7DF0E1666FB9B00D7B705 /* ipad */,
 				A6D7DF14166709CD00D7B705 /* ViewHelper.h */,
 				A6D7DF15166709CD00D7B705 /* ViewHelper.m */,
+				A6D7DF101666FBA200D7B705 /* iphone */,
+				A6D7DF0E1666FB9B00D7B705 /* ipad */,
 			);
 			name = ui;
 			sourceTree = "<group>";
