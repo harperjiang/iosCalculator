@@ -68,7 +68,6 @@
 		A67BC01F165291DD00072670 /* IDCConsoleTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A67BC01E165291DD00072670 /* IDCConsoleTest.m */; };
 		A67BC02D1652C31700072670 /* AssignCommandTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A67BC02C1652C31700072670 /* AssignCommandTest.m */; };
 		A67BC0301652F9BB00072670 /* VariableCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = A67BC02F1652F9BA00072670 /* VariableCommand.m */; };
-		A67CCA721669F024007561D9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A67CCA711669F024007561D9 /* Default-568h@2x.png */; };
 		A67CCA771669F093007561D9 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A67CCA731669F093007561D9 /* Default-Landscape@2x~ipad.png */; };
 		A67CCA781669F093007561D9 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A67CCA741669F093007561D9 /* Default-Landscape~ipad.png */; };
 		A67CCA791669F093007561D9 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A67CCA751669F093007561D9 /* Default-Portrait@2x~ipad.png */; };
@@ -77,6 +76,8 @@
 		A67D23DC17E9F454006DE54D /* NumberTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A67D23DB17E9F454006DE54D /* NumberTest.m */; };
 		A67D23DF17EA146E006DE54D /* ConstantTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A67D23DE17EA146E006DE54D /* ConstantTest.m */; };
 		A67D2DC417E38F7E007C2F7F /* IntegerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A67D2DC317E38F7E007C2F7F /* IntegerTest.m */; };
+		A692351717F88E70001B179F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A692351617F88E70001B179F /* Images.xcassets */; };
+		A692351917F899EF001B179F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A692351817F899EF001B179F /* Default-568h@2x.png */; };
 		A6ADAE7E17ECAA930069DD6B /* ViewUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A6ADAE7D17ECAA930069DD6B /* ViewUtils.m */; };
 		A6ADAE8117ECB1C20069DD6B /* BrowseUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A6ADAE8017ECB1C20069DD6B /* BrowseUtils.m */; };
 		A6AE35081665FE6000AEF12B /* FractionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6AE35071665FE6000AEF12B /* FractionTest.m */; };
@@ -278,9 +279,6 @@
 		A67BC02C1652C31700072670 /* AssignCommandTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignCommandTest.m; sourceTree = "<group>"; };
 		A67BC02E1652F9B900072670 /* VariableCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VariableCommand.h; sourceTree = "<group>"; };
 		A67BC02F1652F9BA00072670 /* VariableCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VariableCommand.m; sourceTree = "<group>"; };
-		A67CCA651669EDE7007561D9 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "../../../../Downloads/Default-Landscape~ipad.png"; sourceTree = "<group>"; };
-		A67CCA661669EDE7007561D9 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~ipad.png"; path = "../../../../Downloads/Default-Portrait~ipad.png"; sourceTree = "<group>"; };
-		A67CCA711669F024007561D9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A67CCA731669F093007561D9 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 		A67CCA741669F093007561D9 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		A67CCA751669F093007561D9 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
@@ -293,6 +291,8 @@
 		A67D23DE17EA146E006DE54D /* ConstantTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConstantTest.m; sourceTree = "<group>"; };
 		A67D2DC217E38F7D007C2F7F /* IntegerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntegerTest.h; sourceTree = "<group>"; };
 		A67D2DC317E38F7E007C2F7F /* IntegerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntegerTest.m; sourceTree = "<group>"; };
+		A692351617F88E70001B179F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A692351817F899EF001B179F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../../../Downloads/Default-568h@2x.png"; sourceTree = "<group>"; };
 		A69B8CA6165302AC00A64A65 /* console.lpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lex; path = console.lpp; sourceTree = "<group>"; };
 		A69B8CA7165302AC00A64A65 /* console.ypp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.yacc; path = console.ypp; sourceTree = "<group>"; };
 		A6ADAE7C17ECAA930069DD6B /* ViewUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewUtils.h; sourceTree = "<group>"; };
@@ -559,6 +559,7 @@
 				A676C0BB164CC20E00C0F859 /* Storyboard_iPad.storyboard */,
 				A676C0A7164CC20E00C0F859 /* Supporting Files */,
 				A6EEE6CC1663102D00310568 /* Settings.bundle */,
+				A692351617F88E70001B179F /* Images.xcassets */,
 			);
 			path = IDCalculator;
 			sourceTree = "<group>";
@@ -566,14 +567,12 @@
 		A676C0A7164CC20E00C0F859 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A6EEE6961662A20400310568 /* tabicon */,
 				A67CCA731669F093007561D9 /* Default-Landscape@2x~ipad.png */,
+				A692351817F899EF001B179F /* Default-568h@2x.png */,
 				A67CCA741669F093007561D9 /* Default-Landscape~ipad.png */,
 				A67CCA751669F093007561D9 /* Default-Portrait@2x~ipad.png */,
 				A67CCA761669F093007561D9 /* Default-Portrait~ipad.png */,
-				A67CCA711669F024007561D9 /* Default-568h@2x.png */,
-				A67CCA651669EDE7007561D9 /* Default-Landscape~ipad.png */,
-				A67CCA661669EDE7007561D9 /* Default-Portrait~ipad.png */,
-				A6EEE6961662A20400310568 /* tabicon */,
 				A6EEE69416627F5800310568 /* Default.png */,
 				A6EEE69216627DA300310568 /* Default@2x.png */,
 				A6EEE67E16616D5A00310568 /* icon.png */,
@@ -1093,6 +1092,11 @@
 				CLASSPREFIX = IDC;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Harper Jiang";
+				TargetAttributes = {
+					A676C09B164CC20E00C0F859 = {
+						DevelopmentTeam = 5X728478P8;
+					};
+				};
 			};
 			buildConfigurationList = A676C096164CC20E00C0F859 /* Build configuration list for PBXProject "IDCalculator" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1126,14 +1130,15 @@
 				A6EEE6A51662A36300310568 /* display_on_24.png in Resources */,
 				A6EEE6A71662A36300310568 /* keyboard_24.png in Resources */,
 				A6EEE6CD1663102F00310568 /* Settings.bundle in Resources */,
-				A67CCA721669F024007561D9 /* Default-568h@2x.png in Resources */,
 				A67CCA771669F093007561D9 /* Default-Landscape@2x~ipad.png in Resources */,
 				A67CCA781669F093007561D9 /* Default-Landscape~ipad.png in Resources */,
 				A67CCA791669F093007561D9 /* Default-Portrait@2x~ipad.png in Resources */,
 				A67CCA7A1669F093007561D9 /* Default-Portrait~ipad.png in Resources */,
 				A6D2B126166A6367000144D5 /* chart_line_24.png in Resources */,
+				A692351717F88E70001B179F /* Images.xcassets in Resources */,
 				A6D2B127166A6367000144D5 /* concole_24.png in Resources */,
 				A6D2B128166A6367000144D5 /* gear_24.png in Resources */,
+				A692351917F899EF001B179F /* Default-568h@2x.png in Resources */,
 				A67A770E17EB87820057656C /* ConsoleParser.output in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1361,10 +1366,15 @@
 		A676C0D9164CC20F00C0F859 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IDCalculator/IDCalculator-Prefix.pch";
 				INFOPLIST_FILE = "IDCalculator/IDCalculator-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1373,10 +1383,15 @@
 		A676C0DA164CC20F00C0F859 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IDCalculator/IDCalculator-Prefix.pch";
 				INFOPLIST_FILE = "IDCalculator/IDCalculator-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
