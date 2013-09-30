@@ -42,6 +42,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[ConsoleViewController keyboardWillChange:]:ConsoleViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "windowBounds">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[Matrix init:]:Matrix.m">
          <PersistentStrings>
             <PersistentString
@@ -84,10 +92,10 @@
                value = "[self description]">
             </PersistentString>
             <PersistentString
-               value = "[NumConstant NEGAONE]">
+               value = "(NumConstant*)coefficient">
             </PersistentString>
             <PersistentString
-               value = "(NumConstant*)coefficient">
+               value = "[NumConstant NEGAONE]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -331,13 +339,13 @@
          contextName = "-[Matrix val:n:]:Matrix.m">
          <PersistentStrings>
             <PersistentString
+               value = "[self val:1 n:0]">
+            </PersistentString>
+            <PersistentString
                value = "[[self data] get:2]">
             </PersistentString>
             <PersistentString
                value = "(NumberData*)item">
-            </PersistentString>
-            <PersistentString
-               value = "[self val:1 n:0]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -395,7 +403,7 @@
          contextName = "-[ArithmeticExpression differentiate:]:ArithmeticExpression.m">
          <PersistentStrings>
             <PersistentString
-               value = "[du description]">
+               value = "[vv description]">
             </PersistentString>
             <PersistentString
                value = "[dv description]">
@@ -404,7 +412,7 @@
                value = "[self description]">
             </PersistentString>
             <PersistentString
-               value = "[vv description]">
+               value = "[du description]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

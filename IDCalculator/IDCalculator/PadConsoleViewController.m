@@ -10,6 +10,10 @@
 #import "IDCConsole.h"
 #import "ViewHelper.h"
 
+#ifndef IOS_VERSION
+#define IOS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
+#endif
+
 @interface PadConsoleViewController ()
 
 @end
@@ -122,10 +126,19 @@
         [UIView setAnimationBeginsFromCurrentState:YES];
         [UIView setAnimationDuration:0.3];
         
-        NSInteger IOS7_OFFSET = 56;
+        // In iOS7, the tab bar will overlap on the view. This constant is to estimate the location of it.
+        int TABBAR_OFFSET = 0;
+        // In iOS6, the displayed keyboard bounds is bigger than the value by this offset
+        int KEYBOARD_OFFSET = 0;
+        if(IOS_VERSION >= 7.0){
+            TABBAR_OFFSET = 56;
+        } else {
+            KEYBOARD_OFFSET = 20;
+        }
+        
         if(keyboardBounds.origin.y >= windowBounds.size.height) {
             // keyboard is hidden
-            NSInteger newtextloc = viewBounds.size.height - IOS7_OFFSET - subviewBounds.size.height;
+            NSInteger newtextloc = viewBounds.size.height - TABBAR_OFFSET - subviewBounds.size.height;
             NSInteger offset = newtextloc - subviewBounds.origin.y;
             displayBounds.size.height += offset;
             subviewBounds.origin.y += offset;
@@ -133,7 +146,7 @@
             [[self keyboardView] setFrame:subviewBounds];
         } else {
             NSInteger newtextloc = keyboardBounds.origin.y - subviewBounds.size.height;
-            NSInteger offset = newtextloc - subviewBounds.origin.y;
+            NSInteger offset = newtextloc - subviewBounds.origin.y - KEYBOARD_OFFSET;
             displayBounds.size.height += offset;
             subviewBounds.origin.y += offset;
             [[self display] setFrame:displayBounds];

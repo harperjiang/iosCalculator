@@ -63,7 +63,7 @@
 
         CGRect keyboardBounds;
         [keyboardBoundsValue getValue:&keyboardBounds];
-        
+        CGRect windowBounds = self.view.window.frame;
         CGRect viewBounds = self.view.frame;
         CGRect textFieldBounds = self.inputField.frame;
         CGRect displayBounds = self.display.frame;
@@ -73,18 +73,26 @@
         [UIView setAnimationBeginsFromCurrentState:YES];
         [UIView setAnimationDuration:0.3];
         
-        int IOS7_OFFSET = 48;
+        // In iOS7, the tab bar will overlap on the view. This constant is to estimate the location of it.
+        int TABBAR_OFFSET = 0;
+        // In iOS6, the displayed keyboard bounds is bigger than the value by this offset
+        int KEYBOARD_OFFSET = 0;
+        if(IOS_VERSION >= 7.0){
+            TABBAR_OFFSET = 48;
+        } else {
+            KEYBOARD_OFFSET = 20;
+        }
         
         if(keyboardBounds.origin.y >= viewBounds.size.height) {
             // keyboard is hidden
-            NSInteger offset = viewBounds.size.height - textFieldBounds.origin.y - textFieldBounds.size.height;
-            displayBounds.size.height += offset - IOS7_OFFSET;
-            textFieldBounds.origin.y += offset - IOS7_OFFSET;
+            NSInteger offset = viewBounds.size.height - textFieldBounds.origin.y - textFieldBounds.size.height - TABBAR_OFFSET;
+            displayBounds.size.height += offset;
+            textFieldBounds.origin.y += offset;
             [[self display] setFrame:displayBounds];
             [[self inputField] setFrame:textFieldBounds];
         } else {
             NSInteger newtextloc = keyboardBounds.origin.y - textFieldBounds.size.height;
-            NSInteger offset = newtextloc - textFieldBounds.origin.y;
+            NSInteger offset = newtextloc - textFieldBounds.origin.y - KEYBOARD_OFFSET;
             displayBounds.size.height += offset;
             textFieldBounds.origin.y += offset;
             [[self display] setFrame:displayBounds];
