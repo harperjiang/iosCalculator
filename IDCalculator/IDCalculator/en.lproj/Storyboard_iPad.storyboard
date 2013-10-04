@@ -85,7 +85,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleToFill" id="7jP-Kf-hg8">
-                                <rect key="frame" x="0.0" y="823.99999999999989" width="768" height="145"/>
+                                <rect key="frame" x="0.0" y="823.99999999999977" width="768" height="145"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="cu8-5k-9UB">
