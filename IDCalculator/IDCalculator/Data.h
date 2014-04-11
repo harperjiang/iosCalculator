@@ -18,4 +18,6 @@
 
 -(Data*) div:(Data*)another;
 
+-(Data*) mod:(Data*)another;
+
 @end

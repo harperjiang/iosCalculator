@@ -33,6 +33,10 @@
     return nil;
 }
 
+-(Data*) mod:(Data *)another {
+    return nil;
+}
+
 -(Data*) pow:(NSInteger)power {
     return nil;
 }

@@ -39,4 +39,12 @@
     STAssertTrue(af.left == [SpecialConstant PI],@"");
 }
 
+-(void) testParseMod {
+    NSString* input = @"5%3";
+    Function* result = [FunctionParser parse:input];
+    STAssertTrue([[result expression] isKindOfClass:[ArithmeticExpression class]],@"");
+    ArithmeticExpression* ae = (ArithmeticExpression*)result.expression;
+    STAssertTrue(ae.opr == MOD,@"");
+}
+
 @end

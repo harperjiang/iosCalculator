@@ -18,7 +18,7 @@ CFunction* calculus_result;
     CNameFunc* namefunc;
     CConstant* num;
 }
-%token NUM LP RP OADD OSUB OMUL ODIV POWER 
+%token NUM LP RP OADD OSUB OMUL ODIV OMOD POWER
 %token FUNC_SIN FUNC_COS FUNC_LN 
 %token DOPR VAR IOPR DX
 %token CONST_E CONST_PI
@@ -30,7 +30,7 @@ CFunction* calculus_result;
 
 %left LOW
 %left OADD OSUB
-%left OMUL ODIV
+%left OMUL ODIV OMOD
 %left POWER
 %left DOPR IOPR DX
 %left LP RP
@@ -47,6 +47,7 @@ func        :   pfunc                           {$$ = $1;}
             |   func OSUB func                  {$$ = new CArithFunc($1,SUB,$3);}
             |   OSUB func %prec POWER           {$$ = new CArithFunc(NULL,SUB,$2);}
             |   func OMUL func                  {$$ = new CArithFunc($1,MUL,$3);}
+            |   func OMOD func                  {$$ = new CArithFunc($1,MOD,$3);}
             |   pfunc pfunc %prec OMUL          {$$ = new CArithFunc($1,MUL,$2);}
             |   num func %prec OMUL             {$$ = new CArithFunc($1,MUL,$2);}
             |   func ODIV func                  {$$ = new CArithFunc($1,DIV,$3);}

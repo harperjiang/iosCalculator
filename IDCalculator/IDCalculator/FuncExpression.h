@@ -15,7 +15,6 @@
 @property NSInteger paramCount;
 
 -(Data*) execute:(ExpressionList*) expList;
-
 -(void) error:(NSString*)input;
 -(void) output:(NSString*)input;
 
@@ -34,6 +33,14 @@
 @end
 
 @interface PowerFuncCallback :  FuncCallback
+
+@end
+
+@interface ModExpFuncCallback : FuncCallback
+
+@end
+
+@interface CRTFuncCallback : FuncCallback
 
 @end
 

@@ -314,7 +314,7 @@ extern int yylex (void);
 #undef YY_DECL
 #endif
 
-#line 37 "console.lpp"
+#line 38 "console.lpp"
 
 
 #line 321 "ConsoleLexer.h"

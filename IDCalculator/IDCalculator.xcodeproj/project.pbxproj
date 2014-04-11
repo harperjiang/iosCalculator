@@ -76,6 +76,9 @@
 		A67D23DC17E9F454006DE54D /* NumberTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A67D23DB17E9F454006DE54D /* NumberTest.m */; };
 		A67D23DF17EA146E006DE54D /* ConstantTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A67D23DE17EA146E006DE54D /* ConstantTest.m */; };
 		A67D2DC417E38F7E007C2F7F /* IntegerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A67D2DC317E38F7E007C2F7F /* IntegerTest.m */; };
+		A68F4BFE18444F7E005BCC25 /* ModularInteger.m in Sources */ = {isa = PBXBuildFile; fileRef = A68F4BFD18444F7D005BCC25 /* ModularInteger.m */; };
+		A68F4C0018445819005BCC25 /* ModularIntegerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A68F4BFF18445819005BCC25 /* ModularIntegerTest.m */; };
+		A68F4C0418448369005BCC25 /* FuncExpressionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A68F4C0318448369005BCC25 /* FuncExpressionTest.m */; };
 		A692351717F88E70001B179F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A692351617F88E70001B179F /* Images.xcassets */; };
 		A692351917F899EF001B179F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A692351817F899EF001B179F /* Default-568h@2x.png */; };
 		A6ADAE7E17ECAA930069DD6B /* ViewUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A6ADAE7D17ECAA930069DD6B /* ViewUtils.m */; };
@@ -291,6 +294,11 @@
 		A67D23DE17EA146E006DE54D /* ConstantTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConstantTest.m; sourceTree = "<group>"; };
 		A67D2DC217E38F7D007C2F7F /* IntegerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntegerTest.h; sourceTree = "<group>"; };
 		A67D2DC317E38F7E007C2F7F /* IntegerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntegerTest.m; sourceTree = "<group>"; };
+		A68F4BFC18444F7D005BCC25 /* ModularInteger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModularInteger.h; sourceTree = "<group>"; };
+		A68F4BFD18444F7D005BCC25 /* ModularInteger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModularInteger.m; sourceTree = "<group>"; };
+		A68F4BFF18445819005BCC25 /* ModularIntegerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModularIntegerTest.m; sourceTree = "<group>"; };
+		A68F4C011844597A005BCC25 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		A68F4C0318448369005BCC25 /* FuncExpressionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuncExpressionTest.m; sourceTree = "<group>"; };
 		A692351617F88E70001B179F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A692351817F899EF001B179F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../../../Downloads/Default-568h@2x.png"; sourceTree = "<group>"; };
 		A69B8CA6165302AC00A64A65 /* console.lpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lex; path = console.lpp; sourceTree = "<group>"; };
@@ -533,6 +541,7 @@
 		A676C09F164CC20E00C0F859 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A68F4C011844597A005BCC25 /* XCTest.framework */,
 				A6741B04167D70A8005BCBE5 /* iAd.framework */,
 				A6EEE6CE1664391300310568 /* QuartzCore.framework */,
 				A6EEE6B31663027C00310568 /* OpenGLES.framework */,
@@ -947,6 +956,8 @@
 				A6741AF5167D6977005BCBE5 /* RealNumber.m */,
 				A6741AF7167D698D005BCBE5 /* ComplexNumber.h */,
 				A6741AF8167D698D005BCBE5 /* ComplexNumber.m */,
+				A68F4BFC18444F7D005BCC25 /* ModularInteger.h */,
+				A68F4BFD18444F7D005BCC25 /* ModularInteger.m */,
 			);
 			name = num;
 			sourceTree = "<group>";
@@ -972,6 +983,7 @@
 				A67D2DC317E38F7E007C2F7F /* IntegerTest.m */,
 				A67D23DA17E9F454006DE54D /* NumberTest.h */,
 				A67D23DB17E9F454006DE54D /* NumberTest.m */,
+				A68F4BFF18445819005BCC25 /* ModularIntegerTest.m */,
 			);
 			name = num;
 			sourceTree = "<group>";
@@ -1038,6 +1050,7 @@
 				A6E505BB166EF39500575845 /* VariableTest.m */,
 				A6E505C11671D1B300575845 /* PolynomialExpressionTest.h */,
 				A6E505C21671D1B300575845 /* PolynomialExpressionTest.m */,
+				A68F4C0318448369005BCC25 /* FuncExpressionTest.m */,
 			);
 			name = expr;
 			sourceTree = "<group>";
@@ -1233,6 +1246,7 @@
 				A6FE3B0617E213720045A1CE /* PolynomialExpression.m in Sources */,
 				A6FE3B0A17E218740045A1CE /* VariableContext.m in Sources */,
 				A6247E3117E4270F006DB3D5 /* ViewPort.m in Sources */,
+				A68F4BFE18444F7E005BCC25 /* ModularInteger.m in Sources */,
 				A67B48A317E50A9F006DB1B6 /* Element.m in Sources */,
 				A67B48A717E5119E006DB1B6 /* ElementContainer.m in Sources */,
 				A659DC6A17E6489700133A7C /* Stack.m in Sources */,
@@ -1257,6 +1271,7 @@
 				A67BC01F165291DD00072670 /* IDCConsoleTest.m in Sources */,
 				A67BC02D1652C31700072670 /* AssignCommandTest.m in Sources */,
 				A6C6F5CF1660237A00472E99 /* CommandConverterTest.mm in Sources */,
+				A68F4C0418448369005BCC25 /* FuncExpressionTest.m in Sources */,
 				A6CE38B41665B01700EDC49A /* GLESObjectTest.m in Sources */,
 				A6AE35081665FE6000AEF12B /* FractionTest.m in Sources */,
 				A602AFDB166B2591007FBA2A /* FunctionParserTest.mm in Sources */,
@@ -1268,6 +1283,7 @@
 				A6741B1B167F7B86005BCBE5 /* InteExpressionTest.mm in Sources */,
 				A67D2DC417E38F7E007C2F7F /* IntegerTest.m in Sources */,
 				A67D23DC17E9F454006DE54D /* NumberTest.m in Sources */,
+				A68F4C0018445819005BCC25 /* ModularIntegerTest.m in Sources */,
 				A67D23DF17EA146E006DE54D /* ConstantTest.m in Sources */,
 				A6DFC0A717ED71FE005184D9 /* ArithConstantTest.m in Sources */,
 			);
@@ -1370,6 +1386,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IDCalculator/IDCalculator-Prefix.pch";
 				INFOPLIST_FILE = "IDCalculator/IDCalculator-Info.plist";
@@ -1388,6 +1408,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IDCalculator/IDCalculator-Prefix.pch";
 				INFOPLIST_FILE = "IDCalculator/IDCalculator-Info.plist";

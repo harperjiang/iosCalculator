@@ -46,18 +46,19 @@
      OSUB = 262,
      OMUL = 263,
      ODIV = 264,
-     POWER = 265,
-     FUNC_SIN = 266,
-     FUNC_COS = 267,
-     FUNC_LN = 268,
-     DOPR = 269,
-     VAR = 270,
-     IOPR = 271,
-     DX = 272,
-     CONST_E = 273,
-     CONST_PI = 274,
-     LOW = 275,
-     HIGH = 276
+     OMOD = 265,
+     POWER = 266,
+     FUNC_SIN = 267,
+     FUNC_COS = 268,
+     FUNC_LN = 269,
+     DOPR = 270,
+     VAR = 271,
+     IOPR = 272,
+     DX = 273,
+     CONST_E = 274,
+     CONST_PI = 275,
+     LOW = 276,
+     HIGH = 277
    };
 #endif
 /* Tokens.  */
@@ -68,18 +69,19 @@
 #define OSUB 262
 #define OMUL 263
 #define ODIV 264
-#define POWER 265
-#define FUNC_SIN 266
-#define FUNC_COS 267
-#define FUNC_LN 268
-#define DOPR 269
-#define VAR 270
-#define IOPR 271
-#define DX 272
-#define CONST_E 273
-#define CONST_PI 274
-#define LOW 275
-#define HIGH 276
+#define OMOD 265
+#define POWER 266
+#define FUNC_SIN 267
+#define FUNC_COS 268
+#define FUNC_LN 269
+#define DOPR 270
+#define VAR 271
+#define IOPR 272
+#define DX 273
+#define CONST_E 274
+#define CONST_PI 275
+#define LOW 276
+#define HIGH 277
 
 
 
@@ -95,7 +97,7 @@ typedef union YYSTYPE
     CConstant* num;
 }
 /* Line 1529 of yacc.c.  */
-#line 99 "CalculusParser.h"
+#line 101 "CalculusParser.h"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1

@@ -110,6 +110,11 @@
                 self.opr = NOP;
                 self.right = nil;
                 return self.left;
+            case MOD:
+                self.left = [(Data*)self.left mod:(Data*)self.right];
+                self.opr = NOP;
+                self.right = nil;
+                return self.left;
             default:
                 // Do nothing but this should not happen
                 return self;
@@ -253,6 +258,8 @@
                 if(self.right == [Integer ZERO])
                     return [Decimal nan];
                 return [(Data*)left div:(Data*)right];
+            case MOD:
+                return [(Data*)left mod:(Data*)right];
             default:
                 return nil;
         }
@@ -394,6 +401,8 @@
             case DIV:
                 [result appendString:@"/"];
                 break;
+            case MOD:
+                [result appendString:@"%"];
             case NOP:
                 break;
         }

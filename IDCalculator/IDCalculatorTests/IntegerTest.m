@@ -20,11 +20,13 @@
     Data* sub = [a sub:b];
     Data* mul = [a mul:b];
     Data* div = [a div:b];
+    Data* mod = [a mod:b];
     
     STAssertTrue([add isKindOfClass:[Integer class]], @"");
     STAssertTrue([sub isKindOfClass:[Integer class]], @"");
     STAssertTrue([mul isKindOfClass:[Integer class]], @"");
     STAssertTrue([div isKindOfClass:[Fraction class]], @"");
+    STAssertTrue([mod isKindOfClass:[Integer class]], @"");
 }
 
 @end

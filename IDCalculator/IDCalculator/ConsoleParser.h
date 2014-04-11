@@ -62,9 +62,10 @@
      DECIMAL = 278,
      ABORT = 279,
      LOW = 280,
-     LV3 = 281,
-     LV2 = 282,
-     LV1 = 283
+     OMOD = 281,
+     LV3 = 282,
+     LV2 = 283,
+     LV1 = 284
    };
 #endif
 /* Tokens.  */
@@ -91,9 +92,10 @@
 #define DECIMAL 278
 #define ABORT 279
 #define LOW 280
-#define LV3 281
-#define LV2 282
-#define LV1 283
+#define OMOD 281
+#define LV3 282
+#define LV2 283
+#define LV1 284
 
 
 
@@ -116,7 +118,7 @@ typedef union YYSTYPE
     CFuncExpression* func;
 }
 /* Line 1529 of yacc.c.  */
-#line 120 "ConsoleParser.h"
+#line 122 "ConsoleParser.h"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1

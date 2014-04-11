@@ -18,6 +18,7 @@ extern void calerror(char* input);
 "-"                 {return OSUB;}
 "*"                 {return OMUL;}
 "/"                 {return ODIV;}
+"%"                 {return OMOD;}
 "^"                 {return POWER;}
 "sin"               {return FUNC_SIN;}
 "cos"               {return FUNC_COS;}

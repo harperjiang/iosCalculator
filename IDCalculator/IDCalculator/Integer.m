@@ -71,6 +71,14 @@ static Integer* NEGAONE;
     return [NumberOperators div:self right:input];
 }
 
+-(Number*) mod:(Number *)input {
+    if([input class] == [Integer class]) {
+        Integer* inp = (Integer*)input;
+        return [Integer construct: self.value % inp.value];
+    }
+    return nil;
+}
+
 -(Decimal*) toDecimal {
     return [[Decimal alloc] init: [[NSDecimalNumber alloc] initWithInteger:[self value]]];
 }

@@ -7,6 +7,7 @@
 //
 
 #import "ExpressionCommand.h"
+#import "VariableContext.h"
 #import "Data.h"
 
 @implementation ExpressionCommand
@@ -20,8 +21,11 @@
 }
 
 -(void) execute {
+    id oldval = [[VariableContext instance] get:KEY_CALCULATE];
+    [[VariableContext instance] set:KEY_CALCULATE value:@"true"];
     // Evaluate the expression
     Expression* result = [[self expression] evaluate];
+    [[VariableContext instance] set:KEY_CALCULATE value:oldval];
     if(nil != result) {
     // Print the result
         [[IDCConsole instance] output:[result description]];
