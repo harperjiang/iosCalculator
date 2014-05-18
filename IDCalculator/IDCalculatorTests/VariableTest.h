@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Harper Jiang. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface VariableTest : SenTestCase
+@interface VariableTest : XCTestCase
 
 -(void) testEquals;
 

@@ -18,19 +18,19 @@
 -(void)testEvaluate {
     BasicFuncExpression* bf = [[BasicFuncExpression alloc] init:BT_SIN base:[Variable x]];
     Expression* eval = [bf evaluate];
-    STAssertEqualObjects(eval,bf,@"");
+    XCTAssertEqualObjects(eval,bf,@"");
     
     bf.type = BT_COS;
     eval = [bf evaluate];
-    STAssertEqualObjects(eval, bf, @"");
+    XCTAssertEqualObjects(eval, bf, @"");
     
     bf.type = BT_LN;
     eval = [bf evaluate];
-    STAssertEqualObjects(eval, bf, @"");
+    XCTAssertEqualObjects(eval, bf, @"");
     
     BasicFuncExpression* fraction = [[BasicFuncExpression alloc] init:BT_SIN base:[[ArithmeticExpression alloc] init:[SpecialConstant PI] opr:DIV right:[Integer construct:2]]];
     eval = [fraction evaluate];
-    STAssertEqualObjects([eval description], @"sin(π/2)", @"");
+    XCTAssertEqualObjects([eval description], @"sin(π/2)", @"");
 }
 
 

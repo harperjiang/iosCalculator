@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Harper Jiang. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import "FuncExpression.h"
 
-@interface FuncExpressionTest : SenTestCase
+@interface FuncExpressionTest : XCTestCase
 
 @end
 

@@ -17,8 +17,8 @@
     anotherx.name = @"x";
     Variable* y = [[Variable alloc] init];
     y.name = @"y";
-    STAssertTrue([x equals:anotherx],@"");
-    STAssertFalse([x equals:y],@"");
+    XCTAssertTrue([x equals:anotherx],@"");
+    XCTAssertFalse([x equals:y],@"");
 }
 
 @end
