@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 Harper Jiang. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface IDCalculatorTests : SenTestCase
+@interface IDCalculatorTests : XCTestCase
 
 @end
