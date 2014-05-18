@@ -40,7 +40,6 @@
 		A676C0B1164CC20E00C0F859 /* IDCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A676C0B0164CC20E00C0F859 /* IDCAppDelegate.m */; };
 		A676C0BD164CC20E00C0F859 /* Storyboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A676C0BB164CC20E00C0F859 /* Storyboard_iPad.storyboard */; };
 		A676C0C0164CC20E00C0F859 /* IDCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A676C0BF164CC20E00C0F859 /* IDCViewController.m */; };
-		A676C0C8164CC20F00C0F859 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A676C0C7164CC20F00C0F859 /* SenTestingKit.framework */; };
 		A676C0C9164CC20F00C0F859 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A676C0A0164CC20E00C0F859 /* UIKit.framework */; };
 		A676C0CA164CC20F00C0F859 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A676C0A2164CC20E00C0F859 /* Foundation.framework */; };
 		A676C0D2164CC20F00C0F859 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A676C0D0164CC20F00C0F859 /* InfoPlist.strings */; };
@@ -80,7 +79,6 @@
 		A68F4C0018445819005BCC25 /* ModularIntegerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A68F4BFF18445819005BCC25 /* ModularIntegerTest.m */; };
 		A68F4C0418448369005BCC25 /* FuncExpressionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A68F4C0318448369005BCC25 /* FuncExpressionTest.m */; };
 		A692351717F88E70001B179F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A692351617F88E70001B179F /* Images.xcassets */; };
-		A692351917F899EF001B179F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A692351817F899EF001B179F /* Default-568h@2x.png */; };
 		A6ADAE7E17ECAA930069DD6B /* ViewUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A6ADAE7D17ECAA930069DD6B /* ViewUtils.m */; };
 		A6ADAE8117ECB1C20069DD6B /* BrowseUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A6ADAE8017ECB1C20069DD6B /* BrowseUtils.m */; };
 		A6AE35081665FE6000AEF12B /* FractionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6AE35071665FE6000AEF12B /* FractionTest.m */; };
@@ -90,6 +88,7 @@
 		A6B9746B164E17EB007E4AB4 /* Vector.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B9746A164E17EB007E4AB4 /* Vector.m */; };
 		A6B9746E164E1A32007E4AB4 /* IDCConsole.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6B9746D164E1A32007E4AB4 /* IDCConsole.mm */; };
 		A6B97475164E8CC1007E4AB4 /* MatrixTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B97474164E8CC1007E4AB4 /* MatrixTest.m */; };
+		A6BE987318F89FDB0045D70C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6BE987218F89FDB0045D70C /* Default-568h@2x.png */; };
 		A6C5D8E3166C0DD80048E5C2 /* Decimal.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C5D8E2166C0DD80048E5C2 /* Decimal.m */; };
 		A6C5D8E7166C13880048E5C2 /* NumberOperators.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C5D8E6166C13870048E5C2 /* NumberOperators.m */; };
 		A6C6F59C165FFB5100472E99 /* CModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6C6F59A165FFB5100472E99 /* CModel.cpp */; };
@@ -237,8 +236,7 @@
 		A676C0BC164CC20E00C0F859 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Storyboard_iPad.storyboard; sourceTree = "<group>"; };
 		A676C0BE164CC20E00C0F859 /* IDCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDCViewController.h; sourceTree = "<group>"; };
 		A676C0BF164CC20E00C0F859 /* IDCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDCViewController.m; sourceTree = "<group>"; };
-		A676C0C6164CC20F00C0F859 /* IDCalculatorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IDCalculatorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A676C0C7164CC20F00C0F859 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		A676C0C6164CC20F00C0F859 /* IDCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IDCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A676C0CF164CC20F00C0F859 /* IDCalculatorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IDCalculatorTests-Info.plist"; sourceTree = "<group>"; };
 		A676C0D1164CC20F00C0F859 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A676C0D3164CC20F00C0F859 /* IDCalculatorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDCalculatorTests.h; sourceTree = "<group>"; };
@@ -300,7 +298,6 @@
 		A68F4C011844597A005BCC25 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		A68F4C0318448369005BCC25 /* FuncExpressionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuncExpressionTest.m; sourceTree = "<group>"; };
 		A692351617F88E70001B179F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		A692351817F899EF001B179F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../../../Downloads/Default-568h@2x.png"; sourceTree = "<group>"; };
 		A69B8CA6165302AC00A64A65 /* console.lpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lex; path = console.lpp; sourceTree = "<group>"; };
 		A69B8CA7165302AC00A64A65 /* console.ypp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.yacc; path = console.ypp; sourceTree = "<group>"; };
 		A6ADAE7C17ECAA930069DD6B /* ViewUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewUtils.h; sourceTree = "<group>"; };
@@ -321,6 +318,7 @@
 		A6B9746D164E1A32007E4AB4 /* IDCConsole.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IDCConsole.mm; sourceTree = "<group>"; };
 		A6B97473164E8CC1007E4AB4 /* MatrixTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatrixTest.h; sourceTree = "<group>"; };
 		A6B97474164E8CC1007E4AB4 /* MatrixTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatrixTest.m; sourceTree = "<group>"; };
+		A6BE987218F89FDB0045D70C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A6C5D8E1166C0DD80048E5C2 /* Decimal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decimal.h; sourceTree = "<group>"; };
 		A6C5D8E2166C0DD80048E5C2 /* Decimal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Decimal.m; sourceTree = "<group>"; };
 		A6C5D8E5166C13870048E5C2 /* NumberOperators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberOperators.h; sourceTree = "<group>"; };
@@ -416,7 +414,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A676C0C8164CC20F00C0F859 /* SenTestingKit.framework in Frameworks */,
 				A676C0C9164CC20F00C0F859 /* UIKit.framework in Frameworks */,
 				A676C0CA164CC20F00C0F859 /* Foundation.framework in Frameworks */,
 			);
@@ -533,7 +530,7 @@
 			isa = PBXGroup;
 			children = (
 				A676C09C164CC20E00C0F859 /* IDCalculator.app */,
-				A676C0C6164CC20F00C0F859 /* IDCalculatorTests.octest */,
+				A676C0C6164CC20F00C0F859 /* IDCalculatorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -549,7 +546,6 @@
 				A676C0A0164CC20E00C0F859 /* UIKit.framework */,
 				A676C0A2164CC20E00C0F859 /* Foundation.framework */,
 				A676C0A4164CC20E00C0F859 /* CoreGraphics.framework */,
-				A676C0C7164CC20F00C0F859 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -576,9 +572,9 @@
 		A676C0A7164CC20E00C0F859 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A6BE987218F89FDB0045D70C /* Default-568h@2x.png */,
 				A6EEE6961662A20400310568 /* tabicon */,
 				A67CCA731669F093007561D9 /* Default-Landscape@2x~ipad.png */,
-				A692351817F899EF001B179F /* Default-568h@2x.png */,
 				A67CCA741669F093007561D9 /* Default-Landscape~ipad.png */,
 				A67CCA751669F093007561D9 /* Default-Portrait@2x~ipad.png */,
 				A67CCA761669F093007561D9 /* Default-Portrait~ipad.png */,
@@ -1093,8 +1089,8 @@
 			);
 			name = IDCalculatorTests;
 			productName = IDCalculatorTests;
-			productReference = A676C0C6164CC20F00C0F859 /* IDCalculatorTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = A676C0C6164CC20F00C0F859 /* IDCalculatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -1103,6 +1099,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = IDC;
+				LastTestingUpgradeCheck = 0510;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Harper Jiang";
 				TargetAttributes = {
@@ -1147,11 +1144,11 @@
 				A67CCA781669F093007561D9 /* Default-Landscape~ipad.png in Resources */,
 				A67CCA791669F093007561D9 /* Default-Portrait@2x~ipad.png in Resources */,
 				A67CCA7A1669F093007561D9 /* Default-Portrait~ipad.png in Resources */,
+				A6BE987318F89FDB0045D70C /* Default-568h@2x.png in Resources */,
 				A6D2B126166A6367000144D5 /* chart_line_24.png in Resources */,
 				A692351717F88E70001B179F /* Images.xcassets in Resources */,
 				A6D2B127166A6367000144D5 /* concole_24.png in Resources */,
 				A6D2B128166A6367000144D5 /* gear_24.png in Resources */,
-				A692351917F899EF001B179F /* Default-568h@2x.png in Resources */,
 				A67A770E17EB87820057656C /* ConsoleParser.output in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1430,6 +1427,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IDCalculator/IDCalculator-Prefix.pch";
@@ -1437,7 +1435,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -1448,6 +1445,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IDCalculator/IDCalculator-Prefix.pch";
@@ -1455,7 +1453,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
