@@ -22,11 +22,11 @@
     Data* div = [a div:b];
     Data* mod = [a mod:b];
     
-    STAssertTrue([add isKindOfClass:[Integer class]], @"");
-    STAssertTrue([sub isKindOfClass:[Integer class]], @"");
-    STAssertTrue([mul isKindOfClass:[Integer class]], @"");
-    STAssertTrue([div isKindOfClass:[Fraction class]], @"");
-    STAssertTrue([mod isKindOfClass:[Integer class]], @"");
+    XCTAssertTrue([add isKindOfClass:[Integer class]], @"");
+    XCTAssertTrue([sub isKindOfClass:[Integer class]], @"");
+    XCTAssertTrue([mul isKindOfClass:[Integer class]], @"");
+    XCTAssertTrue([div isKindOfClass:[Fraction class]], @"");
+    XCTAssertTrue([mod isKindOfClass:[Integer class]], @"");
 }
 
 @end

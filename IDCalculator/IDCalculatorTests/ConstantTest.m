@@ -17,8 +17,8 @@
 
 -(void) testOperationWithConstant {
     Expression* exp = [[Integer ZERO] sub:[SpecialConstant PI]];
-    STAssertEqualObjects([exp class],[ArithConstant class], @"");
-    STAssertEqualObjects([exp description],@"0-π",@"");
+    XCTAssertEqualObjects([exp class],[ArithConstant class], @"");
+    XCTAssertEqualObjects([exp description],@"0-π",@"");
 }
 
 @end

@@ -19,32 +19,32 @@
 -(void) testParseSimple {
     NSString* input = @"sin(4π)";
     Function* result = [FunctionParser parse:input];
-    STAssertTrue(result!=nil, @"");
+    XCTAssertTrue(result!=nil, @"");
 }
 
 -(void) testParseDiffSin {
     NSString* input = @"dsin(x)/dx";
     Function* result = [FunctionParser parse:input];
-    STAssertEqualObjects([[result expression ]class], [DiffExpression class], @"");
+    XCTAssertEqualObjects([[result expression ]class], [DiffExpression class], @"");
 }
 
 -(void) testParseSinPi {
     NSString* input = @"sin(π/2)";
     Function* result = [FunctionParser parse:input];
-    STAssertTrue([[result expression ]isKindOfClass:[BasicFuncExpression class]],@"");
+    XCTAssertTrue([[result expression ]isKindOfClass:[BasicFuncExpression class]],@"");
     BasicFuncExpression* bf = (BasicFuncExpression*)[result expression];
-    STAssertTrue([bf.base isKindOfClass:[ArithmeticExpression class]],@"");
+    XCTAssertTrue([bf.base isKindOfClass:[ArithmeticExpression class]],@"");
     ArithmeticExpression* af = (ArithmeticExpression*)bf.base;
-    STAssertTrue(af.opr == DIV,@"");
-    STAssertTrue(af.left == [SpecialConstant PI],@"");
+    XCTAssertTrue(af.opr == DIV,@"");
+    XCTAssertTrue(af.left == [SpecialConstant PI],@"");
 }
 
 -(void) testParseMod {
     NSString* input = @"5%3";
     Function* result = [FunctionParser parse:input];
-    STAssertTrue([[result expression] isKindOfClass:[ArithmeticExpression class]],@"");
+    XCTAssertTrue([[result expression] isKindOfClass:[ArithmeticExpression class]],@"");
     ArithmeticExpression* ae = (ArithmeticExpression*)result.expression;
-    STAssertTrue(ae.opr == MOD,@"");
+    XCTAssertTrue(ae.opr == MOD,@"");
 }
 
 @end

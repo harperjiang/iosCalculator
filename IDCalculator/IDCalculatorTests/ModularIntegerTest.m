@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Harper Jiang. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import "ModularInteger.h"
 
-@interface ModularIntegerTest : SenTestCase
+@interface ModularIntegerTest : XCTestCase
 
 @end
 
@@ -18,7 +18,7 @@
 - (void)testInverse {
     ModularInteger* mi = [[ModularInteger alloc] init:5 mod:31];
     ModularInteger* mi2 = [[ModularInteger alloc] init:3 mod:31];
-    STAssertEqualObjects(@"12",[[mi div:mi2] description],@"");
+    XCTAssertEqualObjects(@"12",[[mi div:mi2] description],@"");
 }
 
 -(void) testModExp {
@@ -27,7 +27,7 @@
     for(int i = 1; i < 23424;i++) {
         a = (ModularInteger*)[a mul:mi];
         ModularInteger* b = [mi modExp:i];
-        STAssertEqualObjects([a description], [b description], [NSString stringWithFormat:@"%d",i]);
+        XCTAssertEqualObjects([a description], [b description], [NSString stringWithFormat:@"%d",i]);
     }
 }
 @end

@@ -16,7 +16,7 @@
 
 -(void) testEvaluate {
     ArithConstant* ac = [[ArithConstant alloc] init:[SpecialConstant PI] opr:DIV right:[Integer construct:2]];
-    STAssertEqualObjects([[ac evaluate] description], @"π/2",@"");
+    XCTAssertEqualObjects([[ac evaluate] description], @"π/2",@"");
 }
 
 @end

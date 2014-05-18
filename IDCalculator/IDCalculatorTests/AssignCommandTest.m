@@ -37,21 +37,21 @@
     [assign execute];
     Matrix* result = (Matrix*)[[VariableContext instance] lookup:@"p"];
     
-    STAssertEqualObjects([[result val:0 n:0] description], @"10", @"");
-    STAssertEqualObjects([[result val:0 n:1] description], @"11", @"");
-    STAssertEqualObjects([[result val:0 n:2] description], @"12", @"");
-    STAssertEqualObjects([[result val:0 n:3] description], @"13", @"");
-    STAssertEqualObjects([[result val:0 n:4] description], @"14", @"");
-    STAssertEqualObjects([[result val:1 n:0] description], @"40", @"");
-    STAssertEqualObjects([[result val:1 n:1] description], @"45", @"");
-    STAssertEqualObjects([[result val:1 n:2] description], @"50", @"");
-    STAssertEqualObjects([[result val:1 n:3] description], @"55", @"");
-    STAssertEqualObjects([[result val:1 n:4] description], @"60", @"");
-    STAssertEqualObjects([[result val:2 n:0] description], @"70", @"");
-    STAssertEqualObjects([[result val:2 n:1] description], @"79", @"");
-    STAssertEqualObjects([[result val:2 n:2] description], @"88", @"");
-    STAssertEqualObjects([[result val:2 n:3] description], @"97", @"");
-    STAssertEqualObjects([[result val:2 n:4] description], @"106", @"");
+    XCTAssertEqualObjects([[result val:0 n:0] description], @"10", @"");
+    XCTAssertEqualObjects([[result val:0 n:1] description], @"11", @"");
+    XCTAssertEqualObjects([[result val:0 n:2] description], @"12", @"");
+    XCTAssertEqualObjects([[result val:0 n:3] description], @"13", @"");
+    XCTAssertEqualObjects([[result val:0 n:4] description], @"14", @"");
+    XCTAssertEqualObjects([[result val:1 n:0] description], @"40", @"");
+    XCTAssertEqualObjects([[result val:1 n:1] description], @"45", @"");
+    XCTAssertEqualObjects([[result val:1 n:2] description], @"50", @"");
+    XCTAssertEqualObjects([[result val:1 n:3] description], @"55", @"");
+    XCTAssertEqualObjects([[result val:1 n:4] description], @"60", @"");
+    XCTAssertEqualObjects([[result val:2 n:0] description], @"70", @"");
+    XCTAssertEqualObjects([[result val:2 n:1] description], @"79", @"");
+    XCTAssertEqualObjects([[result val:2 n:2] description], @"88", @"");
+    XCTAssertEqualObjects([[result val:2 n:3] description], @"97", @"");
+    XCTAssertEqualObjects([[result val:2 n:4] description], @"106", @"");
 
 }
 

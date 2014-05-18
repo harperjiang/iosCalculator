@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Harper Jiang. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface FunctionParserTest : SenTestCase
+@interface FunctionParserTest : XCTestCase
 
 -(void) testParseSimple;
 -(void) testParseDiffSin;

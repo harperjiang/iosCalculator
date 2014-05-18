@@ -403,6 +403,8 @@
                 break;
             case MOD:
                 [result appendString:@"%"];
+            case POW:
+                [result appendString:@"^"];
             case NOP:
                 break;
         }

@@ -18,7 +18,7 @@
     
     Matrix* matrixB = [[Matrix alloc] init:dataB m:2 n:5];
     NSString* result = [NSString stringWithFormat:@"%d\t%d\t%d\t%d\t%d\t\n%d\t%d\t%d\t%d\t%d\t\n",5,6,7,8,9,10,11,12,13,14];
-    STAssertEqualObjects([matrixB description], result, @"");
+    XCTAssertEqualObjects([matrixB description], result, @"");
 }
 
 -(void) testInverse {
@@ -34,7 +34,7 @@
     Matrix* inv = [m inverse];
     NSString* result = [NSString stringWithFormat:@"%d\t%d\t%d\t\n%d\t%d\t%d\t\n%d\t%d\t%d\t\n",1,0,0,0,1,0,0,0,1];
 
-    STAssertEqualObjects([[inv mul:m] description],result,@"");
+    XCTAssertEqualObjects([[inv mul:m] description],result,@"");
     
     empty = [[ExpressionList alloc] init];
     m = [[Matrix alloc] initWithExpression:empty];
@@ -44,7 +44,7 @@
     [m setVal:1 n:1 val: [Integer construct:5]];
     inv = [m inverse];
     result = [NSString stringWithFormat:@"%d\t%d\t\n%d\t%d\t\n",1,0,0,1];
-    STAssertEqualObjects([[inv mul:m] description], result, @"");
+    XCTAssertEqualObjects([[inv mul:m] description], result, @"");
 }
 
 @end

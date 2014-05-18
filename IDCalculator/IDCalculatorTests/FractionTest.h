@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Harper Jiang. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface FractionTest : SenTestCase
+@interface FractionTest : XCTestCase
 
 -(void) testNegative;
 -(void) testCalculate;

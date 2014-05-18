@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Harper Jiang. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface NumberTest : SenTestCase
+@interface NumberTest : XCTestCase
 
 
 @end
